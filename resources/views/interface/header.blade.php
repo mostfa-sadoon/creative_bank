@@ -49,11 +49,11 @@
         <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href='login.html'">تسجيل الدخول</button>
     </div>
     <a href="profile.html"> <i class="profile bx bxs-user  "></i></a>
-    @if(app()->getLocale() == 'en')  
+    <!-- @if(app()->getLocale() == 'en')  
         <i class="profile bx bx-globe  "><a href="{{url('change_lang/ar')}}">{{trans('user.lang')}}</a></i>
     @else
     <i class="profile bx bx-globe  "><a href="{{url('change_lang/en')}}">{{trans('user.lang')}}</a></i>
-    @endif
+    @endif -->
    
 </div>
 </nav>

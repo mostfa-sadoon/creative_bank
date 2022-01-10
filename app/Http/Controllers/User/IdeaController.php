@@ -39,7 +39,7 @@ class IdeaController extends Controller
             'attatchment'=>$attachment,
             'field_id'=>$request->category,
         ]);
-        Alert::success('Congrats', 'your idea added will reviewd by admin');
+        Alert::success('Congratulations', 'your idea added will reviewd by admin');
         return redirect()->route('home');
     }
 }

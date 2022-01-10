@@ -5,16 +5,16 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active" style="height: 500px;">
-                <img class="d-block w-100" src="assets/images/1.jpg" alt="">
+                <img class="d-block w-100" src="{{asset('interface/assets/images/1.jpg')}}" alt="">
             </div>
             <div class="carousel-item" style="height: 500px;">
-                <img class="d-block w-100" src="assets/images/2.jpg" alt="">
+                <img class="d-block w-100" src="{{asset('interface/assets/images/2.jpg')}}" alt="">
             </div>
             <div class="carousel-item" style="height: 500px;">
-                <img class="d-block w-100" src="assets/images/3.jpg" alt="">
+                <img class="d-block w-100" src="{{asset('interface/assets/images/3.jpg')}}" alt="">
             </div>
             <div class="carousel-item" style="height: 500px;">
-                <img class="d-block w-100" src="assets/images/4.jpg" alt="">
+                <img class="d-block w-100" src="{{asset('interface/assets/images/4.jpg')}}" alt="">
             </div>
 
         </div>
@@ -76,7 +76,7 @@
                                     <div class="col-xs-12 col-sm-4" data-aos="fade-up" data-aos-delay="100">
                                         <div class="card">
                                             <a class="img-card" href="#">
-                                                <img src="assets/images/best_ideas/tablate.png" />
+                                                <img src="{{asset('interface/assets/images/best_ideas/tablate.png')}}" />
                                             </a>
                                             <div class="card-content">
                                                 <h4 class="card-title">
@@ -95,7 +95,7 @@
                                     <div class="col-xs-12 col-sm-4" data-aos="fade-up" data-aos-delay="300">
                                         <div class="card">
                                             <a class="img-card" href="#">
-                                                <img src="assets/images/best_ideas/tablate.png" />
+                                                <img src="{{asset('interface/assets/images/best_ideas/tablate.png')}}" />
                                             </a>
                                             <div class="card-content">
                                                 <h4 class="card-title">
@@ -114,7 +114,7 @@
                                     <div class="col-xs-12 col-sm-4" data-aos="fade-up" data-aos-delay="500">
                                         <div class="card">
                                             <a class="img-card" href="#">
-                                                <img src="assets/images/best_ideas/tablate.png" />
+                                                <img src="{{asset('interface/assets/images/best_ideas/tablate.png')}}" />
                                             </a>
                                             <div class="card-content">
                                                 <h4 class="card-title">
