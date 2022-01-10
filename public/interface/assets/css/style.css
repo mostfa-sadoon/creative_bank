@@ -10,7 +10,7 @@ h6 {
 
 p {
     /* color: rgb(255, 255, 255); */
-    text-align: right;
+    text-align: start;
 }
 
 main-color {
@@ -187,6 +187,19 @@ nav .form-inline .btn:hover {
     background-color: #0080de;
 }
 
+.navbar .profile {
+    color: #dbdbdb;
+    font-size: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.navbar .profile a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
 
 /******End Nav***************/
 
@@ -271,6 +284,15 @@ nav .form-inline .btn:hover {
     color: #000;
 }
 
+.about {
+    padding-bottom: 20px;
+}
+
+.about .section-title {
+    margin: 0%;
+    padding-top: 40px;
+}
+
 
 /*********End About**********/
 
@@ -283,6 +305,288 @@ nav .form-inline .btn:hover {
 
 
 /*********End best-idea**********/
+
+
+/*Start Item Best Subscribers screen*/
+
+.team-item .member {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #202020;
+    width: 100%;
+    box-shadow: -5px -1px 10px .1px rgb(187, 187, 187);
+}
+
+.team-item .member .member-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.team-item .member .member-img .img-fluid {
+    width: 100%;
+    object-fit: fill;
+    transition: all .25s ease;
+}
+
+.team-item .member .social {
+    left: 0;
+    bottom: 30px;
+    right: 0;
+    padding: 10px;
+}
+
+.team-item .member .social a {
+    transition: color 0.3s;
+    color: #111111;
+    margin: 0 3px;
+    border-radius: 50px;
+    width: 36px;
+    height: 36px;
+    background: #0080de;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in-out 0.3s;
+    color: #fff;
+}
+
+.team-item .member .social a:hover {
+    background: #111111;
+}
+
+.team-item .member .social i {
+    font-size: 18px;
+    line-height: 0;
+}
+
+.team-item .member-info h4,
+h2 {
+    font-weight: 600;
+    font-size: 20px;
+    color: #3b3a3a;
+    margin-bottom: 20px;
+}
+
+.team-item .member-info h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    color: #0080de;
+}
+
+.team-item .member-info h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 40%;
+    height: 2px;
+    background: #585858;
+    bottom: 0;
+}
+
+.team-item .member-info span {
+    font-size: 16px;
+    font-weight: 500;
+    color: #464646;
+    margin-bottom: 20px;
+}
+
+.team-item .member-info p {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 26px;
+    color: #777777;
+}
+
+.team-item .member:hover .social {
+    opacity: 1;
+    bottom: 15px;
+}
+
+.team-item .idea-info h4 {
+    color: #0080de;
+}
+
+.team-item .idea-info-icon {
+    text-align: end;
+    color: white;
+    padding: 10px;
+}
+
+.team-item .idea-info-user {
+    padding: 10px;
+    color: #fff;
+}
+
+.team-item .idea-info-user a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.team-item .idea-info-user img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%px;
+    -moz-border-radius: 50%px;
+    width: 50px;
+    height: 50px;
+}
+
+.team-item .profile-data {
+    background-color: rgb(218, 218, 218);
+    padding-bottom: 30px;
+}
+
+.team-item .profile-data .img-fluid {
+    padding: 20px;
+}
+
+.team-item .profile-data .profile-data-icon {
+    color: rgb(75, 75, 75);
+    padding-inline-start: 20px;
+}
+
+.team-item .profile-data .profile-data-icon i {
+    margin-inline-end: 15px;
+}
+
+.team-item .edit button {
+    width: 100px;
+    background-color: #0080de;
+    border: white;
+    color: white;
+}
+
+.team-item .edit button:hover {
+    background-color: #09ac31;
+    border: white;
+    color: white;
+}
+
+.file {
+    visibility: hidden;
+    position: absolute;
+}
+
+
+/*End Item Best Subscribers Screen*/
+
+
+/*Start Item News Screen*/
+
+.item-news {
+    margin-bottom: 80px;
+    overflow: hidden;
+    border-radius: 10px;
+    width: 100%;
+}
+
+.item-news .memitem-newsber-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.item-news .item-news-img {
+    height: 300px;
+    object-fit: fill;
+    transition: all .25s ease;
+}
+
+.item-news .idea-info-icon {
+    background-color: #2b2e34;
+    color: white;
+    width: auto;
+    border-radius: 10px;
+    padding: 5px 20px 5px 20px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.item-news .idea-info-icon .news-date {
+    font-size: 12px;
+    color: gray;
+    display: inline-block;
+    margin: 0;
+    margin-right: 10px;
+}
+
+.item-news .social {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    right: 0;
+    opacity: 0;
+    transition: ease-in-out 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-news .social a {
+    transition: color 0.3s;
+    color: #111111;
+    margin: 0 3px;
+    border-radius: 50px;
+    width: 36px;
+    height: 36px;
+    background: #0080de;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: ease-in-out 0.3s;
+    color: #fff;
+}
+
+.item-news .social a:hover {
+    background: #111111;
+}
+
+.item-news .social i {
+    font-size: 18px;
+    line-height: 0;
+}
+
+.item-news .member-info {
+    padding: 25px 15px;
+}
+
+.item-news .member-info h4 {
+    font-weight: 700;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.item-news .member-info h4:hover {
+    color: #0080de;
+}
+
+.item-news .member-info span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: #aaaaaa;
+    text-align: center;
+}
+
+.item-news .member-info p {
+    font-style: italic;
+    font-size: 14px;
+    line-height: 26px;
+    color: #777777;
+}
+
+.item-news:hover .social {
+    opacity: 1;
+    bottom: 15px;
+}
+
+
+/*End Item News Screen*/
 
 
 /*--------------------------------------------------------------

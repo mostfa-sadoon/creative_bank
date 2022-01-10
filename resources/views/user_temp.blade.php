@@ -1,4 +1,5 @@
 @include('interface.head')
 @include('interface.header')
 @yield('content')
+@include('sweetalert::alert')
 @include('interface.footer')

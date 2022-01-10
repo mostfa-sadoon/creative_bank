@@ -104,6 +104,20 @@
 <script src="{{asset('interface/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
 <script src="{{asset('interface/assets/vendor/php-email-form/validate.js')}}"></script>
 <script src="{{asset('interface/assets/js/custom.js')}}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script>
+        $(document).ready(function(){
+            var lang= {!!  json_encode(app()->getLocale()) !!}
+            console.log(lang);
+            if(lang=="ar"){
+                $("html[lang=ar]").attr("dir", "rtl")
+                .find("body").addClass("right-to-left");
+            }else{
+                $("html[lang=en]").attr("dir", "ltr")
+                .find("body").addClass("left-to-right");
+            }
+        });
+   </script>
 </body>
 
 </html>

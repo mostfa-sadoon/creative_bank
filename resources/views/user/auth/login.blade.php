@@ -21,8 +21,8 @@
                                                 <label for="form_email">البريد الالكترونى<span>*</span>
                                                 </label>
                                                 <input id="form_email" name="email" type="email" name="email" class="form-control" placeholder="ادخل البريد الالكترونى" required="required" data-error="Valid email is required.">
-                                                   @if ($errors->has('email'))
-                                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                                    @if ($errors->has('email'))
+                                                      <span class="text-danger">{{ $errors->first('email') }}</span>
                                                     @endif
                                             </div>
                                         </div>
