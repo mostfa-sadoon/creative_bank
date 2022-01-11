@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;  
 use App\Http\Controllers\User\Auth\AuthController;
 use App\Http\Controllers\User\IdeaController;
-
+use  App\Http\Controllers\User\Pages\LayoutController;
 
 
 
@@ -18,15 +18,22 @@ use App\Http\Controllers\User\IdeaController;
 |
 */
 
+// the home page
 Route::get('/', function () {
     return view('user.home.index');
 })->name('home');
-
+// login and register  
 Route::get('login/user', [AuthController::class, 'index'])->name('user.login');
 Route::get('registration/user', [AuthController::class, 'registration'])->name('user.register');
 Route::post('register/user', [AuthController::class, 'register'])->name('user.create');
 Route::post('signin/user', [AuthController::class, 'login'])->name('user.signin');
 Route::get('signout/user', [AuthController::class, 'signout'])->name('user.signout');
+// pages
+Route::get('much/earn', [LayoutController::class, 'index'])->name('much.index');
+Route::get('about/bank', [LayoutController::class, 'about'])->name('about');
+Route::get('conect/us', [LayoutController::class, 'conect'])->name('conect');
+Route::get('suggestions', [LayoutController::class, 'suggestions'])->name('suggestions');
+
 
 Route::middleware('auth:web')->group(function () {
     Route::get('/createidea',[IdeaController::class, 'create'])->name('idea.create');

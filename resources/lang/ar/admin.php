@@ -20,9 +20,12 @@ return [
     'creative_bank'=>'بنك الافكار',
     'users'=>'المستخدمين',
     'fields'=>'التصنيفات',
-
     'field_in_arabic'=>'ألمجال بالعربي',
     'field_in_english'=>'المجال بالانجليزي',
     'add_new_field'=>'اضافه مجال جديد',
+
+
+    'ideas'=>'الافكار',
+    'new_ideas'=>'الافكار الجديده',
    
 ];

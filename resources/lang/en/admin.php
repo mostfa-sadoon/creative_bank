@@ -27,4 +27,9 @@ return [
     'field_in_arabic'=>'field in arabic',
     'field_in_english'=>'field in english',
     'add_new_field'=>'add new field',
+
+
+
+    'ideas'=>'ideas',
+    'new_ideas'=>'new ideas',
 ];

@@ -15,10 +15,17 @@
                             </ul>
                         </li>
 
-
+                        
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.users')}}</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('field.index')}}">{{ trans('admin.fields')}}</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.ideas')}}</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route('idea.index')}}">{{ trans('admin.new_ideas')}}</a></li>
                             </ul>
                         </li>
 

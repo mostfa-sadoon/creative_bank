@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\Auth\CustomAuthController;
 use App\Http\Controllers\Admin\CategoryController; 
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\FieldController;
+use App\Http\Controllers\Admin\IdeaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,6 +40,9 @@ use App\Http\Controllers\Admin\FieldController;
     Route::get('/field/show/{id}', [FieldController::class, 'show'])->name('field.show');   
     Route::post('/field/update', [FieldController::class, 'update'])->name('field.update'); 
     Route::post('/field/destroy', [FieldController::class, 'destroy'])->name('field.destroy');
+    // ideas
+    Route::get('/ideas', [IdeaController::class, 'index'])->name('idea.index'); 
+    Route::get('/ideas/show/{id}', [IdeaController::class, 'show'])->name('idea.show'); 
 
 });
 Route::get('change_lang/{lang}', [HomeController::class,'change_lang'])->name('change_lang');

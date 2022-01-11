@@ -8,11 +8,11 @@
 </button>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <a class="navbar-brand" href="index.html">بنك <span>الأفكار</span> </a>
+    <a class="navbar-brand" href="{{route('home')}}">بنك <span>الأفكار</span> </a>
 
     <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">{{trans('user.main')}}</a>
+            <a class="nav-link active" aria-current="page" href="{{route('home')}}">{{trans('user.main')}}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('idea.create')}}">{{trans('user.send_your_idea')}}</a>
@@ -33,13 +33,13 @@
             <a class="nav-link " href="news.html">{{trans('user.last_news')}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="about.html">{{trans('user.about_bank')}}</a>
+            <a class="nav-link" href="{{route('about')}}">{{trans('user.about_bank')}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="#">{{trans('user.conact_us')}}</a>
+            <a class="nav-link " href="{{route('conect')}}">{{trans('user.conact_us')}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="suggestions.html">{{trans('user.suggestions')}}</a>
+            <a class="nav-link " href="{{route('suggestions')}}">{{trans('user.suggestions')}}</a>
         </li>
     </ul>
     <div class="form-inline mr-auto">
