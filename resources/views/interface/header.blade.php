@@ -46,9 +46,15 @@
         <form>
             <input class="form-control mr-sm-2" type="search" placeholder="بحث" aria-label="Search">
         </form>
-        <button class="btn btn-outline-success my-2 my-sm-0" onclick="location.href='login.html'">تسجيل الدخول</button>
+        @guest
+           <a href="{{route('user.login')}}" class="btn btn-outline-success my-2 my-sm-0">تسجيل الدخول</a>
+        @endguest
+        @auth
+           <a href="{{route('user.signout')}}" class="btn btn-outline-success my-2 my-sm-0">تسجيل الخروج</a>
+
+           <a href="{{route('profile.show',Auth::user()->id)}}"><i class="profile bx bxs-user  "></i></a>
+        @endauth
     </div>
-    <a href="profile.html"> <i class="profile bx bxs-user  "></i></a>
     <!-- @if(app()->getLocale() == 'en')  
         <i class="profile bx bx-globe  "><a href="{{url('change_lang/ar')}}">{{trans('user.lang')}}</a></i>
     @else

@@ -24,4 +24,11 @@ return [
     'conact_us'=>'تواصل معنا',
     'suggestions'=>'المقترحات',
     'creative'=>'المبدعين',
+
+     'Researcher'=>'باحث',
+     'business'=>'رجل اعمال',
+     'pioneer'=>'رائد',
+     'student'=>'طالب',
+     'specialized'=>'متخصص',
+     'Investor'=>'مستثمر',
 ];

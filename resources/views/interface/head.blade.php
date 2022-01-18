@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="{{asset('interface/assets/vendor/aos/aos.css')}}">
     <link rel="stylesheet" href="{{asset('interface/assets/css/style.css')}}"/>
     <link rel="stylesheet" href="{{asset('interface/assets/css/best_idea.css')}}"/>
+
+
+   
     <!-- <link href="assets/vendor/aos/aos.css" rel="stylesheet"--->
     <style type="text/css">
         .fixed-top {

@@ -5,8 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 class Idea extends Model
 {
+    use SoftDeletes;
     use HasFactory;
     protected $guarded = [];    
     public function getImgAttribute($img)
@@ -23,18 +26,12 @@ class Idea extends Model
             return asset('/uploads/attachment') . '/' . $attatchment;
         }
     }
-
-    public function  getVideo_linkAttribute($url)
+    public function user()
     {
-        if(strlen($url) > 11)
-        {
-            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match))
-            {
-                return $match[1];
-            }
-            else
-                return false;
-        }
-        return $url;
+        return $this->belongsTo(User::class);
+    }
+    public function field()
+    {
+        return $this->belongsTo(Field::class);
     }
 }

@@ -12,4 +12,8 @@ class Field extends Model
         'name_ar',
         'name_en',
     ];
+    public function user()
+    {
+        return $this->hasMany(User::class);
+    }
 }

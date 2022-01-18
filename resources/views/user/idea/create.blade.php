@@ -53,10 +53,22 @@
                                         <div class="">
                                             <div class="form-group">
                                                 <label for="form_email">فيديو</label>
-                                                <input id="form_email" name="video_link" type="url" name="text" class="form-control" placeholder="ادخل رابط الفيديو *" required="required" data-error="Valid email is required.">
+                                                <input id="form_email" name="video_link" type="url" name="text" class="form-control" placeholder="ادخل رابط الفيديو *"  data-error="Valid email is required.">
                                                 <p class="hidden-text mt-3">من فضلك اضف رابط يوتيوب صحيح. فمثلا https://www.youtube.com/watch?v=xxxxxxxxxxx</p>
                                                    @if ($errors->has('video_link'))
                                                       <span class="text-danger">{{ $errors->first('video_link')}}</span>
+                                                    @endif
+                                            </div>
+                                        </div>
+                                         <!---The Opportunity---->
+                                         <div class="">
+                                            <div class="form-group">
+                                                <label for="form_message">الوصف<span> *</span>
+                                                </label>
+                                                <textarea id="form_message" name="desc" class="form-control" placeholder="أكتب الفرصة هنا *" rows="4" required="required" data-error="Please, leave us a message.">
+                                                </textarea>
+                                                   @if ($errors->has('problem'))
+                                                      <span class="text-danger">{{ $errors->first('problem')}}</span>
                                                     @endif
                                             </div>
                                         </div>

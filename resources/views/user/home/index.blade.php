@@ -73,65 +73,32 @@
                         <div class="content">
                             <div class="">
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm-4" data-aos="fade-up" data-aos-delay="100">
-                                        <div class="card">
-                                            <a class="img-card" href="#">
-                                                <img src="{{asset('interface/assets/images/best_ideas/tablate.png')}}" />
-                                            </a>
-                                            <div class="card-content">
-                                                <h4 class="card-title">
-                                                    <a href="#"> تابلت التعلم من خلال الواقع المعزز zSpace
-                                                  </a>
-                                                </h4>
-                                                <p class="">
-                                                    الواقع المعزز، تابلت، تعليم، تكنولوجيا، أبعاد، نظارات ثلاثية الأبعاد، تفاعلية، حصص، تطبيق، قلم، الواقع الافتراضي، تكنولوجيا الواقع الافتراضي
-                                                </p>
-                                            </div>
-                                            <div class="card-read-more">
-                                                <a href="#" class="btn btn-link btn-block">عرض المزيد</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-4" data-aos="fade-up" data-aos-delay="300">
-                                        <div class="card">
-                                            <a class="img-card" href="#">
-                                                <img src="{{asset('interface/assets/images/best_ideas/tablate.png')}}" />
-                                            </a>
-                                            <div class="card-content">
-                                                <h4 class="card-title">
-                                                    <a href="#"> تابلت التعلم من خلال الواقع المعزز zSpace
-                                                  </a>
-                                                </h4>
-                                                <p class="">
-                                                    الواقع المعزز، تابلت، تعليم، تكنولوجيا، أبعاد، نظارات ثلاثية الأبعاد، تفاعلية، حصص، تطبيق، قلم، الواقع الافتراضي، تكنولوجيا الواقع الافتراضي
-                                                </p>
-                                            </div>
-                                            <div class="card-read-more">
-                                                <a href="#" class="btn btn-link btn-block">عرض المزيد</a>
+                                    @foreach($ideas as $idea)
+                                        <div class="col-xs-12 col-sm-4" data-aos="fade-up" data-aos-delay="100">
+                                            <div class="card">
+                                                <a class="img-card" href="#">
+                                                    <img src="{{$idea->img}}" />
+                                                </a>
+                                                <div class="card-content">
+                                                    <h4 class="card-title">
+                                                        <a href="#"> {{$idea->name}}
+                                                    </a>
+                                                    </h4>
+                                                    <p class="">
+                                                        {{$idea->desc}}
+                                                 </p>
+                                                </div>
+                                                <div class="card-read-more">
+                                                    <a href="{{route('user.idea.show',$idea->id)}}" class="btn btn-link btn-block">عرض المزيد</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-4" data-aos="fade-up" data-aos-delay="500">
-                                        <div class="card">
-                                            <a class="img-card" href="#">
-                                                <img src="{{asset('interface/assets/images/best_ideas/tablate.png')}}" />
-                                            </a>
-                                            <div class="card-content">
-                                                <h4 class="card-title">
-                                                    <a href="#"> تابلت التعلم من خلال الواقع المعزز zSpace
-                                                  </a>
-                                                </h4>
-                                                <p class="">
-                                                    الواقع المعزز، تابلت، تعليم، تكنولوجيا، أبعاد، نظارات ثلاثية الأبعاد، تفاعلية، حصص، تطبيق، قلم، الواقع الافتراضي، تكنولوجيا الواقع الافتراضي
-                                                </p>
-                                            </div>
-                                            <div class="card-read-more">
-                                                <a href="#" class="btn btn-link btn-block">عرض المزيد</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
+                                    @endforeach
                                 </div>
+                                
+                                    <div class="d-flex justify-content-center">
+                                    <a class="btn btn-info text-white" href="{{route('allidea')}}">see all</a>
+                                    </div>
                             </div>
                         </div>
                     </div>

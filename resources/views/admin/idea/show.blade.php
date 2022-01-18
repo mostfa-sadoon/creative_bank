@@ -9,6 +9,10 @@
       <div class="d-flex justify-content-center">
           <img class="img-fluid" src="{{$idea->img}}">
        </div>
+       <div class="">
+         <h4>description</h4>
+        <p>{{$idea->desc}}</p>
+    </div>
     <div class="">
          <h4>problem</h4>
         <p>{{$idea->problem}}</p>
@@ -21,16 +25,22 @@
          <h4>pdf</h4>    
          <embed src="{{$idea->attatchment}}" width="100%" height="500px">
     </div>
-    <iframe width="560" height="315" src="{{$idea->video_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          {{$idea->video_link}}
-
-          <iframe width="560" height="315" src="http://www.youtube.com/embed/{{$idea->video_link}}" frameborder="0" allowfullscreen></iframe>
 
 
-            <x-embed url="https://www.youtube.com/watch?v=oHg5SJYRHA0" />
-            
-    <iframe width="306" height="200" src="{{ $idea->video_link }}" frameborder="0" allowfullscreen></iframe>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dTUb4d4fL_g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="420" height="315"
+          src="https://www.youtube.com/embed/ETVAhPIkebc?controls=0">
+    </iframe>
+
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ETVAhPIkebc?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/EIfsXEtEUhQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+    <div class="d-flex justify-content-center">
+         <a  href="{{route('idea.accept',$idea->id)}}"class="btn btn-success"> accepte</a>   <a href="{{route('idea.refused',$idea->id)}}" class="btn btn-danger text-white"> refused</a>
+    </div>          
 @endsection
 @section('scripts')    
     

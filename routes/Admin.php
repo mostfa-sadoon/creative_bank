@@ -17,6 +17,7 @@ use App\Http\Controllers\Admin\IdeaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
     Route::get('login', [CustomAuthController::class, 'index'])->name('login');
     Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom'); 
     Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
@@ -24,13 +25,13 @@ use App\Http\Controllers\Admin\IdeaController;
     Route::middleware('auth:Admin')->group(function () {
     Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
     Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
-    // category routes
-    Route::get('/category', [CategoryController::class, 'index'])->name('category.index'); 
+    // category routes                                                                                 
+    Route::get('/category', [CategoryController::class, 'index'])->name('category.index');             
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create'); 
-    Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store'); 
+    Route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');    
     Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit'); 
-    Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('category.show'); 
-    Route::post('/category/update', [CategoryController::class, 'update'])->name('category.update'); 
+    Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('category.show');  
+    Route::post('/category/update', [CategoryController::class, 'update'])->name('category.update');   
     Route::post('/category/destroy', [CategoryController::class, 'destroy'])->name('category.destroy'); 
     // fildes routes
     Route::get('/field', [FieldController::class, 'index'])->name('field.index'); 
@@ -43,6 +44,9 @@ use App\Http\Controllers\Admin\IdeaController;
     // ideas
     Route::get('/ideas', [IdeaController::class, 'index'])->name('idea.index'); 
     Route::get('/ideas/show/{id}', [IdeaController::class, 'show'])->name('idea.show'); 
-
+    Route::get('/ideas/accept/{id}', [IdeaController::class, 'accept'])->name('idea.accept'); 
+    Route::get('/ideas/refused/{id}', [IdeaController::class, 'refused'])->name('idea.refused'); 
+    Route::get('/ideas/delete/{id}', [IdeaController::class, 'destroy'])->name('idea.delete');
+    Route::get('/ideas/trash', [IdeaController::class, 'trash'])->name('idea.trash');
 });
 Route::get('change_lang/{lang}', [HomeController::class,'change_lang'])->name('change_lang');

@@ -12,4 +12,8 @@ class Category extends Model
         'name_ar',
         'name_en',
     ];
+    public function ideas()
+    {
+        return $this->hasMany(Idea::class);
+    }
 }

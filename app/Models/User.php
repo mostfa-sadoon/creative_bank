@@ -28,7 +28,6 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
     /**
      * The attributes that should be cast.
      *
@@ -37,4 +36,21 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function ideas()
+    {
+        return $this->hasMany(Idea::class);
+    }
+    public function field()
+    {
+        return $this->belongsTo(Field::class);
+    }
+    public function getImgAttribute($img)
+    {
+        if ($img)
+        {
+            return asset('/uploads/user/profile_img') . '/' . $img;
+        }else{
+            return asset('/uploads/user/default/default.jpg');
+        }
+    }
 }

@@ -28,16 +28,14 @@ class AuthController extends Controller
     }
     public function login(Request $request)
     {
-       // dd($request->all());
         $request->validate([
             'email' => 'required',
             'password' => 'required',
         ]);
-        if (Auth::guard('web')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->route('home')
-                        ->withSuccess('Signed in');
+        if (Auth::guard()->attempt(['email' => $request->email, 'password' => $request->password])) {
+            return redirect()->route('home');
         }
-        return redirect("login/user")->withSuccess('Login details are not valid');
+        return redirect("login/user")->with('error', 'the email or password is not success');
     }
     public function register(Request $request)
     {
@@ -65,8 +63,8 @@ class AuthController extends Controller
     }
     public function signout()
     {
-        Session::flush();
-        Auth::logout();
+         Session::flush();
+         Auth::guard('web')->logout();
         return Redirect('login/user');
     }
 }

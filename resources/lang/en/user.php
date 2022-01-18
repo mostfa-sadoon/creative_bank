@@ -24,4 +24,12 @@ return [
     'conact_us'=>'conact',
     'suggestions'=>'suggestions',
     'creative'=>'creative',
+
+    'Researcher'=>'Researcher',
+    'business'=>'business',
+    'pioneer'=>'pioneer',
+    'student'=>'student',
+    'specialized'=>'specialized',
+    'Investor'=>'Investor',
+
 ];
