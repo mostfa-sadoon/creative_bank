@@ -58,7 +58,7 @@ class ProfileController extends Controller
                'field_id'=>$request->field,
                'classification'=>$request->clasified
           ]);
-          return redirect()->back();
+          return redirect()->route('profile.show',$id);
       }else{
           $request->validate([
                'img'=>'image|mimes:jpg,png,jpeg,gif,svg|max:10240',

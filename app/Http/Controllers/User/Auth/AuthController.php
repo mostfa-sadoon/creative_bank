@@ -46,10 +46,11 @@ class AuthController extends Controller
             'address'=>  'required|max:60|min:12',
             'gender'=>   'required',
             'field'=>    'required',
+            'clasified'=>'required',
             'password'=> 'required|min:6|max:50|confirmed',
             'password_confirmation' => 'required|max:50|min:6',
         ]);
-        User::create([
+            $user= User::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
@@ -57,9 +58,13 @@ class AuthController extends Controller
             'gender'=>$request->gender,
             'field_id'=>$request->field,
             'date_of_birth'=>$request->birthdate,
+            'classification'=>$request->clasified,
             'password'=>Hash::make($request->password),
         ]);
-       return redirect()->route('home');
+          if($user->wasRecentlyCreated === true){
+            Auth::guard()->attempt(['email' => $request->email, 'password' => $request->password]);
+            return redirect()->route('profile.show',Auth::user()->id);
+          }
     }
     public function signout()
     {

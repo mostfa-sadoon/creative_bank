@@ -5,11 +5,12 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Events\IdeaViewer;
 use App\Models\Category;
 use App\Models\Idea;
 use App\Models\Field;
 use Alert;
-
+     
 class IdeaController extends Controller
 {
     //
@@ -55,6 +56,7 @@ class IdeaController extends Controller
     public function show($id)
     {
         $idea=Idea::find($id);
+        event(new IdeaViewer($idea));
         $lang=app()->getLocale();
         $category=Category::select('name_'.$lang.' as name')->find($idea->category_id);
         
