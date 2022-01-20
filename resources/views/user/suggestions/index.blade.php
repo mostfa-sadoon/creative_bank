@@ -29,8 +29,7 @@
                                             <div class="form-group">
                                                 <label for="form_message">اكتب مقترحك<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="message" class="form-control" placeholder="أكتب المقترح هنا *" rows="4" required="required" data-error="Please, leave us a message.">
-                                                </textarea>
+                                                <textarea id="form_message" name="message" class="form-control" placeholder="أكتب المقترح هنا *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                                             </div>
                                         </div>
                                         <!---Attachment---->
