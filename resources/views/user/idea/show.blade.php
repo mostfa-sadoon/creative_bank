@@ -102,8 +102,8 @@
                         </span>
                     </div>
                     <div class="comment-text w-100">
-                        <h6>مصطفى سعدون</h6>
-                        <div class="comment-footer"> <span class="date">April 14, 2019</span> </div>
+                        <h6>{{$comment->user->name}}</h6>
+                        <div class="comment-footer"> <span class="date">{{date('d-m-Y', strtotime($comment->created_at))}}</span> </div>
                         <p class="m-b-5 m-t-10">{{$comment->comment}}
                         </p>
                     </div>
