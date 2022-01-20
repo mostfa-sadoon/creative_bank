@@ -9,6 +9,7 @@ use App\Events\IdeaViewer;
 use App\Models\Category;
 use App\Models\Idea;
 use App\Models\Field;
+use App\Models\Comment;
 use Alert;
      
 class IdeaController extends Controller
@@ -55,7 +56,7 @@ class IdeaController extends Controller
     }
     public function show($id)
     {
-        $idea=Idea::find($id);
+        $idea=Idea::with('comments')->find($id);
         event(new IdeaViewer($idea));
         $lang=app()->getLocale();
         $category=Category::select('name_'.$lang.' as name')->find($idea->category_id);
@@ -67,4 +68,17 @@ class IdeaController extends Controller
         $ideas=Idea::select('id','name','img','desc')->where('status','true')->paginate(10);
         return view('user.idea.allidea',compact('ideas'));
     } 
+    public function sendcomment(Request $request)
+    {
+        $idea_id=$request->idea_id;
+        $request->validate([
+            'comment'=>'required|max:200',
+        ]);
+        Comment::create([
+            'user_id'=>$request->user_id,
+            'idea_id'=>$idea_id,
+            'comment'=>$request->comment,
+        ]);
+        return redirect()->route('user.idea.show',$idea_id);
+    }
 }

@@ -94,40 +94,40 @@
                 <h6>الموقع غير مسؤول عن مضمون التعليقات</h6>
             </div>
             <div class="comment-widgets p-3 m-2 mt-lg-4">
+                @foreach($idea->comments as $comment)
                 <div class="d-flex flex-row comment-row ">
                     <div class="p-2">
                         <span class="round">
-                            <img src="https://i.imgur.com/uIgDDDd.jpg" alt="user" width="50">
+                            <img src="{{$comment->user->img}}" alt="user" width="50">
                         </span>
                     </div>
                     <div class="comment-text w-100">
                         <h6>مصطفى سعدون</h6>
                         <div class="comment-footer"> <span class="date">April 14, 2019</span> </div>
-                        <p class="m-b-5 m-t-10">انها لفكرة رائعة
+                        <p class="m-b-5 m-t-10">{{$comment->comment}}
                         </p>
                     </div>
                 </div>
-                <div class="d-flex flex-row comment-row ">
-                    <div class="p-2"><span class="round"><img src="https://i.imgur.com/uIgDDDd.jpg" alt="user" width="50"></span></div>
-                    <div class="comment-text w-100">
-                        <h6>مصطفى سعدون</h6>
-                        <div class="comment-footer"> <span class="date">April 14, 2019</span> </div>
-                        <p class="m-b-5 m-t-10">انها لفكرة رائعة
-                        </p>
-                    </div>
-                </div>
+                @endforeach
             </div>
+             
+              <form action="{{route('comment.send')}}" method="Post">
+                  @csrf
+                  <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                  <input type="hidden" name="idea_id" value="{{$idea->id}}">
+                  <div class="bg-light p-3 m-2 mt-lg-4">
+                        <div class="d-flex flex-row align-items-start">
+                            <img class="rounded-circle m-2" src="{{Auth::user()->img}}" width="50">
+                            <textarea class="form-control ml-1 shadow-none textarea"  name="comment" placeholder="اكتب تعليقا بناء" rows="3"></textarea>
+                        </div>
+                        <div class="mt-1 ">
+                            <input class="btn btn-primary btn-sm shadow-none m-1" type="submit" value="ارسل">
+                        </div>
+                </div>
+              </form>
+        
 
-            <div class="bg-light p-3 m-2 mt-lg-4">
-                <div class="d-flex flex-row align-items-start">
-                    <img class="rounded-circle m-2" src="https://i.imgur.com/RpzrMR2.jpg" width="50">
-                    <textarea class="form-control ml-1 shadow-none textarea " rows="3"></textarea>
-                </div>
-                <div class="mt-1 ">
-                    <button class="btn btn-primary btn-sm shadow-none m-1" type="button">أرسل</button>
-                    <button class="btn btn-outline-primary btn-sm m-1 shadow-none" type="button">ألغى</button>
-                </div>
-            </div>
+            
 
 
         </section>
