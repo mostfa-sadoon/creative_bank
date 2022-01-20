@@ -47,4 +47,5 @@
     <script src="{{asset('../assets/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
     <!--FooTable init-->
     <script src="{{asset('js/footable-init.js')}}"></script>
+   
 @endsection

@@ -10,7 +10,7 @@
             <div class="card mt-2 mx-auto p-1 bg-light">
                 <div class="card-body bg-light">
                     <div class="container">
-                        <h2 class="text-center">تعديل الملف الشخصى</h2>
+                        <h2 class="text-center">{{trans('user.edit_user')}}</h2>
                         <div></div>
                         <form id="contact-form" role="form" action="{{route('user.update')}}" method="post" enctype="multipart/form-data">
                             @csrf
@@ -29,7 +29,7 @@
                                             <div class=" ">
                                                 <!-- <input type="text" class="form-control" disabled placeholder="Upload File" id="file"> -->
                                                 <div class="mt-4">
-                                                    <button type="button" class="browse btn btn-primary">إختر صورة</button>
+                                                    <button type="button" class="browse btn btn-primary">{{trans('user.choose_img')}}</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -37,7 +37,7 @@
                                 </div>
                                 <!---Name---->
                                 <div class="form-group ">
-                                    <label for="validationDefault01"> الاسم بالكامل <span>*</span>
+                                    <label for="validationDefault01">{{trans('user.full_name')}}<span>*</span>
                                     </label>
                                     <input type="text" class="form-control" name="name" value="{{$user->name}}" id="validationDefault01" placeholder="  الاسم بالكامل " required>
                                     @error('name')
@@ -47,7 +47,7 @@
                                 <!---Email---->
                                 <div class="">
                                     <div class="form-group">
-                                        <label for="form_email">البريد الالكترونى<span>*</span>
+                                        <label for="form_email">{{trans('user.email')}}<span>*</span>
                                         </label>
                                         <input id="form_email" name="email" type="email" value="{{$user->email}}" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
                                         @error('email')
@@ -57,7 +57,7 @@
                                 </div>              
                                 <!---Phone---->
                                 <div class="form-group ">
-                                    <label for="validationDefault01">رقم الهاتف<span>*</span>
+                                    <label for="validationDefault01">{{trans('user.phone_number')}}<span>*</span>
                                     </label>
                                     <input type="tel" name="phone" class="form-control" value="{{$user->phone}}" id="validationDefault01" placeholder="رقم الهاتف" required>
                                     @error('phone')
@@ -66,7 +66,7 @@
                                 </div>
                                 <!---Age---->
                                 <div class="form-group ">
-                                    <label for="validationDefault01">تاريخ الميلاد<span>*</span>
+                                    <label for="validationDefault01">{{trans('user.phone_number')}}<span>*</span>
                                     </label>
                                     <input type="date" name="date_of_birth" class="form-control" value="{{$user->date_of_birth}}" id="validationDefault01" placeholder="تاريخ الميلاد" required>
                                     @error('date_of_birth')
@@ -75,17 +75,17 @@
                                 </div>
                                 <!---Gender---->
                                 <div class="form-group ">
-                                    <label for="validationDefault01">النوع<span>*</span>
+                                    <label for="validationDefault01">{{trans('user.kind')}}<span>*</span>
                                     </label>
                                     <div class="row">
                                         <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
-                                            ذكر
+                                           {{trans('user.male')}}
                                            </label>
                                             <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" checked>
 
                                         </div>
                                         <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
-                                            أنثى
+                                          {{trans('user.famale')}}
                                             </label>
                                             <input class="form-check-input" type="radio" value="famale" name="gender" id="flexRadioDefault2">
 
@@ -97,7 +97,7 @@
                                 </div>
                                 <!---ِAddress---->
                                 <div class="form-group ">
-                                    <label for="validationDefault01">العنوان<span>*</span>
+                                    <label for="validationDefault01">{{trans('user.address')}}<span>*</span>
                                     </label>
                                     <input type="text" name="address" class="form-control" value="{{$user->address}}" id="validationDefault01" placeholder="العنوان" required>
                                     @error('address')
@@ -107,7 +107,7 @@
                                 <!---User Category---->
                                 <div class="">
                                     <div class="form-group">
-                                        <label for="form_need">تصنيف المستخدم <span>*</span>
+                                        <label for="form_need">{{trans('user.user_classificaion')}}<span>*</span>
                                         </label>
                                         <select id="form_need" name="clasified" class="form-control" required="required" data-error="Please specify your need.">
                                         <option value="{{$user->classification}}" selected >{{trans('user.'.$user->classification.'')}}</option>
@@ -127,7 +127,7 @@
                                 <!---Category---->
                                 <div class="">
                                     <div class="form-group">
-                                        <label for="form_need">الصناعة /المجال<span>*</span>
+                                        <label for="form_need">{{trans('user.Industry')}}<span>*</span>
                                         </label>
                                     <select id="form_need" name="field" class="form-control" required="required" data-error="Please specify your need.">
                                         <option value="{{$user->field_id}}" selected >{{$field->name}}</option>
@@ -143,11 +143,11 @@
 
                                    <!---Submit Button---->
                                    <div class="mt-4 d-flex justify-content-center">
-                                    <a  href="{{route('user.edit.password')}}"class="btn btn-success btn-send pt-2 btn-block">تعديل كلمه المرور</a>
+                                    <a  href="{{route('user.edit.password')}}"class="btn btn-success btn-send pt-2 btn-block">{{trans('user.edit_password')}}</a>
                                   </div>
                                 <!---Submit Button---->
                                 <div class="mt-4">
-                                    <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="تعديل">
+                                    <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="{{trans('user.edit')}}">
                                 </div>
                             </div>
                         </form>

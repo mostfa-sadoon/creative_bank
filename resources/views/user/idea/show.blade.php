@@ -1,4 +1,7 @@
 @extends('user_temp')
+@section('style')
+
+@endsection
 @section('content')
 <!-- ======= Start Content ======= -->
 <div class=" mt-4 ">

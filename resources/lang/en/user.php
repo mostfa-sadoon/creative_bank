@@ -31,5 +31,21 @@ return [
     'student'=>'student',
     'specialized'=>'specialized',
     'Investor'=>'Investor',
+    
+    'field'=>'field',
+    'Industry'=>'Industry/field',
+    'address'=>'address',
+     
+    'edit_user'=>'edit your profile',
+    'full_name'=>'full name',
+    'choose_img'=>'choose img',
+    'phone_number'=>'phone number',
+    'birth_date'=>'birth day',
+    'kind'=>'kind',
+    'male'=>'male',
+    'famale'=>'famale',
+    'user_classificaion'=>'user classification',
+    'email'=>'email',
+
 
 ];

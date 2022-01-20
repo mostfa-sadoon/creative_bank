@@ -20,13 +20,13 @@
                     </div>
                     <div class="member-info col-md-8 ">
                         <h2>{{$user->name}}</h2>
-                        <h4>الفئة:
+                        <h4>{{trans('user.field')}}:
                             <span>{{trans('user.'.$user->classification.'')}}</span>
                         </h4>
-                        <h4>الصناعة / المجال:
+                        <h4>{{trans('user.Industry')}}:
                             <span>{{$field->name}}</span>
                         </h4>
-                        <h4>العنوان:
+                        <h4>{{trans('user.address')}}:
                             <span>{{$user->address}} </span>
                         </h4>
 

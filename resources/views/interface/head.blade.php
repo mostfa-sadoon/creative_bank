@@ -29,6 +29,7 @@
             transition: transform .8s;
         }
     </style>
+      @yield('style')
     <title>بنك الأفكار</title>
 </head>
 
