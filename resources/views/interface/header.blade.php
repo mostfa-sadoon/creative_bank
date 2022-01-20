@@ -4,11 +4,11 @@
 
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
-  <a class="navbar-brand" href="#">بنك <span>الأفكار</span> </a>
+  <a class="navbar-brand" href="#"> <span>فكرتك</span> </a>
 </button>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <a class="navbar-brand" href="{{route('home')}}">بنك <span>سعدون</span> </a>
+    <a class="navbar-brand" href="{{route('home')}}"> <span>فكرتك</span> </a>
 
     <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item">
