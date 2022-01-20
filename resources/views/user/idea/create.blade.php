@@ -65,8 +65,7 @@
                                             <div class="form-group">
                                                 <label for="form_message">الوصف<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="desc" class="form-control" placeholder="أكتب الفرصة هنا *" rows="4" required="required" data-error="Please, leave us a message.">
-                                                </textarea>
+                                                <textarea id="form_message" name="desc" class="form-control" placeholder="أكتب الفرصة هنا *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                                                    @if ($errors->has('problem'))
                                                       <span class="text-danger">{{ $errors->first('problem')}}</span>
                                                     @endif
@@ -77,8 +76,7 @@
                                             <div class="form-group">
                                                 <label for="form_message">المشكلة<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="problem" class="form-control" placeholder="أكتب الفرصة هنا *" rows="4" required="required" data-error="Please, leave us a message.">
-                                                </textarea>
+                                                <textarea id="form_message" name="problem" class="form-control" placeholder="أكتب الفرصة هنا *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                                                    @if ($errors->has('problem'))
                                                       <span class="text-danger">{{ $errors->first('problem')}}</span>
                                                     @endif
@@ -89,8 +87,7 @@
                                             <div class="form-group">
                                                 <label for="form_message">الحل<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="solve" class="form-control" placeholder="أكتب الحل هنا *" rows="4" required="required" data-error="Please, leave us a message.">
-                                                </textarea>
+                                                <textarea id="form_message" name="solve" class="form-control" placeholder="أكتب الحل هنا *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                                                    @if ($errors->has('solve'))
                                                       <span class="text-danger">{{ $errors->first('solve')}}</span>
                                                     @endif

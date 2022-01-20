@@ -474,6 +474,7 @@ h2 {
 .team-item .profile-data {
     background-color: rgb(218, 218, 218);
     padding-bottom: 30px;
+    text-align: start;
 }
 
 .team-item .profile-data .img-fluid {
