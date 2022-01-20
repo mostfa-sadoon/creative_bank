@@ -48,12 +48,12 @@
     <!-- ======= Start Content ======= -->
     <div class="">
         <!-- ======= Start Body ======= -->
-        <section id="about" class="container about" data-aos="zoom-in" data-aos-delay="100">
+        <section id="about" class="  about bg-light" data-aos="zoom-in" data-aos-delay="100">
 
             <div class="section-title">
                 <h2>من نحن؟</h2>
             </div>
-            <div>
+            <div class="container">
                 <p>نظراً لأن العمل في مجال الخدمات الإلكترونية يرتكز بشكل أساس على الأفكار الإبداعية، فقد قامت الشركة منذ عدة أعوام. بتأسيس بنك الأفكار كمبادرة تصب في هذا الاتجاه.</p>
                 <p>ويهدف بنك الأفكار إلى استقبال جميع الأفكار سواء المتعلقة بمشاريع إلكترونية جديدة أو عمليات تطوير جوهرية لمنتجات الشركة الحالية أو غيرها</p>
             </div>
