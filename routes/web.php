@@ -35,6 +35,8 @@ Route::get('/user/show/idea',[IdeaController::class, 'allidea'])->name('allidea'
 //profile
 Route::get('/user/profile/show/{id}',[ProfileController::class, 'index'])->name('profile.show');
 Route::middleware('auth:web')->group(function () {
+    //user Auth
+    Route::get('signout', [AuthController::class, 'signOut'])->name('user.signout');
     //idea
     Route::get('/createidea',[IdeaController::class, 'create'])->name('idea.create');
     Route::post('/store/idea',[IdeaController::class, 'store'])->name('idea.store');
@@ -43,6 +45,6 @@ Route::middleware('auth:web')->group(function () {
     Route::post('/user/update',[ProfileController::class, 'update'])->name('user.update');
     Route::get('/user/password/edit',[ProfileController::class, 'editpassword'])->name('user.edit.password');
     Route::post('/user/password/update',[ProfileController::class, 'updatepassword'])->name('password.update');
-    //user Auth
-    Route::get('signout', [AuthController::class, 'signOut'])->name('user.signout');
+    // send comment
+    Route::post('/user/send/comment',[IdeaController::class, 'sendcomment'])->name('comment.send');
 });

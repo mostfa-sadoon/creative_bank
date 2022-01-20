@@ -34,4 +34,8 @@ class Idea extends Model
     {
         return $this->belongsTo(Field::class);
     }
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
