@@ -13,6 +13,29 @@ $(function() {
 
 
 });
+
+//----------Start like button---------------------
+$('.button').click(function() {
+    $('.label').html(function(i, val) {
+        return val * 1 + 1
+    });
+});
+//----------End like button---------------------
+//------------Start View -----------------------
+$(function() {
+
+    var valueElement = $('#value');
+
+    function incrementValue(e) {
+        valueElement.text(Math.max(parseInt(valueElement.text()) + e.data.increment, 0));
+        return false;
+    }
+
+    $('.pulsebutton').one('mouseenter', { increment: 1 }, incrementValue);
+
+});
+
+//-------------End View ------------------------
 $(document).on("click", ".browse", function() {
     var file = $(this).parents().find(".file");
     file.trigger("click");
@@ -30,11 +53,11 @@ $('input[type="file"]').change(function(e) {
     reader.readAsDataURL(this.files[0]);
 });
 /*******news******** */
-$(document).ready(function() {
-    document.getElementById("heart").onclick = function() {
-        document.querySelector(".fa-gratipay").style.color = "#E74C3C";
-    };
-});
+// $(document).ready(function() {
+//     document.getElementById("heart").onclick = function() {
+//         document.querySelector(".fa-gratipay").style.color = "#E74C3C";
+//     };
+// });
 
 //*******make navbar top when scrolling****************
 document.addEventListener("DOMContentLoaded", function() {
