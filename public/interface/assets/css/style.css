@@ -902,6 +902,14 @@ h2 {
 
 /*End News*/
 
+.gender-check {
+    display: inline-block;
+}
+
+.gender-check .form-check-label {
+    margin-inline: 40px;
+}
+
 
 /*========Start Best Ideas Screen==========*/
 

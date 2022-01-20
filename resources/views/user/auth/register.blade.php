@@ -76,16 +76,18 @@
                                     <label for="validationDefault01">النوع<span>*</span>
                                     </label>
                                     <div class="row">
-                                        <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
+                                        <div class="form-check gender-check col-md-4 col-3 text-center"> 
+                                            <label class="form-check-label " for="flexRadioDefault1">
                                             ذكر
                                            </label>
-                                            <input class="form-check-input" value="male" name="gender" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                            <input class="form-check-input" value="male" name="gender" type="radio" name="flexRadioDefault" id="flexRadioDefault1"checked>
 
                                         </div>
-                                        <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
+                                        <div class="form-check gender-check col-md-4 col-3">
+                                            <label class="form-check-label" for="flexRadioDefault2">
                                             أنثى
                                             </label>
-                                            <input class="form-check-input" value="famale" name="gender" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                            <input class="form-check-input" value="famale" name="gender" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
 
                                         </div>
                                         @error('gender')
