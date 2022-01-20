@@ -108,35 +108,72 @@
         </section>
         <!-- ======= End best-idea ======= -->
 
-        <!-- ======= Start cost ======= -->
-        <section id="cost" class="  cost ">
-            <div class="">
+      <!-- ======= Start cost ======= -->
+      <section id="cost" class="  cost ">
+            <div class="container">
                 <div class="section-title" data-aos="zoom-in" data-aos-delay="100">
                     <h2>كم سأربح !</h2>
                 </div>
-                <section class="wrapper">
-                    <div class="container-fostrap">
-
-                        <div class="content">
-                            <div class="">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-4" data-aos="fade-up" data-aos-delay="100">
-
+                <div class=" row justify-content-center p-4">
+                    <div class="col-md-12">
+                        <div class="wrapper-home">
+                            <div class="row ">
+                                <div class="col-md-6 col-12 order-2 order-md-1">
+                                    <h4>إعتماداً على:-</h4>
+                                    <div class="row">
+                                        <div class="">
+                                            <div class="dbox pull-right">
+                                                <h6>
+                                                    <i class="icon align-items-center justify-content-center fa fa-lightbulb-o fa-lg">
+                                                    </i> تقييم الفكرة و قابليتها للتنفيذ وامكانية تطويرها
+                                                </h6>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="">
+                                            <div class="dbox pull-right">
+                                                <h6>
+                                                    <i class="icon align-items-center justify-content-center fa fa-lightbulb-o fa-lg">
+                                                    </i> إحتياج السوق للفكرة
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="">
+                                            <div class="dbox pull-right">
+                                                <h6>
+                                                    <i class="icon align-items-center justify-content-center fa fa-lightbulb-o fa-lg">
+                                                    </i> تحديد العوائق و العقبات المواجهة لتنفيذ الفكرة
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="">
+                                            <div class="dbox pull-right">
+                                                <h5>
 
-
+                                                    يتم تجميع نقاط لكل فكرة و عن طريقها يتم تحديد مبلغ لصاحب الفكرةللبدء فى تنفيذها
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="contact-img col-md-6 order-1 order-md-2">
+                                    <img src="assets/images/earnMony-removebg-preview.png" alt="Earn Mony" />
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-
+                </div>
             </div>
         </section>
         <!-- ======= End cost ======= -->
 
         <!-- ======= Start Notable participants ======= -->
-        <section id="team" class="container team ">
+        <section id="team" class=" team bg-light">
             <div class="container" data-aos="fade-up">
 
                 <div class="section-title" data-aos="zoom-in">
@@ -145,7 +182,7 @@
                         جديدة أو عمليات تطوير جوهرية لمنتجات الشركة الحالية أو غيرها</p>
                 </div>
 
-                <div class="row">
+                <div class="row mt-4">
 
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
