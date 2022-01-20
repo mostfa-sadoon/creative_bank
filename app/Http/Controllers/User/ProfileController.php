@@ -16,6 +16,7 @@ class ProfileController extends Controller
     {
          $user=User::find($id);
          $lang=app()->getLocale();
+      //   dd($user->field->id);
          $field=Field::select('name_'.$lang.' as name')->find($user->field->id);
          return view('user.profile.index',compact('user','field'));
     }

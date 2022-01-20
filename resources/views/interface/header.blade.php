@@ -8,7 +8,7 @@
 </button>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <a class="navbar-brand" href="{{route('home')}}">بنك <span>الأفكار</span> </a>
+    <a class="navbar-brand" href="{{route('home')}}">بنك <span>سعدون</span> </a>
 
     <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item">

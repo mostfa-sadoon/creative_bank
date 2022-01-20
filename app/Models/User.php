@@ -40,10 +40,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Idea::class);
     }
+
     public function field()
     {
         return $this->belongsTo(Field::class);
     }
+    
     public function getImgAttribute($img)
     {
         if ($img)
