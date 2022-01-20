@@ -6,7 +6,7 @@
         <div class="row">
 
             <div class="col-lg-3 col-md-6 footer-contact">
-                <h3>بنك <span>الافكار</span></h3>
+                <h3> <span>فكرتك</span></h3>
                 <p><i class="bi bi-geo-alt-fill"></i> 7 زيد إبن ثابت , الحجاز مصر الجديدة القاهرة ,مصر<br>
                     <i class="bi bi-telephone-fill"></i> 01097130604
                     <br>
@@ -58,7 +58,7 @@
         <div class="col-md-6">
             <div class="me-md-auto text-center text-md-end">
                 <div class="copyright">
-                    &copy; حقوق النشر <strong><span> بنك الأفكار </span></strong>. جميع الحقوق محفوظة
+                    &copy; حقوق النشر <strong><span> فكرتك </span></strong>. جميع الحقوق محفوظة
                 </div>
                 <div class="credits">
                     تم التطوير بواسطة <a href="https://sdsolutionseg.com/index.php">SD Solutions</a>
