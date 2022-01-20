@@ -1,6 +1,43 @@
 @extends('user_temp')
 @section('style')
-
+<style>
+        .comment-widgets .comment-row:hover {
+            background: rgba(0, 0, 0, 0.02);
+            cursor: pointer
+        }
+        
+        .comment-footer {
+            text-align: start;
+            font-size: 14px;
+        }
+        
+        .comment-text p {
+            text-align: start;
+            margin-top: 10px;
+        }
+        
+        .comment-widgets {
+            background-color: rgb(252, 252, 252);
+            box-shadow: 0px 1px 10px #e2e2e2;
+        }
+        
+        .comment-widgets .comment-row {
+            border-bottom: 1px solid rgba(120, 130, 140, 0.13);
+            padding: 15px
+        }
+        
+        .comment-text:hover {
+            visibility: hidden
+        }
+        
+        .comment-text:hover {
+            visibility: visible
+        }
+        
+        .round img {
+            border-radius: 100%
+        }
+    </style>
 @endsection
 @section('content')
 <!-- ======= Start Content ======= -->
@@ -52,6 +89,49 @@
                 </div>
             </div>
         </section>
+        <section class="team-item container creative card bg-white p-1">
+            <div class="comments container mt-4">
+                <h6>الموقع غير مسؤول عن مضمون التعليقات</h6>
+            </div>
+            <div class="comment-widgets p-3 m-2 mt-lg-4">
+                <div class="d-flex flex-row comment-row ">
+                    <div class="p-2">
+                        <span class="round">
+                            <img src="https://i.imgur.com/uIgDDDd.jpg" alt="user" width="50">
+                        </span>
+                    </div>
+                    <div class="comment-text w-100">
+                        <h6>مصطفى سعدون</h6>
+                        <div class="comment-footer"> <span class="date">April 14, 2019</span> </div>
+                        <p class="m-b-5 m-t-10">انها لفكرة رائعة
+                        </p>
+                    </div>
+                </div>
+                <div class="d-flex flex-row comment-row ">
+                    <div class="p-2"><span class="round"><img src="https://i.imgur.com/uIgDDDd.jpg" alt="user" width="50"></span></div>
+                    <div class="comment-text w-100">
+                        <h6>مصطفى سعدون</h6>
+                        <div class="comment-footer"> <span class="date">April 14, 2019</span> </div>
+                        <p class="m-b-5 m-t-10">انها لفكرة رائعة
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-light p-3 m-2 mt-lg-4">
+                <div class="d-flex flex-row align-items-start">
+                    <img class="rounded-circle m-2" src="https://i.imgur.com/RpzrMR2.jpg" width="50">
+                    <textarea class="form-control ml-1 shadow-none textarea " rows="3"></textarea>
+                </div>
+                <div class="mt-1 ">
+                    <button class="btn btn-primary btn-sm shadow-none m-1" type="button">أرسل</button>
+                    <button class="btn btn-outline-primary btn-sm m-1 shadow-none" type="button">ألغى</button>
+                </div>
+            </div>
+
+
+        </section>
+        
         <!---End Goal---->
     </div>
     <!-- ======= End Content ======= -->
