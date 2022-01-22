@@ -2,13 +2,13 @@
 
   <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-  <a class="navbar-brand" href="#"> <span>فكرتك</span> </a>
-</button>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          <a class="navbar-brand" href="#"> <span><img src="{{asset('interface/assets/images/logo.png')}}" alt="logo" width="100px"height="50px"/></span> </a>
+        </button>
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <a class="navbar-brand" href="{{route('home')}}"> <span>فكرتك</span> </a>
+    <a class="navbar-brand" href="{{route('home')}}"> <span><img src="{{asset('interface/assets/images/logo.png')}}" alt="logo" width="100px"height="50px"/></span> </a>
 
     <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item">

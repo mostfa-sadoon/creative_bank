@@ -162,7 +162,7 @@
                                     </div>
                                 </div>
                                 <div class="contact-img col-md-6 order-1 order-md-2">
-                                    <img src="assets/images/earnMony-removebg-preview.png" alt="Earn Mony" />
+                                    <img src="{{asset('interface/assets/images/earnMony-removebg-preview.png')}}" alt="Earn Mony" />
                                 </div>
                             </div>
                         </div>
