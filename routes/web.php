@@ -8,6 +8,7 @@ use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\ProfileController;    
 use App\Http\Controllers\User\NewsController;
 use App\Http\Controllers\User\CommonquestionController;
+use App\Http\Controllers\User\suggestionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,7 +41,9 @@ use App\Http\Controllers\User\CommonquestionController;
     Route::get('/user/news/all',[NewsController::class, 'index'])->name('allnews');   
     Route::get('/user/news/show/{id}',[NewsController::class, 'show'])->name('user.news.show');    
     //common qustions
-    Route::get('/user/commonquestion',[CommonquestionController::class, 'index'])->name('user.commonquestions');    
+    Route::get('/user/commonquestion',[CommonquestionController::class, 'index'])->name('user.commonquestions');
+    //suggestion
+    Route::resource('suggestions', suggestionController::class);   
     Route::middleware('auth:web')->group(function () {
         //user Auth
         Route::get('signout', [AuthController::class, 'signOut'])->name('user.signout');

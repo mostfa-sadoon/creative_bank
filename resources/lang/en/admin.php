@@ -43,4 +43,8 @@ return [
      'answer_ar'=>'answer in arabic',
      'answer_en'=>'answer in english',
      'add_question'=>'add question',
+
+     'suggesions'=>'suggesions',
+     'show_suggesions'=>'عرض الاقتراحات',
+
 ];

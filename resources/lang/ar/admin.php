@@ -41,4 +41,6 @@ return [
      'answer_ar'=>'الاجابه بالعربي',
      'answer_en'=>'الاجابه بالانجليزيه',
      'add_question'=>'اضافه سؤال',
+     'suggesions'=>'الاقتراحات',
+     'show_suggesions'=>'  عرض الاقتراحات',
 ];

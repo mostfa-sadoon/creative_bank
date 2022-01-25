@@ -39,7 +39,7 @@
             <a class="nav-link " href="{{route('conect')}}">{{trans('user.conact_us')}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="{{route('suggestions')}}">{{trans('user.suggestions')}}</a>
+            <a class="nav-link " href="{{route('suggestions.index')}}">{{trans('user.suggestions')}}</a>
         </li>
     </ul>
     <div class="form-inline mr-auto">
