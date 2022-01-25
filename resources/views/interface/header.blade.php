@@ -30,7 +30,7 @@
             <a class="nav-link " href="{{route('user.commonquestions')}}">{{trans('user.common_question')}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="{{route('allnews')}}')}}">{{trans('user.last_news')}}</a>
+            <a class="nav-link " href="{{route('allnews')}}">{{trans('user.last_news')}}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('about')}}">{{trans('user.about_bank')}}</a>
