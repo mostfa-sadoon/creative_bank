@@ -7,6 +7,24 @@
     <link href="{{asset('css/pages/footable-page.css')}}" rel="stylesheet">
     @endsection
 @section('content')      
+              <!-- Bread crumb and right sidebar toggle -->
+                <!-- ============================================================== -->
+                <div class="row page-titles">
+                    <div class="col-md-5 align-self-center">
+                        <h3 class="text-themecolor">{{trans('admin.creative_bank')}}</h3>
+                    </div>
+                    <div class="col-md-7 align-self-center">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard 2</li>
+                        </ol>
+                    </div>
+                    <div class="">
+                        <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Bread crumb and right sidebar toggle -->
 <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Contact Emplyee list</h4>

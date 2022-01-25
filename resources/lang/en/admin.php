@@ -31,6 +31,16 @@ return [
     'new_ideas'=>'new ideas',
     'trash'=>'trash',
 
-
+    'news'=>'news',
+    'add_news'=>'add news',
+    'news_all'=>'news All',
+    'news_trash'=>'trash',
     
+    'commonquestion'=>'commonquestion',
+    'commonquestion.show'=>'display question',
+    'question_ar'=>'question in arabic',
+     'question_en'=>'question in english',
+     'answer_ar'=>'answer in arabic',
+     'answer_en'=>'answer in english',
+     'add_question'=>'add question',
 ];

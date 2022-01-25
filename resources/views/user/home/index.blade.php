@@ -268,56 +268,27 @@
                     <h2>آخر الأخبار</h2>
                 </div>
                 <div class="row">
-                    <div class="cardcontainer col-md-4" data-aos="fade-up" data-aos-delay="200">
-                        <div class="photo"> <img src="https://images.pexels.com/photos/2346006/pexels-photo-2346006.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500">
-                            <div class="photos">عاجل</div>
+                    @foreach($news as $new)
+                        <div class="cardcontainer col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="photo"> <img src="{{$new->img}}">
+                            </div>
+                            <div class="content">
+                                <h4 class="txt4 text-white">{{$new->header}}</h4>
+                                <!-- <p class="txt5">A city that never sleeps</p> -->
+                                <p class="txt2 mt-3">{{$new->desc}}</p>
+                            </div>
+                            <div class="newsFooter">
+                                <p>
+                                    <a class="read-more waves-effect waves-light btn" href="{{route('user.news.show',$new->id)}}">عرض المزيد</a>
+                                </p>
+                                <p class="txt3">{{date('d-m-Y', strtotime($new->created_at))}}<i class="bi bi-calendar"></i></p>
+                            </div>
                         </div>
-                        <div class="content">
-                            <p class="txt4">ساكنين تطلق أداة تسعير خوارزمية جديدة للعقارات</p>
-                            <!-- <p class="txt5">A city that never sleeps</p> -->
-                            <p class="txt2">ستوفر أداة التسعير المجاني للمشترين والبائعين تقديرًا دقيقًا للأسعار ليكون بمثابة نقطة انطلاق ,ستوفر أداة التسعير المجاني للمشترين والبائعين تقديرًا دقيقًا للأسعار ليكون بمثابة نقطة انطلاق,للتفاوض.</p>
-                        </div>
-                        <div class="newsFooter">
-                            <p>
-                                <a class="read-more waves-effect waves-light btn" href="#">عرض المزيد</a>
-                            </p>
-                            <p class="txt3">12/22/2021 <i class="bi bi-calendar"></i></p>
-                        </div>
-                    </div>
-                    <div class="cardcontainer col-md-4" data-aos="fade-up" data-aos-delay="400">
-                        <div class="photo"> <img src="https://images.pexels.com/photos/2346006/pexels-photo-2346006.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500">
-                            <div class="photos">عاجل</div>
-                        </div>
-                        <div class="content">
-                            <p class="txt4">ساكنين تطلق أداة تسعير خوارزمية جديدة للعقارات</p>
-                            <!-- <p class="txt5">A city that never sleeps</p> -->
-                            <p class="txt2">ستوفر أداة التسعير المجاني للمشترين والبائعين تقديرًا دقيقًا للأسعار ليكون بمثابة نقطة انطلاق ,ستوفر أداة التسعير المجاني للمشترين والبائعين تقديرًا دقيقًا للأسعار ليكون بمثابة نقطة انطلاق,للتفاوض.</p>
-                        </div>
-                        <div class="newsFooter">
-                            <p>
-                                <a class="read-more waves-effect waves-light btn" href="#">عرض المزيد</a>
-                            </p>
-                            <p class="txt3">12/22/2021 <i class="bi bi-calendar"></i></p>
-                        </div>
-                    </div>
-                    <div class="cardcontainer col-md-4" data-aos="fade-up" data-aos-delay="600">
-                        <div class="photo"> <img src="https://images.pexels.com/photos/2346006/pexels-photo-2346006.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=1&w=500">
-                            <div class="photos">عاجل</div>
-                        </div>
-                        <div class="content">
-                            <p class="txt4">ساكنين تطلق أداة تسعير خوارزمية جديدة للعقارات</p>
-                            <!-- <p class="txt5">A city that never sleeps</p> -->
-                            <p class="txt2">ستوفر أداة التسعير المجاني للمشترين والبائعين تقديرًا دقيقًا للأسعار ليكون بمثابة نقطة انطلاق ,ستوفر أداة التسعير المجاني للمشترين والبائعين تقديرًا دقيقًا للأسعار ليكون بمثابة نقطة انطلاق,للتفاوض.</p>
-                        </div>
-                        <div class="newsFooter">
-                            <p>
-                                <a class="read-more waves-effect waves-light btn" href="#">عرض المزيد</a>
-                            </p>
-                            <p class="txt3">12/22/2021 <i class="bi bi-calendar"></i></p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
-
+                    <div class="d-flex justify-content-center">
+                        <a class="btn btn-info text-white" href="{{route('allnews')}}">see all</a>
+                    </div>
             </div>
         </section>
         <!---End News---->

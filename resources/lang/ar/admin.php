@@ -28,5 +28,17 @@ return [
     'ideas'=>'الافكار',
     'new_ideas'=>'الافكار الجديده',
     'trash'=>'الارشيف',
-   
+
+     'news'=>'الاخبار',
+     'add_news'=>'اضافه خبر',
+     'news_all'=>'كل الاخبار',
+     'news_trash'=>'الارشيف',
+
+     'commonquestion'=>'الاسئله الشائعه',
+     'commonquestion.show'=>'عرض الاسئله',
+     'question_ar'=>'السؤال بالعربي',
+     'question_en'=>'السؤال بالانجليزي',
+     'answer_ar'=>'الاجابه بالعربي',
+     'answer_en'=>'الاجابه بالانجليزيه',
+     'add_question'=>'اضافه سؤال',
 ];

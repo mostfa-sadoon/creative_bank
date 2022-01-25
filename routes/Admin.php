@@ -6,7 +6,8 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\FieldController;
 use App\Http\Controllers\Admin\IdeaController;
-
+use App\Http\Controllers\Admin\NewsController;   
+use App\Http\Controllers\Admin\CommonquestionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,7 +18,6 @@ use App\Http\Controllers\Admin\IdeaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
     Route::get('login', [CustomAuthController::class, 'index'])->name('login');
     Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom'); 
     Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
@@ -48,5 +48,25 @@ use App\Http\Controllers\Admin\IdeaController;
     Route::get('/ideas/refused/{id}', [IdeaController::class, 'refused'])->name('idea.refused'); 
     Route::get('/ideas/delete/{id}', [IdeaController::class, 'destroy'])->name('idea.delete');
     Route::get('/ideas/trash', [IdeaController::class, 'trash'])->name('idea.trash');
+    //news
+    Route::get('/news', [NewsController::class, 'index'])->name('news.index'); 
+    Route::get('/news/create', [NewsController::class, 'create'])->name('news.create'); 
+    Route::post('/news/store', [NewsController::class, 'store'])->name('news.store'); 
+    Route::get('/news/show/{id}', [NewsController::class, 'show'])->name('news.show');
+    Route::get('/news/show/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');       
+    Route::POST('/news/show/update/', [NewsController::class, 'update'])->name('news.update'); 
+    Route::get('/news/trash/{id}', [NewsController::class, 'trash'])->name('news.trash');
+    Route::get('/news/trash/', [NewsController::class, 'gettrash'])->name('news.gettrash');
+    Route::get('/news/show/trashed/{id}', [NewsController::class, 'showtrashed'])->name('news.show.trashed');
+    Route::get('/news/delete/{id}', [NewsController::class, 'destroy'])->name('news.delete');
+    Route::get('/news/restore/{id}', [NewsController::class, 'restore'])->name('news.restore');
+    //common question     
+    Route::get('/commonquestions', [CommonquestionController::class, 'index'])->name('commonquestions.index'); 
+    Route::get('/commonquestions/create', [CommonquestionController::class, 'create'])->name('commonquestions.create'); 
+    Route::post('/commonquestions/create', [CommonquestionController::class, 'store'])->name('commonquestions.store');
+    Route::get('/commonquestions/edit/{id}', [CommonquestionController::class, 'edit'])->name('commonquestions.edit'); 
+    Route::post('/commonquestions/update', [CommonquestionController::class, 'update'])->name('commonquestions.update');
+    Route::get('/commonquestions/delete/{id}', [CommonquestionController::class, 'delete'])->name('commonquestions.delete'); 
+
 });
 Route::get('change_lang/{lang}', [HomeController::class,'change_lang'])->name('change_lang');

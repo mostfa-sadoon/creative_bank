@@ -36,7 +36,7 @@ class IdeaController extends Controller
      }
      public function destroy($id)
      {
-        $idea = Idea::findOrFail($id);
+        $idea = Idea::withTrashed()->findOrFail($id);
         $idea->forceDelete();
         Alert::success('success', 'the idea has been deleted');
         return redirect()->route('idea.index');

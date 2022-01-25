@@ -25,7 +25,6 @@
         @endforeach
     </div>
 </div>
-
         <div class="d-flex justify-content-center">
             {{ $ideas->links('vendor.pagination.custom') }}
         </div>

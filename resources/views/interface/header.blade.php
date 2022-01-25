@@ -27,7 +27,7 @@
             <a class="nav-link" href="bestIdeas.html">{{trans('user.creative')}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="commonQuestions.html">{{trans('user.common_question')}}</a>
+            <a class="nav-link " href="{{route('user.commonquestions')}}">{{trans('user.common_question')}}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link " href="news.html">{{trans('user.last_news')}}</a>
