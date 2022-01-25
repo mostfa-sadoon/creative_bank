@@ -55,9 +55,14 @@
                             <div class="idea-info-user">
                                 <a href="{{route('profile.show',$idea->user_id)}}"> <img src="{{$idea->user->img}}" class="img-fluid" alt="">
                                     <span>{{$idea->user->name}}</span>
+        
                                 </a>
                             </div>
                             <div class="idea-info-icon ">
+                                <div class="like ui labeled button  bg-success" tabindex="0">
+                                    <i class="fa fa-thumbs-up fa-2x"></i>
+                                    <span class="ui basic blue label"> 0 </span>
+                                </div>
                                 <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
                             </div>
                         </div>
