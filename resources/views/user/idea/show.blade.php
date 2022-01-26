@@ -43,7 +43,7 @@
 <!-- ======= Start Content ======= -->
 <div class=" mt-4 ">
         <!---Start Goal-->
-        <section id="creative" class="team-item container creative card bg-light" data-id="1">
+        <section id="creative" class="team-item container creative card bg-light" data-id="{{$idea->id}}">
             <div class="container about-bank">
 
                 <div class="row">
