@@ -13,24 +13,36 @@
                                 <img src="{{$user->img}}" class="img-fluid" alt="">
                             </div>
                         </div>
-                        <div class="profile-data-icon mt-lg-4"><i class='bx bxs-cake'></i> {{$user->date_of_birth}}</div>
+                        <!-- <div class="profile-data-icon mt-lg-4"><i class='bx bxs-cake'></i> {{$user->date_of_birth}}</div>
                         <div class="profile-data-icon mt-lg-1"> <i class="fa fa-envelope"></i> {{$user->email}}</div>
-                        <div class="profile-data-icon mt-lg-1"><i class="fa fa-phone"></i> {{$user->phone}}</div>
+                        <div class="profile-data-icon mt-lg-1"><i class="fa fa-phone"></i> {{$user->phone}}</div> -->
+                        <!-- <div class="member-info  ">
+                            <h4>{{$user->name}}</h4>
+                            <h6>{{trans('user.field')}}:
+                                <span>{{trans('user.'.$user->classification.'')}}</span>
+                            </h6>
+                            <h6>{{trans('user.Industry')}}:
+                                <span>{{$field->name}}</span>
+                            </h6>
+                        </div> -->
 
                     </div>
-                    <div class="member-info col-md-8 ">
+                    <div class="member-info col-md-8 col-12">
                         <h2>{{$user->name}}</h2>
-                        <h4>{{trans('user.field')}}:
+                        <h6>{{trans('user.field')}}:
                             <span>{{trans('user.'.$user->classification.'')}}</span>
-                        </h4>
-                        <h4>{{trans('user.Industry')}}:
+                        </h6>
+                        <h6>{{trans('user.Industry')}}:
                             <span>{{$field->name}}</span>
-                        </h4>
-                        <h4>{{trans('user.address')}}:
-                            <span>{{$user->address}} </span>
-                        </h4>
-
+                        </h6>
+                       <h6>About:</h6>
+                       <p>he is the best one of the ..............</p>
                     </div>
+                    
+                </div>
+                <div class="buttons text-center mt-4">
+                    <button class="hire upper" onclick="location.href='sendIdea.html'">Contact</button>
+                </div>
                 </div>
                      @if(Auth::id() == $user->id) 
                         <div class="edit text-center">
