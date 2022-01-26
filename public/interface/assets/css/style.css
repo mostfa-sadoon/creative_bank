@@ -115,6 +115,10 @@ main-color {
     background-color: #2D2F44 !important;
 }
 
+.navbar-expand-lg .navbar-nav {
+    margin: auto;
+}
+
 .my_collaps {
     background-color: #E94F1B !important;
 }
