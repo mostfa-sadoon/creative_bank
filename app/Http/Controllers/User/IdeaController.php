@@ -9,7 +9,8 @@ use App\Events\IdeaViewer;
 use App\Models\Category;
 use App\Models\Idea;
 use App\Models\Field;
-use App\Models\Comment;
+use App\Models\Comment;  
+use App\Models\Userlike; 
 use Alert;
      
 class IdeaController extends Controller
@@ -60,7 +61,7 @@ class IdeaController extends Controller
         event(new IdeaViewer($idea));
         $lang=app()->getLocale();
         $category=Category::select('name_'.$lang.' as name')->find($idea->category_id);
-        
+      //  $userlike=Userlike::where()
         return view('user.idea.show',compact('idea','category'));
     }
     public function allidea()
@@ -88,6 +89,10 @@ class IdeaController extends Controller
         $idea->update([
            'like'=>$idea->like+1,
         ]);
-        return response()->json(['msg'=>$idea->like]);
+        Userlike::create([
+            'user_id'=>Auth::user()->id,
+            'idea_id'=>$request->id
+         ]);
+        return response()->json(['msg'=>'success','like'=>$idea->like]);
     }
 }

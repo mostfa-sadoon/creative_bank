@@ -1,6 +1,8 @@
 @extends('user_temp')
 @section('style')
+<link rel="stylesheet" href="{{asset('interface/assets/css/jquery-confirm.css')}}"/>
 <style>
+    
         .comment-widgets .comment-row:hover {
             background: rgba(0, 0, 0, 0.02);
             cursor: pointer
@@ -33,10 +35,12 @@
         .comment-text:hover {
             visibility: visible
         }
-        
         .round img {
             border-radius: 100%
         }
+        .icon_color{
+            color:#aaaa55;
+            }
     </style>
 @endsection
 @section('content')
@@ -52,23 +56,26 @@
                             <div class="member-img">
                                 <img src="{{$idea->img}}" class="img-fluid" alt="">
                             </div>
-                            <div class="idea-info-user">
+                            <div class="idea-info-user d-flex  justify-content-around">
                                 <a href="{{route('profile.show',$idea->user_id)}}"> <img src="{{$idea->user->img}}" class="img-fluid" alt="">
                                     <span>{{$idea->user->name}}</span>
         
                                 </a>
+                              <div>
+                              <button id="like" class="btn-success btn" ><i class="fa fa-thumbs-up fa-2x" data-status="not_like" id="icon" ></i> </button>
+                                <span class="ui basic blue label" id="result">{{$idea->like}}</span>
+                                <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
+                              </div>
+                               
                             </div>
-                            <div class="idea-info-icon ">
+                            <div class="idea-info-icon d-flex justify-content-start">
                                 <!-- <div class="like ui labeled button  bg-success" tabindex="0">
                                     <a id="" class="text-white">
                                         <i class="fa fa-thumbs-up fa-2x"></i>
                                         
                                     </a>    
                                 </div> -->
-                             
-                                <button id="like" class="btn-success btn" ><i class="fa fa-thumbs-up fa-2x"></i> </button>
-                                <span class="ui basic blue label" id="result">{{$idea->like}}</span>
-                                <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
+                               
                             </div>
                         </div>
                     </div>
@@ -119,46 +126,70 @@
                 </div>
                 @endforeach
             </div>
-              <form action="{{route('comment.send')}}" method="Post">
-                  @csrf
-                  <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                  <input type="hidden" name="idea_id" value="{{$idea->id}}">
-                  <div class="bg-light p-3 m-2 mt-lg-4">
-                        <div class="d-flex flex-row align-items-start">
-                            <img class="rounded-circle m-2" src="{{Auth::user()->img}}" width="50">
-                            <textarea class="form-control ml-1 shadow-none textarea"  name="comment" placeholder="اكتب تعليقا بناء" rows="3"></textarea>
-                        </div>
-                        <div class="mt-1 ">
-                            <input class="btn btn-primary btn-sm shadow-none m-1" type="submit" value="ارسل">
-                        </div>
-                </div>
-              </form>
+            @auth
+                <form action="{{route('comment.send')}}" method="Post">
+                    @csrf
+                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                    <input type="hidden" name="idea_id" value="{{$idea->id}}">
+                    <div class="bg-light p-3 m-2 mt-lg-4">
+                            <div class="d-flex flex-row align-items-start">
+                                <img class="rounded-circle m-2" src="{{Auth::user()->img}}" width="50">
+                                <textarea class="form-control ml-1 shadow-none textarea"  name="comment" placeholder="اكتب تعليقا بناء" rows="3"></textarea>
+                            </div>
+                            <div class="mt-1 ">
+                                <input class="btn btn-primary btn-sm shadow-none m-1" type="submit" value="ارسل">
+                            </div>
+                    </div>
+                </form>
+            @endauth
+            @guest
+                 <div class="d-flex justify-content-center">
+                    <a href="{{route('user.login')}}">قم بتسجيل الدخول للتعليق</a>
+                 </div>
+            @endguest
         </section>
         <!---End Goal---->
     </div>
     <!-- ======= End Content ======= -->
 @endsection
 @section('scripts')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-      $(document).ready(function () {
-        var id = $("#creative").attr("data-id");
-          console.log(id);
-          $("button").click(function(){
-            $.ajax({
-               type:'POST',
-               url:'/idea/like',
-               data: {
-                    "id":  $("#creative").attr("data-id"),
-                    _token: "{{ csrf_token() }}",
-                },
-               success:function(data) {
-                  console.log(data.msg);
-                  $("#result").html(data.msg);
+            @auth
+            <script>
+                $(document).ready(function () {
+                    // to gat the id if idea
+                    var id = $("#creative").attr("data-id");
+                
+                        $("button").click(function(){
+                            $.ajax({
+                            type:'POST',
+                            url:'/idea/like',
+                            data: {
+                                    "id":  $("#creative").attr("data-id"),
+                                    _token: "{{ csrf_token() }}",
+                                },
+                            success:function(data) {
+                                $("#result").html(data.like);
+                                $("#icon").addClass("icon_color");
+                            }
+                            });
+                        });
+                });
+            </script>
+            @endauth
+            @guest
+            <script src="{{asset('interface/assets/js/jquery-confirm.min.js')}}"></script>
+            <script>
+                $(document).ready(function () {
+                // to gat the id if idea
+                var id = $("#creative").attr("data-id");
+                    $("button").click(function(){
+                        $.alert({
+                            title: 'login',
+                            content: 'login to can like',
+                        });
+                    });
+                });  
+            </script>
+            @endguest
 
-               }
-            });
-          });
-      });
-</script>
 @endsection

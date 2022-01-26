@@ -52,7 +52,7 @@
         @endguest
         @auth
           
-
+        <a href="{{route('user.signout')}}">خروج</a>
            <a href="{{route('profile.show',Auth::user()->id)}}"><i class="profile bx bxs-user  "></i></a>
         @endauth
     </div>
