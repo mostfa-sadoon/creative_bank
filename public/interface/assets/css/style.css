@@ -177,10 +177,17 @@ nav .form-inline .form-control {
     width: 150px;
 }
 
+nav .form-inline {
+    margin: 0px 10px;
+}
+
+nav .form-inline .profile {
+    margin: 0px 10px;
+}
+
 nav .form-inline .btn {
     border: 1px solid #E94F1B;
     color: #E94F1B;
-    margin-right: 5px;
 }
 
 nav .form-inline .btn:hover {
