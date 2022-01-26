@@ -7,7 +7,8 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\FieldController;
 use App\Http\Controllers\Admin\IdeaController;
 use App\Http\Controllers\Admin\NewsController;   
-use App\Http\Controllers\Admin\CommonquestionController;
+use App\Http\Controllers\Admin\CommonquestionController;    
+use App\Http\Controllers\Admin\suggestionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,6 +68,7 @@ use App\Http\Controllers\Admin\CommonquestionController;
     Route::get('/commonquestions/edit/{id}', [CommonquestionController::class, 'edit'])->name('commonquestions.edit'); 
     Route::post('/commonquestions/update', [CommonquestionController::class, 'update'])->name('commonquestions.update');
     Route::get('/commonquestions/delete/{id}', [CommonquestionController::class, 'delete'])->name('commonquestions.delete'); 
-
+    //sugestions
+    Route::get('/suggestions/admin/show', [suggestionController::class, 'index'])->name('admin.suggestions');
 });
 Route::get('change_lang/{lang}', [HomeController::class,'change_lang'])->name('change_lang');

@@ -81,4 +81,11 @@ class IdeaController extends Controller
         ]);
         return redirect()->route('user.idea.show',$idea_id);
     }
+    public function like($id)
+    {
+       $idea=Idea::update([
+           'like'=>$idea->like+1,
+       ]);
+       
+    }
 }
