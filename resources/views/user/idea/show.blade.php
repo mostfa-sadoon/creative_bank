@@ -141,14 +141,10 @@
 @section('scripts')
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-       
       $(document).ready(function () {
         var id = $("#creative").attr("data-id");
           console.log(id);
           $("button").click(function(){
-
-
-
             $.ajax({
                type:'POST',
                url:'/idea/like',
@@ -157,18 +153,11 @@
                     _token: "{{ csrf_token() }}",
                 },
                success:function(data) {
-                  $("#msg").html(data.msg);
+                  console.log(data.msg);
+                  $("#result").html(data.msg);
+
                }
             });
-
-
-
-
-
-
-            
-
-
           });
       });
 </script>

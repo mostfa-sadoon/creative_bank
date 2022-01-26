@@ -83,7 +83,11 @@ class IdeaController extends Controller
     }
     public function like(Request $request)
     {
-       
-        return response()->json(['success'=>'Data is successfully added']);
+        $id=$request->id;
+        $idea=Idea::find($id);
+        $idea->update([
+           'like'=>$idea->like+1,
+        ]);
+        return response()->json(['msg'=>$idea->like]);
     }
 }
