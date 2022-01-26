@@ -55,6 +55,14 @@
            <a href="{{route('profile.show',Auth::user()->id)}}"><i class="profile bx bxs-user  "></i></a>
         @endauth
     </div>
+    <div class="form-inline mr-auto">
+               
+                <select class="btn selectpicker" data-width="fit">
+                    <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
+                  <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>عربى</option>
+                </select>
+            </div>
+
     <!-- @if(app()->getLocale() == 'en')  
         <i class="profile bx bx-globe  "><a href="{{url('change_lang/ar')}}">{{trans('user.lang')}}</a></i>
     @else
