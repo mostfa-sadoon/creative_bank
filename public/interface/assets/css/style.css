@@ -19,9 +19,9 @@ main-color {
 
 .buttons button {
     background: #E94F1B;
-    padding: 10px;
+    padding: 5px;
     width: 100px;
-    font-size: 14px;
+    font-size: 18px;
     border: none;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -30,6 +30,7 @@ main-color {
     -moz-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
     margin: auto;
+    font-weight: 900;
 }
 
 .buttons button:hover {
@@ -1205,6 +1206,19 @@ h6 {
         width: 100%;
         height: auto;
     }
+}
+
+.btn-info {
+    background-color: #E94F1B;
+    border: none;
+}
+
+.btn-info:hover {
+    background-color: #2D2F44;
+    border: none;
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
 }
 
 

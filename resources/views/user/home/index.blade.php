@@ -97,7 +97,7 @@
                                 </div>
                                 
                                     <div class="d-flex justify-content-center">
-                                    <a class="btn btn-info text-white" href="{{route('allidea')}}">see all</a>
+                                    <a class=" btn btn-info " href="{{route('allidea')}}">See All</a>
                                     </div>
                             </div>
                         </div>
@@ -188,12 +188,12 @@
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
                                 <img src="interface/assets/images/team/team-1.jpg" class="img-fluid" alt="">
-                                <div class="social">
+                                <!-- <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>
                                     <a href=""><i class="bi bi-instagram"></i></a>
                                     <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="member-info">
                                 <h4>عاطف السعيد</h4>
@@ -206,12 +206,12 @@
                         <div class="member" data-aos="fade-up" data-aos-delay="300">
                             <div class="member-img">
                                 <img src="interface/assets/images/team/team-3.jpg" class="img-fluid" alt="">
-                                <div class="social">
+                                <!-- <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>
                                     <a href=""><i class="bi bi-instagram"></i></a>
                                     <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="member-info">
                                 <h4>مصطفى سعدون</h4>
@@ -224,12 +224,12 @@
                         <div class="member" data-aos="fade-up" data-aos-delay="100">
                             <div class="member-img">
                                 <img src="interface/assets/images/team/team-1.jpg" class="img-fluid" alt="">
-                                <div class="social">
+                                <!-- <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>
                                     <a href=""><i class="bi bi-instagram"></i></a>
                                     <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="member-info">
                                 <h4>عاطف السعيد</h4>
@@ -242,12 +242,12 @@
                         <div class="member" data-aos="fade-up" data-aos-delay="300">
                             <div class="member-img">
                                 <img src="interface/assets/images/team/team-3.jpg" class="img-fluid" alt="">
-                                <div class="social">
+                                <!-- <div class="social">
                                     <a href=""><i class="bi bi-twitter"></i></a>
                                     <a href=""><i class="bi bi-facebook"></i></a>
                                     <a href=""><i class="bi bi-instagram"></i></a>
                                     <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div>
+                                </div> -->
                             </div>
                             <div class="member-info">
                                 <h4>مصطفى سعدون</h4>
@@ -287,7 +287,7 @@
                     @endforeach
                 </div>
                     <div class="d-flex justify-content-center">
-                        <a class="btn btn-info text-white" href="{{route('allnews')}}">see all</a>
+                        <a class="btn btn-info text-white" href="{{route('allnews')}}">See All</a>
                     </div>
             </div>
         </section>
