@@ -9,7 +9,7 @@
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <a class="navbar-brand" href="{{route('home')}}"> <span><img src="{{asset('interface/assets/images/logo.png')}}" alt="logo" width="100px"height="50px"/></span> </a>
-<div class=""style="display:flex;">
+<div class=""style="display:contents;">
     <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('home')}}">{{trans('user.main')}}</a>
@@ -42,6 +42,7 @@
             <a class="nav-link " href="{{route('suggestions.index')}}">{{trans('user.suggestions')}}</a>
         </li>
     </ul>
+    <div style="display:contents;">
     <div class="form-inline mr-auto">
         <form>
             <input class="form-control mr-sm-2" type="search" placeholder="بحث" aria-label="Search">
@@ -62,6 +63,7 @@
                   <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>عربى</option>
                 </select>
             </div>
+    </div>
 
 </div>
    
