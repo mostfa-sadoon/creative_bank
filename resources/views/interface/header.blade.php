@@ -9,7 +9,7 @@
 
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <a class="navbar-brand" href="{{route('home')}}"> <span><img src="{{asset('interface/assets/images/logo.png')}}" alt="logo" width="100px"height="50px"/></span> </a>
-
+<div class=""style="display:flex;">
     <ul class="navbar-nav my-2 my-lg-0">
         <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{route('home')}}">{{trans('user.main')}}</a>
@@ -63,6 +63,8 @@
                 </select>
             </div>
 
+</div>
+   
     <!-- @if(app()->getLocale() == 'en')  
         <i class="profile bx bx-globe  "><a href="{{url('change_lang/ar')}}">{{trans('user.lang')}}</a></i>
     @else
