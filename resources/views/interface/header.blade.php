@@ -50,7 +50,7 @@
            <a href="{{route('user.login')}}" class="btn btn-outline-success my-2 my-sm-0">تسجيل الدخول</a>
         @endguest
         @auth
-           <a href="{{route('user.signout')}}" class="btn btn-outline-success my-2 my-sm-0">تسجيل الخروج</a>
+          
 
            <a href="{{route('profile.show',Auth::user()->id)}}"><i class="profile bx bxs-user  "></i></a>
         @endauth
