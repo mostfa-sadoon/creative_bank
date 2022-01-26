@@ -21,11 +21,11 @@
         <section id="hero">
         </section>
         <!---- ======= Content ======= ---->
-        <div class="row welcome-head">
-            <div class="col-xl-10">
+        <div class="row welcome-head text-center">
+            <div class="col-xl-12 col-12">
                 <h1 class="text-center">مرحبا بكم فى بنك <span>الأفكار</span></h1>
                 <!-- <p>جميع الإنجازات، كل الثروات المكتسبة كانت بدايتها فكرة</p> -->
-                <p>نظراً لأن العمل في مجال الخدمات الإلكترونية يرتكز بشكل أساس على الأفكار الإبداعية، فقد قامت الشركة منذ عدة أعوام. بتأسيس بنك الأفكار كمبادرة تصب في هذا الاتجاه.</p>
+                <p  class="text-center">نظراً لأن العمل في مجال الخدمات الإلكترونية يرتكز بشكل أساس على الأفكار الإبداعية، فقد قامت الشركة منذ عدة أعوام. بتأسيس بنك الأفكار كمبادرة تصب في هذا الاتجاه.</p>
                 <div class="buttons  text-center">
                     <button class="hire upper" onclick="location.href='contactus.html'">أرسل فكرتك</button>
                 </div>
