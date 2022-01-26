@@ -81,11 +81,9 @@ class IdeaController extends Controller
         ]);
         return redirect()->route('user.idea.show',$idea_id);
     }
-    public function like($id)
+    public function like(Request $request)
     {
-       $idea=Idea::update([
-           'like'=>$idea->like+1,
-       ]);
-       return response()->json(['success'=>'Data is successfully added']);
+       
+        return response()->json(['success'=>'Data is successfully added']);
     }
 }

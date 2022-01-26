@@ -145,9 +145,31 @@
       $(document).ready(function () {
         var id = $("#creative").attr("data-id");
           console.log(id);
-            $("button").click(function(){
-                console.log('fdf');    
+          $("button").click(function(){
+
+
+
+            $.ajax({
+               type:'POST',
+               url:'/idea/like',
+               data: {
+                    "id":  $("#creative").attr("data-id"),
+                    _token: "{{ csrf_token() }}",
+                },
+               success:function(data) {
+                  $("#msg").html(data.msg);
+               }
             });
+
+
+
+
+
+
+            
+
+
+          });
       });
 </script>
 @endsection
