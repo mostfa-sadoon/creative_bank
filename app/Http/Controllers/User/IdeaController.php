@@ -86,6 +86,6 @@ class IdeaController extends Controller
        $idea=Idea::update([
            'like'=>$idea->like+1,
        ]);
-       
+       return response()->json(['success'=>'Data is successfully added']);
     }
 }

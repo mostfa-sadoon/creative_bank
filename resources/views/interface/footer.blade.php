@@ -90,7 +90,7 @@
 <!-- ======= End Footer ======= -->
 
 <!--Script------------------------------------------->
-<script src="{{asset('interface/assets/js/jquery-2.1.0.min.js')}}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="{{asset('interface/assets/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('interface/assets/js/bootstrap.min.js')}}"></script>
 

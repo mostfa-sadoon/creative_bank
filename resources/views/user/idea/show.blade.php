@@ -43,7 +43,7 @@
 <!-- ======= Start Content ======= -->
 <div class=" mt-4 ">
         <!---Start Goal-->
-        <section id="creative" class="team-item container creative card bg-light">
+        <section id="creative" class="team-item container creative card bg-light" data-id="1">
             <div class="container about-bank">
 
                 <div class="row">
@@ -67,7 +67,7 @@
                                 </div> -->
                              
                                 <button id="like" class="btn-success btn" ><i class="fa fa-thumbs-up fa-2x"></i> </button>
-                                <span class="ui basic blue label">{{$idea->like}}</span>
+                                <span class="ui basic blue label" id="result">{{$idea->like}}</span>
                                 <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
                             </div>
                         </div>
@@ -139,11 +139,15 @@
     <!-- ======= End Content ======= -->
 @endsection
 @section('scripts')
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+       
       $(document).ready(function () {
-        $("button").click(function(){
-             console.log('fd');
-        });
+        var id = $("#creative").attr("data-id");
+          console.log(id);
+            $("button").click(function(){
+                console.log('fdf');    
+            });
       });
 </script>
 @endsection
