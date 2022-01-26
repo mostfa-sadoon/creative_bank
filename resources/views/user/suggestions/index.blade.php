@@ -23,15 +23,16 @@
                             <div class="container">
                                 <h2>المقترحات</h2>
                                 @auth
-                                <form id="contact-form" role="form" action="" method="post">
+                                <form id="contact-form" role="form" action="{{route('suggestions.store')}}" method="post">
                                     @csrf 
+                                    <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                                     <div class="controls">
                                         <!---The Opportunity---->
                                         <div class="">
                                             <div class="form-group">
                                                 <label for="form_message">اكتب مقترحك<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="message" class="form-control" placeholder="أكتب المقترح هنا *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                                <textarea id="form_message" name="suggestion" class="form-control" placeholder="أكتب المقترح هنا *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                                             </div>
                                         </div>
                                       
@@ -44,9 +45,19 @@
                                    </form>
                                 @endauth
                                 @guest
-                                   <div class="d-flex justify-content-center">
-                                       <p class="text-red">  login to send your suggesions </p>
-                                   </div>
+                                    <div class="card text-center">
+                                        <div class="card-header">
+                                             Authentication
+                                        </div>
+                                        <div class="card-body">
+                                            <div class=" d-flex justify-content-center">
+                                            <p class="card-text">you should have acount to send your suggestins</p>
+                                            </div>
+                                          
+                                            <a href="{{route('user.login')}}" class="btn btn-primary">login</a>
+                                        </div>
+                                      
+                                    </div>
                                 @endguest   
                            
                             </div>

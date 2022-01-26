@@ -59,10 +59,15 @@
                                 </a>
                             </div>
                             <div class="idea-info-icon ">
-                                <div class="like ui labeled button  bg-success" tabindex="0">
-                                    <i class="fa fa-thumbs-up fa-2x"></i>
-                                    <span class="ui basic blue label"> 0 </span>
-                                </div>
+                                <!-- <div class="like ui labeled button  bg-success" tabindex="0">
+                                    <a id="" class="text-white">
+                                        <i class="fa fa-thumbs-up fa-2x"></i>
+                                        
+                                    </a>    
+                                </div> -->
+                             
+                                <button id="like" class="btn-success btn" ><i class="fa fa-thumbs-up fa-2x"></i> </button>
+                                <span class="ui basic blue label">{{$idea->like}}</span>
                                 <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
                             </div>
                         </div>
@@ -90,7 +95,6 @@
                     <br>
                 </div>
                 <div>
-
                 </div>
             </div>
         </section>
@@ -115,7 +119,6 @@
                 </div>
                 @endforeach
             </div>
-             
               <form action="{{route('comment.send')}}" method="Post">
                   @csrf
                   <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
@@ -130,14 +133,17 @@
                         </div>
                 </div>
               </form>
-        
-
-            
-
-
         </section>
-        
         <!---End Goal---->
     </div>
     <!-- ======= End Content ======= -->
+@endsection
+@section('scripts')
+<script>
+      $(document).ready(function () {
+        $("button").click(function(){
+             console.log('fd');
+        });
+      });
+</script>
 @endsection
