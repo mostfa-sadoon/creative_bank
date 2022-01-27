@@ -62,20 +62,25 @@
         
                                 </a>
                               <div>
-                              <button id="like" class="btn-success btn" ><i class="fa fa-thumbs-up fa-2x" data-status="not_like" id="icon" ></i> </button>
-                                <span class="ui basic blue label" id="result">{{$idea->like}}</span>
-                                <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
-                              </div>
-                               
+                                    <!-- this condation to check if user has react before -->
+                                  @if($interaction == "true")
+                                  <button id="like" class="btn-success btn" ><i class="fa fa-thumbs-up fa-2x icon_color" data-status="none" id="icon" ></i> </button>
+                                        <span class="ui basic blue label" id="result">{{$idea->like}}</span>
+                                        <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
+                                    </div>
+                                  @else
+                                  <button id="like" class="btn-success btn" ><i class="fa fa-thumbs-up fa-2x" data-status="none" id="icon" ></i> </button>
+                                        <span class="ui basic blue label" id="result">{{$idea->like}}</span>
+                                        <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
+                                    </div>
+                                  @endif
                             </div>
                             <div class="idea-info-icon d-flex justify-content-start">
                                 <!-- <div class="like ui labeled button  bg-success" tabindex="0">
                                     <a id="" class="text-white">
                                         <i class="fa fa-thumbs-up fa-2x"></i>
-                                        
                                     </a>    
                                 </div> -->
-                               
                             </div>
                         </div>
                     </div>
@@ -158,20 +163,37 @@
                 $(document).ready(function () {
                     // to gat the id if idea
                     var id = $("#creative").attr("data-id");
-                
+                    console.log(status);
                         $("button").click(function(){
-                            $.ajax({
-                            type:'POST',
-                            url:'/idea/like',
-                            data: {
-                                    "id":  $("#creative").attr("data-id"),
-                                    _token: "{{ csrf_token() }}",
-                                },
-                            success:function(data) {
-                                $("#result").html(data.like);
-                                $("#icon").addClass("icon_color");
+                            if($("#icon").hasClass('icon_color'))
+                            {
+                                $.ajax({
+                                type:'POST',
+                                url:'/idea/unlike',
+                                data: {
+                                        "id":  $("#creative").attr("data-id"),
+                                        _token: "{{ csrf_token() }}",
+                                    },
+                                success:function(data) {
+                                    $("#result").html(data.like);
+                                    $("#icon").removeClass("icon_color");
+                                }
+                                });
+                            }else{
+                                $.ajax({
+                                type:'POST',
+                                url:'/idea/like',
+                                data: {
+                                        "id":  $("#creative").attr("data-id"),
+                                        _token: "{{ csrf_token() }}",
+                                    },
+                                success:function(data) {
+                                    $("#result").html(data.like);
+                                    $("#icon").addClass("icon_color");
+                                }
+                                });
                             }
-                            });
+                       
                         });
                 });
             </script>
@@ -191,5 +213,4 @@
                 });  
             </script>
             @endguest
-
 @endsection

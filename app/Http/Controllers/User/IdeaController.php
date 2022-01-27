@@ -61,8 +61,15 @@ class IdeaController extends Controller
         event(new IdeaViewer($idea));
         $lang=app()->getLocale();
         $category=Category::select('name_'.$lang.' as name')->find($idea->category_id);
-      //  $userlike=Userlike::where()
-        return view('user.idea.show',compact('idea','category'));
+        // this to check of the user is interaction 
+         $userlike=Userlike::where('user_id',Auth::user()->id)->where('idea_id',$id)->count();
+         $interaction="false";
+         if($userlike > 0)
+         {
+             $interaction="true";
+         }
+        // dd($interaction);
+        return view('user.idea.show',compact('idea','category','interaction'));
     }
     public function allidea()
     {
@@ -85,14 +92,32 @@ class IdeaController extends Controller
     public function like(Request $request)
     {
         $id=$request->id;
+        $userlike=Userlike::where('user_id',Auth::user()->id)->where('idea_id',$id)->get();
         $idea=Idea::find($id);
-        $idea->update([
-           'like'=>$idea->like+1,
-        ]);
-        Userlike::create([
-            'user_id'=>Auth::user()->id,
-            'idea_id'=>$request->id
-         ]);
+        if($userlike)
+        {
+            $idea->update([
+               'like'=>$idea->like+1,
+            ]);
+            Userlike::create([
+                'user_id'=>Auth::user()->id,
+                'idea_id'=>$request->id
+             ]);
+        }
+        return response()->json(['msg'=>'success','like'=>$idea->like]);
+    }
+    public function unlike(Request $request)
+    {
+        $id=$request->id;
+        $userlike=Userlike::where('user_id',Auth::user()->id)->where('idea_id',$id)->first();
+        $idea=Idea::find($id);
+        if($userlike)
+        {
+            $idea->update([
+                'like'=>$idea->like-1,
+             ]);
+            $userlike->delete();
+        }
         return response()->json(['msg'=>'success','like'=>$idea->like]);
     }
 }

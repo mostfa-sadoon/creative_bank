@@ -51,6 +51,7 @@ use App\Http\Controllers\User\suggestionController;
         Route::get('/createidea',[IdeaController::class, 'create'])->name('idea.create');
         Route::post('/store/idea',[IdeaController::class, 'store'])->name('idea.store');
         Route::post('/idea/like',[IdeaController::class, 'like'])->name('idea.like');
+        Route::post('/idea/unlike',[IdeaController::class, 'unlike'])->name('idea.unlike');
         //user profile            
         Route::get('/user/profile/edit/{id}',[ProfileController::class, 'edit'])->name('profile.edit');    
         Route::post('/user/update',[ProfileController::class, 'update'])->name('user.update');
