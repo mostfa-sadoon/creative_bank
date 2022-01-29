@@ -62,11 +62,14 @@ class IdeaController extends Controller
         $lang=app()->getLocale();
         $category=Category::select('name_'.$lang.' as name')->find($idea->category_id);
         // this to check of the user is interaction 
-         $userlike=Userlike::where('user_id',Auth::user()->id)->where('idea_id',$id)->count();
          $interaction="false";
-         if($userlike > 0)
+         if(Auth::user())
          {
-             $interaction="true";
+            $userlike=Userlike::where('user_id',Auth::user()->id)->where('idea_id',$id)->count();
+            if($userlike > 0)
+            {
+                $interaction="true";
+            }
          }
         // dd($interaction);
         return view('user.idea.show',compact('idea','category','interaction'));

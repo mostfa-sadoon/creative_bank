@@ -49,6 +49,8 @@ use App\Http\Controllers\Admin\suggestionController;
     Route::get('/ideas/refused/{id}', [IdeaController::class, 'refused'])->name('idea.refused'); 
     Route::get('/ideas/delete/{id}', [IdeaController::class, 'destroy'])->name('idea.delete');
     Route::get('/ideas/trash', [IdeaController::class, 'trash'])->name('idea.trash');
+    Route::get('/ideas/trash/{id}', [IdeaController::class, 'showtrashed'])->name('idea.trash.view');
+    Route::get('/ideas/restore/{id}', [IdeaController::class, 'restore'])->name('idea.restore');
     //news
     Route::get('/news', [NewsController::class, 'index'])->name('news.index'); 
     Route::get('/news/create', [NewsController::class, 'create'])->name('news.create'); 

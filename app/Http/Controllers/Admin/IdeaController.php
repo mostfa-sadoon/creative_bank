@@ -43,7 +43,22 @@ class IdeaController extends Controller
      }
      public function trash()
      {
-         $ideas=DB::table('ideas')->whereNotNull('deleted_at')->get();    
+         $ideas=Idea::onlyTrashed()->paginate(20);
+       //  $ideas=DB::table('ideas')->whereNotNull('deleted_at')->get();    
          return view('admin.idea.trash',compact('ideas'));
+    }
+    public function showtrashed($id)
+    {
+        $idea=Idea::withTrashed()->find($id);
+        return view('admin.idea.trash_ideas',compact('idea'));
+    }
+    public function restore($id)
+    {
+       $idea = Idea::withTrashed()->findOrFail($id);
+       $idea->update([
+          'deleted_at'=>null
+       ]);
+       Alert::success('success', 'the news has restore successfully');
+       return redirect()->route('idea.trash');
     }
 }
