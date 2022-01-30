@@ -43,4 +43,9 @@ return [
      'add_question'=>'اضافه سؤال',
      'suggesions'=>'الاقتراحات',
      'show_suggesions'=>'  عرض الاقتراحات',
+
+     'employee'=>'الموظفين',
+     'employee_create'=>'اضافه موظف',
+
+     'creators'=>'المبدعين',
 ];

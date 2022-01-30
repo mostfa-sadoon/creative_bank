@@ -28,6 +28,10 @@
             transform: translateY(40px);
             transition: transform .8s;
         }
+        .dropdown-menu {
+            width: 50px !important;
+            height: 50px !important;
+        }
     </style>
       @yield('style')
     <title>بنك الأفكار</title>

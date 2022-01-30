@@ -9,6 +9,8 @@ use App\Http\Controllers\Admin\IdeaController;
 use App\Http\Controllers\Admin\NewsController;   
 use App\Http\Controllers\Admin\CommonquestionController;    
 use App\Http\Controllers\Admin\suggestionController;
+use App\Http\Controllers\Admin\employeecontroller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,5 +74,15 @@ use App\Http\Controllers\Admin\suggestionController;
     Route::get('/commonquestions/delete/{id}', [CommonquestionController::class, 'delete'])->name('commonquestions.delete'); 
     //sugestions
     Route::get('/suggestions/admin/show', [suggestionController::class, 'index'])->name('admin.suggestions');
+    Route::group(['middleware' => ['role:Super-Admin']], function () {
+        //
+        Route::get('/employees', [employeecontroller::class, 'index'])->name('employees');    
+        Route::get('/employee/create', [employeecontroller::class, 'create'])->name('employee.create');
+        Route::post('/employee/store', [employeecontroller::class, 'store'])->name('employee.store');
+        Route::get('/employee/delete/{id}', [employeecontroller::class, 'delete'])->name('employee.delete');
+        Route::get('/employee/edite/{id}', [employeecontroller::class, 'edit'])->name('employee.edit');
+        Route::post('/employee/update', [employeecontroller::class, 'update'])->name('employee.update');
+
+    });
 });
 Route::get('change_lang/{lang}', [HomeController::class,'change_lang'])->name('change_lang');

@@ -7,7 +7,7 @@
                     <div class="card mt-2 mx-auto p-1 bg-light">
                         <div class="card-body bg-light">
                             <div class="container">
-                                <h2>أرسل فكرتك</h2>
+                                <h2>{{trans('home.send_your_idea')}}</h2>
                                 <form id="contact-form" role="form" action="{{route('idea.store')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="controls">
@@ -30,7 +30,7 @@
                                         <!---Idea Title---->
                                         <div class="">
                                             <div class="form-group">
-                                                <label for="validationServer01">عنوان الفكرة<span> *</span></label>
+                                                <label for="validationServer01">{{trans('home.idea_title')}}<span> *</span></label>
                                                 <input id="validationServer01" type="text" name="name" class="form-control is-nvalid" placeholder=" أدخل عنوان الفكرة *" required="required" data-error="Firstname is required.">
                                                     @if ($errors->has('name'))
                                                       <span class="text-danger">{{ $errors->first('name') }}</span>
@@ -63,9 +63,9 @@
                                          <!---The Opportunity---->
                                          <div class="">
                                             <div class="form-group">
-                                                <label for="form_message">الوصف<span> *</span>
+                                                <label for="form_message">{{trans('home.desc')}}<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="desc" class="form-control" placeholder="أكتب الفرصة هنا *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                                <textarea id="form_message" name="desc" class="form-control" placeholder="{{trans('home.desc_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                                                    @if ($errors->has('problem'))
                                                       <span class="text-danger">{{ $errors->first('problem')}}</span>
                                                     @endif
@@ -74,9 +74,9 @@
                                         <!---The Opportunity---->
                                         <div class="">
                                             <div class="form-group">
-                                                <label for="form_message">المشكلة<span> *</span>
+                                                <label for="form_message">{{trans('home.problem')}}<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="problem" class="form-control" placeholder="أكتب الفرصة هنا *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                                <textarea id="form_message" name="problem" class="form-control" placeholder="{{trans('home.problem_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                                                    @if ($errors->has('problem'))
                                                       <span class="text-danger">{{ $errors->first('problem')}}</span>
                                                     @endif
@@ -85,9 +85,9 @@
                                         <!---The Solution---->
                                         <div class="">
                                             <div class="form-group">
-                                                <label for="form_message">الحل<span> *</span>
+                                                <label for="form_message">{{trans('home.solve')}}<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="solve" class="form-control" placeholder="أكتب الحل هنا *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                                <textarea id="form_message" name="solve" class="form-control" placeholder="{{trans('home.solve_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
                                                    @if ($errors->has('solve'))
                                                       <span class="text-danger">{{ $errors->first('solve')}}</span>
                                                     @endif
@@ -103,7 +103,7 @@
                                         </div>
                                         <!---Submit Button---->
                                         <div class="mt-4">
-                                            <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="أرسل فكرتك">  
+                                            <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="{{trans('home.send_your_idea')}}">  
                                         </div>
                                     </div>
                                 </form>

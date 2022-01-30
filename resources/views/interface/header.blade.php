@@ -56,14 +56,23 @@
            <a href="{{route('profile.show',Auth::user()->id)}}"><i class="profile bx bxs-user  "></i></a>
         @endauth
     </div>
-    <div class="form-inline ">
-               
-                <select class="btn selectpicker" data-width="fit">
-                    <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
-                  <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>عربى</option>
-                </select>
-            </div>
-    </div>
+
+    <div class="dropdown show">
+       @if(app()->getLocale() == 'en') 
+        <a class="btn btn-secondary dropdown-toggle" href="{{url('change_lang/en')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            english
+        </a>
+        @else
+        <a class="btn btn-secondary dropdown-toggle" href="{{url('change_lang/ar')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            عربي
+        </a>
+       @endif
+       
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="{{url('change_lang/en')}}">english</a>
+            <a class="dropdown-item" href="{{url('change_lang/ar')}}">عربي</a>
+        </div>
+     </div>
 
 </div>
    

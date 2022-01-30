@@ -23,11 +23,11 @@
         <!---- ======= Content ======= ---->
         <div class="row welcome-head text-center">
             <div class="col-xl-12 col-12">
-                <h1 class="text-center">مرحبا بكم فى بنك <span>الأفكار</span></h1>
+                <h1 class="text-center">{{trans('home.hallo_in')}} <span>{{trans('home.ideas')}}</span></h1>
                 <!-- <p>جميع الإنجازات، كل الثروات المكتسبة كانت بدايتها فكرة</p> -->
-                <p  class="text-center">نظراً لأن العمل في مجال الخدمات الإلكترونية يرتكز بشكل أساس على الأفكار الإبداعية، فقد قامت الشركة منذ عدة أعوام. بتأسيس بنك الأفكار كمبادرة تصب في هذا الاتجاه.</p>
+                <p  class="text-center">{{trans('home.text_slider')}}</p>
                 <div class="buttons  text-center">
-                    <button class="hire upper" onclick="location.href='contactus.html'">أرسل فكرتك</button>
+                    <button class="hire upper" onclick="location.href='contactus.html'">{{trans('home.send_idea')}}</button>
                 </div>
             </div>
 
@@ -51,11 +51,10 @@
         <section id="about" class="  about bg-light" data-aos="zoom-in" data-aos-delay="100">
 
             <div class="section-title">
-                <h2>من نحن؟</h2>
+                <h2>{{trans('home.who_us')}}</h2>
             </div>
             <div class="container">
-                <p>نظراً لأن العمل في مجال الخدمات الإلكترونية يرتكز بشكل أساس على الأفكار الإبداعية، فقد قامت الشركة منذ عدة أعوام. بتأسيس بنك الأفكار كمبادرة تصب في هذا الاتجاه.</p>
-                <p>ويهدف بنك الأفكار إلى استقبال جميع الأفكار سواء المتعلقة بمشاريع إلكترونية جديدة أو عمليات تطوير جوهرية لمنتجات الشركة الحالية أو غيرها</p>
+                <p>{{trans('home.who_us_answer')}}</p>
             </div>
 
         </section>
@@ -65,7 +64,7 @@
         <section id="best-idea" class="container best-idea">
             <div class="">
                 <div class="section-title" data-aos="zoom-in" data-aos-delay="100">
-                    <h2>أفضل الأفكار</h2>
+                    <h2>{{trans('home.best_ideas')}}</h2>
                 </div>
                 <section class="wrapper">
                     <div class="container-fostrap">
@@ -89,7 +88,7 @@
                                                  </p>
                                                 </div>
                                                 <div class="card-read-more">
-                                                    <a href="{{route('user.idea.show',$idea->id)}}" class="btn btn-link btn-block">عرض المزيد</a>
+                                                    <a href="{{route('user.idea.show',$idea->id)}}" class="btn btn-link btn-block">{{trans('home.show_more')}}</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -97,7 +96,7 @@
                                 </div>
                                 
                                     <div class="d-flex justify-content-center">
-                                    <a class=" btn btn-info " href="{{route('allidea')}}">See All</a>
+                                    <a class=" btn btn-info " href="{{route('allidea')}}">{{trans('home.see_more')}}</a>
                                     </div>
                             </div>
                         </div>
@@ -112,7 +111,7 @@
       <section id="cost" class="  cost ">
             <div class="container">
                 <div class="section-title" data-aos="zoom-in" data-aos-delay="100">
-                    <h2>كم سأربح !</h2>
+                    <h2>{{trans('home.how_much_earn')}}</h2>
                 </div>
                 <div class=" row justify-content-center p-4">
                     <div class="col-md-12">
@@ -265,7 +264,7 @@
         <section id="news" class="container news">
             <div class="container news">
                 <div class="section-title" data-aos="zoom-in" data-aos-delay="100">
-                    <h2>آخر الأخبار</h2>
+                    <h2>{{trans('home.last_news')}}</h2>
                 </div>
                 <div class="row">
                     @foreach($news as $new)
@@ -279,7 +278,7 @@
                             </div>
                             <div class="newsFooter">
                                 <p>
-                                    <a class="read-more waves-effect waves-light btn" href="{{route('user.news.show',$new->id)}}">عرض المزيد</a>
+                                    <a class="read-more waves-effect waves-light btn" href="{{route('user.news.show',$new->id)}}">{{trans('home.show_more')}}</a>
                                 </p>
                                 <p class="txt3">{{date('d-m-Y', strtotime($new->created_at))}}<i class="bi bi-calendar"></i></p>
                             </div>
@@ -287,7 +286,7 @@
                     @endforeach
                 </div>
                     <div class="d-flex justify-content-center">
-                        <a class="btn btn-info text-white" href="{{route('allnews')}}">See All</a>
+                        <a class="btn btn-info text-white" href="{{route('allnews')}}">{{trans('home.see_more')}}</a>
                     </div>
             </div>
         </section>

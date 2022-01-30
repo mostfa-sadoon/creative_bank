@@ -47,4 +47,8 @@ return [
      'suggesions'=>'suggesions',
      'show_suggesions'=>'عرض الاقتراحات',
 
+     'employee'=>'employee',
+     'employee_create'=>'create employee',
+
+     'creators'=>'creators',
 ];
