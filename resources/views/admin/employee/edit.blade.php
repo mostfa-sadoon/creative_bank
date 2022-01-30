@@ -53,7 +53,7 @@
                         </div>
                             
 
-                        @role('writer')
+                        @if($role == "writer")
                          <div class="col-12 mt-3">
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="role" id="inlineRadio1" value="option1" >
@@ -77,7 +77,7 @@
                                 </div>
                             </div>
                           </div>
-                        @endrole
+                        @endif
 
                      
                       

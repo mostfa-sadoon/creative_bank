@@ -39,8 +39,10 @@ class employeecontroller extends Controller
     }
     public function edit($id)
     {
+       
         $employee=Admin::find($id);
-        return view('admin.employee.edit',compact('employee'));
+        $role=$employee->getRoleNames();
+        return view('admin.employee.edit',compact('employee','role'));
     }
     public function update(Request $request)
     {
