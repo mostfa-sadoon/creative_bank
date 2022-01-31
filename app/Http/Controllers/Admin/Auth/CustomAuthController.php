@@ -16,7 +16,7 @@ class CustomAuthController extends Controller
         if(Auth::guard('Admin')->check()){
             return redirect("dashboard");
         }
-        return view('admin.custom.login');
+        return view('auth.login');
     }  
     public function customLogin(Request $request)
     {
