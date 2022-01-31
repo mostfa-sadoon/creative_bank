@@ -108,7 +108,7 @@
   </div>
 @endsection
 @section('scripts')
-    <script src="{{asset('../assets/plugins/Chart.js/Chart.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/Chart.js/Chart.min.js')}}"></script>
    
     <script>
        // idea chart script 
