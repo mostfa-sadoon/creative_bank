@@ -12,7 +12,7 @@ class CustomAuthController extends Controller
     //
     public function index()
     { 
-
+        
         if(Auth::guard('Admin')->check()){
             return redirect("dashboard");
         }

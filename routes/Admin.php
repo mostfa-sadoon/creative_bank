@@ -83,7 +83,6 @@ use App\Http\Controllers\Admin\employeecontroller;
         Route::get('/employee/delete/{id}', [employeecontroller::class, 'delete'])->name('employee.delete');
         Route::get('/employee/edite/{id}', [employeecontroller::class, 'edit'])->name('employee.edit');
         Route::post('/employee/update', [employeecontroller::class, 'update'])->name('employee.update');
-
     });
 });
 Route::get('change_lang/{lang}', [HomeController::class,'change_lang'])->name('change_lang');
