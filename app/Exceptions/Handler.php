@@ -27,8 +27,6 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
-
-
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         if (request()->expectsJson()) {
@@ -46,7 +44,6 @@ class Handler extends ExceptionHandler
         }
         return redirect()->route($login);
     }
-
 
     /**
      * Register the exception handling callbacks for the application.
