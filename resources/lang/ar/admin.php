@@ -48,4 +48,5 @@ return [
      'employee_create'=>'اضافه موظف',
 
      'creators'=>'المبدعين',
+     'creative_bank'>'بنك الافكار',
 ];

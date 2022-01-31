@@ -27,7 +27,8 @@ use App\Http\Controllers\Admin\employeecontroller;
     Route::post('custom-registration', [CustomAuthController::class, 'customRegistration'])->name('register.custom'); 
     Route::middleware('auth:Admin')->group(function () {
     Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
-    Route::get('dashboard', [CustomAuthController::class, 'dashboard']); 
+    Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
+
     // category routes                                                                                 
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');             
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create'); 

@@ -57,15 +57,15 @@ class CustomAuthController extends Controller
         'password' => Hash::make($data['password'])
       ]);
     }    
-    public function dashboard()
-    {
-        if(Auth::guard('Admin')->check()){
-            return view('dashboard');
-        }else{
-            return view('auth.login');
-        }
-        return redirect("login")->withSuccess('You are not allowed to access');
-    }
+    // public function dashboard()
+    // {
+    //     if(Auth::guard('Admin')->check()){
+    //         return view('dashboard');
+    //     }else{
+    //         return view('auth.login');
+    //     }
+    //     return redirect("login")->withSuccess('You are not allowed to access');
+    // }
     public function signOut() {
         Session::flush();
         Auth::logout();
