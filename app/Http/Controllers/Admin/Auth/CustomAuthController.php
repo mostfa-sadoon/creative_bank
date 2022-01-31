@@ -14,9 +14,9 @@ class CustomAuthController extends Controller
     { 
 
         if(Auth::guard('Admin')->check()){
-            return view('dashboard');
+            return redirect("dashboard");
         }
-         return view('auth.login');
+        return redirect("login");
     }  
     public function customLogin(Request $request)
     {
@@ -34,7 +34,7 @@ class CustomAuthController extends Controller
     public function registration()
     {
         if(Auth::guard('Admin')->check()){
-            return view('dashboard');
+            return redirect("dashboard");
         }
         return redirect("dashboard");
     }
