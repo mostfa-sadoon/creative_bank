@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Idea;
 use App\Models\User;
+use App\Models\News;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -25,6 +26,7 @@ class HomeController extends Controller
     public function index()
     {
         $ideacount=Idea::withTrashed()->count();
+        $newscount=News::withTrashed()->count();
         $refusedidea=Idea::onlyTrashed()->count();
         $acceptedidea=Idea::where('status','true')->count();
         $totaluser=User::count();
@@ -34,6 +36,6 @@ class HomeController extends Controller
           // dd($idea_count);
         $idea_count = json_encode($idea_count);
        // dd($idea_count);
-        return view('dashboard',compact('ideacount','refusedidea','acceptedidea','totaluser','idea_count'));
+        return view('dashboard',compact('ideacount','refusedidea','acceptedidea','totaluser','newscount','idea_count'));
     }
 }
