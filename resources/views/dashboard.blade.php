@@ -33,7 +33,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex no-block">
-                                    <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="../assets/images/icon/income.png" alt="Income" /></div>
+                                    <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="{{'asset('../assets/images/icon/income.png')}}" alt="Income" /></div>
                                     <div class="align-self-center">
                                         <h6 class="text-muted m-t-10 m-b-0">Total Idea</h6>
                                         <h2 class="m-t-0">{{$ideacount}}</h2></div>
@@ -45,7 +45,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex no-block">
-                                    <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="../assets/images/icon/expense.png" alt="Income" /></div>
+                                    <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="{{asset('../assets/images/icon/expense.png')}}" alt="Income" /></div>
                                     <div class="align-self-center">
                                         <h6 class="text-muted m-t-10 m-b-0">Total user</h6>
                                         <h2 class="m-t-0">{{$totaluser}}</h2></div>
@@ -57,7 +57,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex no-block">
-                                    <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="../assets/images/icon/assets.png" alt="Income" /></div>
+                                    <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="{{asset('../assets/images/icon/assets.png')}}" alt="Income" /></div>
                                     <div class="align-self-center">
                                         <h6 class="text-muted m-t-10 m-b-0">Total news</h6>
                                         <h2 class="m-t-0">{{$newscount}}</h2></div>
@@ -69,7 +69,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex no-block">
-                                    <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="../assets/images/icon/staff.png" alt="Income" /></div>
+                                    <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="{{asset('../assets/images/icon/staff.png')}}" alt="Income" /></div>
                                     <div class="align-self-center">
                                         <h6 class="text-muted m-t-10 m-b-0">Total Staff</h6>
                                         <h2 class="m-t-0">987,563</h2></div>
