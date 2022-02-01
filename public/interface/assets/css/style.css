@@ -48,6 +48,11 @@ main-color {
     color: white;
 }
 
+.form-check-input {
+    position: relative;
+    margin: 0;
+}
+
 
 /******Start section-title**********/
 
@@ -554,7 +559,7 @@ h6 {
 
 .file {
     visibility: hidden;
-    position: absolute;
+    /* position: absolute; */
 }
 
 
