@@ -45,9 +45,9 @@
          <embed src="{{$idea->attatchment}}" width="100%" height="500px">
     </div>
 
-
+    
     <iframe width="420" height="315"
-          src="{{$idea->video_link}}">
+          src="{{$idea->video}}">
     </iframe>
 
 

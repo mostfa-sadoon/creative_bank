@@ -24,7 +24,7 @@ class CreateIdeasTable extends Migration
             $table->string('img');
             $table->string('attatchment')->nullable();
             $table->text('problem');
-            $table->text('video_link')->nullable();
+            $table->text('video')->nullable();
             $table->text('solve');
             $table->text('desc');
             $table->integer('view')->default(0);

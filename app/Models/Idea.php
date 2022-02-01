@@ -26,14 +26,30 @@ class Idea extends Model
             return asset('/uploads/attachment') . '/' . $attatchment;
         }
     }
-    public function getVideo_linkAttribute($link)
+    public function getVideoAttribute($video)
     {
-        if ($link)
+        if ($video)
         {
-            str_replace("watch?v=","embed/",$link);
-            return $link;
+           
+            return  str_replace("watch?v=","embed/",$video);
         }
     }
+
+    // public function  getVideoAttribute($url)
+    // {
+    //     if(strlen($url) > 11)
+    //     {
+    //         if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match))
+    //         {
+    //             return $match[1];
+    //         }
+    //         else
+    //             return false;
+    //     }
+    //     return "ffdfd";
+    // }
+
+
     public function user()
     {
         return $this->belongsTo(User::class);
