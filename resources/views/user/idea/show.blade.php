@@ -56,32 +56,32 @@
                             <div class="member-img">
                                 <img src="{{$idea->img}}" class="img-fluid" alt="">
                             </div>
-                            <div class="idea-info-user d-flex  justify-content-around">
-                                <a href="{{route('profile.show',$idea->user_id)}}"> <img src="{{$idea->user->img}}" class="img-fluid" alt="">
+                            <div class="idea-info-user d-flex  justify-content-around row">
+                                <div class="col-12 idea_user_info"><a href="{{route('profile.show',$idea->user_id)}}"> <img src="{{$idea->user->img}}" class="img-fluid" alt="">
                                     <span>{{$idea->user->name}}</span>
         
-                                </a>
-                              <div>
+                                </a></div>
+                              <div class="col-12 mt-2 text-center">
                                     <!-- this condation to check if user has react before -->
-                                  @if($interaction == "true")
+                                  @if($interaction == "true")  <span class="ui basic blue label" id="result"> {{$idea->like}} </span>
                                   <button id="like" class="btn-success btn like" ><i class="fa fa-thumbs-up fa-1x icon_color" data-status="none" id="icon" ></i> </button>
-                                        <span class="ui basic blue label" id="result">{{$idea->like}}</span>
-                                        <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
+                                      
+                                        <i class="bi bi-eye"></i><span> {{$idea->view}} <span> مشاهدة </span></span>
                                     </div>
-                                  @else
+                                  @else <span class="ui basic blue label" id="result"> {{$idea->like}} </span>
                                   <button id="like" class="btn-success btn like" ><i class="fa fa-thumbs-up fa-1x" data-status="none" id="icon" ></i> </button>
-                                        <span class="ui basic blue label" id="result">{{$idea->like}}</span>
-                                        <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
+                                       
+                                        <i class="bi bi-eye"></i><span> {{$idea->view}} <span> مشاهدة </span></span>
                                     </div>
                                   @endif
                             </div>
-                            <div class="idea-info-icon d-flex justify-content-start">
-                                <!-- <div class="like ui labeled button  bg-success" tabindex="0">
+                            <!-- <div class="idea-info-icon d-flex justify-content-start">
+                                <div class="like ui labeled button  bg-success" tabindex="0">
                                     <a id="" class="text-white">
                                         <i class="fa fa-thumbs-up fa-2x"></i>
                                     </a>    
-                                </div> -->
-                            </div>
+                                </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="member-info col-md-6 ">
