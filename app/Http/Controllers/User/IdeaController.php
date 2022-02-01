@@ -45,7 +45,7 @@ class IdeaController extends Controller
             'name'=>$request->name,
             'user_id'=>Auth::user()->id,
             'img'=> $img,
-            'video_link'=>$request->video_link,
+            'video'=>$request->video_link,
             'problem'=>$request->problem,
             'solve'=>$request->solve,
             'attatchment'=>$attachment,
