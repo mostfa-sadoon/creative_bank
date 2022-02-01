@@ -39,7 +39,7 @@
             border-radius: 100%
         }
         .icon_color{
-            color:#aaaa55;
+            color:#E94F1B;
             }
     </style>
 @endsection
@@ -63,13 +63,15 @@
                                 </a></div>
                               <div class="col-12 mt-2 text-center">
                                     <!-- this condation to check if user has react before -->
-                                  @if($interaction == "true")  <span class="ui basic blue label" id="result"> {{$idea->like}} </span>
-                                  <button id="like" class="btn-success btn like" ><i class="fa fa-thumbs-up fa-1x icon_color" data-status="none" id="icon" ></i> </button>
+                                  @if($interaction == "true")
+                                    <span class="ui basic blue label" id="result"> {{$idea->like}} </span>
+                                  <button id="like" class=" btn like" ><i class="fa fa-thumbs-up fa-1x icon_color" data-status="none" id="icon" ></i> </button>
                                       
                                         <i class="bi bi-eye"></i><span> {{$idea->view}} <span> مشاهدة </span></span>
                                     </div>
-                                  @else <span class="ui basic blue label" id="result"> {{$idea->like}} </span>
-                                  <button id="like" class="btn-success btn like" ><i class="fa fa-thumbs-up fa-1x" data-status="none" id="icon" ></i> </button>
+                                  @else 
+                                  <span class="ui basic blue label" id="result"> {{$idea->like}} </span>
+                                  <button id="like" class=" btn like" ><i class="fa fa-thumbs-up fa-1x" data-status="none" id="icon" ></i> </button>
                                        
                                         <i class="bi bi-eye"></i><span> {{$idea->view}} <span> مشاهدة </span></span>
                                     </div>
