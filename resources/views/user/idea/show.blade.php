@@ -53,9 +53,16 @@
                 <div class="row">
                     <div class=" col-md-6 d-flex ">
                         <div class="member " data-aos="fade-up" data-aos-delay="100">
+                            @if($idea->video)
+                            <div class="">
+                                <h4>video</h4>    
+                                <iframe width="620" height="375" src="{{$idea->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            @else
                             <div class="member-img">
                                 <img src="{{$idea->img}}" class="img-fluid" alt="">
                             </div>
+                            @endif
                             <div class="idea-info-user d-flex  justify-content-around row">
                                 <div class="col-12 idea_user_info"><a href="{{route('profile.show',$idea->user_id)}}"> <img src="{{$idea->user->img}}" class="img-fluid" alt="">
                                     <span>{{$idea->user->name}}</span>

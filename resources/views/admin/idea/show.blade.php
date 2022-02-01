@@ -45,10 +45,12 @@
          <embed src="{{$idea->attatchment}}" width="100%" height="500px">
     </div>
 
-       <iframe width="560" height="315" src="{{$idea->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
-    
 
+    <div class="">
+         <h4>video</h4>    
+         <iframe width="620" height="375" src="{{$idea->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+      
 
         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/EIfsXEtEUhQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
     <div class="d-flex justify-content-center">
