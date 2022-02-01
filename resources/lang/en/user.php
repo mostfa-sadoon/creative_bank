@@ -17,7 +17,7 @@ return [
     'creative_bank' => 'creative bank',
     'main' => 'home',
     'send_your_idea' => 'send idea',
-    'How_much_earn' => 'How much earn',
+    'How_much_earn' => 'Profit',
     'common_question' => 'common question',
     'last_news' => ' news',
     'about_bank'=>'about',
