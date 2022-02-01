@@ -12,7 +12,7 @@
                             <div class="photo"> <img src="{{$new->img}}">
                             </div>
                             <div class="content">
-                                <h4 class="txt4">{{$new->header}}</h4>
+                                <h4 class="txt4 text-white">{{$new->header}}</h4>
                                 <!-- <p class="txt5">A city that never sleeps</p> -->
                                 <p class="txt2">{{$new->desc}}</p>
                             </div>

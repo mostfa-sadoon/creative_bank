@@ -41,12 +41,13 @@
                     
                 </div>
                 <div class="buttons text-center mt-4">
-                    <button class="hire upper" onclick="location.href='sendIdea.html'">Contact</button>
+                   
                 </div>
-                </div>
+                </div class=" text-center">
                      @if(Auth::id() == $user->id) 
                         <div class="edit text-center">
-                             <a class="btn btn-success" href="{{route('profile.edit',$user->id)}}">تعديل</a>
+                             <a class="btn btn-success" href="{{route('profile.edit',$user->id)}}">تعديل</a> 
+                             <button class="btn hire upper" onclick="location.href='sendIdea.html'">Contact</button>
                         </div>
                      @endif
             </div>
