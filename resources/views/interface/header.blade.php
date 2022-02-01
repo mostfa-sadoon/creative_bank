@@ -50,10 +50,12 @@
         @guest
            <a href="{{route('user.login')}}" class="btn btn-outline-success my-2 my-sm-0">تسجيل الدخول</a>
         @endguest
-      
-    </div>
-
-    <div class="dropdown show">
+        @auth
+          
+        <!-- <a href="{{route('user.signout')}}">خروج</a> -->
+           <a href="{{route('profile.show',Auth::user()->id)}}"><i class="profile bx bxs-user  "></i></a>
+        @endauth
+        <div class="dropdown show">
        @if(app()->getLocale() == 'en') 
         <a class="btn btn-secondary dropdown-toggle" href="{{url('change_lang/en')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             English
@@ -69,6 +71,9 @@
             <a class="dropdown-item" href="{{url('change_lang/ar')}}">عربي</a>
         </div>
      </div>
+    </div>
+
+   
 
 </div>
    
