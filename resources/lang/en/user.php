@@ -46,6 +46,5 @@ return [
     'famale'=>'famale',
     'user_classificaion'=>'user classification',
     'email'=>'email',
-
-
+    'ideas'=>'ideas',
 ];

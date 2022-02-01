@@ -47,7 +47,7 @@
 
 
     <iframe width="420" height="315"
-          src="https://www.youtube.com/embed/ETVAhPIkebc?controls=0">
+          src="{{$ideaa->video_link}}">
     </iframe>
 
 

@@ -26,11 +26,14 @@
         <li class="nav-item">
             <a class="nav-link" href="bestIdeas.html">{{trans('user.creative')}}</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item">  
             <a class="nav-link " href="{{route('user.commonquestions')}}">{{trans('user.common_question')}}</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link " href="{{route('allnews')}}">{{trans('user.last_news')}}</a>
+            <a class="nav-link " href="{{route('allnews')}}">{{trans('user.last_news')}}</a>      
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{{route('allidea')}}">{{trans('user.ideas')}}</a>      
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{route('about')}}">{{trans('user.about_bank')}}</a>

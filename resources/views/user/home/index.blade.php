@@ -27,7 +27,7 @@
                 <!-- <p>جميع الإنجازات، كل الثروات المكتسبة كانت بدايتها فكرة</p> -->
                 <p  class="text-center">{{trans('home.text_slider')}}</p>
                 <div class="buttons  text-center">
-                    <button class="hire upper" onclick="location.href='contactus.html'">{{trans('home.send_idea')}}</button>
+                    <button class="hire upper" onclick="location.href='{{route('idea.create')}}'">{{trans('home.send_idea')}}</button>
                 </div>
             </div>
 
