@@ -28,7 +28,6 @@ class IdeaController extends Controller
             'name'=>'required',
             'desc'=>'required|max:80|min:10',
             'img'=>'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            'video_link'=>'url',
             'problem'=>'required|max:2000|min:50',
             'solve'=>'required|max:2000|min:50',
             'attachment'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,pdf|max:8192',
@@ -40,6 +39,11 @@ class IdeaController extends Controller
             $attachment = $this->MoveImage($request->attachment,'uploads/attachment');
         }else{
             $attachment=null;   
+        }
+        if($request->video_link!=null){
+            $request->validate([
+                'video_link'=>'url',
+            ]);
         }
         Idea::create([
             'name'=>$request->name,
