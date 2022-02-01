@@ -64,12 +64,12 @@
                               <div>
                                     <!-- this condation to check if user has react before -->
                                   @if($interaction == "true")
-                                  <button id="like" class="btn-success btn" ><i class="fa fa-thumbs-up fa-2x icon_color" data-status="none" id="icon" ></i> </button>
+                                  <button id="like" class="btn-success btn like" ><i class="fa fa-thumbs-up fa-1x icon_color" data-status="none" id="icon" ></i> </button>
                                         <span class="ui basic blue label" id="result">{{$idea->like}}</span>
                                         <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
                                     </div>
                                   @else
-                                  <button id="like" class="btn-success btn" ><i class="fa fa-thumbs-up fa-2x" data-status="none" id="icon" ></i> </button>
+                                  <button id="like" class="btn-success btn like" ><i class="fa fa-thumbs-up fa-1x" data-status="none" id="icon" ></i> </button>
                                         <span class="ui basic blue label" id="result">{{$idea->like}}</span>
                                         <i class="bi bi-eye"></i><span> {{$idea->view}} <span>مشاهدة</span></span>
                                     </div>

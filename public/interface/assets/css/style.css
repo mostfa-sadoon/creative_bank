@@ -350,6 +350,10 @@ h6 {
     box-shadow: -5px -1px 10px .1px rgb(187, 187, 187);
 }
 
+.team-item .member .like {
+    padding: 3px 7px;
+}
+
 .team-item .member .member-img {
     position: relative;
     overflow: hidden;
