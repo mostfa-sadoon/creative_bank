@@ -26,6 +26,14 @@ class Idea extends Model
             return asset('/uploads/attachment') . '/' . $attatchment;
         }
     }
+    public function getVideo_linkAttribute($link)
+    {
+        if ($link)
+        {
+            str_replace("watch?v=","embed/",$link);
+            return $link;
+        }
+    }
     public function user()
     {
         return $this->belongsTo(User::class);
