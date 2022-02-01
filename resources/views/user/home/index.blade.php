@@ -60,6 +60,61 @@
         </section>
         <!-- ======= End Body ======= -->
 
+        <!-- ======= Start vote best-idea ======= -->
+        <section id="best-idea" class="container best-idea">
+            <div class="">
+                <div class="section-title" data-aos="zoom-in" data-aos-delay="100">
+                    <h2>{{trans('home.best_ideas')}}</h2>
+                </div>
+                <section class="wrapper">
+                    <div class="container-fostrap">
+
+                        <div class="content">
+                            <div class="">
+                                <div class="row">
+                                    @foreach($ideas as $idea)
+                                        <div class="col-xs-12 col-sm-4" data-aos="fade-up" data-aos-delay="100">
+                                            <div class="card">
+                                                <a class="img-card" href="#">
+                                                    <img src="{{$idea->img}}" />
+                                                </a>
+                                                <div class="card-content">
+                                                    <h4 class="card-title">
+                                                        <a href="#"> {{$idea->name}}
+                                                    </a>
+                                                    </h4>
+                                                    <p class="">
+                                                        {{$idea->desc}}
+                                                 </p>
+                                                </div>
+                                                <div class="">
+                                                <div class="idea-info-icon text-center"> 
+                                            
+                                                    <div class="like  ui labeled button  bg-success p-1" tabindex="0">
+                                                        <i class="fa fa-thumbs-up fa-lg"></i>
+                                                        <span class="ui basic blue label"> 0 </span>
+                                                    </div>
+                                                   
+                                                </div>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                
+                                    <div class="d-flex justify-content-center">
+                                    <a class=" btn btn-info " href="{{route('allidea')}}">{{trans('home.see_more')}}</a>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </section>
+        <!-- ======= End vote best-idea ======= -->
+
         <!-- ======= Start best-idea ======= -->
         <section id="best-idea" class="container best-idea">
             <div class="">
