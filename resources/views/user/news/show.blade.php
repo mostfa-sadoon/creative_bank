@@ -5,7 +5,7 @@
         <!---Start Goal-->
         <section id="creative" class="container  card bg-light">
             <div class="container mt-lg-4">
-                <h2 class="">{{$news->header}}</h2>
+                <h2 class="black-color">{{$news->header}}</h2>
                 <div class="item-news col-md-12">
                     <div class="item-news-img">
                         <img src="{{$news->img}}" alt="">

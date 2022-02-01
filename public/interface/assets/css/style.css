@@ -115,6 +115,10 @@ main-color {
     text-align: start;
 }
 
+.black-color {
+    color: #000;
+}
+
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 0.4rem;
     padding-left: 0.4+rem;
