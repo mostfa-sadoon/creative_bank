@@ -13,6 +13,6 @@ class CommonquestionController extends Controller
     {
         $lang=app()->getLocale();
         $commonquestions=Commonquestion::select('question_'.$lang.' as question','answer_'.$lang.' as answer','id')->get();
-        return view('user.Commonquestion.index',compact('commonquestions'));
+        return view('user.commonquestion.index',compact('commonquestions'));
     }
 }
