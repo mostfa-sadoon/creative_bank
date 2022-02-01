@@ -22,7 +22,7 @@ class suggestionController extends Controller
       ]);
       $data['user_id']=$request->user_id;
       Suggestion::create($data);
-      Alert::success('success', 'your suggestions added successfully');
+      Alert::success('success', 'your suggestion added successfully');
       return redirect()->route('home');
     }
 }
