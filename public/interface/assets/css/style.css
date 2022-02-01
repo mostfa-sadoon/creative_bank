@@ -39,6 +39,15 @@ main-color {
     border: 1px solid #E94F1B;
 }
 
+.dropdown-menu {
+    padding: 0;
+}
+
+.dropdown-item {
+    background-color: #2D2F44;
+    color: white;
+}
+
 
 /******Start section-title**********/
 

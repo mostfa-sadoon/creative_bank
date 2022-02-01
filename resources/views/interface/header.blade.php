@@ -60,7 +60,7 @@
     <div class="dropdown show">
        @if(app()->getLocale() == 'en') 
         <a class="btn btn-secondary dropdown-toggle" href="{{url('change_lang/en')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            english
+            English
         </a>
         @else
         <a class="btn btn-secondary dropdown-toggle" href="{{url('change_lang/ar')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -69,7 +69,7 @@
        @endif
        
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="{{url('change_lang/en')}}">english</a>
+            <a class="dropdown-item" href="{{url('change_lang/en')}}">English</a>
             <a class="dropdown-item" href="{{url('change_lang/ar')}}">عربي</a>
         </div>
      </div>
