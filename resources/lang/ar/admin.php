@@ -49,4 +49,6 @@ return [
 
      'creators'=>'المبدعين',
      'creative_bank'>'بنك الافكار',
+
+     'ideas'=>'الافكار',
 ];
