@@ -47,7 +47,7 @@
 
 
     <iframe width="420" height="315"
-          src="{{$ideaa->video_link}}">
+          src="{{$idea->video_link}}">
     </iframe>
 
 
