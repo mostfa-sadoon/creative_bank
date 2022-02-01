@@ -49,7 +49,6 @@ return [
 
      'employee'=>'employee',
      'employee_create'=>'create employee',
-
      'creators'=>'creators',
 
      'creative_bank'>'creative bank',
