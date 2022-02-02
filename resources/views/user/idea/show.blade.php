@@ -121,7 +121,7 @@
         </section>
         <section class="team-item container creative card bg-white p-1">
             <div class="comments container mt-4">
-                <h6>الموقع غير مسؤول عن مضمون التعليقات</h6>
+                <h6>الموقع غير مسؤول عن مضمون التعليقات </h6>
             </div>
             <div class="comment-widgets p-3 m-2 mt-lg-4">
                 @foreach($idea->comments as $comment)
@@ -172,13 +172,16 @@
                 $(document).ready(function () {
                     // to gat the id if idea
                     var id = $("#creative").attr("data-id");
+                    var likeurl={!! json_encode(route('idea.like'))!!}
+                    var unlikeurl={!! json_encode(route('idea.unlike'))!!}
+                    console.log(url);
                     console.log(status);
                         $("button").click(function(){
                             if($("#icon").hasClass('icon_color'))
                             {
                                 $.ajax({
                                 type:'POST',
-                                url:'/idea/unlike',
+                                url:unlikeurl,
                                 data: {
                                         "id":  $("#creative").attr("data-id"),
                                         _token: "{{ csrf_token() }}",
@@ -191,7 +194,7 @@
                             }else{
                                 $.ajax({
                                 type:'POST',
-                                url:'/idea/like',
+                                url:likeurl,
                                 data: {
                                         "id":  $("#creative").attr("data-id"),
                                         _token: "{{ csrf_token() }}",
