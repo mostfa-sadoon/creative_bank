@@ -44,6 +44,9 @@
                                 <li><a href="{{route('idea.index')}}">{{ trans('admin.new_ideas')}}</a></li>
                             </ul>
                             <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route('idea.accepted')}}">{{ trans('admin.accepted_ideas')}}</a></li>
+                            </ul>
+                            <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('idea.trash')}}">{{ trans('admin.trash')}}</a></li>
                             </ul>
                         </li>

@@ -7,9 +7,10 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\FieldController;
 use App\Http\Controllers\Admin\IdeaController;
 use App\Http\Controllers\Admin\NewsController;   
-use App\Http\Controllers\Admin\CommonquestionController;    
+use App\Http\Controllers\Admin\CommonquestionController;      
 use App\Http\Controllers\Admin\suggestionController;
 use App\Http\Controllers\Admin\employeecontroller;
+use App\Http\Controllers\Admin\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,9 @@ use App\Http\Controllers\Admin\employeecontroller;
     Route::middleware('auth:Admin')->group(function () {
     Route::get('signout', [CustomAuthController::class, 'signOut'])->name('signout');
     Route::get('dashboard', [HomeController::class, 'index'])->name('dashboard');
-
+    //profile
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');     
     // category routes                                                                                 
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');             
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create'); 
@@ -46,7 +49,8 @@ use App\Http\Controllers\Admin\employeecontroller;
     Route::post('/field/update', [FieldController::class, 'update'])->name('field.update'); 
     Route::post('/field/destroy', [FieldController::class, 'destroy'])->name('field.destroy');
     // ideas
-    Route::get('/ideas', [IdeaController::class, 'index'])->name('idea.index'); 
+    Route::get('/ideas', [IdeaController::class, 'index'])->name('idea.index');
+    Route::get('/ideas/accepted', [IdeaController::class, 'accepted'])->name('idea.accepted'); 
     Route::get('/ideas/show/{id}', [IdeaController::class, 'show'])->name('idea.show'); 
     Route::get('/ideas/accept/{id}', [IdeaController::class, 'accept'])->name('idea.accept'); 
     Route::get('/ideas/refused/{id}', [IdeaController::class, 'refused'])->name('idea.refused'); 

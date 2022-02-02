@@ -21,7 +21,7 @@
             <a class="nav-link " href="#">كيف يعمل</a>
         </li> -->
         <li class="nav-item">
-            <a class="nav-link " href="#">{{trans('user.How_much_earn')}}</a>
+            <a class="nav-link " href="{{route('profite')}}">{{trans('user.How_much_earn')}}</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="bestIdeas.html">{{trans('user.creative')}}</a>

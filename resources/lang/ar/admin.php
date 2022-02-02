@@ -51,4 +51,5 @@ return [
      'creative_bank'>'بنك الافكار',
 
      'ideas'=>'الافكار',
+     'accepted_ideas'=>'الافكار المقبوله',
 ];

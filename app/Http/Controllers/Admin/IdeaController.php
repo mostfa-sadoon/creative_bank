@@ -13,6 +13,11 @@ class IdeaController extends Controller
          $ideas=Idea::where('status','false')->get();
          return view('admin.idea.index',compact('ideas'));
      }
+     public function accepted()
+     {
+      $ideas=Idea::where('status','true')->get();
+      return view('admin.idea.accepted_idea',compact('ideas'));
+     }
      public function show($id)
      {
          $idea=Idea::find($id);
@@ -39,7 +44,7 @@ class IdeaController extends Controller
         $idea = Idea::withTrashed()->findOrFail($id);
         $idea->forceDelete();
         Alert::success('success', 'the idea has been deleted');
-        return redirect()->route('idea.index');
+        return redirect()->back();
      }
      public function trash()
      {

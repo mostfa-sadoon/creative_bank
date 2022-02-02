@@ -31,7 +31,8 @@ use App\Http\Controllers\User\suggestionController;
     Route::get('much/earn', [LayoutController::class, 'index'])->name('much.index');  
     Route::get('about/bank', [LayoutController::class, 'about'])->name('about');  
     Route::get('conect/us', [LayoutController::class, 'conect'])->name('conect');  
-    Route::get('suggestions', [LayoutController::class, 'suggestions'])->name('suggestions');  
+    Route::get('suggestions', [LayoutController::class, 'suggestions'])->name('suggestions');
+    Route::get('profite', [LayoutController::class, 'profite'])->name('profite');  
     //idea
     Route::get('/user/show/idea/{id}',[IdeaController::class, 'show'])->name('user.idea.show');  
     Route::get('/user/show/idea',[IdeaController::class, 'allidea'])->name('allidea');   

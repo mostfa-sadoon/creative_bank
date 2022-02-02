@@ -24,4 +24,8 @@ class LayoutController extends Controller
     {
         return view('user.suggestions.index');
     }
+    public function profite()
+    {
+        return view('user.earn.index');
+    }
 }
