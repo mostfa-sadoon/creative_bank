@@ -54,4 +54,5 @@ return [
      'creative_bank'>'creative bank',
      'ideas'=>'ideas',
      'accepted_ideas'=>'accepted ideas',
+     
 ];

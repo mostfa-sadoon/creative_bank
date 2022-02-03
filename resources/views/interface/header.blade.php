@@ -47,9 +47,6 @@
     </ul>
     <div style="display:contents;">
     <div class="form-inline ">
-        <form>
-            <input class="form-control " type="search" placeholder="بحث" aria-label="Search">
-        </form>
         @guest
            <a href="{{route('user.login')}}" class="btn btn-outline-success my-2 my-sm-0">تسجيل الدخول</a>
         @endguest

@@ -56,12 +56,9 @@
             <div class="container">
                 <p>{{trans('home.who_us_answer')}}</p>
             </div>
-
+            
         </section>
         <!-- ======= End Body ======= -->
-
-    
-
         <!-- ======= Start best-idea ======= -->
         <section id="best-idea" class="container best-idea">
             <div class="">
