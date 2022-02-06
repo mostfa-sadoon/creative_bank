@@ -9,8 +9,9 @@ use App\Http\Controllers\Admin\IdeaController;
 use App\Http\Controllers\Admin\NewsController;   
 use App\Http\Controllers\Admin\CommonquestionController;      
 use App\Http\Controllers\Admin\suggestionController;
-use App\Http\Controllers\Admin\employeecontroller;
+use App\Http\Controllers\Admin\employeecontroller;     
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\VoteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,10 @@ use App\Http\Controllers\Admin\ProfileController;
     Route::get('/ideas/trash', [IdeaController::class, 'trash'])->name('idea.trash');
     Route::get('/ideas/trash/{id}', [IdeaController::class, 'showtrashed'])->name('idea.trash.view');
     Route::get('/ideas/restore/{id}', [IdeaController::class, 'restore'])->name('idea.restore');
+    //vote
+    Route::get('/vote', [VoteController::class, 'index'])->name('vote.index');
+    Route::get('/vote/create', [VoteController::class, 'create'])->name('vote.create');
+    Route::post('/vote/store', [VoteController::class, 'store'])->name('vote.store');
     //news
     Route::get('/news', [NewsController::class, 'index'])->name('news.index'); 
     Route::get('/news/create', [NewsController::class, 'create'])->name('news.create'); 

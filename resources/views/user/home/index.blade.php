@@ -1,6 +1,10 @@
 @extends('user_temp')
-@section('content')
+@section('styles')
+<!-- timer style -->
 
+<!--  end timer style -->
+@endsection
+@section('content')
     <!---- ======= Start Slider ======= ---->
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -59,6 +63,37 @@
             
         </section>
         <!-- ======= End Body ======= -->
+        <!-- -------- start vote   -------->
+        <section id="best-idea" class="vote ">
+            <div class="container mt-4">
+                <div class="row ">
+                    <div class="col-md-6 ">
+                        <h2 class="text-warning">{{trans('user.vote')}}</h2>
+                        <div class="member-info  mt-5">
+                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                        </div>  
+                    </div>
+                    <div class="col-md-6">
+
+                        <h3 class="text-warning">Timer</h3>
+                        <span id="days"></span><span id="hours"></span><span id="mins"></span><span id="secs"></span>
+                        <h3 class="text-warning">ideas</h3>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action ">
+                                Cras justo odio
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+                            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+                            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+          
+        </section>      
+                     <!-- end vote -->
+        <!-- -------- ende vote   --------->
         <!-- ======= Start best-idea ======= -->
         <section id="best-idea" class="container best-idea">
             <div class="">
@@ -293,5 +328,70 @@
 
     </div>
     <!-- ======= End Content ======= -->
+@endsection
+@section('scripts')
+<script>
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            exportEnabled: true,
+            animationEnabled: true,
+            title:{
+                text: "best idea"
+            },
+            legend:{
+                cursor: "pointer",
+                itemclick: explodePie
+            },
+            data: [{
+                type: "pie",
+                showInLegend: true,
+                toolTipContent: "{name}: <strong>{y}%</strong>",
+                indexLabel: "{name} - {y}%",
+                dataPoints: [
+                    { y: 20, name: "School Aid" },
+                    { y: 26, name: "Medical Aid", exploded: true },
+                    { y: 5, name: "Debt/Capital" },
+                ]
+            }]
+        });
+        chart.render();
+        }
+        function explodePie (e) {
+            if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+                e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+            } else {
+                e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+            }
+            e.chart.render();
 
+        }
+    </script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<!-- end chart script -->        
+
+<!-- start timer script -->     
+  <script>
+        var countDownDate = new Date("Jul 25, 2022 16:37:52").getTime();
+        var myfunc = setInterval(function() {
+        // code goes here
+        var now = new Date().getTime();
+        var timeleft = countDownDate - now;
+            
+        var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days + "d "
+        document.getElementById("hours").innerHTML = hours + "h " 
+        document.getElementById("mins").innerHTML = minutes + "m " 
+        document.getElementById("secs").innerHTML = seconds + "s"
+        }, 1000)
+       
+  </script>
+<!-- end timer script -->     
+
+<!-- start vote script -->
+
+<!-- end vote script -->
 @endsection

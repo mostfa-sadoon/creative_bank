@@ -93,11 +93,31 @@
                         </div>
                     </div>
                     <!-- start vote -->
-                    <div class="col-md-6 d-flex ">
+                    <div class="col-md-6 ">
                             <h2 class="text-warning">{{trans('user.vote')}}</h2>
                             <div class="member-info  mt-5">
-                            <div id="donut-chart"></div>
-                            </div>  
+                                <div id="donut-chart"></div>   
+                             </div>  
+                            <div>
+                                <button class="btn btn-success">vote for this idea</button>
+                            </div>
+                             <div>
+                                 <h3 class="text-warning">other idea</h3>
+                                 <ul class="list-group">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Cras justo odio
+                                        <span class="badge badge-primary badge-pill">14</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Dapibus ac facilisis in
+                                        <span class="badge badge-primary badge-pill">2</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        Morbi leo risus
+                                        <span class="badge badge-primary badge-pill">1</span>
+                                    </li>
+                                </ul>
+                             </div>
                     </div>
                      <!-- end vote -->
                 </div>
@@ -177,6 +197,7 @@
 @endsection
 @section('scripts')
             @auth
+            <!-- start like script -->
             <script>
                 var likeurl={!! json_encode(route('idea.like'))!!}
                     var unlikeurl={!! json_encode(route('idea.unlike'))!!}
@@ -216,55 +237,62 @@
                        
                         });
                 });
-            </script>
-            @endauth
-            @guest
-            <script src="{{asset('interface/assets/js/jquery-confirm.min.js')}}"></script>
-            <script>
-                $(document).ready(function () {
-                // to gat the id if idea
-                var id = $("#creative").attr("data-id");
-                    $("button").click(function(){
-                        $.alert({
-                            title: 'login',
-                            content: 'login to can like',
-                        });
-                    });
-                });  
-            </script>
-
-<script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"/>
-  <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"type="text/css"/>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+                </script>
+                @endauth
+                @guest
+                <script src="{{asset('interface/assets/js/jquery-confirm.min.js')}}"></script>
                 <script>
-      var chart = bb.generate({
-        data: {
-          columns: [
-            ["Blue", 2],
-            ["orange", 4],
-            ["green", 3],
-          ],
-          type: "donut",
-          onclick: function (d, i) {
-            console.log("onclick", d, i);
-          },
-          onover: function (d, i) {
-            console.log("onover", d, i);
-          },
-          onout: function (d, i) {
-            console.log("onout", d, i);
-          },
-        },
-        donut: {
-          title: "70",
-        },
-        bindto: "#donut-chart",
-      });
-    </script>
+                    $(document).ready(function () {
+                    // to gat the id if idea
+                    var id = $("#creative").attr("data-id");
+                        $("button").click(function(){
+                            $.alert({
+                                title: 'login',
+                                content: 'login to can like',
+                            });
+                        });
+                    });  
+                </script>
+         <!-- end like script -->
+         <!-- start chart script -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"/>
+    <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"type="text/css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+                <script>
+                    var chart = bb.generate({
+                        data: {
+                        columns: [
+                            ["Blue", 2],
+                            ["orange", 5],
+                            ["orang", 2],
+                            ["orangff", 2],
+                            ["orangfffk", 2],
+                            ["orangffff", 5],
+                        ],
+                        type: "donut",
+                        onclick: function (d, i) {
+                            console.log("onclick", d, i);
+                        },
+                        onover: function (d, i) {
+                            console.log("onover", d, i);
+                        },
+                        onout: function (d, i) {
+                            console.log("onout", d, i);
+                        },
+                        },
+                        donut: {
+                        title: "vote the best idea",
+                        },
+                        bindto: "#donut-chart",
+                    });
+                    </script>
+          <!-- end chart script -->           
+          <!-- start vote script -->
+
+          <!-- end vote script -->
             @endguest
 @endsection

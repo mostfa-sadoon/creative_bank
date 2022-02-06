@@ -50,6 +50,14 @@
                                 <li><a href="{{route('idea.trash')}}">{{ trans('admin.trash')}}</a></li>
                             </ul>
                         </li>
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.vote')}}</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route('vote.index')}}">{{ trans('admin.vote')}}</a></li>
+                            </ul>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route('vote.create')}}">{{ trans('admin.vote_create')}}</a></li>
+                            </ul>
+                        </li>
 
 
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.news')}}</span></a>
