@@ -97,7 +97,7 @@
                     </div>
                     @if($votestatus == "true")
                           <!-- start vote -->
-                        <div class="col-md-6 ">
+                        <div class="col-md-6 " id="vote" data-voteid="{{$vote->id}}">
                             <h2 class="text-warning">{{trans('user.vote')}}</h2>
                              <div>
                                  <h3 class="text-warning">other idea in the vote</h3>
@@ -193,13 +193,15 @@
             @auth
             <!-- start like script -->
                  <script>
-                    var likeurl={!! json_encode(route('idea.like'))!!}
+                        var likeurl={!! json_encode(route('idea.like'))!!}
                         var unlikeurl={!! json_encode(route('idea.unlike'))!!}
+                        var vote={!! json_encode(route('idea.vote'))!!}
+                        var unvote={!! json_encode(route('idea.unvote'))!!}
                     $(document).ready(function () {
                         // to gat the id if idea
                         var id = $("#creative").attr("data-id");
                         console.log(status);
-                            $("button").click(function(){
+                            $("#like").click(function(){
                                 if($("#icon").hasClass('icon_color'))
                                 {
                                     $.ajax({
@@ -229,10 +231,25 @@
                                     });
                                 }
                             });
+
+                             /*************************start vote script*************************** */
+                             $("#vote").click(function(){
+                                $.ajax({
+                                type:'POST',
+                                url:vote,
+                                data: {
+                                        "idea_id":  $("#creative").attr("data-id"),
+                                        "vote_id":  $("#vote").attr("data-voteid"),
+                                        _token: "{{ csrf_token() }}",
+                                    },
+                                success:function(data) {
+                                    $("#result").html(data.like);
+                                    $("#icon").removeClass("icon_color");
+                                }
+                                });
+                             });
+                             /*************************end vote script*************************** */
                     });
-                   /*************************start vote script*************************** */
-                       
-                   /*************************end vote script*************************** */
                 </script>
                 @endauth
                 @guest

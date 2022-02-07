@@ -146,4 +146,15 @@ class IdeaController extends Controller
         }
         return response()->json(['msg'=>'success','like'=>$idea->like]);
     }
+    public function vote(Request $request)
+    {
+       // dd($request->all());
+       $idea_id=$request->idea_id;
+       $vote_id=$request->vote_id;
+       $voteidea=Voteidea::where('idea_id',$idea_id)->where('vote_id',$vote_id)->first();
+       $voteidea->update([
+           'count'=>$voteidea->count+1,
+       ]);
+       return response()->json(['msg'=>'success','vote'=>$voteidea->count]);
+    }
 }
