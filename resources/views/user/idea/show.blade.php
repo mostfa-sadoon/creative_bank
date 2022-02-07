@@ -41,6 +41,9 @@
         .icon_color{
             color:#E94F1B;
             }
+         .vote{
+             background-color:#a8a8cb;
+         }   
     </style>
 @endsection
 @section('content')
@@ -65,10 +68,7 @@
                             <div class="idea-info-user d-flex  justify-content-around row">
                                 <div class="col-12 idea_user_info"><a href="{{route('profile.show',$idea->user_id)}}"> <img src="{{$idea->user->img}}" class="img-fluid" alt="">
                                     <span>{{$idea->user->name}}</span>
-        
                                 </a>
-                            
-                            
                             </div>
                               <div class="col-12 mt-2 text-center">
                                     <!-- this condation to check if user has react before -->
@@ -99,12 +99,24 @@
                           <!-- start vote -->
                         <div class="col-md-6 " id="vote" data-voteid="{{$vote->id}}">
                             <h2 class="text-warning">{{trans('user.vote')}}</h2>
+
+                            <div>
+                                 <h3 class="text-warning">idea</h3>
+                                    <div class="list-group mt-4" id="vote_ideas">
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between">{{$idea->name}}
+                                               <span class="badge badge-primary badge-pill" id="vote_result">{{$idea->voteideas}}</span>
+                                            </li>
+                                             
+                                        </ul>
+                                    </div>
+                             </div>
+
                              <div>
                                  <h3 class="text-warning">other idea in the vote</h3>
-                                    <div class="list-group mt-4">
-                                      
+                                    <div class="list-group mt-4" id="vote_ideas">
                                            @foreach($vote->voteideas as $vote)
-                                            <a href="{{route('user.idea.show',$vote->idea_id)}}" class="list-group-item list-group-item-action d-flex justify-content-between ">
+                                               <a href="{{route('user.idea.show',$vote->idea_id)}}" class="list-group-item list-group-item-action d-flex justify-content-between " >
                                                       {{$vote->idea->name}}
                                                     <span class="badge badge-primary badge-pill">{{$vote->count}}</span>
                                                 </a>
@@ -113,7 +125,7 @@
                                     </div>
                              </div>
                             <div class="d-flex justify-content-center mt-4">
-                                <button class="btn btn-success" id="vote">vote for this idea</button>
+                                <button class="btn btn-success" id="vote_button">vote for this idea</button>
                             </div>
                          </div>
                        <!-- end vote -->
@@ -232,22 +244,27 @@
                                 }
                             });
 
-                             /*************************start vote script*************************** */
-                             $("#vote").click(function(){
-                                $.ajax({
-                                type:'POST',
-                                url:vote,
-                                data: {
-                                        "idea_id":  $("#creative").attr("data-id"),
-                                        "vote_id":  $("#vote").attr("data-voteid"),
-                                        _token: "{{ csrf_token() }}",
-                                    },
-                                success:function(data) {
-                                    $("#result").html(data.like);
-                                    $("#icon").removeClass("icon_color");
-                                }
+                             /*************************start vote script***************************  */  
+                             if($("#vote_idea").hasClass('vote'))
+                             {
+
+                             }else{
+                                    $("#vote_button").click(function(){
+                                    $.ajax({
+                                    type:'POST',
+                                    url:vote,
+                                    data: {
+                                            "idea_id":  $("#creative").attr("data-id"),
+                                            "vote_id":  $("#vote").attr("data-voteid"),
+                                            _token: "{{ csrf_token() }}",
+                                        },
+                                        success:function(data) {
+                                            $("#vote_result").html(data.vote);                                         
+                                            $("#vote_idea").addClass("vote");
+                                        }
+                                    });
                                 });
-                             });
+                             }
                              /*************************end vote script*************************** */
                     });
                 </script>
