@@ -1,8 +1,6 @@
 @extends('user_temp')
 @section('styles')
-<!-- timer style -->
 
-<!--  end timer style -->
 @endsection
 @section('content')
     <!---- ======= Start Slider ======= ---->
@@ -53,47 +51,49 @@
     <div class="">
         <!-- ======= Start Body ======= -->
         <section id="about" class="  about bg-light" data-aos="zoom-in" data-aos-delay="100">
-
             <div class="section-title">
                 <h2>{{trans('home.who_us')}}</h2>
             </div>
             <div class="container">
                 <p>{{trans('home.who_us_answer')}}</p>
             </div>
-            
         </section>
         <!-- ======= End Body ======= -->
         <!-- -------- start vote   -------->
-        <section id="best-idea" class="vote ">
-            <div class="container mt-4">
-                <div class="row ">
-                    <div class="col-md-6 ">
-                        <h2 class="text-warning">{{trans('user.vote')}}</h2>
-                        <div class="member-info  mt-5">
-                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-                        </div>  
-                    </div>
-                    <div class="col-md-6">
-
-                        <h3 class="text-warning">Timer</h3>
-                        <span id="days"></span><span id="hours"></span><span id="mins"></span><span id="secs"></span>
-                        <h3 class="text-warning">ideas</h3>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action ">
-                                Cras justo odio
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                            <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-                            <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item list-group-item-action disabled">Vestibulum at eros</a>
+        @if(!$votes->isEmpty())     
+           @foreach($votes as $vote) 
+            <section id="best-idea" class="vote ">
+                <div class="container mt-4">
+                    <div class="row ">
+                            <!-- column -->
+                               <div class="col-lg-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">{{$vote->name_en}}</h4>
+                                            <div id="morris-donut-chart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                           <!-- column -->
+                        <div class="col-md-6">
+                            <h3 class="text-warning">Timer</h3>
+                            <span id="days"></span><span id="hours"></span><span id="mins"></span><span id="secs"></span>
+                            <h3 class="text-warning mt-4">ideas</h3>
+                            <div class="list-group mt-4">
+                                 @foreach($vote->voteideas as $voteidea)
+                                           <a href="{{route('user.idea.show',$voteidea->idea_id)}}" class="list-group-item list-group-item-action d-flex justify-content-between">
+                                                {{$voteidea->idea->name}}
+                                                <span class="badge badge-primary badge-pill">{{$voteidea->count}}</span>
+                                            </a>
+                                 @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
-             </div>
-          
-        </section>      
-                     <!-- end vote -->
-        <!-- -------- ende vote   --------->
+            </section>
+           @endforeach        
+        @endif                   
+        <!-- -------- end vote   --------->
         <!-- ======= Start best-idea ======= -->
         <section id="best-idea" class="container best-idea">
             <div class="">
@@ -128,7 +128,6 @@
                                         </div>
                                     @endforeach
                                 </div>
-                                
                                     <div class="d-flex justify-content-center">
                                     <a class=" btn btn-info " href="{{route('allidea')}}">{{trans('home.see_more')}}</a>
                                     </div>
@@ -187,7 +186,6 @@
                                         <div class="">
                                             <div class="dbox pull-right">
                                                 <h5>
-
                                                     يتم تجميع نقاط لكل فكرة و عن طريقها يتم تحديد مبلغ لصاحب الفكرةللبدء فى تنفيذها
                                                 </h5>
                                             </div>
@@ -330,44 +328,55 @@
     <!-- ======= End Content ======= -->
 @endsection
 @section('scripts')
-<script>
-    window.onload = function () {
-        var chart = new CanvasJS.Chart("chartContainer", {
-            exportEnabled: true,
-            animationEnabled: true,
-            title:{
-                text: "best idea"
-            },
-            legend:{
-                cursor: "pointer",
-                itemclick: explodePie
-            },
+ <!-- start chart script -->    
+   @if($count >0)
+    <script src="../assets/plugins/raphael/raphael-min.js"></script>
+        <script src="../assets/plugins/morrisjs/morris.js"></script>
+        <script src="js/morris-data.js"></script>
+        <!-- ============================================================== -->
+        <!-- Style switcher -->
+        <!-- ============================================================== -->
+        <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+        <script>
+        Morris.Donut({
+            element: 'morris-donut-chart',
             data: [{
-                type: "pie",
-                showInLegend: true,
-                toolTipContent: "{name}: <strong>{y}%</strong>",
-                indexLabel: "{name} - {y}%",
-                dataPoints: [
-                    { y: 20, name: "School Aid" },
-                    { y: 26, name: "Medical Aid", exploded: true },
-                    { y: 5, name: "Debt/Capital" },
-                ]
-            }]
+                label: "Download Sales",
+                value: 12,
+            }, {
+                label: "In-Store Sales",
+                value: 30
+            }, {
+                label: "Mail-Order Sales",
+                value: 20
+            }],
+            resize: true,
+            colors:['#009efb', '#55ce63', '#2f3d4a']
         });
-        chart.render();
-        }
-        function explodePie (e) {
-            if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
-                e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
-            } else {
-                e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
-            }
-            e.chart.render();
-
-        }
-    </script>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-<!-- end chart script -->        
+        </script>
+    @else
+        <script src="../assets/plugins/raphael/raphael-min.js"></script>
+        <script src="../assets/plugins/morrisjs/morris.js"></script>
+        <script src="js/morris-data.js"></script>
+        <!-- ============================================================== -->
+        <!-- Style switcher -->
+        <!-- ============================================================== -->
+        <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+        <script>
+        Morris.Donut({
+            element: 'morris-donut-chart',
+            data: [{
+                label: "no vote yet",
+                value: 100
+            }],
+            resize: true,
+            colors:['#2f3d4a']
+        });
+        </script>
+   @endif
+ <!-- end chart script -->
+  
+          
 
 <!-- start timer script -->     
   <script>

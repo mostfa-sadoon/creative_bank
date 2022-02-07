@@ -66,7 +66,10 @@
                                 <div class="col-12 idea_user_info"><a href="{{route('profile.show',$idea->user_id)}}"> <img src="{{$idea->user->img}}" class="img-fluid" alt="">
                                     <span>{{$idea->user->name}}</span>
         
-                                </a></div>
+                                </a>
+                            
+                            
+                            </div>
                               <div class="col-12 mt-2 text-center">
                                     <!-- this condation to check if user has react before -->
                                   @if($interaction == "true")
@@ -92,59 +95,50 @@
                             </div> -->
                         </div>
                     </div>
-                    <!-- start vote -->
-                    <div class="col-md-6 ">
+                    @if($votestatus == "true")
+                          <!-- start vote -->
+                        <div class="col-md-6 ">
                             <h2 class="text-warning">{{trans('user.vote')}}</h2>
-                            <div class="member-info  mt-5">
-                                <div id="donut-chart"></div>   
-                             </div>  
-                            <div>
-                                <button class="btn btn-success">vote for this idea</button>
-                            </div>
                              <div>
-                                 <h3 class="text-warning">other idea</h3>
-                                 <ul class="list-group">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Cras justo odio
-                                        <span class="badge badge-primary badge-pill">14</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Dapibus ac facilisis in
-                                        <span class="badge badge-primary badge-pill">2</span>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Morbi leo risus
-                                        <span class="badge badge-primary badge-pill">1</span>
-                                    </li>
-                                </ul>
+                                 <h3 class="text-warning">other idea in the vote</h3>
+                                    <div class="list-group mt-4">
+                                      
+                                           @foreach($vote->voteideas as $vote)
+                                            <a href="{{route('user.idea.show',$vote->idea_id)}}" class="list-group-item list-group-item-action d-flex justify-content-between ">
+                                                      {{$vote->idea->name}}
+                                                    <span class="badge badge-primary badge-pill">{{$vote->count}}</span>
+                                                </a>
+                                           @endforeach
+                                
+                                    </div>
                              </div>
-                    </div>
-                     <!-- end vote -->
-                </div>
-
-                <div class="member-info col-md-6 ">
-                        <h2>{{$idea->name}}</h2>
-                        <h4>الفئة:
-                            <span>{{$category->name}}</span>
-                        </h4>
-                        <h4>العنوان:
-                            <span>{{$idea->user->address}}</span>
-                        </h4>
-                        <h4>البريد الالكترونى:
-                            <span>{{$idea->user->email}}</span>
-                        </h4>
-                </div>
-
-                <div class="idea-info col-md-10 ">
-                    <h4>الوصف</h4>
-                    <p>{{$idea->desc}}</p>
-                    <h4>المشكلة</h4>
-                    <p>{{$idea->problem}}</p>
-                    <h4>الحل</h4>
-                    <P>{{$idea->solve}}</P>
-                    <br>
-                </div>
-                <div>
+                            <div class="d-flex justify-content-center mt-4">
+                                <button class="btn btn-success" id="vote">vote for this idea</button>
+                            </div>
+                         </div>
+                       <!-- end vote -->
+                    @endif
+                    <div class="member-info col-md-6 ">
+                                <h2>{{$idea->name}}</h2>
+                                <h4>الفئة:
+                                    <span>{{$category->name}}</span>
+                                </h4>
+                                <h4>العنوان:
+                                    <span>{{$idea->user->address}}</span>
+                                </h4>
+                                <h4>البريد الالكترونى:
+                                    <span>{{$idea->user->email}}</span>
+                                </h4>
+                        </div>
+                        <div class="idea-info col-md-10 ">
+                            <h4>الوصف</h4>
+                            <p>{{$idea->desc}}</p>
+                            <h4>المشكلة</h4>
+                            <p>{{$idea->problem}}</p>
+                            <h4>الحل</h4>
+                            <P>{{$idea->solve}}</P>
+                            <br>
+                        </div>
                 </div>
             </div>
         </section>
@@ -198,45 +192,47 @@
 @section('scripts')
             @auth
             <!-- start like script -->
-            <script>
-                var likeurl={!! json_encode(route('idea.like'))!!}
-                    var unlikeurl={!! json_encode(route('idea.unlike'))!!}
-                $(document).ready(function () {
-                    // to gat the id if idea
-                    var id = $("#creative").attr("data-id");
-                    console.log(status);
-                        $("button").click(function(){
-                            if($("#icon").hasClass('icon_color'))
-                            {
-                                $.ajax({
-                                type:'POST',
-                                url:unlikeurl,
-                                data: {
-                                        "id":  $("#creative").attr("data-id"),
-                                        _token: "{{ csrf_token() }}",
-                                    },
-                                success:function(data) {
-                                    $("#result").html(data.like);
-                                    $("#icon").removeClass("icon_color");
+                 <script>
+                    var likeurl={!! json_encode(route('idea.like'))!!}
+                        var unlikeurl={!! json_encode(route('idea.unlike'))!!}
+                    $(document).ready(function () {
+                        // to gat the id if idea
+                        var id = $("#creative").attr("data-id");
+                        console.log(status);
+                            $("button").click(function(){
+                                if($("#icon").hasClass('icon_color'))
+                                {
+                                    $.ajax({
+                                    type:'POST',
+                                    url:unlikeurl,
+                                    data: {
+                                            "id":  $("#creative").attr("data-id"),
+                                            _token: "{{ csrf_token() }}",
+                                        },
+                                    success:function(data) {
+                                        $("#result").html(data.like);
+                                        $("#icon").removeClass("icon_color");
+                                    }
+                                    });
+                                }else{
+                                    $.ajax({
+                                    type:'POST',
+                                    url:likeurl,
+                                    data: {
+                                            "id":  $("#creative").attr("data-id"),
+                                            _token: "{{ csrf_token() }}",
+                                        },
+                                    success:function(data) {
+                                        $("#result").html(data.like);
+                                        $("#icon").addClass("icon_color");
+                                    }
+                                    });
                                 }
-                                });
-                            }else{
-                                $.ajax({
-                                type:'POST',
-                                url:likeurl,
-                                data: {
-                                        "id":  $("#creative").attr("data-id"),
-                                        _token: "{{ csrf_token() }}",
-                                    },
-                                success:function(data) {
-                                    $("#result").html(data.like);
-                                    $("#icon").addClass("icon_color");
-                                }
-                                });
-                            }
+                            });
+                    });
+                   /*************************start vote script*************************** */
                        
-                        });
-                });
+                   /*************************end vote script*************************** */
                 </script>
                 @endauth
                 @guest
@@ -245,54 +241,20 @@
                     $(document).ready(function () {
                     // to gat the id if idea
                     var id = $("#creative").attr("data-id");
-                        $("button").click(function(){
+                        $("#like").click(function(){
                             $.alert({
                                 title: 'login',
                                 content: 'login to can like',
                             });
                         });
+                        $("#vote").click(function(){
+                            $.alert({
+                                title: 'login',
+                                content: 'login to can vote',
+                            });
+                        });
+
                     });  
                 </script>
-         <!-- end like script -->
-         <!-- start chart script -->
-    <script src="https://d3js.org/d3.v4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/billboard.js/dist/billboard.min.css"/>
-    <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"type="text/css"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
-                <script>
-                    var chart = bb.generate({
-                        data: {
-                        columns: [
-                            ["Blue", 2],
-                            ["orange", 5],
-                            ["orang", 2],
-                            ["orangff", 2],
-                            ["orangfffk", 2],
-                            ["orangffff", 5],
-                        ],
-                        type: "donut",
-                        onclick: function (d, i) {
-                            console.log("onclick", d, i);
-                        },
-                        onover: function (d, i) {
-                            console.log("onover", d, i);
-                        },
-                        onout: function (d, i) {
-                            console.log("onout", d, i);
-                        },
-                        },
-                        donut: {
-                        title: "vote the best idea",
-                        },
-                        bindto: "#donut-chart",
-                    });
-                    </script>
-          <!-- end chart script -->           
-          <!-- start vote script -->
-
-          <!-- end vote script -->
             @endguest
 @endsection

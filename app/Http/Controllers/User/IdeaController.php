@@ -11,6 +11,8 @@ use App\Models\Idea;
 use App\Models\Field;
 use App\Models\Comment;  
 use App\Models\Userlike; 
+use App\Models\Vote;
+use App\Models\Voteidea; 
 use Alert;
      
 class IdeaController extends Controller
@@ -65,6 +67,23 @@ class IdeaController extends Controller
         event(new IdeaViewer($idea));
         $lang=app()->getLocale();
         $category=Category::select('name_'.$lang.' as name')->find($idea->category_id);
+        $votestatus="false";
+        $vote="";
+        $votes=Vote::where('status','true')->get();
+        foreach($votes as $vote){
+           foreach ($vote->voteideas as $key=>$vote)
+           {
+                if($vote->idea_id==$id){
+                  $votestatus="true";
+                  $vote_id=$vote->vote_id;
+                  $vote=Vote::find($vote_id);
+                  break;
+                }
+           }   
+         }
+        
+       //  dd($votestatus);
+
         // this to check of the user is interaction 
          $interaction="false";
          if(Auth::user())
@@ -76,7 +95,7 @@ class IdeaController extends Controller
             }
          }
         // dd($interaction);
-        return view('user.idea.show',compact('idea','category','interaction'));
+        return view('user.idea.show',compact('idea','category','interaction','votestatus','vote'));
     }
     public function allidea()
     {

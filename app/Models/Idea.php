@@ -62,4 +62,8 @@ class Idea extends Model
     {
         return $this->hasMany(Comment::class);
     }
+    public function voteideas()
+    {
+        return $this->hasMany(Voteidea::class);
+    }
 }
