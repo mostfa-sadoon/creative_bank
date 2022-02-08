@@ -70,12 +70,15 @@ class IdeaController extends Controller
         $lang=app()->getLocale();
         $category=Category::select('name_'.$lang.' as name')->find($idea->category_id);
         $votestatus="false";
+        // to check if user vote or note
+        $uservote="false";
         $vote="";
         $votes=Vote::where('status','true')->get();
         foreach($votes as $vote){
            foreach ($vote->voteideas as $key=>$vote)
            {
                 if($vote->idea_id==$id){
+                  // vote status to check if idea in vote or note
                   $votestatus="true";
                   $vote_id=$vote->vote_id;
                   $vote=Vote::find($vote_id);
@@ -83,9 +86,6 @@ class IdeaController extends Controller
                 }
            }   
          }
-        
-       //  dd($votestatus);
-
         // this to check of the user is interaction 
          $interaction="false";
          if(Auth::user())
@@ -95,9 +95,16 @@ class IdeaController extends Controller
             {
                 $interaction="true";
             }
+            if(isset($vote_id)){
+                $voteuser=Voteuser::where('user_id',Auth::guard('web')->user()->id)->where('idea_id',$id)->where('vote_id',$vote_id)->count();  
+                if($voteuser>0){
+                    $uservote="true";
+                }
+            }
          }
+        // dd($uservote);
         // dd($interaction);
-        return view('user.idea.show',compact('idea','category','interaction','votestatus','vote'));
+        return view('user.idea.show',compact('idea','category','interaction','votestatus','vote','uservote'));
     }
     public function allidea()
     {
@@ -120,9 +127,9 @@ class IdeaController extends Controller
     public function like(Request $request)
     {
         $id=$request->id;
-        $userlike=Userlike::where('user_id',Auth::user()->id)->where('idea_id',$id)->get();
+        $userlike=Userlike::where('user_id',Auth::user()->id)->where('idea_id',$id)->count();
         $idea=Idea::find($id);
-        if($userlike)
+        if($userlike==0)
         {
             $idea->update([
                'like'=>$idea->like+1,
@@ -147,27 +154,5 @@ class IdeaController extends Controller
             $userlike->delete();
         }
         return response()->json(['msg'=>'success','like'=>$idea->like]);
-    }
-    public function vote(Request $request)
-    {
-    
-           // dd($request->all());
-            $idea_id=$request->idea_id;
-            $vote_id=$request->vote_id;
-            $vote=Vote::find($vote_id);
-            $voteidea=Voteidea::where('idea_id',$idea_id)->where('vote_id',$vote_id)->first();
-            $voteuser=Voteuser::where('user_id',Auth::guard('web')->user()->id)->where('idea_id',$idea_id)->where('vote_id',$vote_id)->count();
-            if($voteuser==0)
-            {
-                $voteidea->update([
-                    'count'=>$voteidea->count+1,
-                    ]);
-            }
-                Voteuser::create([
-                  'vote_id'=>$request->vote_id,
-                  'idea_id'=>$request->idea_id,
-                  'user_id'=>Auth::guard('web')->user()->id,
-                ]);
-                return response()->json(['msg'=>'success','vote'=>$voteidea->count]);    
     }
 }

@@ -8,7 +8,9 @@ use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\ProfileController;    
 use App\Http\Controllers\User\NewsController;
 use App\Http\Controllers\User\CommonquestionController;
-use App\Http\Controllers\User\suggestionController;
+use App\Http\Controllers\User\suggestionController;   
+use App\Http\Controllers\User\VoteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,8 +55,8 @@ use App\Http\Controllers\User\suggestionController;
         Route::post('/store/idea',[IdeaController::class, 'store'])->name('idea.store');
         Route::post('/idea/like',[IdeaController::class, 'like'])->name('idea.like');
         Route::post('/idea/unlike',[IdeaController::class, 'unlike'])->name('idea.unlike');
-        Route::post('/idea/vote',[IdeaController::class, 'vote'])->name('idea.vote');
-        Route::post('/idea/unvote',[IdeaController::class, 'unvote'])->name('idea.unvote');
+        Route::post('/idea/vote',[VoteController::class, 'vote'])->name('idea.vote');
+        Route::post('/idea/unvote',[VoteController::class, 'unvote'])->name('idea.unvote');
         //user profile            
         Route::get('/user/profile/edit/{id}',[ProfileController::class, 'edit'])->name('profile.edit');    
         Route::post('/user/update',[ProfileController::class, 'update'])->name('user.update');

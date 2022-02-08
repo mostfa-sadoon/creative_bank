@@ -41,8 +41,10 @@
         .icon_color{
             color:#E94F1B;
             }
+
          .vote{
-             background-color:#a8a8cb;
+             background-color:green;
+             color:white;
          }   
     </style>
 @endsection
@@ -99,34 +101,42 @@
                           <!-- start vote -->
                         <div class="col-md-6 " id="vote" data-voteid="{{$vote->id}}">
                             <h2 class="text-warning">{{trans('user.vote')}}</h2>
-
-                            <div>
-                                 <h3 class="text-warning">idea</h3>
+                                <div>
                                     <div class="list-group mt-4" id="vote_ideas">
                                         <ul class="list-group">
-                                            <li class="list-group-item d-flex justify-content-between">{{$idea->name}}
-                                               <span class="badge badge-primary badge-pill" id="vote_result">{{$idea->voteideas}}</span>
-                                            </li>
-                                             
+                                                @foreach($vote->voteideas as $voteidea)
+                                                        @if($voteidea->idea_id == $idea->id)
+                                                        <li class="list-group-item d-flex justify-content-between">
+                                                                {{$idea->name}}
+                                                            <span class="badge badge-primary badge-pill" id="vote_result">{{$voteidea->count}}</span>
+                                                            </li>
+                                                        @endif
+                                                @endforeach
                                         </ul>
                                     </div>
-                             </div>
+                                </div>
+                                <div class="d-flex justify-content-center mt-4">
+                                    @if($uservote=="true")
+                                    <button id="vote_button" class="vote"  > vote for this idea</button>
+                                    @else
+                                    <button id="vote_button" class=""  >vote for this idea</button>
+                                    @endif
+                                 </div>
 
                              <div>
                                  <h3 class="text-warning">other idea in the vote</h3>
                                     <div class="list-group mt-4" id="vote_ideas">
                                            @foreach($vote->voteideas as $vote)
-                                               <a href="{{route('user.idea.show',$vote->idea_id)}}" class="list-group-item list-group-item-action d-flex justify-content-between " >
-                                                      {{$vote->idea->name}}
-                                                    <span class="badge badge-primary badge-pill">{{$vote->count}}</span>
-                                                </a>
+                                                    @if($vote->idea_id != $idea->id)
+                                                       <a href="{{route('user.idea.show',$vote->idea_id)}}" class="list-group-item list-group-item-action d-flex justify-content-between " >
+                                                            {{$vote->idea->name}}
+                                                            <span class="badge badge-primary badge-pill">{{$vote->count}}</span>
+                                                        </a>
+                                                    @endif
                                            @endforeach
-                                
                                     </div>
                              </div>
-                            <div class="d-flex justify-content-center mt-4">
-                                <button class="btn btn-success" id="vote_button">vote for this idea</button>
-                            </div>
+                          
                          </div>
                        <!-- end vote -->
                     @endif
@@ -243,13 +253,24 @@
                                     });
                                 }
                             });
-
                              /*************************start vote script***************************  */  
-                             if($("#vote_idea").hasClass('vote'))
-                             {
-
-                             }else{
-                                    $("#vote_button").click(function(){
+                             $("#vote_button").click(function(){
+                                if($("#vote_button").hasClass('vote'))
+                                {
+                                    $.ajax({
+                                            type:'POST',
+                                            url:unvote,
+                                            data: {
+                                                    "idea_id":  $("#creative").attr("data-id"),
+                                                    "vote_id":  $("#vote").attr("data-voteid"),
+                                                    _token: "{{ csrf_token() }}",
+                                                },
+                                            success:function(data) {
+                                                $("#vote_result").html(data.vote);
+                                                $("button").removeClass("vote");
+                                            }
+                                            });
+                                  }else{
                                     $.ajax({
                                     type:'POST',
                                     url:vote,
@@ -260,11 +281,11 @@
                                         },
                                         success:function(data) {
                                             $("#vote_result").html(data.vote);                                         
-                                            $("#vote_idea").addClass("vote");
+                                            $("#vote_button").addClass("vote");
                                         }
                                     });
-                                });
-                             }
+                                   }
+                            });
                              /*************************end vote script*************************** */
                     });
                 </script>
