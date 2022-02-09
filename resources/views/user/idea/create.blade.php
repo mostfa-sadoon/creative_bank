@@ -66,8 +66,8 @@
                                                 <label for="form_message">{{trans('home.desc')}}<span> *</span>
                                                 </label>
                                                 <textarea id="form_message" name="desc" class="form-control" placeholder="{{trans('home.desc_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
-                                                   @if ($errors->has('problem'))
-                                                      <span class="text-danger">{{ $errors->first('problem')}}</span>
+                                                   @if ($errors->has('desc'))
+                                                      <span class="text-danger">{{ $errors->first('desc')}}</span>
                                                     @endif
                                             </div>
                                         </div>
