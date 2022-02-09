@@ -1,14 +1,14 @@
 @extends('admin_temp')
 @section('styles')
-    <link href="{{asset('../assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{asset('assets/plugins/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <!-- page CSS -->
-    <link href="{{asset('../assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('../assets/plugins/select2/dist/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
-    <link href="{{asset('../assets/plugins/switchery/dist/switchery.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('../assets/plugins/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('../assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')}}" rel="stylesheet" />
-    <link href="{{asset('../assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}" rel="stylesheet" />
-    <link href="{{asset('../assets/plugins/multiselect/css/multi-select.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/plugins/select2/dist/css/select2.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('assets/plugins/switchery/dist/switchery.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/plugins/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css')}}" rel="stylesheet" />
+    <link href="{{asset('assets/plugins/multiselect/css/multi-select.css')}}" rel="stylesheet" type="text/css" />
 @endsection
 @section('content')      
       <!-- Bread crumb and right sidebar toggle -->
@@ -86,12 +86,12 @@
 
     <!-- This page plugins -->
     <!-- ============================================================== -->
-    <script src="{{asset('../assets/plugins/switchery/dist/switchery.min.js')}}"></script>
-    <script src="{{asset('../assets/plugins/select2/dist/js/select2.full.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('../assets/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
-    <script src="{{asset('../assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
-    <script src="{{asset('../assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js')}}" type="text/javascript"></script>
-    <script type="text/javascript" src="{{asset('../assets/plugins/multiselect/js/jquery.multi-select.js')}}"></script>
+    <script src="{{asset('assets/plugins/switchery/dist/switchery.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/select2/dist/js/select2.full.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('assets/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('assets/plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js')}}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{asset('assets/plugins/multiselect/js/jquery.multi-select.js')}}"></script>
     <script>
     jQuery(document).ready(function() {
         // Switchery
@@ -202,5 +202,5 @@
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="{{asset('../assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
+    <script src="{{asset('assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
 @endsection

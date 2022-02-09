@@ -330,8 +330,8 @@
 @section('scripts')
  <!-- start chart script -->    
    @if($count >0)
-        <script src="{{asset('../assets/plugins/raphael/raphael-min.js')}}"></script>
-        <script src="{{asset('../assets/plugins/morrisjs/morris.js')}}"></script>
+        <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
+        <script src="{{asset('assets/plugins/morrisjs/morris.js')}}"></script>
         <script src="{{asset('js/morris-data.js')}}"></script>
         <!-- ============================================================== -->
         <!-- Style switcher -->
@@ -352,7 +352,7 @@
         <!-- ============================================================== -->
         <!-- Style switcher -->
         <!-- ============================================================== -->
-        <script src="{{asset('../assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
+        <script src="{{asset('assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
         <script>
         Morris.Donut({
             element: 'morris-donut-chart',
