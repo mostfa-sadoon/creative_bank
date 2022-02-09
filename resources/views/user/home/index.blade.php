@@ -330,13 +330,13 @@
 @section('scripts')
  <!-- start chart script -->    
    @if($count >0)
-    <script src="../assets/plugins/raphael/raphael-min.js"></script>
-        <script src="../assets/plugins/morrisjs/morris.js"></script>
-        <script src="js/morris-data.js"></script>
+        <script src="{{asset('../assets/plugins/raphael/raphael-min.js')}}"></script>
+        <script src="{{asset('../assets/plugins/morrisjs/morris.js')}}"></script>
+        <script src="{{asset('js/morris-data.js')}}"></script>
         <!-- ============================================================== -->
         <!-- Style switcher -->
         <!-- ============================================================== -->
-        <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+        <script src="{{asset('../assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
         <script>
         Morris.Donut({
             element: 'morris-donut-chart',
@@ -346,13 +346,13 @@
         });
         </script>
     @else
-        <script src="../assets/plugins/raphael/raphael-min.js"></script>
-        <script src="../assets/plugins/morrisjs/morris.js"></script>
-        <script src="js/morris-data.js"></script>
+        <script src="{{asset('../assets/plugins/raphael/raphael-min.js')}}"></script>
+        <script src="{{asset('../assets/plugins/morrisjs/morris.j')}}s"></script>
+        <script src="{{asset('js/morris-data.js')}}"></script>
         <!-- ============================================================== -->
         <!-- Style switcher -->
         <!-- ============================================================== -->
-        <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+        <script src="{{asset('../assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
         <script>
         Morris.Donut({
             element: 'morris-donut-chart',

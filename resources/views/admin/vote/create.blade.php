@@ -202,5 +202,5 @@
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="{{asset('../assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
 @endsection
