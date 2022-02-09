@@ -14,10 +14,11 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'api',
+        'guard' => 'web',
         'passwords' => 'users',
     ],
-   
+
+
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -48,6 +49,7 @@ return [
             'driver' => 'jwt',
             'provider' => 'users',
         ],
+
     ],
 
     /*
