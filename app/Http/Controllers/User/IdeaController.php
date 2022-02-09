@@ -73,7 +73,7 @@ class IdeaController extends Controller
         // to check if user vote or note
         $uservote="false";
         $vote="";
-        $votes=Vote::where('status','true')->get();
+        $votes=Vote::with('voteideas')->where('status','true')->get();
         foreach($votes as $vote){
            foreach ($vote->voteideas as $key=>$vote)
            {
