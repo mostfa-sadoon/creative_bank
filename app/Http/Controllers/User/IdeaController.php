@@ -30,7 +30,7 @@ class IdeaController extends Controller
     {
         $request->validate([
             'name'=>'required',
-            'desc'=>'required|max:80|min:10',
+            'desc'=>'required|max:200|min:10',
             'img'=>'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
             'problem'=>'required|max:2000|min:50',
             'solve'=>'required|max:2000|min:50',
