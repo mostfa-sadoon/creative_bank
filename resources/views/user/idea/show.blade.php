@@ -117,9 +117,9 @@
                                 </div>
                                 <div class="d-flex justify-content-center mt-4">
                                     @if($uservote=="true")
-                                    <button id="vote_button" class="vote"  > vote for this idea</button>
+                                    <button id="vote_button" class="btn btn-success vote"  > vote for this idea</button>
                                     @else
-                                    <button id="vote_button" class=""  >vote for this idea</button>
+                                    <button id="vote_button" class="btn btn-outline-success"  >vote for this idea</button>
                                     @endif
                                  </div>
 
