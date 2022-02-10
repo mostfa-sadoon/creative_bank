@@ -63,6 +63,8 @@ use App\Http\Controllers\Admin\VoteController;
     Route::get('/vote', [VoteController::class, 'index'])->name('vote.index');
     Route::get('/vote/create', [VoteController::class, 'create'])->name('vote.create');
     Route::post('/vote/store', [VoteController::class, 'store'])->name('vote.store');
+    Route::get('/vote/delete/{id}', [VoteController::class, 'delete'])->name('vote.delete');
+    Route::get('/vote/end/{id}', [VoteController::class, 'endvote'])->name('vote.end');
     //news
     Route::get('/news', [NewsController::class, 'index'])->name('news.index'); 
     Route::get('/news/create', [NewsController::class, 'create'])->name('news.create'); 

@@ -16,7 +16,9 @@ class VoteController extends Controller
     //
     public function index()
     {
-        return view('admin.vote.index');
+        $lang=app()->getLocale();
+        $votes=Vote::select('name_'.$lang.' as name','end_vote','status','created_at','id')->get();
+        return view('admin.vote.index',compact('votes'));
     }
     public function create()
     {
@@ -47,5 +49,21 @@ class VoteController extends Controller
             });
             Alert::success('Congratulations', 'the news added successfully');
             return redirect()->route('vote.index');
+    }
+
+    public function endvote($id)
+    {
+        $vote=Vote::findorfail($id);
+        $vote->update([
+         'status'=>'false'
+        ]);
+        return redirect()->back();
+    }
+
+    public function delete($id)
+    {
+          $vote=Vote::findorfail($id);
+          $vote->delete();
+          return redirect()->back();
     }
 }
