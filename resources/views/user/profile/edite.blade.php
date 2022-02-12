@@ -110,12 +110,10 @@
                                         <label for="form_need">{{trans('user.user_classificaion')}}<span>*</span>
                                         </label>
                                         <select id="form_need" name="clasified" class="form-control" required="required" data-error="Please specify your need.">
-                                        <option value="{{$user->classification}}" selected >{{trans('user.'.$user->classification.'')}}</option>
-                                        <option value="Researcher">باحث</option>
-                                        <option value="poinner">رائد أعمال</option>
-                                        <option value="student">طالب </option>
-                                        <option value="specialized">محترف/متخصص</option>
-                                        <option value="Investor">مستثمر</option>
+                                        <option value="{{$user->classified_id}}" selected >{{$classification->name}}</option>
+                                        @foreach($classifications as $classification)
+                                            <option value="{{$classification->id}}">{{$classification->name}}</option>
+                                        @endforeach
                                     </select>
 
                                     @error('clasified')

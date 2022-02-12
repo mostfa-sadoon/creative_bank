@@ -111,12 +111,9 @@
                                         </label>
                                         <select id="form_need" name="clasified" class="form-control" required="required" data-error="Please specify your need.">
                                         <option value="" selected disabled>-- اختر --</option>
-                                        <option value="Researcher">باحث</option>
-                                        <option value="business pioneer">رائد أعمال</option>
-                                        <option value="student">صحافة</option>
-                                        <option value="specialized">محترف/متخصص</option>
-                                        <option value="Investor">مستمر</option>
-                                        <option value="other">أخرى</option>
+                                        @foreach($classifications as $classification)
+                                            <option value="{{$classification->id}}">{{$classification->name}}</option>
+                                        @endforeach
                                     </select>
                                     @error('clasified')
                                         <div class="alert alert-danger">{{ $message }}</div>

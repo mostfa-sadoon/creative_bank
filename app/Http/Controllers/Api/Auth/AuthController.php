@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\Models\User;
 use App\Models\Field;
+use App\Models\Classification;
 use Illuminate\Http\Request;
 use Validator;
 use JWTAuth;
@@ -39,10 +40,10 @@ class AuthController extends Controller
     public function create(Request $request){
          $lang=$request->header('lang');
          $fields=Field::select('name_'.$lang.' as name','id')->get();
-         $classified=['Researcher','business pioneer','student','specialized','Investor','other'];
+         $classifications=Classification::select('name_'.$lang.' as name','id')->get();
          $data=[];
          $data['fields']=$fields;
-         $data['classified']=$classified;
+         $data['classified']=$classifications;
          return msgdata(true,'get field successfully',$data);
     }
     public function register(Request $request)

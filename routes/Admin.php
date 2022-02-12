@@ -7,11 +7,12 @@ use App\Http\Controllers\Admin\HomeController;
 use App\Http\Controllers\Admin\FieldController;
 use App\Http\Controllers\Admin\IdeaController;
 use App\Http\Controllers\Admin\NewsController;   
-use App\Http\Controllers\Admin\CommonquestionController;      
+use App\Http\Controllers\Admin\CommonquestionController;        
 use App\Http\Controllers\Admin\suggestionController;
 use App\Http\Controllers\Admin\employeecontroller;     
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\VoteController;
+use App\Http\Controllers\Admin\ClassificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,13 @@ use App\Http\Controllers\Admin\VoteController;
     Route::get('/field/show/{id}', [FieldController::class, 'show'])->name('field.show');   
     Route::post('/field/update', [FieldController::class, 'update'])->name('field.update'); 
     Route::post('/field/destroy', [FieldController::class, 'destroy'])->name('field.destroy');
+     // fildes classification
+     Route::get('/classification', [ClassificationController::class, 'index'])->name('classification.index'); 
+     Route::get('/classification/create', [ClassificationController::class, 'create'])->name('classification.create'); 
+     Route::post('/classification/store', [ClassificationController::class, 'store'])->name('classification.store'); 
+     Route::get('/classification/edit/{id}', [ClassificationController::class, 'edit'])->name('classification.edit'); 
+     Route::post('/classification/update', [ClassificationController::class, 'update'])->name('classification.update'); 
+     Route::post('/classification/destroy', [ClassificationController::class, 'destroy'])->name('classification.destroy');
     // ideas
     Route::get('/ideas', [IdeaController::class, 'index'])->name('idea.index');
     Route::get('/ideas/accepted', [IdeaController::class, 'accepted'])->name('idea.accepted'); 

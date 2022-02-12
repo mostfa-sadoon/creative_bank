@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Field;
+use App\Models\Classification;
 use Auth;
 use Hash;
 
@@ -25,8 +26,10 @@ class ProfileController extends Controller
          $user=User::find($id);
          $lang=app()->getLocale();   
          $field=Field::select('name_'.$lang.' as name')->find($user->field->id);
+         $classification=Classification::select('name_'.$lang.' as name')->find($user->field->id);
          $fields=Field::select('name_'.$lang.' as name','id')->get();
-         return view('user.profile.edite',compact('user','field','fields'));
+         $classifications=Classification::select('name_'.$lang.' as name','id')->get();
+         return view('user.profile.edite',compact('user','field','fields','classifications','classification'));
     }
     public function update(Request $request)
     {
@@ -57,7 +60,7 @@ class ProfileController extends Controller
                'gender'=>$request->gender,
                'date_of_birth'=>$request->date_of_birth,
                'field_id'=>$request->field,
-               'classification'=>$request->clasified
+               'classified_id'=>$request->clasified
           ]);
           return redirect()->route('profile.show',$id);
       }else{

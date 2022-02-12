@@ -20,12 +20,13 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('phone');
-            $table->enum('classification', ['Researcher', 'business pioneer','student','specialized','Investor','other']);
             $table->date('date_of_birth');
             $table->enum('gender', ['male','famale']);
             $table->string('address');
             $table->unsignedBigInteger('field_id')->nullable();
             $table->foreign('field_id')->references('id')->on('fields')->onDelete('set null');
+            $table->unsignedBigInteger('classified_id')->nullable();
+            $table->foreign('classified_id')->references('id')->on('classifications')->onDelete('set null');
             $table->rememberToken();
             $table->timestamps();
         });

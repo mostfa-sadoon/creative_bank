@@ -19,10 +19,14 @@ return [
     'add_new_category'=>'اضافه تصنيف جديد',
     'creative_bank'=>'بنك الافكار',
     'users'=>'المستخدمين',
-    'fields'=>'التصنيفات',
+    'fields'=>'المجالات',
+    'classification'=>'التصنيات',
     'field_in_arabic'=>'ألمجال بالعربي',
     'field_in_english'=>'المجال بالانجليزي',
     'add_new_field'=>'اضافه مجال جديد',
+    'add_new_classification'=>'اضافه تصنيف جديد',
+    'classification_in_arabic'=>'التصنيف بالعربي ',
+    'classificstion_in_english'=>'التصنيف باالانجليزيه',
 
 
     'ideas'=>'الافكار',

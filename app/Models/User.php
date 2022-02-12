@@ -58,6 +58,12 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsTo(Field::class);
     }
     
+    public function classification()
+    {
+        return $this->belongsTo(Classification::class);
+    }
+    
+
     public function getImgAttribute($img)
     {
         if ($img)

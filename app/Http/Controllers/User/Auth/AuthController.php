@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Validator;
 use App\Models\User;
 use App\Models\Field;
+use App\Models\Classification;
 use Session;
 use Hash;
 
@@ -24,7 +25,8 @@ class AuthController extends Controller
     {
         $lang=app()->getLocale();
         $fields=Field::select('name_'.$lang.' as name','id')->get();
-        return view('user.auth.register',compact('fields'));
+        $classifications=Classification::select('name_'.$lang.' as name','id')->get();
+        return view('user.auth.register',compact('fields','classifications'));
     }
     public function login(Request $request)
     {
@@ -39,6 +41,7 @@ class AuthController extends Controller
     }
     public function register(Request $request)
     {
+        //dd($request->clasified);
         $request->validate([
             'name' =>    'required|string|between:12,50',
             'email' =>   'required|unique:users|max:50',
@@ -58,7 +61,7 @@ class AuthController extends Controller
             'gender'=>$request->gender,
             'field_id'=>$request->field,
             'date_of_birth'=>$request->birthdate,
-            'classification'=>$request->clasified,
+            'classified_id'=>$request->clasified,
             'password'=>Hash::make($request->password),
         ]);
           if($user->wasRecentlyCreated === true){
