@@ -60,4 +60,8 @@ return [
      'ideas'=>'ideas',
      'accepted_ideas'=>'accepted ideas',
      'vote'=>'vote',
+  
+
+    
+   
 ];

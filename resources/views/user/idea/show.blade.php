@@ -117,9 +117,9 @@
                                 </div>
                                 <div class="d-flex justify-content-center mt-4">
                                     @if($uservote=="true")
-                                    <button id="vote_button" class="btn btn-success vote"  > vote for this idea</button>
+                                    <button id="vote_button" class="btn btn-success vote"  >cancel</button>
                                     @else
-                                    <button id="vote_button" class="btn btn-outline-success"  >vote for this idea</button>
+                                    <button id="vote_button" class="btn btn-outline-success" >vote</button>
                                     @endif
                                  </div>
 
@@ -268,6 +268,7 @@
                                             success:function(data) {
                                                 $("#vote_result").html(data.vote);
                                                 $("button").removeClass("vote");
+                                                $("#vote_button").html('vote');
                                             }
                                             });
                                   }else{
@@ -280,8 +281,9 @@
                                             _token: "{{ csrf_token() }}",
                                         },
                                         success:function(data) {
-                                            $("#vote_result").html(data.vote);                                         
+                                            $("#vote_result").html(data.vote);                             
                                             $("#vote_button").addClass("vote");
+                                            $("#vote_button").html('cancel');            
                                         }
                                     });
                                    }

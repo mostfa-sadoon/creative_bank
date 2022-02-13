@@ -15,34 +15,34 @@
             </div>
 
             <div class="col-lg-2 col-md-6 footer-links">
-                <h4>روابط هامة</h4>
+                <h4>{{trans('user.important_link')}}</h4>
                 <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">الرئيسية</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">أرسل فكرتك</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">{{trans('user.main')}}</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">{{trans('user.send_idea')}}</a></li>
                     <li><i class="bx bx-chevron-right"></i>
-                        <a href="#">مبدعين</a>
+                        <a href="#">{{trans('user.creative')}}</a>  
                     </li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">تواصل معنا</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#">{{trans('user.conact_us')}}</a></li>
                 </ul>
             </div>
 
             <div class="col-lg-3 col-md-6 footer-links">
-                <h4>خدماتنا</h4>
+                <h4>{{trans('user.our_service')}}</h4>
                 <ul>
                     <li><i class="bx bx-chevron-right"></i>
-                        <a href="#services">عرض آخر الاخبار</a>
+                        <a href="#services">{{trans('user.last_news')}}</a>
                     </li>
                     <li><i class="bx bx-chevron-right"></i>
-                        <a href="#services">مناقشة الأفكار الابداعية</a>
+                        <a href="#services">{{trans('user.discussion_creative_idea')}}</a>
                     </li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#services">التواصل مع الفائزين</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#services">عرض أفضل الافكار</a></li>
+                    <li><i class="bx bx-chevron-right"></i> <a href="#services">{{trans('user.winners')}}</a></li>   
+                    <li><i class="bx bx-chevron-right"></i> <a href="#services">{{trans('user.display_best_idea')}}</a></li>
 
                 </ul>
             </div>
 
             <div class="col-lg-4 col-md-6 footer-newsletter">
-                <h4>أرسل فكرتك</h4>
+                <h4>{{trans('user.send_idea')}}</h4>
                 <!-- <p>Our experienced team of professionals specializing in providing software solutions for companies of all sizes in different industry sectors, easier and in a much efficient way.</p> -->
                 <form action="" method="post">
                     <input type="email" name="email"><input type="submit" value="سجل الان">

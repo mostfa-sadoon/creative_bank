@@ -48,4 +48,16 @@ return [
     'email'=>'email',
     'ideas'=>'ideas',
     'vote'=>'vote',
+    'edit'=>'edit',
+    'edit_password'=>'edit password',
+
+    'main'=>'main',
+    'send_idea'=>'send your idea',
+    'important_link'=>'important link',
+
+    'our_service'=>'our service',
+    'last_news'=>'our service',
+    'discussion_creative_idea'=>'discussion creative idea',
+    'display_best_idea'=>'display best idea',
+     'winners'=>'winners',
 ];
