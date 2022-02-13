@@ -42,7 +42,7 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         //dd($request->clasified);
-        $request->validate([
+      $validator=$request->validate([
             'name' =>    'required|string|between:12,50',
             'email' =>   'required|unique:users|max:50',
             'phone'=>    'required|unique:users|min:8|max:24',

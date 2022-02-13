@@ -18,7 +18,7 @@
                                 <div class="form-group ">
                                     <label for="validationDefault01"> الاسم بالكامل <span>*</span>
                                     </label>
-                                    <input type="text" name="name" class="form-control" id="validationDefault01" placeholder="  الاسم بالكامل " required>
+                                    <input type="text" name="name" value="{{ old('name') }}" class="form-control" id="validationDefault01" placeholder="  الاسم بالكامل " required>
                                     @error('name')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -29,7 +29,7 @@
                                     <div class="form-group">
                                         <label for="form_email">البريد الالكترونى<span>*</span>
                                         </label>
-                                        <input id="form_email" name="email" type="email" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
+                                        <input id="form_email" name="email" value="{{ old('email') }}" type="email" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
                                             @error('email')
                                                 <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
@@ -39,7 +39,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputPassword1">الرقم السرى<span>*</span>
                                     </label>
-                                    <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="الرقم السرى">
+                                    <input type="password" name="password" value="{{ old('password') }}" class="form-control" id="exampleInputPassword1" placeholder="الرقم السرى">
                                     @error('password')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -48,7 +48,7 @@
                                  <div class="form-group">
                                     <label for="exampleInputPassword1">تاكيد الرقم السري<span>*</span>
                                     </label>
-                                    <input type="password" name="password_confirmation" class="form-control" id="exampleInputPassword1" placeholder="الرقم السرى">
+                                    <input type="password" value="{{ old('password_confirmation') }}" name="password_confirmation" class="form-control" id="exampleInputPassword1" placeholder="الرقم السرى">
                                     @error('password_confirmation')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -57,7 +57,7 @@
                                 <div class="form-group ">
                                     <label for="validationDefault01">رقم الهاتف<span>*</span>
                                     </label>
-                                    <input type="tel" name="phone" class="form-control" id="validationDefault01" placeholder="رقم الهاتف" required>
+                                    <input type="tel" name="phone" value="{{ old('phone') }}" class="form-control" id="validationDefault01" placeholder="رقم الهاتف" required>
                                     @error('phone')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -66,7 +66,7 @@
                                 <div class="form-group ">
                                     <label for="validationDefault01">تاريخ الميلاد<span>*</span>
                                     </label>
-                                    <input type="date" name="birthdate" class="form-control" id="validationDefault01" placeholder="تاريخ الميلاد" required>
+                                    <input type="date" name="birthdate" value="{{ old('birthdate') }}"  class="form-control" id="validationDefault01" placeholder="تاريخ الميلاد" required>
                                     @error('birthdate')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -99,7 +99,7 @@
                                 <div class="form-group ">
                                     <label for="validationDefault01">العنوان<span>*</span>
                                     </label>
-                                    <input type="text" name="address" class="form-control" id="validationDefault01" placeholder="العنوان" required>
+                                    <input type="text" name="address" value="{{ old('address') }}" class="form-control" id="validationDefault01" placeholder="العنوان" required>
                                     @error('address')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -110,9 +110,14 @@
                                         <label for="form_need">تصنيف المستخدم <span>*</span>
                                         </label>
                                         <select id="form_need" name="clasified" class="form-control" required="required" data-error="Please specify your need.">
+                                     
                                         <option value="" selected disabled>-- اختر --</option>
                                         @foreach($classifications as $classification)
+                                            @if (old('clasified') == $classification->id)
+                                                <option value="{{$classification->id}}" selected>{{ $classification->name }}</option>
+                                            @else
                                             <option value="{{$classification->id}}">{{$classification->name}}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                     @error('clasified')
@@ -128,7 +133,11 @@
                                         <select id="form_need" name="field" class="form-control" required="required" data-error="Please specify your need.">
                                         <option value="" selected disabled>-- اختر --</option>
                                         @foreach($fields as $field)
-                                            <option value="{{$field->id}}">{{$field->name}}</option>
+                                                @if (old('field') == $field->id)
+                                                    <option value="{{$field->id}}" selected>{{ $field->name }}</option>
+                                                @else
+                                                <option value="{{$field->id}}">{{$field->name}}</option>
+                                                @endif
                                         @endforeach
                                     </select>
                                     @error('field')

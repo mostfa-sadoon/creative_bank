@@ -21,9 +21,9 @@
                                                 <label for="form_email">البريد الالكترونى<span>*</span>
                                                 </label>
                                                 <input id="form_email" name="email" type="email" name="email" class="form-control" placeholder="ادخل البريد الالكترونى" required="required" data-error="Valid email is required.">
-                                                    @if ($errors->has('email'))
-                                                      <span class="text-danger">{{ $errors->first('email') }}</span>
-                                                    @endif
+                                                    @error('email')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
                                             </div>
                                         </div>
 
@@ -31,11 +31,18 @@
                                             <label for="exampleInputPassword1">الرقم السرى<span>*</span>
                                             </label>
                                             <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="الرقم السرى">
-                                                    @if ($errors->has('password'))
-                                                    <span class="text-danger">{{ $errors->first('email') }}</span>
-                                                    @endif
-                                        </div>
-                                        <a href="{{route('user.register')}}">لا تمتلك حساب! سجل الان.</a>
+                                                   @error('password')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+                                         </div>
+                                           
+                                         @if (session('error'))
+                                            <p class="alert alert-danger">
+                                                {{ session('error') }}
+                                            </p>
+                                        @endif
+                                        
+                                         <a href="{{route('user.register')}}">لا تمتلك حساب! سجل الان.</a>
                                         <!-- <div class="form-group form-check">
                                             <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                             <label class="form-check-label" for="exampleCheck1">Check me out</label>
