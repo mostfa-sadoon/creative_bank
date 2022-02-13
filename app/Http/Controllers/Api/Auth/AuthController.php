@@ -72,7 +72,7 @@ class AuthController extends Controller
                 'gender'=>$request->gender,
                 'field_id'=>$request->field,
                 'date_of_birth'=>$request->date_of_birth,
-                'classification'=>$request->clasified,
+                'classified_id'=>$request->clasified,
                 'password'=>Hash::make($request->password),
             ]);
             $credentials = $request->only('email', 'password');

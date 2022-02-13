@@ -21,7 +21,6 @@ use App\Http\Controllers\Api\Auth\AuthController;
     Route::post('login', [AuthController::class, 'login']);
     Route::post('register', [AuthController::class, 'register']);
     Route::post('registerForm', [AuthController::class, 'create']);
-    
     Route::group(['middleware' => ['jwt.verify']], function() {
 
     });
