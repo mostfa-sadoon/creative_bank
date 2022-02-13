@@ -48,7 +48,7 @@ class AuthController extends Controller
     }
     public function register(Request $request)
     {
-          
+        $lang=$request->header('lang');
         $validator = Validator::make($request->all(), [
             'name' =>    'required|string|between:12,50',
             'email' =>   'required|unique:users|max:50',
@@ -73,6 +73,7 @@ class AuthController extends Controller
                 'field_id'=>$request->field,
                 'date_of_birth'=>$request->date_of_birth,
                 'classified_id'=>$request->clasified,
+                'lang'=>$lang,
                 'password'=>Hash::make($request->password),
             ]);
             $credentials = $request->only('email', 'password');
