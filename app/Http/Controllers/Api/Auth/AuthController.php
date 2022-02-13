@@ -31,7 +31,7 @@ class AuthController extends Controller
         }
         else{
             return response()->json([
-                'success' => true,
+                'status' => true,
                 'msg'=>'login success',
                 'token' => $token,
             ]);
@@ -79,7 +79,7 @@ class AuthController extends Controller
             $credentials = $request->only('email', 'password');
             $token = JWTAuth::attempt($credentials);
             return response()->json([
-                'success' => true,
+                'status' => true,
                 'token' => $token,
             ]);
     }

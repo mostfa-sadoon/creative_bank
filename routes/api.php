@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\IdeaController;
 
 
 
@@ -23,10 +24,12 @@ use App\Http\Controllers\Api\HomeController;
     Route::post('register', [AuthController::class, 'register']);
     Route::get('registerForm', [AuthController::class, 'create']);
     Route::get('Home', [HomeController::class, 'index']);
-
-
     Route::group(['middleware' => ['jwt.verify']], function() {
-       
+
+        Route::get('ideaForm', [IdeaController::class, 'index']);
+        Route::post('ideastore', [IdeaController::class, 'store']);
+
+
     });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
