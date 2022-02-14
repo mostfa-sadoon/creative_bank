@@ -94,17 +94,56 @@
                                     <label for="validationDefault01">{{trans('user.kind')}}<span>*</span>
                                     </label>
                                     <div class="row">
-                                        <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
-                                           {{trans('user.male')}}
-                                           </label>
-                                            <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" checked>
-                                        </div>
-                                        <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
-                                          {{trans('user.famale')}}
+                                    @if(old('gender'))
+                                        @if(old('gender')=='male')
+                                            <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
+                                            {{trans('user.male')}}
                                             </label>
-                                            <input class="form-check-input" type="radio" value="famale" name="gender" id="flexRadioDefault2">
-
-                                        </div>
+                                                <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" checked>
+                                            </div>
+                                            <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
+                                            {{trans('user.famale')}}
+                                                </label>
+                                                <input class="form-check-input" type="radio" value="famale" name="gender" id="flexRadioDefault2">
+                                            </div>
+                                        @else
+                                           <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
+                                            {{trans('user.male')}}
+                                            </label>
+                                                <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" >
+                                            </div>
+                                            <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
+                                            {{trans('user.famale')}}
+                                                </label>
+                                                <input class="form-check-input" type="radio" value="famale" name="gender" id="flexRadioDefault2" checked>
+                                            </div>
+                                        @endif
+                                    @else
+                                    @if($user->gender=='male')
+                                            <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
+                                            {{trans('user.male')}}
+                                            </label>
+                                                <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" checked>
+                                            </div>
+                                            <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
+                                            {{trans('user.famale')}}
+                                                </label>
+                                                <input class="form-check-input" type="radio" value="famale" name="gender" id="flexRadioDefault2">
+                                            </div>
+                                        @else
+                                            <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
+                                            {{trans('user.male')}}
+                                            </label>
+                                                <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" >
+                                            </div>
+                                            <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
+                                            {{trans('user.famale')}}
+                                                </label>
+                                                <input class="form-check-input" type="radio" value="famale" name="gender" id="flexRadioDefault2" checked>
+                                            </div>
+                                        @endif
+                                    @endif
+                                       
                                     </div>
                                     @error('gender')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -129,12 +168,21 @@
                                         <label for="form_need">{{trans('user.user_classificaion')}}<span>*</span>
                                         </label>
                                         <select id="form_need" name="clasified" class="form-control" required="required" data-error="Please specify your need.">
-
-                                            <option value="{{$user->classified_id}}" selected >{{$classification->name}}</option>
-                                            @foreach($classifications as $classification)
-                                                <option value="{{$classification->id}}">{{$classification->name}}</option>
-                                            @endforeach
-                                    </select>
+                                            @if(old('clasified'))
+                                                @foreach($classifications as $classification)
+                                                    @if (old('clasified') == $classification->id)
+                                                    <option value="{{$classification->id}}" selected>{{ $classification->name }}</option>
+                                                    @else
+                                                    <option value="{{$classification->id}}">{{$classification->name}}</option>
+                                                    @endif
+                                                @endforeach
+                                            @else
+                                                <option value="{{$user->classified_id}}" selected >{{$classification->name}}</option>
+                                                @foreach($classifications as $classification)
+                                                    <option value="{{$classification->id}}">{{$classification->name}}</option>
+                                                @endforeach
+                                            @endif
+                                        </select>
 
                                     @error('clasified')
                                         <div class="alert alert-danger">{{ $message }}</div>
@@ -148,10 +196,20 @@
                                         <label for="form_need">{{trans('user.Industry')}}<span>*</span>
                                         </label>
                                     <select id="form_need" name="field" class="form-control" required="required" data-error="Please specify your need.">
-                                        <option value="{{$user->field_id}}" selected >{{$field->name}}</option>
-                                        @foreach($fields as $field)
-                                            <option value="{{$field->id}}">{{$field->name}}</option>
-                                        @endforeach
+                                           @if(old('field'))
+                                                @foreach($fields as $field)
+                                                    @if (old('field') == $field->id)
+                                                    <option value="{{$field->id}}" selected>{{ $field->name }}</option>
+                                                    @else
+                                                    <option value="{{$field->id}}">{{$field->name}}</option>
+                                                    @endif
+                                                @endforeach
+                                            @else
+                                                 <option value="{{$user->field_id}}" selected >{{$field->name}}</option>
+                                                @foreach($fields as $field)
+                                                    <option value="{{$field->id}}">{{$field->name}}</option>
+                                                @endforeach
+                                            @endif
                                     </select>
                                         @error('field')
                                             <div class="alert alert-danger">{{ $message }}</div>
