@@ -49,6 +49,9 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $lang=$request->header('lang');
+        if($request->header('lang')==null){
+           $lang='ar';
+        }
         $validator = Validator::make($request->all(), [
             'name' =>    'required|string|between:12,50',
             'email' =>   'required|unique:users|max:50',

@@ -19,7 +19,11 @@
                                                 <select id="form_need" name="category" class="form-control" required="required" data-error="Please specify your need.">
                                                 <option value="" selected disabled>-- اختر قيمة --</option>
                                                 @foreach($categories as $category)
-                                                   <option value="{{$category->id}}">{{$category->name}}</option>
+                                                    @if (old('category') == $category->id)
+                                                    <option value="{{$category->id}}" selected>{{ $category->name }}</option>
+                                                    @else
+                                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                                    @endif
                                                 @endforeach
                                             </select>
                                                    @if ($errors->has('category'))
@@ -31,7 +35,7 @@
                                         <div class="">
                                             <div class="form-group">
                                                 <label for="validationServer01">{{trans('home.idea_title')}}<span> *</span></label>
-                                                <input id="validationServer01" type="text" name="name" class="form-control is-nvalid" placeholder=" أدخل عنوان الفكرة *" required="required" data-error="Firstname is required.">
+                                                <input id="validationServer01" type="text" name="name"  value="{{ old('name') }}" class="form-control is-nvalid" placeholder=" أدخل عنوان الفكرة *" required="required" data-error="Firstname is required.">
                                                     @if ($errors->has('name'))
                                                       <span class="text-danger">{{ $errors->first('name') }}</span>
                                                     @endif
@@ -44,7 +48,7 @@
                                         <!---Choose Photo---->
                                         <div class="form-group">
                                             <label for="exampleFormControlFile1">الصورة</label>
-                                            <input type="file" name="img" class="form-control-file" id="exampleFormControlFile1">
+                                            <input type="file" name="img"  value="{{ old('img') }}" class="form-control-file" id="exampleFormControlFile1">
                                                    @if ($errors->has('img'))
                                                       <span class="text-danger">{{ $errors->first('img') }}</span>
                                                     @endif
@@ -53,7 +57,7 @@
                                         <div class="">
                                             <div class="form-group">
                                                 <label for="form_email">فيديو</label>
-                                                <input id="form_email" name="video_link" type="url" name="text" class="form-control" placeholder="ادخل رابط الفيديو *"  data-error="Valid email is required.">
+                                                <input id="form_email" name="video_link"  value="{{ old('video_link') }}" type="url" name="text" class="form-control" placeholder="ادخل رابط الفيديو *"  data-error="Valid email is required.">
                                                 <p class="hidden-text mt-3">من فضلك اضف رابط يوتيوب صحيح. فمثلا https://www.youtube.com/watch?v=xxxxxxxxxxx</p>
                                                    @if ($errors->has('video_link'))
                                                       <span class="text-danger">{{ $errors->first('video_link')}}</span>
@@ -65,7 +69,7 @@
                                             <div class="form-group">
                                                 <label for="form_message">{{trans('home.desc')}}<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="desc" class="form-control" placeholder="{{trans('home.desc_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                                <textarea id="form_message" name="desc" class="form-control" placeholder="{{trans('home.desc_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message.">{{ old('desc') }}</textarea>
                                                    @if ($errors->has('desc'))
                                                       <span class="text-danger">{{ $errors->first('desc')}}</span>
                                                     @endif
@@ -76,7 +80,7 @@
                                             <div class="form-group">
                                                 <label for="form_message">{{trans('home.problem')}}<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="problem" class="form-control" placeholder="{{trans('home.problem_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                                <textarea id="form_message" name="problem" class="form-control" placeholder="{{trans('home.problem_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message.">{{ old('problem') }}</textarea>
                                                    @if ($errors->has('problem'))
                                                       <span class="text-danger">{{ $errors->first('problem')}}</span>
                                                     @endif
@@ -87,7 +91,7 @@
                                             <div class="form-group">
                                                 <label for="form_message">{{trans('home.solve')}}<span> *</span>
                                                 </label>
-                                                <textarea id="form_message" name="solve" class="form-control" placeholder="{{trans('home.solve_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                                <textarea id="form_message" name="solve" class="form-control" placeholder="{{trans('home.solve_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message.">{{ old('solve') }}</textarea>
                                                    @if ($errors->has('solve'))
                                                       <span class="text-danger">{{ $errors->first('solve')}}</span>
                                                     @endif
@@ -96,7 +100,7 @@
                                         <!---Attachment---->
                                         <div class="form-group">
                                             <label for="exampleFormControlFile1">مرفق</label>
-                                            <input type="file" name="attachment" class="form-control-file" id="exampleFormControlFile1">
+                                            <input type="file" name="attachment"  value="{{ old('attachment') }}" class="form-control-file" id="exampleFormControlFile1">
                                             @if ($errors->has('attachment'))
                                                 <span class="text-danger">{{ $errors->first('attachment')}}</span>
                                             @endif

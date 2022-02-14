@@ -22,7 +22,7 @@
                                     <div class=" text-center">
                                         <div id="msg"></div>
                                         <form method="post" id="image-form">
-                                            <input type="file" name="img" class="file" accept="image/*">
+                                            <input type="file" name="img" class="file" value="{{$user->img}}" accept="image/*">
                                             @error('img')
                                                 <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
@@ -39,7 +39,11 @@
                                 <div class="form-group ">
                                     <label for="validationDefault01">{{trans('user.full_name')}}<span>*</span>
                                     </label>
-                                    <input type="text" class="form-control" name="name" value="{{$user->name}}" id="validationDefault01" placeholder="  الاسم بالكامل " required>
+                                    @if(old('name'))
+                                       <input type="text" class="form-control" name="name"  value="{{ old('name') }}" id="validationDefault01" placeholder="  الاسم بالكامل " required>
+                                    @else
+                                       <input type="text" class="form-control" name="name"  value="{{$user->name}}"  id="validationDefault01" placeholder="  الاسم بالكامل " required>
+                                    @endif             
                                     @error('name')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -49,7 +53,11 @@
                                     <div class="form-group">
                                         <label for="form_email">{{trans('user.email')}}<span>*</span>
                                         </label>
-                                        <input id="form_email" name="email" type="email" value="{{$user->email}}" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
+                                        @if(old('email'))
+                                        <input id="form_email" name="email" type="email" value="{{old('email')}}" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
+                                        @else
+                                           <input id="form_email" name="email" type="email" value="{{$user->email}}" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
+                                        @endif
                                         @error('email')
                                            <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
@@ -59,19 +67,27 @@
                                 <div class="form-group ">
                                     <label for="validationDefault01">{{trans('user.phone_number')}}<span>*</span>
                                     </label>
-                                    <input type="tel" name="phone" class="form-control" value="{{$user->phone}}" id="validationDefault01" placeholder="رقم الهاتف" required>
-                                    @error('phone')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+                                        @if(old('phone'))
+                                        <input type="text" name="phone" class="form-control" value="{{old('phone')}}" id="validationDefault01" placeholder="رقم الهاتف" required>
+                                        @else
+                                        <input type="text" name="phone" class="form-control" value="{{$user->phone}}" id="validationDefault01" placeholder="رقم الهاتف" required>
+                                        @endif
+                                        @error('phone')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
                                 <!---Age---->
                                 <div class="form-group ">
                                     <label for="validationDefault01">{{trans('user.phone_number')}}<span>*</span>
                                     </label>
-                                    <input type="date" name="date_of_birth" class="form-control" value="{{$user->date_of_birth}}" id="validationDefault01" placeholder="تاريخ الميلاد" required>
-                                    @error('date_of_birth')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+                                        @if(old('date_of_birth'))
+                                        <input type="date" name="date_of_birth" class="form-control" value="{{old('date_of_birth')}}" id="validationDefault01" placeholder="تاريخ الميلاد" required>
+                                        @else
+                                        <input type="date" name="date_of_birth" class="form-control" value="{{$user->date_of_birth}}" id="validationDefault01" placeholder="تاريخ الميلاد" required>
+                                        @endif
+                                        @error('date_of_birth')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
                                 <!---Gender---->
                                 <div class="form-group ">
@@ -82,7 +98,6 @@
                                            {{trans('user.male')}}
                                            </label>
                                             <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" checked>
-
                                         </div>
                                         <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
                                           {{trans('user.famale')}}
@@ -99,10 +114,14 @@
                                 <div class="form-group ">
                                     <label for="validationDefault01">{{trans('user.address')}}<span>*</span>
                                     </label>
-                                    <input type="text" name="address" class="form-control" value="{{$user->address}}" id="validationDefault01" placeholder="العنوان" required>
-                                    @error('address')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+                                        @if(old('date_of_birth'))
+                                        <input type="text" name="address" class="form-control" value="{{old('address')}}" id="validationDefault01" placeholder="العنوان" required>
+                                        @else
+                                        <input type="text" name="address" class="form-control" value="{{$user->address}}" id="validationDefault01" placeholder="العنوان" required>
+                                        @endif
+                                        @error('address')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                 </div>
                                 <!---User Category---->
                                 <div class="">
@@ -110,10 +129,11 @@
                                         <label for="form_need">{{trans('user.user_classificaion')}}<span>*</span>
                                         </label>
                                         <select id="form_need" name="clasified" class="form-control" required="required" data-error="Please specify your need.">
-                                        <option value="{{$user->classified_id}}" selected >{{$classification->name}}</option>
-                                        @foreach($classifications as $classification)
-                                            <option value="{{$classification->id}}">{{$classification->name}}</option>
-                                        @endforeach
+
+                                            <option value="{{$user->classified_id}}" selected >{{$classification->name}}</option>
+                                            @foreach($classifications as $classification)
+                                                <option value="{{$classification->id}}">{{$classification->name}}</option>
+                                            @endforeach
                                     </select>
 
                                     @error('clasified')
