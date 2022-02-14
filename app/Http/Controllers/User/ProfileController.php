@@ -33,6 +33,7 @@ class ProfileController extends Controller
     }
     public function update(Request $request)
     {
+        // dd($request->all());
      $id=Auth::user()->id;
         $request->validate([
           'name' =>    'required|string|between:12,50',
@@ -76,7 +77,7 @@ class ProfileController extends Controller
                'date_of_birth'=>$request->date_of_birth,
                'gender'=>$request->gender,
                'field_id'=>$request->field,
-               'classification'=>$request->clasified
+               'classified_id'=>$request->clasified
           ]);
           return redirect()->route('profile.show',$id);    
       }
@@ -102,6 +103,5 @@ class ProfileController extends Controller
                ]);
                return redirect()->route('profile.show',$id);
            }    
-             
     }
 }
