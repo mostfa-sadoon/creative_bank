@@ -16,7 +16,7 @@ class HomeController extends Controller
         $lang=app()->getLocale();
         $ideas=Idea::select('id','name','img','desc')->where('status','true')->orderBy('created_at', 'desc')->take(3)->get();
         $news=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','img','id','created_at')->take(3)->get();
-        $votes=Vote::with('voteideas')->where('status','true')->get();
+        $votes=Vote::with('voteideas')->where('status','true')->where('end_vote','>', now())->get();
         // to dispaly idea name in chart js
         $ideas_vote=[];
         $count=0;

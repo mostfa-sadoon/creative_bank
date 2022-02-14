@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Idea;               
 use App\Models\Vote;
 use Alert;
+use Carbon\Carbon;
 use App\Models\Voteidea;
 
 
@@ -37,6 +38,7 @@ class VoteController extends Controller
                     'name_en'=>'required|max:35',
                 ]);
                 $data['status']="true";
+            //    dd( $request->end_vote);
                 $vote = Vote::create($data);
                 foreach($ideas as $idea)
                 {
@@ -50,7 +52,6 @@ class VoteController extends Controller
             Alert::success('Congratulations', 'the news added successfully');
             return redirect()->route('vote.index');
     }
-
     public function endvote($id)
     {
         $vote=Vote::findorfail($id);
@@ -59,7 +60,6 @@ class VoteController extends Controller
         ]);
         return redirect()->back();
     }
-
     public function delete($id)
     {
           $vote=Vote::findorfail($id);

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Api\Auth;
-
 use App\Http\Controllers\Controller;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use App\Models\User;
@@ -24,7 +23,7 @@ class AuthController extends Controller
         ]);
          //Send failed response if request is not valid
          if ($validator->fails()) {
-             return msg(false,$validator->messages());
+             return msg(false,$validator->messages()->first());
         }
         if (! $token = JWTAuth::attempt($credentials)) {
             return msg(false,'Login credentials are invalid');
@@ -65,7 +64,7 @@ class AuthController extends Controller
             'password_confirmation' => 'required|max:50|min:6',
         ]);
         if ($validator->fails()) {
-            return msg(false,$validator->messages());
+            return msg(false, $validator->messages()->first());
         }
             $user= User::create([
                 'name'=>$request->name,
@@ -83,6 +82,7 @@ class AuthController extends Controller
             $token = JWTAuth::attempt($credentials);
             return response()->json([
                 'status' => true,
+                'msg'=>'register success',
                 'token' => $token,
             ]);
     }

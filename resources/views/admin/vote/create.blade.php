@@ -71,7 +71,7 @@
                   <div class="col-md-12">
                         <div class="form-group">
                             <label class="control-label">Date of end vote</label>
-                            <input type="date" name="end_vote" class="form-control " placeholder="dd/mm/yyyy">
+                            <input type="datetime-local" name="end_vote" class="form-control " placeholder="dd/mm/yyyy">
                             @if ($errors->has('end_vote'))
                                 <span class="text-danger">{{ $errors->first('end_vote')}}</span>
                             @endif

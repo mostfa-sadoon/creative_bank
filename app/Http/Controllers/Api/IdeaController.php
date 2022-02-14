@@ -19,7 +19,6 @@ class IdeaController extends Controller
         return msgdata(true,'get categories successfully',$data);
     }
     public function store(Request $request){
-
            //start validation
             $validator = Validator::make($request->all(), [
                 'name'=>'required',
@@ -33,7 +32,7 @@ class IdeaController extends Controller
             ]);
             if ($validator->fails()) {
                 return msg(false,'idea added successfully');
-                return response()->json(['status' => 401, 'msg' => $validator->messages()]);
+                return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
             } else {
                 $img = $this->MoveImage($request->img, 'uploads/imgs/idea');
                 if($request->hasfile('attachment'))
