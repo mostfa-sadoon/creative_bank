@@ -52,10 +52,10 @@ class AuthController extends Controller
            $lang='ar';
         }
         $validator = Validator::make($request->all(), [
-            'name' =>    'required|string|between:12,50',
+            'name' =>    'required|string|between:6,50',
             'email' =>   'required|unique:users|max:50',
             'phone'=>    'required|unique:users|min:8|max:24',
-            'address'=>  'required|max:60|min:12',
+            'address'=>  'required|max:60|min:8',
             'gender'=>   'required',
             'field'=>    'required',
             'clasified'=>'required',
