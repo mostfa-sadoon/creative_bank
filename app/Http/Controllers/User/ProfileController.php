@@ -36,10 +36,10 @@ class ProfileController extends Controller
         // dd($request->all());
      $id=Auth::user()->id;
         $request->validate([
-          'name' =>    'required|string|between:12,50',
+          'name' =>    'required|string|between:6,50',
           'email' =>   'required|max:50|unique:users,email,'.$id,
           'phone'=>    'required|min:8|max:24|unique:users,phone,'.$id,
-          'address'=>  'required|max:60|min:12',
+          'address'=>  'required|max:60|min:6',
           'gender'=>   'required',
           'date_of_birth'=>'required',
           'field'=>    'required',

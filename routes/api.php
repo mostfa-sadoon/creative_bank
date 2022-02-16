@@ -4,7 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\HomeController;
-use App\Http\Controllers\Api\IdeaController;
+use App\Http\Controllers\Api\IdeaController;   
+use App\Http\Controllers\Api\ProfileController;
 
 
 
@@ -28,7 +29,10 @@ use App\Http\Controllers\Api\IdeaController;
 
         Route::get('ideaForm', [IdeaController::class, 'index']);
         Route::post('ideastore', [IdeaController::class, 'store']);
-
+        Route::get('profile', [ProfileController::class, 'index']);
+        Route::post('profileUpdateImg', [ProfileController::class, 'update_img']);
+        Route::post('profileUpdateInfo', [ProfileController::class, 'update']);
+       
 
     });
 
