@@ -31,7 +31,9 @@ use App\Http\Controllers\Api\ProfileController;
         Route::post('ideastore', [IdeaController::class, 'store']);
         Route::get('profile', [ProfileController::class, 'index']);
         Route::post('profileUpdateImg', [ProfileController::class, 'update_img']);
+        Route::get('updateform', [ProfileController::class, 'updateform']);
         Route::post('profileUpdateInfo', [ProfileController::class, 'update']);
+        Route::post('updatepassword', [ProfileController::class, 'updatepassword']);
        
 
     });

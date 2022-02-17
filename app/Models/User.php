@@ -55,13 +55,13 @@ class User extends Authenticatable implements JWTSubject
 
     public function field()
     {
-        return $this->belongsTo(Field::class);
+        return $this->belongsTo(Field::class,'field_id');
     }
     
     // here we write forign key because the forign key in the table not match model name (Classification)
     public function classification()  
     {
-        return $this->belongsTo(Classification::class ,'classified_id')->select('id','name_ar');
+        return $this->belongsTo(Classification::class ,'classified_id');
     }
     
 

@@ -17,7 +17,7 @@ class HomeController extends Controller
         $data=[];
         $lang=$request->header('lang');
         $imgsSlider=ImgSlider::select('img')->get();
-        $ideas=Idea::select('id','name','img','desc')->where('status','true')->orderBy('created_at', 'desc')->take(6)->get();
+        $ideas=Idea::select('id','name','img','desc','view','like')->where('status','true')->orderBy('created_at', 'desc')->take(6)->get();
         $news=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','img','id')->orderBy('created_at', 'desc')->take(6)->get();
         $votes=Vote::select('id','name_'.$lang.' as name','end_vote','created_at')->with('voteideas')->where('status','true')->get();
         $data['imgsSlider']=$imgsSlider;

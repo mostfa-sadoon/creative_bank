@@ -9,6 +9,7 @@ use App\Models\Field;
 use App\Models\Classification;
 use Auth;
 use Validator;
+use Hash;
 
 class ProfileController extends Controller
 {
@@ -25,8 +26,7 @@ class ProfileController extends Controller
         }])->with(['field'=>function($q)use ($lang){
             $q->select('id','name_'.$lang.' as name');
         }])->find($id)->makeHidden(['email_verified_at','created_at','updated_at']);
-
-       // $user=User::select('id','name')->with('classification')->with('field')->where('id','=',$id)->get();   
+        // $user=User::select('id','name')->with('classification')->with('field')->where('id','=',$id)->get();   
         return msgdata(true,'get profile data successfully',$user);
     }
     public function update_img(Request $request){
@@ -43,6 +43,22 @@ class ProfileController extends Controller
             ]);
             return msg(true, "image updated success");
         }
+    }
+
+    public function updateform(Request $request){
+        $lang=$request->header('lang');
+        if($request->header('lang')==null){
+        $lang='ar';
+        }
+
+        $lang=$request->header('lang');
+        $fields=Field::select('name_'.$lang.' as name','id')->get();
+        $classifications=Classification::select('name_'.$lang.' as name','id')->get();
+        $data=[];
+        $data['fields']=$fields;
+        $data['classified']=$classifications;
+        return msgdata(true,'get field successfully',$data);
+
     }
 
     public function update(Request $request){
@@ -73,4 +89,29 @@ class ProfileController extends Controller
             return msg(true, "profile info updated success");
         }
     } 
+
+    public function updatepassword(Request $request){
+        $data=[];
+        $user=User::find(Auth::user()->id);
+        $validator = Validator::make($request->all(), [
+            'old_password'=>'required',  
+            'password'=>'required|min:6|max:50|confirmed', 
+            'password_confirmation' => 'required|max:50|min:6',    
+        ]);
+        
+        if ($validator->fails()) {
+            return msg(false, $validator->messages()->first());
+        } else {
+            $data['old_password']=$request->old_password;
+            if (!Hash::check($data['old_password'], $user->password)) {
+                return msg(false, "The specified password does not match the old password");
+           } else {
+            $data['password']=$request->password;
+               $user->update([   
+                    'password'=> bcrypt($data['password']),
+               ]);
+               return msg(true, "password updated success");
+           }    
+        }
+    }
 }
