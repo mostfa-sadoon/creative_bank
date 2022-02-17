@@ -28,4 +28,19 @@ class LikeController extends Controller
         }
         return response()->json(['msg'=>'success','like'=>$idea->like]);
     }
+    
+    public function unlike(Request $request)
+    {
+        $id=$request->id;
+        $userlike=Userlike::where('user_id',Auth::user()->id)->where('idea_id',$id)->first();
+        $idea=Idea::find($id);
+        if($userlike)
+        {
+            $idea->update([
+                'like'=>$idea->like-1,
+             ]);
+            $userlike->delete();
+        }
+        return response()->json(['msg'=>'success','like'=>$idea->like]);
+    }
 }
