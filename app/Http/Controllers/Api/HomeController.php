@@ -25,12 +25,12 @@ class HomeController extends Controller
         if( Auth::guard('api')->user())
         {
               foreach($ideas as $idea){
-                    $userlike=Userlike::where('user_id',Auth::guard('api')->user()->id)->where('idea_id',1)->count();
+                    $userlike=Userlike::where('user_id',Auth::guard('api')->user()->id)->where('idea_id',$idea->id)->count();
                     if($userlike > 0)
                     {
-                       $idea->likestatus="mo";
-                    
-                
+                      $idea->setAttribute('likeStatus', "true");
+                    }else{
+                        $idea->setAttribute('likeStatus', "false");
                     }
               }
         }
@@ -41,7 +41,6 @@ class HomeController extends Controller
         $data['news']=$news;
         $data['vote']=$votes;
         $data['bsetSubscriper']=[];
-
         return msgdata(true,'get data successfully',$data);
     }
 

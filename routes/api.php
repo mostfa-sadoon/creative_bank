@@ -3,9 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\AuthController;
-use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\HomeController; 
 use App\Http\Controllers\Api\IdeaController;   
 use App\Http\Controllers\Api\ProfileController;
+use App\Http\Controllers\Api\LikeController;
 
 
 
@@ -35,6 +36,8 @@ use App\Http\Controllers\Api\ProfileController;
         Route::post('profileUpdateInfo', [ProfileController::class, 'update']);
         Route::post('updatepassword', [ProfileController::class, 'updatepassword']);
        
+        Route::post('/idea/like',[LikeController::class, 'like']);
+        Route::post('/idea/unlike',[LikeController::class, 'unlike']);
 
     });
 
