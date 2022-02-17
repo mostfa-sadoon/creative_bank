@@ -19,7 +19,8 @@ class ProfileController extends Controller
          $lang=app()->getLocale();
       //   dd($user->field->id);
          $field=Field::select('name_'.$lang.' as name')->find($user->field->id);
-         return view('user.profile.index',compact('user','field'));
+         $classification=Classification::select('name_'.$lang.' as name')->find($user->field->id);
+         return view('user.profile.index',compact('user','field','classification'));
     }
     public function edit($id)
     {
