@@ -12,6 +12,12 @@ class Idea extends Model
     use SoftDeletes;
     use HasFactory;
     protected $guarded = [];    
+    protected $appends = ['likestatus'];
+    public function getlikestatusAttribute()
+    {
+        return false;
+    }
+
     public function getImgAttribute($img)
     {
         if ($img)
