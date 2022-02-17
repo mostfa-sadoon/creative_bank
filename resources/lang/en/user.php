@@ -60,4 +60,5 @@ return [
     'discussion_creative_idea'=>'discussion creative idea',
     'display_best_idea'=>'display best idea',
      'winners'=>'winners',
+     'female'=>'female',
 ];

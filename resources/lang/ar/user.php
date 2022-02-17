@@ -62,6 +62,6 @@ return [
     'discussion_creative_idea'=>'مناقشه الافكار الابدايه',
     'display_best_idea'=>'عرض افضل الافكار',
     'winners'=>'الفائزين',
-    ''=>'',
+    'female'=>'انثي',
     ''=>'',
 ];
