@@ -13,9 +13,9 @@ class Idea extends Model
     use HasFactory;
     protected $guarded = [];    
     protected $appends = ['likestatus'];
-    public function getlikestatusAttribute()
+    public function getlikestatusAttribute($value)
     {
-        return false;
+        return $value;
     }
 
     public function getImgAttribute($img)
