@@ -10,6 +10,7 @@ h6 {
 body{
     overflow-x: hidden;
     font-family: 'Roboto', sans-serif !important;
+
 }
 p {
     /* color: rgb(255, 255, 255); */
@@ -129,7 +130,7 @@ main-color {
 .navbar-expand-lg .navbar-nav .nav-link {
     padding-right: 1rem;
     color:#0c1856 !important;
-    font-size: 16px;
+    font-size: 13px;
 }
 
 .navbar {
@@ -214,8 +215,7 @@ nav .form-inline .btn {
     border: 1px solid #E94F1B;
     color: #ffffff;
     background-color:#E94F1B ;
-    margin-left: 5px !important;
-
+    margin-right: 3px !important;
 }
 
 nav .form-inline .btn:hover {
@@ -238,7 +238,7 @@ nav .form-inline .btn:hover {
     font-size: 20px;
 }
 
-#dropdownMenuLink1{
+#dropdownMenuLink{
     background-color: #0c1856 !important;
     border: 1px solid #0c1856 !important;
 }
@@ -275,11 +275,10 @@ nav .form-inline .btn:hover {
 .carousel .welcome-head {
     position: absolute;
     top: 50%;
-    left: 12%;
+    left: 95% !important;
     transform: translate(-50%, -50%);
+    width: 83% !important;
 }
-
-
 
 .carousel .welcome-head h1 {
     font-size: 40px;

@@ -6,17 +6,11 @@
     <!---- ======= Start Slider ======= ---->
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active" style="height: 500px;">
-                <img class="d-block w-100" src="{{asset('interface/assets/images/1.jpg')}}" alt="">
+            <div class="carousel-item active" style="height: 500px; background-color:white;">
+                <img class="d-block " src="{{asset('interface/assets/images/slider2.jpg')}}" alt="">
             </div>
             <div class="carousel-item" style="height: 500px;">
-                <img class="d-block w-100" src="{{asset('interface/assets/images/2.jpg')}}" alt="">
-            </div>
-            <div class="carousel-item" style="height: 500px;">
-                <img class="d-block w-100" src="{{asset('interface/assets/images/3.jpg')}}" alt="">
-            </div>
-            <div class="carousel-item" style="height: 500px;">
-                <img class="d-block w-100" src="{{asset('interface/assets/images/4.jpg')}}" alt="">
+                <img class="d-block " src="{{asset('interface/assets/images/slider1.jpg')}}" alt="">
             </div>
 
         </div>
@@ -24,7 +18,7 @@
         </section>
         <!---- ======= Content ======= ---->
         <div class="row welcome-head text-center">
-            <div class="col-xl-12 col-12">
+            <div class="col-xl-6 col-6">
                 <h1 class="text-center">{{trans('home.hallo_in')}} <span>{{trans('home.ideas')}}</span></h1>
                 <!-- <p>جميع الإنجازات، كل الثروات المكتسبة كانت بدايتها فكرة</p> -->
                 <p  class="text-center">{{trans('home.text_slider')}}</p>
@@ -60,8 +54,8 @@
         </section>
         <!-- ======= End Body ======= -->
         <!-- -------- start vote   -------->
-        @if(!$votes->isEmpty())     
-           @foreach($votes as $vote) 
+        @if(!$votes->isEmpty())
+           @foreach($votes as $vote)
             <section id="best-idea" class="vote ">
                 <div class="container mt-4">
                     <div class="row ">
@@ -91,8 +85,8 @@
                     </div>
                 </div>
             </section>
-           @endforeach        
-        @endif                   
+           @endforeach
+        @endif
         <!-- -------- end vote   --------->
         <!-- ======= Start best-idea ======= -->
         <section id="best-idea" class="container best-idea">
@@ -328,7 +322,7 @@
     <!-- ======= End Content ======= -->
 @endsection
 @section('scripts')
- <!-- start chart script -->    
+ <!-- start chart script -->
    @if($count >0)
         <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
         <script src="{{asset('assets/plugins/morrisjs/morris.js')}}"></script>
@@ -366,32 +360,33 @@
         </script>
    @endif
  <!-- end chart script -->
-  
-          
 
-<!-- start timer script -->     
+
+
+<!-- start timer script -->
   <script>
         var countDownDate = new Date("Jul 25, 2022 16:37:52").getTime();
         var myfunc = setInterval(function() {
         // code goes here
         var now = new Date().getTime();
         var timeleft = countDownDate - now;
-            
+
         var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
         var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
         var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
         document.getElementById("days").innerHTML = days + "d "
-        document.getElementById("hours").innerHTML = hours + "h " 
-        document.getElementById("mins").innerHTML = minutes + "m " 
+        document.getElementById("hours").innerHTML = hours + "h "
+        document.getElementById("mins").innerHTML = minutes + "m "
         document.getElementById("secs").innerHTML = seconds + "s"
         }, 1000)
-       
+
   </script>
-<!-- end timer script -->     
+<!-- end timer script -->
 
 <!-- start vote script -->
 
 <!-- end vote script -->
 @endsection
+
