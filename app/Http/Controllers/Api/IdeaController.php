@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Idea;
-
 use App\Models\Userlike;
 use App\Models\Voteuser;
 
@@ -35,7 +34,7 @@ class IdeaController extends Controller
                 'video_link'=>'url',
             ]);
             if ($validator->fails()) {
-                return msg(false,'idea added successfully');
+                return msg(true,'idea added successfully');
                 return response()->json(['status' => 401, 'msg' => $validator->messages()->first()]);
             } else {
                 $img = $this->MoveImage($request->img, 'uploads/imgs/idea');
