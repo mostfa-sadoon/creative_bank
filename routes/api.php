@@ -26,7 +26,7 @@ use App\Http\Controllers\Api\LikeController;
     Route::post('register', [AuthController::class, 'register']);
     Route::get('registerForm', [AuthController::class, 'create']);
     Route::get('Home', [HomeController::class, 'index']);
-    Route::get('idea/show/{id}', [IdeaController::class, 'show']);
+    Route::get('idea/show', [IdeaController::class, 'show']);
 
     Route::group(['middleware' => ['jwt.verify']], function() {
             Route::controller(IdeaController::class)->group(function(){

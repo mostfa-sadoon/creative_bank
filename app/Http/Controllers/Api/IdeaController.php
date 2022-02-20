@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Idea;
+
+use App\Models\Userlike;
+use App\Models\Voteuser;
+
 use Validator;
 
 class IdeaController extends Controller
@@ -49,10 +53,25 @@ class IdeaController extends Controller
                 return msg(true,'idea added successfully');
             }
     }
-    public function show($id)
+    public function show(Request $request)
     {
-        
-         $idea=Idea::with('comments')->with('voteideas')->find($id);
+         $id=$request->id;
+         $idea=Idea::with(['comments'=>function($q){
+            $q->with('user');
+        }])->with('voteideas')->find($id);
+        $idea->setAttribute('likeStatus', "false");
+        $idea->setAttribute('voteStatus', "false");
+        if( Auth::guard('api')->user()){
+                $userlike=Userlike::where('user_id',Auth::guard('api')->user()->id)->where('idea_id',$id)->count();
+                if($userlike > 0)
+                {
+                    $idea->setAttribute('likeStatus', "true");
+                }
+                $voteuser=Voteuser::where('user_id',Auth::guard('api')->user()->id)->where('idea_id',$id)->count();  
+                if($voteuser>0){
+                    $idea->setAttribute('voteStatus', "true");
+                }
+        }
          return msgdata(true,'get idea success',$idea);
     }
 

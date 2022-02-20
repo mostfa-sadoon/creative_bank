@@ -32,7 +32,8 @@ class HomeController extends Controller
                         $idea->setAttribute('likeStatus', "false");
                     }
               }
-        }else{
+        }
+        else{
             foreach($ideas as $idea){             
                 $idea->setAttribute('likeStatus', "false");
             }
