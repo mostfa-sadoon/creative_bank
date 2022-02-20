@@ -102,9 +102,9 @@
                                                 <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" checked>
                                             </div>
                                             <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
-                                            {{trans('user.famale')}}
+                                            {{trans('user.female')}}
                                                 </label>
-                                                <input class="form-check-input" type="radio" value="famale" name="gender" id="flexRadioDefault2">
+                                                <input class="form-check-input" type="radio" value="female" name="gender" id="flexRadioDefault2">
                                             </div>
                                         @else
                                            <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
@@ -113,9 +113,9 @@
                                                 <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" >
                                             </div>
                                             <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
-                                            {{trans('user.famale')}}
+                                            {{trans('user.female')}}
                                                 </label>
-                                                <input class="form-check-input" type="radio" value="famale" name="gender" id="flexRadioDefault2" checked>
+                                                <input class="form-check-input" type="radio" value="female" name="gender" id="flexRadioDefault2" checked>
                                             </div>
                                         @endif
                                     @else
@@ -126,9 +126,9 @@
                                                 <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" checked>
                                             </div>
                                             <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
-                                            {{trans('user.famale')}}
+                                            {{trans('user.female')}}
                                                 </label>
-                                                <input class="form-check-input" type="radio" value="famale" name="gender" id="flexRadioDefault2">
+                                                <input class="form-check-input" type="radio" value="female" name="gender" id="flexRadioDefault2">
                                             </div>
                                         @else
                                             <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
@@ -137,9 +137,9 @@
                                                 <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" >
                                             </div>
                                             <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
-                                            {{trans('user.famale')}}
+                                            {{trans('user.female')}}
                                                 </label>
-                                                <input class="form-check-input" type="radio" value="famale" name="gender" id="flexRadioDefault2" checked>
+                                                <input class="form-check-input" type="radio" value="female" name="gender" id="flexRadioDefault2" checked>
                                             </div>
                                         @endif
                                     @endif

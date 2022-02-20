@@ -49,4 +49,11 @@ class IdeaController extends Controller
                 return msg(true,'idea added successfully');
             }
     }
+    public function show($id)
+    {
+        
+         $idea=Idea::with('comments')->with('voteideas')->find($id);
+         return msgdata(true,'get idea success',$idea);
+    }
+
 }

@@ -12,6 +12,7 @@ class Idea extends Model
     use SoftDeletes;
     use HasFactory;
     protected $guarded = [];    
+   
     public function getImgAttribute($img)
     {
         if ($img)

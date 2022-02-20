@@ -87,7 +87,7 @@
                                             <label class="form-check-label" for="flexRadioDefault2">
                                             أنثى
                                             </label>
-                                            <input class="form-check-input" value="famale" name="gender" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                                            <input class="form-check-input" value="female" name="gender" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
 
                                         </div>
                                         @error('gender')

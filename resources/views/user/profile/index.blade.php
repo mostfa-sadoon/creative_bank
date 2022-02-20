@@ -30,7 +30,7 @@
                     <div class="member-info col-md-8 col-12">
                         <h2>{{$user->name}}</h2>
                         <h6>{{trans('user.field')}}:
-                            <span>{{trans('user.'.$user->classification.'')}}</span>
+                            <span>{{$classification->name}}</span>
                         </h6>
                         <h6>{{trans('user.Industry')}}:
                             <span>{{$field->name}}</span>

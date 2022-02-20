@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone');
             $table->date('date_of_birth');
-            $table->enum('gender', ['male','famale']);
+            $table->enum('gender', ['male','female']);
             $table->string('address');
             $table->unsignedBigInteger('field_id')->nullable();
             $table->foreign('field_id')->references('id')->on('fields')->onDelete('set null');
