@@ -42,15 +42,22 @@
     <!-- ======= End Slider ======= -->
 
     <!-- ======= Start Content ======= -->
-    <div class="">
         <!-- ======= Start Body ======= -->
         <section id="about" class="  about bg-light" data-aos="zoom-in" data-aos-delay="100">
-            <div class="section-title">
-                <h2>{{trans('home.who_us')}}</h2>
+            <div class="aboutContent">
+                <div class="textContent">
+                    <div class="section-title">
+                        <h2>{{trans('home.who_us')}}</h2>
+                    </div>
+                    <div class="container">
+                        <p>{{trans('home.who_us_answer')}}</p>
+                    </div>
+                </div>
+                <div class="imgContent">
+                    <img class="d-block " src="{{asset('interface/assets/images/slider2.jpg')}}" alt="">
+                </div>
             </div>
-            <div class="container">
-                <p>{{trans('home.who_us_answer')}}</p>
-            </div>
+      
         </section>
         <!-- ======= End Body ======= -->
         <!-- -------- start vote   -------->
@@ -318,7 +325,6 @@
         </section>
         <!---End News---->
 
-    </div>
     <!-- ======= End Content ======= -->
 @endsection
 @section('scripts')
@@ -381,6 +387,9 @@
         document.getElementById("mins").innerHTML = minutes + "m "
         document.getElementById("secs").innerHTML = seconds + "s"
         }, 1000)
+
+        
+
 
   </script>
 <!-- end timer script -->

@@ -2,9 +2,8 @@
 
  <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark ">
 
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="menuToggle()">
             <span class="navbar-toggler-icon"></span>
-            <a class="navbar-brand" href="#"> <span><img src="{{asset('interface/assets/images/logo.png')}}" alt="logo" width="100px"height="50px"/></span> </a>
           </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -87,3 +86,12 @@
   </nav>
 
   <!---- ======= End Nav ======= ---->
+<script>
+    const myNav = document.getElementById('#navbarSupportedContent');
+
+    function menuToggle(){
+        myNav.style.display = 'inline-table !important';
+    }
+        
+
+</script>

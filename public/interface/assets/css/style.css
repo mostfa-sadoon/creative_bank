@@ -1607,12 +1607,42 @@ footer .copyright span {
     color: #E94F1B;
 }
 /**************************************************/
-#navbarSupportedContent{
-    display: flex!important;
-    justify-content:space-evenly!important;
-}
+
 
 .navbar-brand{
     margin:0 !important;
     padding: 0 !important;
 }
+/**************************************************/
+
+.aboutContent{
+    display: flex;
+}
+
+@media screen and (max-width: 992px) {
+    .aboutContent {
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+    #carouselExampleControls{
+        display: none !important;
+    }
+    .imgContent img{
+        width: 100% !important;
+    }
+    .navbar-dark .navbar-toggler{
+        /* display: contents !important; */
+        color: #e94f1b !important;
+    }
+  
+    .navbar-dark .navbar-toggler-icon{
+        background-color: #e94f1b !important;
+    }
+  }
+  
+  @media screen and (min-width: 900px){
+    #navbarSupportedContent{
+        display: flex!important;
+        justify-content:space-evenly!important;
+    } 
+  }
