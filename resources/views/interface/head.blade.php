@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{asset('interface/assets/vendor/owl-carousel/owl.carousel.css')}}">
     <link rel="stylesheet" href="{{asset('interface/assets/vendor/aos/aos.css')}}">
     @if(app()->getLocale() == 'en')
-    <link rel="stylesheet" href="{{asset('interface/assets/css/eng-style.css')}}"/>
+    <link rel="stylesheet" href="{{asset('interface/assets/css/style.css')}}"/>
     @else
     <link rel="stylesheet" href="{{asset('interface/assets/css/style.css')}}"/>
     @endif

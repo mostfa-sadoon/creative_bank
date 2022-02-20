@@ -79,7 +79,6 @@
                 <a href="https://www.linkedin.com/company/sdsolutionseg/mycompany/ " class="linkedin "><i class="bx bxl-linkedin "></i></a>
             </div>
         </div>
-
     </div>
 
 
