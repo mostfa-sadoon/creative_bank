@@ -26,19 +26,24 @@ use App\Http\Controllers\Api\LikeController;
     Route::post('register', [AuthController::class, 'register']);
     Route::get('registerForm', [AuthController::class, 'create']);
     Route::get('Home', [HomeController::class, 'index']);
+    Route::get('idea/show/{id}', [IdeaController::class, 'show']);
+
     Route::group(['middleware' => ['jwt.verify']], function() {
-
-        Route::get('ideaForm', [IdeaController::class, 'index']);
-        Route::post('ideastore', [IdeaController::class, 'store']);
-        Route::get('profile', [ProfileController::class, 'index']);
-        Route::post('profileUpdateImg', [ProfileController::class, 'update_img']);
-        Route::get('updateform', [ProfileController::class, 'updateform']);
-        Route::post('profileUpdateInfo', [ProfileController::class, 'update']);
-        Route::post('updatepassword', [ProfileController::class, 'updatepassword']);
-       
-        Route::post('/idea/like',[LikeController::class, 'like']);
-        Route::post('/idea/unlike',[LikeController::class, 'unlike']);
-
+            Route::controller(IdeaController::class)->group(function(){
+                Route::get('ideaForm','index');
+                Route::post('ideastore','store');
+            });
+            Route::controller(ProfileController::class)->group(function(){
+                Route::get('profile','index');
+                Route::post('profileUpdateImg','update_img');
+                Route::get('updateform','updateform');
+                Route::post('profileUpdateInfo','update');
+                Route::post('updatepassword','updatepassword');
+            });
+            Route::controller(LikeController::class)->group(function(){
+                Route::post('/idea/like','like');
+                Route::post('/idea/unlike','unlike');
+            });
     });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
