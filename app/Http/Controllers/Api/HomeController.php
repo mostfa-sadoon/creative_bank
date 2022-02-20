@@ -21,7 +21,6 @@ class HomeController extends Controller
         $lang=$request->header('lang');
         $imgsSlider=ImgSlider::select('img')->get();
         $ideas=Idea::select('id','name','img','desc','view','like')->where('status','true')->orderBy('created_at', 'desc')->take(6)->get();
-        $likeStatus="false";
         if( Auth::guard('api')->user())
         {
               foreach($ideas as $idea){
@@ -33,6 +32,10 @@ class HomeController extends Controller
                         $idea->setAttribute('likeStatus', "false");
                     }
               }
+        }else{
+            foreach($ideas as $idea){             
+                $idea->setAttribute('likeStatus', "false");
+            }
         }
         $news=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','img','id','created_at')->orderBy('created_at', 'desc')->take(6)->get();
         $votes=Vote::select('id','name_'.$lang.' as name','end_vote','created_at')->with('voteideas')->where('status','true')->get();
