@@ -81,6 +81,9 @@ return [
     */
 
     'locale' => 'ar',
+    
+    'useAcceptLanguageHeader' => false,
+    'hideDefaultLocaleInURL' => true,
 
     /*
     |--------------------------------------------------------------------------
