@@ -81,10 +81,8 @@ return [
     */
 
     'locale' => 'ar',
-    
-    'useAcceptLanguageHeader' => false,
-    'hideDefaultLocaleInURL' => true,
 
+   
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
