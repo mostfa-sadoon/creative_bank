@@ -43,21 +43,14 @@
 
     <!-- ======= Start Content ======= -->
         <!-- ======= Start Body ======= -->
+        
         <section id="about" class="  about bg-light" data-aos="zoom-in" data-aos-delay="100">
-            <div class="aboutContent">
-                <div class="textContent">
-                    <div class="section-title">
-                        <h2>{{trans('home.who_us')}}</h2>
-                    </div>
-                    <div class="container">
-                        <p>{{trans('home.who_us_answer')}}</p>
-                    </div>
-                </div>
-                <div class="imgContent">
-                    <img class="d-block " src="{{asset('interface/assets/images/slider2.jpg')}}" alt="">
-                </div>
+            <div class="section-title">
+                    <h2>{{trans('home.who_us')}}</h2>
             </div>
-      
+            <div class="container">
+                <p>{{trans('home.who_us_answer')}}</p>
+            </div>
         </section>
         <!-- ======= End Body ======= -->
         <!-- -------- start vote   -------->
