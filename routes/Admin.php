@@ -46,36 +46,47 @@ use App\Http\Controllers\Admin\userController;
     //user 
     Route::get('/user', [userController::class, 'index'])->name('user.index');
     // fildes routes
-    Route::get('/field', [FieldController::class, 'index'])->name('field.index'); 
-    Route::get('/field/create', [FieldController::class, 'create'])->name('field.create'); 
-    Route::post('/field/store', [FieldController::class, 'store'])->name('field.store'); 
-    Route::get('/field/edit/{id}', [FieldController::class, 'edit'])->name('field.edit'); 
-    Route::get('/field/show/{id}', [FieldController::class, 'show'])->name('field.show');   
-    Route::post('/field/update', [FieldController::class, 'update'])->name('field.update'); 
-    Route::post('/field/destroy', [FieldController::class, 'destroy'])->name('field.destroy');
+    Route::controller(FieldController::class)->group(function(){ 
+        Route::get('/field','index')->name('field.index'); 
+        Route::get('/field/create','create')->name('field.create'); 
+        Route::post('/field/store','store')->name('field.store'); 
+        Route::get('/field/edit/{id}','edit')->name('field.edit'); 
+        Route::get('/field/show/{id}','show')->name('field.show');   
+        Route::post('/field/update','update')->name('field.update'); 
+        Route::post('/field/destroy','destroy')->name('field.destroy');
+    });
      // fildes classification
-     Route::get('/classification', [ClassificationController::class, 'index'])->name('classification.index'); 
-     Route::get('/classification/create', [ClassificationController::class, 'create'])->name('classification.create'); 
-     Route::post('/classification/store', [ClassificationController::class, 'store'])->name('classification.store'); 
-     Route::get('/classification/edit/{id}', [ClassificationController::class, 'edit'])->name('classification.edit'); 
-     Route::post('/classification/update', [ClassificationController::class, 'update'])->name('classification.update'); 
-     Route::post('/classification/destroy', [ClassificationController::class, 'destroy'])->name('classification.destroy');
+    Route::controller(ClassificationController::class)->group(function(){ 
+        Route::get('/classification','index')->name('classification.index'); 
+        Route::get('/classification/create','create')->name('classification.create'); 
+        Route::post('/classification/store','store')->name('classification.store'); 
+        Route::get('/classification/edit/{id}','edit')->name('classification.edit'); 
+        Route::post('/classification/update','update')->name('classification.update'); 
+        Route::post('/classification/destroy','destroy')->name('classification.destroy');
+    });
     // ideas
-    Route::get('/ideas', [IdeaController::class, 'index'])->name('idea.index');
-    Route::get('/ideas/accepted', [IdeaController::class, 'accepted'])->name('idea.accepted'); 
-    Route::get('/ideas/show/{id}', [IdeaController::class, 'show'])->name('idea.show'); 
-    Route::get('/ideas/accept/{id}', [IdeaController::class, 'accept'])->name('idea.accept'); 
-    Route::get('/ideas/refused/{id}', [IdeaController::class, 'refused'])->name('idea.refused'); 
-    Route::get('/ideas/delete/{id}', [IdeaController::class, 'destroy'])->name('idea.delete');
-    Route::get('/ideas/trash', [IdeaController::class, 'trash'])->name('idea.trash');
-    Route::get('/ideas/trash/{id}', [IdeaController::class, 'showtrashed'])->name('idea.trash.view');
-    Route::get('/ideas/restore/{id}', [IdeaController::class, 'restore'])->name('idea.restore');
+    Route::controller(IdeaController::class)->group(function(){
+        Route::get('/ideas','index')->name('idea.index');
+        Route::get('/ideas/email','email')->name('idea.email');
+        Route::get('/ideas/accepted', 'accepted')->name('idea.accepted'); 
+        Route::get('/ideas/refused', 'getrefused')->name('idea.getrefused'); 
+        Route::get('/ideas/show/{id}', 'show')->name('idea.show'); 
+        Route::get('/ideas/accept/{id}','accept')->name('idea.accept'); 
+        Route::get('/ideas/refused/{id}', 'refused')->name('idea.refused'); 
+        Route::get('/ideas/delete/{id}','destroy')->name('idea.delete');
+        Route::get('/ideas/trash', 'trash')->name('idea.trash');
+        Route::get('/idea/trash/{id}', 'maketrash')->name('idea.trashed'); 
+        Route::get('/ideas/trash/{id}','showtrashed')->name('idea.trash.view');
+        Route::get('/ideas/restore/{id}', 'restore')->name('idea.restore');
+    });
     //vote
-    Route::get('/vote', [VoteController::class, 'index'])->name('vote.index');
-    Route::get('/vote/create', [VoteController::class, 'create'])->name('vote.create');
-    Route::post('/vote/store', [VoteController::class, 'store'])->name('vote.store');
-    Route::get('/vote/delete/{id}', [VoteController::class, 'delete'])->name('vote.delete');
-    Route::get('/vote/end/{id}', [VoteController::class, 'endvote'])->name('vote.end');
+    Route::controller(IdeaController::class)->group(function(){
+        Route::get('/vote','index')->name('vote.index');
+        Route::get('/vote/create','create')->name('vote.create');
+        Route::post('/vote/store','store')->name('vote.store');
+        Route::get('/vote/delete/{id}','delete')->name('vote.delete');
+        Route::get('/vote/end/{id}','endvote')->name('vote.end');
+    });
     //news
     Route::get('/news', [NewsController::class, 'index'])->name('news.index'); 
     Route::get('/news/create', [NewsController::class, 'create'])->name('news.create'); 

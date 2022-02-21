@@ -43,7 +43,7 @@
                             @foreach($ideas as $key=>$idea)
                           
                             <tr>
-                                <td></td>                  
+                                <td></td>
                                 <td>{{$idea->name}}</td>
                                 <td>{{date(' H:i:s', strtotime($idea->created_at))}}</td>
                                 <td><a href="{{route('idea.show',$idea->id)}}"><i class="fas fa-eye"></i></a><a href="{{route('idea.trashed',$idea->id)}}"class="m-5"><i class="fas fa-trash-alt"></i></a></td>

@@ -30,7 +30,7 @@
        </div>
        <div class="">
          <h4>description</h4>
-        <p>{{$idea->desc}}</p>
+         <p>{{$idea->desc}}</p>
     </div>
     <div class="">
          <h4>problem</h4>
@@ -54,7 +54,13 @@
 
         <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/EIfsXEtEUhQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
     <div class="d-flex justify-content-center">
-         <a  href="{{route('idea.accept',$idea->id)}}"class="btn btn-success"> accepte</a>   <a href="{{route('idea.refused',$idea->id)}}" class="btn btn-danger text-white"> refused</a>
+           @if($idea->status=="false")
+              <a  href="{{route('idea.accept',$idea->id)}}"class="btn btn-success ml-1"> accepte</a>   <a href="{{route('idea.refused',$idea->id)}}" class="btn btn-danger text-white ml-1"> refused</a>  <a href="{{route('idea.trashed',$idea->id)}}" class="btn  btn-warning text-white ml-1"> archive</a>
+            @elseif($idea->status=="true")
+             <a href="{{route('idea.refused',$idea->id)}}" class="btn btn-danger text-white ml-1"> refused</a> <a href="{{route('idea.trashed',$idea->id)}}" class="btn  btn-warning text-white ml-1"> archive</a>
+            @elseif($idea->status=="refused")
+            <a  href="{{route('idea.accept',$idea->id)}}"class="btn btn-success ml-1"> accepte</a> <a href="{{route('idea.trashed',$idea->id)}}" class="btn  btn-warning text-white ml-1"> archive</a>
+            @endif
     </div>          
 @endsection
 @section('scripts')    

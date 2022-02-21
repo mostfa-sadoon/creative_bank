@@ -69,7 +69,7 @@ return [
      'joining_date'=>'joining date',
      'Action'=>'Action',
   
-
+     'refused_ideas'=>'refused idea',
     
    
 ];

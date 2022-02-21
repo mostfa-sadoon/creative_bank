@@ -63,5 +63,5 @@ return [
     'display_best_idea'=>'عرض افضل الافكار',
     'winners'=>'الفائزين',
     'female'=>'انثي',
-    ''=>'',
+    'refused_ideas'=>'الافكار المرفوضه',
 ];

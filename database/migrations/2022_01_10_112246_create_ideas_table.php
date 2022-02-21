@@ -20,7 +20,7 @@ class CreateIdeasTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->enum('status', ['true','false'])->default('false');
+            $table->enum('status', ['true','false','refused'])->default('false');
             $table->string('img');
             $table->string('attatchment')->nullable();
             $table->text('problem');
