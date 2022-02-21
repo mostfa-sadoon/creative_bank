@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\employeecontroller;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\VoteController;
 use App\Http\Controllers\Admin\ClassificationController;
+use App\Http\Controllers\Admin\userController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,8 @@ use App\Http\Controllers\Admin\ClassificationController;
     Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('category.show');  
     Route::post('/category/update', [CategoryController::class, 'update'])->name('category.update');   
     Route::post('/category/destroy', [CategoryController::class, 'destroy'])->name('category.destroy'); 
+    //user 
+    Route::get('/user', [userController::class, 'index'])->name('user.index');
     // fildes routes
     Route::get('/field', [FieldController::class, 'index'])->name('field.index'); 
     Route::get('/field/create', [FieldController::class, 'create'])->name('field.create'); 

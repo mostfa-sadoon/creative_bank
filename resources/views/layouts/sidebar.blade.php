@@ -17,6 +17,11 @@
 
                         @role('Super-Admin')
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.users')}}</span></a>
+                          
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route('user.index')}}">{{ trans('admin.users')}}</a></li>
+                            </ul>
+
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('field.index')}}">{{ trans('admin.fields')}}</a></li>
                             </ul>
@@ -88,8 +93,6 @@
                                 <li><a href="{{route('admin.suggestions')}}">{{ trans('admin.show_suggesions')}}</a></li>
                             </ul>
                         </li>
-
-
 
                     </ul>
                 </nav>

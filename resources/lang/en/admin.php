@@ -60,6 +60,14 @@ return [
      'ideas'=>'ideas',
      'accepted_ideas'=>'accepted ideas',
      'vote'=>'vote',
+
+
+     'number'=>'number',
+     'name'=>'name',
+     'email'=>'email',
+     'phone'=>'phone',
+     'joining_date'=>'joining date',
+     'Action'=>'Action',
   
 
     
