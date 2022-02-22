@@ -80,7 +80,7 @@ use App\Http\Controllers\Admin\userController;
         Route::get('/ideas/restore/{id}', 'restore')->name('idea.restore');
     });
     //vote
-    Route::controller(IdeaController::class)->group(function(){
+    Route::controller(VoteController::class)->group(function(){
         Route::get('/vote','index')->name('vote.index');
         Route::get('/vote/create','create')->name('vote.create');
         Route::post('/vote/store','store')->name('vote.store');
