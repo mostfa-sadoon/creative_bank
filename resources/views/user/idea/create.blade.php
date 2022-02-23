@@ -105,9 +105,37 @@
                                                 <span class="text-danger">{{ $errors->first('attachment')}}</span>
                                             @endif
                                         </div>
+
+
+                                          <!---Feasibility_study---->
+                                          <div class="form-group">
+                                            <label for="exampleFormControlFile1">{{trans('user.Feasibility_study')}}</label>
+                                            <input type="file" name="Feasibility_study"  value="{{ old('attachment') }}" class="form-control-file" id="exampleFormControlFile1">
+                                            @if ($errors->has('attachment'))
+                                                <span class="text-danger">{{ $errors->first('attachment')}}</span>
+                                            @endif
+                                        </div>
+
+                                          <!---Intellectual_property---->
+                                          <div class="form-group">
+                                            <label for="exampleFormControlFile1">{{trans('user.Intellectual_property')}}</label>
+                                            <input type="file" name="Intellectual_property"  value="{{ old('attachment') }}" class="form-control-file" id="exampleFormControlFile1">
+                                            @if ($errors->has('attachment'))
+                                                <span class="text-danger">{{ $errors->first('attachment')}}</span>
+                                            @endif
+                                        </div>
+
+                                          <!---patent---->
+                                          <div class="form-group">
+                                            <label for="exampleFormControlFile1">{{trans('user.patent')}}</label>
+                                            <input type="file" name="patent"  value="{{ old('attachment') }}" class="form-control-file" id="exampleFormControlFile1">
+                                            @if ($errors->has('attachment'))
+                                                <span class="text-danger">{{ $errors->first('attachment')}}</span>
+                                            @endif
+                                        </div>
                                         <!---Submit Button---->
                                         <div class="mt-4">
-                                            <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="{{trans('home.send_your_idea')}}">  
+                                            <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="{{trans('home.send_your_idea')}}">
                                         </div>
                                     </div>
                                 </form>

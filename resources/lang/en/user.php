@@ -31,11 +31,11 @@ return [
     'student'=>'student',
     'specialized'=>'specialized',
     'Investor'=>'Investor',
-    
+
     'field'=>'field',
     'Industry'=>'Industry/field',
     'address'=>'address',
-     
+
     'edit_user'=>'edit your profile',
     'full_name'=>'full name',
     'choose_img'=>'choose img',
@@ -61,4 +61,8 @@ return [
     'display_best_idea'=>'display best idea',
      'winners'=>'winners',
      'female'=>'female',
+
+     'patent'=>'patent',
+     'Intellectual_property'=>'Intellectual property',
+     'Feasibility_study'=>'Feasibility study',
 ];

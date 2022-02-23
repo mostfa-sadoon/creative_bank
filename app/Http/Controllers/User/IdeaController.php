@@ -10,13 +10,13 @@ use App\Events\IdeaViewer;
 use App\Models\Category;
 use App\Models\Idea;
 use App\Models\Field;
-use App\Models\Comment;  
-use App\Models\Userlike; 
+use App\Models\Comment;
+use App\Models\Userlike;
 use App\Models\Vote;
-use App\Models\Voteidea; 
+use App\Models\Voteidea;
 use App\Models\Voteuser;
 use Alert;
-     
+
 class IdeaController extends Controller
 {
     //
@@ -35,14 +35,35 @@ class IdeaController extends Controller
             'problem'=>'required|max:2000|min:50',
             'solve'=>'required|max:2000|min:50',
             'attachment'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,pdf|max:8192',
-            'category'=>'required'
+            'category'=>'required',
+            'Intellectual_property'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,docx,pdf|max:8192',
+            'Feasibility_study'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,docx,pdf|max:8192',
+            'patent'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,docx,pdf|max:8192',
         ]);
         $img = $this->MoveImage($request->img, 'uploads/imgs/idea');
         if($request->hasfile('attachment'))
         {
             $attachment = $this->MoveImage($request->attachment,'uploads/attachment');
         }else{
-            $attachment=null;   
+            $attachment=null;
+        }
+        if($request->hasfile('Intellectual_property'))
+        {
+            $Intellectual_property = $this->MoveImage($request->Intellectual_property,'uploads/attachment/Intellectual_property');
+        }else{
+            $Intellectual_property=null;
+        }
+        if($request->hasfile('Feasibility_study'))
+        {
+            $Feasibility_study = $this->MoveImage($request->Feasibility_study,'uploads/attachment/Feasibility_study');
+        }else{
+            $Feasibility_study=null;
+        }
+        if($request->hasfile('patent'))
+        {
+            $patent = $this->MoveImage($request->patent,'uploads/attachment/patent');
+        }else{
+            $patent=null;
         }
         if($request->video_link!=null){
             $request->validate([
@@ -53,12 +74,15 @@ class IdeaController extends Controller
             'name'=>$request->name,
             'user_id'=>Auth::user()->id,
             'img'=> $img,
-            'video'=>$request->video_link,
+            'videolink'=>$request->video_link,
             'problem'=>$request->problem,
             'solve'=>$request->solve,
             'attatchment'=>$attachment,
             'desc'=>$request->desc,
             'category_id'=>$request->category,
+            'Intellectual_property'=>$Intellectual_property,
+            'Feasibility_study'=>$Feasibility_study,
+            'patent'=>$patent,
         ]);
         Alert::success('Congratulations', 'your idea added will reviewd by admin');
         return redirect()->route('home');
@@ -84,9 +108,9 @@ class IdeaController extends Controller
                   $vote=Vote::find($vote_id);
                   break;
                 }
-           }   
+           }
          }
-        // this to check of the user is interaction 
+        // this to check of the user is interaction
          $interaction="false";
          if(Auth::user())
          {
@@ -96,7 +120,7 @@ class IdeaController extends Controller
                 $interaction="true";
             }
             if(isset($vote_id)){
-                $voteuser=Voteuser::where('user_id',Auth::guard('web')->user()->id)->where('idea_id',$id)->where('vote_id',$vote_id)->count();  
+                $voteuser=Voteuser::where('user_id',Auth::guard('web')->user()->id)->where('idea_id',$id)->where('vote_id',$vote_id)->count();
                 if($voteuser>0){
                     $uservote="true";
                 }
@@ -110,7 +134,7 @@ class IdeaController extends Controller
     {
         $ideas=Idea::select('id','name','img','desc')->where('status','true')->paginate(10);
         return view('user.idea.allidea',compact('ideas'));
-    } 
+    }
     public function sendcomment(Request $request)
     {
         $idea_id=$request->idea_id;

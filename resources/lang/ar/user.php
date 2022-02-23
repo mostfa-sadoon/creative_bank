@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    
+
     'lang' => 'انجليزي',
     'creative_bank' => 'بنك الافكار',
     'main' => 'الرئيسيه',
@@ -52,7 +52,7 @@ return [
     'ideas'=>'الافكار',
     'vote'=>'التصويت',
 
-    
+
     'main'=>'الرئيسيه',
     'send_idea'=>'ارسل فكرتك',
     'important_link'=>'روابط هامه',
@@ -64,4 +64,8 @@ return [
     'winners'=>'الفائزين',
     'female'=>'انثي',
     'refused_ideas'=>'الافكار المرفوضه',
+
+    'patent'=>'برائه اختراع',
+    'Intellectual_property'=>'حقوق الملكيه الفكريه',
+    'Feasibility_study'=>'دراسه جدوي',
 ];

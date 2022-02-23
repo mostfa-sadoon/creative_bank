@@ -11,8 +11,8 @@ class Idea extends Model
 {
     use SoftDeletes;
     use HasFactory;
-    protected $guarded = [];    
-   
+    protected $guarded = [];
+
     public function getImgAttribute($img)
     {
         if ($img)
@@ -27,29 +27,35 @@ class Idea extends Model
             return asset('/uploads/attachment') . '/' . $attatchment;
         }
     }
-    public function getVideoAttribute($video)
+    public function getFeasibilityStudyAttribute($Feasibility_study)
     {
-        if ($video)
+        if ($Feasibility_study)
         {
-           
-            return  str_replace("watch?v=","embed/",$video);
+            return asset('/uploads/attachment/Feasibility_study') . '/' . $Feasibility_study;
+        }
+    }
+    public function getIntellectualPropertyAttribute($Intellectual_property)
+    {
+        if ($Intellectual_property)
+        {
+            return asset('/uploads/attachment/Intellectual_property') . '/' . $Intellectual_property;
+        }
+    }
+    public function getPatentAttribute($patent)
+    {
+        if ($patent)
+        {
+            return asset('/uploads/attachment/patent') . '/' . $patent;
         }
     }
 
-    // public function  getVideoAttribute($url)
-    // {
-    //     if(strlen($url) > 11)
-    //     {
-    //         if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match))
-    //         {
-    //             return $match[1];
-    //         }
-    //         else
-    //             return false;
-    //     }
-    //     return "ffdfd";
-    // }
-
+    public function getVideolinkAttribute($Videolink)
+    {
+        if ($Videolink)
+        {
+            return  str_replace("watch?v=","embed/",$Videolink);
+        }
+    }
 
     public function user()
     {

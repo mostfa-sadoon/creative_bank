@@ -31,7 +31,10 @@ class IdeaController extends Controller
                 'solve'=>'required|max:2000|min:50',
                 'attachment'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,pdf|max:8192',
                 'category_id'=>'required',
-                'video_link'=>'url',
+                'videolink'=>'url',
+                'Intellectual_property'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,docx,pdf|max:8192',
+                'Feasibility_study'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,docx,pdf|max:8192',
+                'patent'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,docx,pdf|max:8192',
             ]);
             if ($validator->fails()) {
                 return msg(false, $validator->messages()->first());
@@ -43,11 +46,32 @@ class IdeaController extends Controller
                 }else{
                     $attachment=null;
                 }
+                if($request->hasfile('Intellectual_property'))
+                {
+                    $Intellectual_property = $this->MoveImage($request->Intellectual_property,'uploads/attachment/Intellectual_property');
+                }else{
+                    $Intellectual_property=null;
+                }
+                if($request->hasfile('Feasibility_study'))
+                {
+                    $Feasibility_study = $this->MoveImage($request->Feasibility_study,'uploads/attachment/Feasibility_study');
+                }else{
+                    $Feasibility_study=null;
+                }
+                if($request->hasfile('patent'))
+                {
+                    $patent = $this->MoveImage($request->patent,'uploads/attachment/patent');
+                }else{
+                    $patent=null;
+                }
                 $data=$request->all();
                 $data['user_id']=Auth::user()->id;
                 $data['view']=0;
                 $data['like']=0;
                 $data['img']=$img;
+                $data['Intellectual_property']=$Intellectual_property;
+                $data['Feasibility_study']=$Feasibility_study;
+                $data['patent']=$patent;
                 Idea::create($data);
                 return msg(true,'idea added successfully');
             }

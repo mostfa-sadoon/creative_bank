@@ -29,6 +29,7 @@ class IdeaController extends Controller
      public function show($id)
      {
          $idea=Idea::find($id);
+        // dd($idea);
          return view('admin.idea.show',compact('idea'));
      }
      public function accept($id)
@@ -58,7 +59,7 @@ class IdeaController extends Controller
         Alert::success('success', 'the idea has been deleted');
         return redirect()->route('idea.trash');
      }
-    
+
       public function maketrash($id)
       {
       $idea = Idea::findOrFail($id);
@@ -69,7 +70,7 @@ class IdeaController extends Controller
      public function trash()
      {
          $ideas=Idea::onlyTrashed()->paginate(20);
-       //  $ideas=DB::table('ideas')->whereNotNull('deleted_at')->get();    
+       //  $ideas=DB::table('ideas')->whereNotNull('deleted_at')->get();
          return view('admin.idea.trash',compact('ideas'));
     }
     public function showtrashed($id)
