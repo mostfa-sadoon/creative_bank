@@ -41,12 +41,13 @@ class IdeaController extends Controller
                 {
                     $attachment = $this->MoveImage($request->attachment,'uploads/attachment');
                 }else{
-                    $attachment=null;   
+                    $attachment=null;
                 }
                 $data=$request->all();
                 $data['user_id']=Auth::user()->id;
                 $data['view']=0;
                 $data['like']=0;
+                $data['img']=$img;
                 Idea::create($data);
                 return msg(true,'idea added successfully');
             }
@@ -65,7 +66,7 @@ class IdeaController extends Controller
                 {
                     $idea->setAttribute('likeStatus', "true");
                 }
-                $voteuser=Voteuser::where('user_id',Auth::guard('api')->user()->id)->where('idea_id',$id)->count();  
+                $voteuser=Voteuser::where('user_id',Auth::guard('api')->user()->id)->where('idea_id',$id)->count();
                 if($voteuser>0){
                     $idea->setAttribute('voteStatus', "true");
                 }
