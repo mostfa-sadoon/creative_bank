@@ -3,392 +3,279 @@
 
 @endsection
 @section('content')
-    <!---- ======= Start Slider ======= ---->
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active" style="height: 500px; background-color:white;">
-                <img class="d-block " src="{{asset('interface/assets/images/slider2.jpg')}}" alt="">
-            </div>
-            <div class="carousel-item" style="height: 500px;">
-                <img class="d-block " src="{{asset('interface/assets/images/slider1.jpg')}}" alt="">
-            </div>
 
-        </div>
-        <section id="hero">
-        </section>
-        <!---- ======= Content ======= ---->
-        <div class="row welcome-head text-center">
-            <div class="col-xl-6 col-6">
-                <h1 class="text-center">{{trans('home.hallo_in')}} <span>{{trans('home.ideas')}}</span></h1>
-                <!-- <p>جميع الإنجازات، كل الثروات المكتسبة كانت بدايتها فكرة</p> -->
-                <p  class="text-center">{{trans('home.text_slider')}}</p>
-                <div class="buttons  text-center">
-                    <button class="hire upper" onclick="location.href='{{route('idea.create')}}'">{{trans('home.send_idea')}}</button>
-                </div>
-            </div>
 
-        </div>
-        <!---- ======= carousel-control-prev ======= ---->
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <!---- ======= carousel-control-next ======= ---->
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+
+
+<div id="theme-banner-one">
+    <div class="illustration wow zoomIn animated" data-wow-delay="1s" data-wow-duration="2s">
+        <img src="{{asset('interface/images/shape/banner-shape1.svg')}}" alt="">
+        <img src="{{asset('interface/images/shape/banner-shape2.svg')}}" alt="" class="shape-one wow fadeInDown animated" data-wow-delay="1.8s">
+        <img src="{{asset('interface/images/shape/banner-shape3.svg')}}" alt="" class="shape-two wow fadeInUp animated" data-wow-delay="2.7s">
     </div>
-    <!-- ======= End Slider ======= -->
+    <img src="{{asset('interface/images/shape/oval-1.svg')}}" alt="" class="oval-one">
+    <img src="{{asset('interface/images/shape/shape-1.svg')}}" alt="" class="shape-three">
+    <img src="{{asset('interface/images/shape/shape-55.svg')}}" alt="" class="shape-four">
+    <img src="{{asset('interface/images/shape/shape-56.svg')}}" alt="" class="shape-five">
+    <img src="{{asset('interface/images/shape/shape-57.svg')}}" alt="" class="shape-six">
+    <img src="{{asset('interface/images/shape/shape-58.svg')}}" alt="" class="shape-seven">
+    <img src="{{asset('interface/images/shape/shape-59.svg')}}" alt="" class="shape-eight">
+    <img src="{{asset('interface/images/shape/shape-60.svg')}}" alt="" class="shape-nine">
+    <img src="{{asset('interface/images/shape/shape-61.svg')}}" alt="" class="shape-ten">
+    <img src="{{asset('interface/images/shape/shape-62.svg')}}" alt="" class="shape-eleven">
+    <div class="container">
+        <div class="main-wrapper">
+            <h1 class="main-title wow fadeInUp animated" data-wow-delay="0.4s">مرحبا بكم فى <br> بنك الافكار</h1>
+            <p class="sub-title wow fadeInUp animated" data-wow-delay="0.9s">ارسل لنا فكرتك لتجد الدعم المناسب</p>
+            <ul class="button-group lightgallery">
+                <li><a href="send-your-idea.html" class="more-button solid-button-one wow fadeInRight animated" data-wow-delay="1.5s">ارسل فكرتك<i class="fa fa-angle-left icon-right" aria-hidden="true"></i></a></li>
+            </ul>
+        </div> <!-- /.main-wrapper -->
+    </div> <!-- /.container -->
+</div> <!-- /#theme-banner-one -->
 
-    <!-- ======= Start Content ======= -->
-        <!-- ======= Start Body ======= -->
-        
-        <section id="about" class="  about bg-light" data-aos="zoom-in" data-aos-delay="100">
-            <div class="section-title">
-                    <h2>{{trans('home.who_us')}}</h2>
-            </div>
-            <div class="container">
-                <p>{{trans('home.who_us_answer')}}</p>
-            </div>
-        </section>
-        <!-- ======= End Body ======= -->
-        <!-- -------- start vote   -------->
-        @if(!$votes->isEmpty())
-           @foreach($votes as $vote)
-            <section id="best-idea" class="vote ">
-                <div class="container mt-4">
-                    <div class="row ">
-                            <!-- column -->
-                               <div class="col-lg-6">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h4 class="card-title">{{$vote->name_en}}</h4>
-                                            <div id="morris-donut-chart"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                           <!-- column -->
-                        <div class="col-md-6">
-                            <h3 class="text-warning">Timer</h3>
-                            <span id="days"></span><span id="hours"></span><span id="mins"></span><span id="secs"></span>
-                            <h3 class="text-warning mt-4">ideas</h3>
-                            <div class="list-group mt-4">
-                                 @foreach($vote->voteideas as $voteidea)
-                                           <a href="{{route('user.idea.show',$voteidea->idea_id)}}" class="list-group-item list-group-item-action d-flex justify-content-between">
-                                                {{$voteidea->idea->name}}
-                                                <span class="badge badge-primary badge-pill">{{$voteidea->count}}</span>
-                                            </a>
-                                 @endforeach
-                            </div>
-                        </div>
+
+<!--
+=============================================
+    What WE Do
+==============================================
+-->
+<div class="agn-what-we-do pt-150 pb-200">
+    <img src="{{asset('interface/images/shape/shape-63.svg')}}" alt="" class="shape-one" data-aos="fade-right">
+    <img src="{{asset('interface/images/shape/shape-56.svg')}}" alt="" class="shape-two">
+    <div class="container">
+        <div class="theme-title-one text-center custom-blog">
+            <div class="upper-title">What We Do</div>
+            <h2 class="main-title">السماح للشباب<br>بالتعبير عن افكارهم</h2>
+        </div> <!-- /.theme-title-one -->
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="single-block">
+                    <div class="icon">
+                        <img src="{{asset('interface/images/shape/shape-2.svg')}}" alt="" class="bg">
+                        <img src="{{asset('interface/images/icon/icon1.svg')}}" alt="" class="shape" data-aos="zoom-in-down">
                     </div>
-                </div>
-            </section>
-           @endforeach
-        @endif
-        <!-- -------- end vote   --------->
-        <!-- ======= Start best-idea ======= -->
-        <section id="best-idea" class="container best-idea">
-            <div class="">
-                <div class="section-title" data-aos="zoom-in" data-aos-delay="100">
-                    <h2>{{trans('home.best_ideas')}}</h2>
-                </div>
-                <section class="wrapper">
-                    <div class="container-fostrap">
-
-                        <div class="content">
-                            <div class="">
-                                <div class="row">
-                                    @foreach($ideas as $idea)
-                                        <div class="col-xs-12 col-sm-4" data-aos="fade-up" data-aos-delay="100">
-                                            <div class="card">
-                                                <a class="img-card" href="#">
-                                                    <img src="{{$idea->img}}" />
-                                                </a>
-                                                <div class="card-content">
-                                                    <h4 class="card-title">
-                                                        <a href="#"> {{$idea->name}}
-                                                    </a>
-                                                    </h4>
-                                                    <p class="">
-                                                        {{$idea->desc}}
-                                                 </p>
-                                                </div>
-                                                <div class="card-read-more">
-                                                    <a href="{{route('user.idea.show',$idea->id)}}" class="btn btn-link btn-block">{{trans('home.show_more')}}</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                </div>
-                                    <div class="d-flex justify-content-center">
-                                    <a class=" btn btn-info " href="{{route('allidea')}}">{{trans('home.see_more')}}</a>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
+                    <h5 class="title">1. تقديم الفكرة</h5>
+                    <p>تقديم الفكرة مع توفير العناصر المطلوبة للتقديم.</p>
+                    <a href="about-us.html" class="more-button">المزيد من التفاصيل</a>
+                </div> <!-- /.single-block -->
             </div>
-        </section>
-        <!-- ======= End best-idea ======= -->
 
-      <!-- ======= Start cost ======= -->
-      <section id="cost" class="  cost ">
-            <div class="container">
-                <div class="section-title" data-aos="zoom-in" data-aos-delay="100">
-                    <h2>{{trans('home.how_much_earn')}}</h2>
-                </div>
-                <div class=" row justify-content-center p-4">
-                    <div class="col-md-12">
-                        <div class="wrapper-home">
-                            <div class="row ">
-                                <div class="col-md-6 col-12 order-2 order-md-1">
-                                    <h4>إعتماداً على:-</h4>
-                                    <div class="row">
-                                        <div class="">
-                                            <div class="dbox pull-right">
-                                                <h6>
-                                                    <i class="icon align-items-center justify-content-center fa fa-lightbulb-o fa-lg">
-                                                    </i> تقييم الفكرة و قابليتها للتنفيذ وامكانية تطويرها
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="">
-                                            <div class="dbox pull-right">
-                                                <h6>
-                                                    <i class="icon align-items-center justify-content-center fa fa-lightbulb-o fa-lg">
-                                                    </i> إحتياج السوق للفكرة
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="">
-                                            <div class="dbox pull-right">
-                                                <h6>
-                                                    <i class="icon align-items-center justify-content-center fa fa-lightbulb-o fa-lg">
-                                                    </i> تحديد العوائق و العقبات المواجهة لتنفيذ الفكرة
-                                                </h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="">
-                                            <div class="dbox pull-right">
-                                                <h5>
-                                                    يتم تجميع نقاط لكل فكرة و عن طريقها يتم تحديد مبلغ لصاحب الفكرةللبدء فى تنفيذها
-                                                </h5>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="contact-img col-md-6 order-1 order-md-2">
-                                    <img src="{{asset('interface/assets/images/earnMony-removebg-preview.png')}}" alt="Earn Mony" />
-                                </div>
-                            </div>
-                        </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single-block">
+                    <div class="icon">
+                        <img src="{{asset('interface/images/shape/shape-2.svg')}}" alt="" class="bg">
+                        <img src="{{asset('interface/images/icon/icon2.svg')}}" alt="" class="shape" data-aos="zoom-in-down">
                     </div>
+                    <h5 class="title">2. دراسة الفكرة</h5>
+                    <p>دراسة الافكار المقدمة وامكانية تنفيذها</p>
+                    <a href="about-us.html" class="more-button">المزيد من التفاصيل</a>
+                </div> <!-- /.single-block -->
+            </div>
+
+            <div class="col-lg-4 co-12 d-md-none d-lg-block">
+                <div class="single-block">
+                    <div class="icon">
+                        <img src="{{asset('interface/images/shape/shape-2.svg')}}" alt="" class="bg">
+                        <img src="{{asset('interface/images/icon/icon3.svg')}}" alt="" class="shape" data-aos="zoom-in-down">
+                    </div>
+                    <h5 class="title">3. تمويل الافكار المقبولة</h5>
+                    <p>يوجد عدة فوائد يحصل عليها المشتركين المقبولة افكارهم</p>
+                    <a href="about-us.html" class="more-button">المزيد من التفاصيل</a>
+                </div> <!-- /.single-block -->
+            </div>
+        </div>
+    </div> <!-- /.container -->
+</div> <!-- /.agn-what-we-do -->
+
+
+<!--
+=============================================
+    About Us
+==============================================
+-->
+<div class="agn-about-us">
+    <img src="{{asset('interface/images/shape/shape-61.svg')}}" alt="" class="shape-one">
+    <img src="{{asset('interface/images/shape/shape-64.svg')}}" alt="" class="shape-two" data-aos="fade-right">
+    <img src="{{asset('interface/images/shape/shape-65.svg')}}" alt="" class="shape-three" data-aos="fade-left">
+    <img src="{{asset('interface/images/shape/shape-60.svg')}}" alt="" class="shape-four">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 order-lg-last">
+                <div class="text-wrapper">
+                    <div class="theme-title-one">
+                        <div class="upper-title">About us</div>
+                        <h2 class="main-title">بنك الابتكار المصري هو بوابة الكترونية متكاملة تسمح بتلاقي افكار الشباب</h2>
+                    </div> <!-- /.theme-title-one -->
+                    <p>ملتقى للمخترع والمستثمر ورجل الصناعة والمجتمع المدني والجهات المانحة للمساهمة في تفعيل منظومة العلوم والتكنولوجيا واستثمار الابتكارات والاختراعات والمساعدة في خلق فرص استثمارية تكنولوجية وتكنولوجيا وطنية</p>
                 </div>
             </div>
-        </section>
-        <!-- ======= End cost ======= -->
-
-        <!-- ======= Start Notable participants ======= -->
-        <section id="team" class=" team bg-light">
-            <div class="container" data-aos="fade-up">
-
-                <div class="section-title" data-aos="zoom-in">
-                    <h2>أبرز المشتركين</h2>
-                    <p>نظراً لأن العمل في مجال الخدمات الإلكترونية يرتكز بشكل أساس على الأفكار الإبداعية، فقد قامت الشركة منذ عدة أعوام. بتأسيس بنك الأفكار كمبادرة تصب في هذا الاتجاه. ويهدف بنك الأفكار إلى استقبال جميع الأفكار سواء المتعلقة بمشاريع إلكترونية
-                        جديدة أو عمليات تطوير جوهرية لمنتجات الشركة الحالية أو غيرها</p>
+            <div class="col-lg-6 order-lg-first">
+                <div class="img-box">
+                    <img src="{{asset('interface/images/home/about-img.png')}}" alt="" class="main-img">
                 </div>
-
-                <div class="row mt-4">
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="interface/assets/images/team/team-1.jpg" class="img-fluid" alt="">
-                                <!-- <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div> -->
-                            </div>
-                            <div class="member-info">
-                                <h4>عاطف السعيد</h4>
-                                <span>صاحب أفضل فكرة فى الزراعة الرقمية</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="300">
-                            <div class="member-img">
-                                <img src="interface/assets/images/team/team-3.jpg" class="img-fluid" alt="">
-                                <!-- <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div> -->
-                            </div>
-                            <div class="member-info">
-                                <h4>مصطفى سعدون</h4>
-                                <span>صاحب افضل فكرة فى ترشيد المياه</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="member-img">
-                                <img src="interface/assets/images/team/team-1.jpg" class="img-fluid" alt="">
-                                <!-- <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div> -->
-                            </div>
-                            <div class="member-info">
-                                <h4>عاطف السعيد</h4>
-                                <span>صاحب أفضل فكرة فى الزراعة الرقمية</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                        <div class="member" data-aos="fade-up" data-aos-delay="300">
-                            <div class="member-img">
-                                <img src="interface/assets/images/team/team-3.jpg" class="img-fluid" alt="">
-                                <!-- <div class="social">
-                                    <a href=""><i class="bi bi-twitter"></i></a>
-                                    <a href=""><i class="bi bi-facebook"></i></a>
-                                    <a href=""><i class="bi bi-instagram"></i></a>
-                                    <a href=""><i class="bi bi-linkedin"></i></a>
-                                </div> -->
-                            </div>
-                            <div class="member-info">
-                                <h4>مصطفى سعدون</h4>
-                                <span>صاحب افضل فكرة فى ترشيد المياه</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-        </section>
-        <!-- End Notable participants -->
+        </div>
+    </div> <!-- /.container -->
+    <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">مزيد من التفاصيل<i class="fa fa-angle-left icon-left" aria-hidden="true"></i></a>
+</div> <!-- /.agn-about-us -->
 
-        <!---Start News-->
-        <section id="news" class="container news">
-            <div class="container news">
-                <div class="section-title" data-aos="zoom-in" data-aos-delay="100">
-                    <h2>{{trans('home.last_news')}}</h2>
-                </div>
+
+
+<!--
+=============================================
+    Theme Counter
+==============================================
+-->
+<div class="agn-counter-section">
+    <img src="{{asset('interface/images/shape/shape-55.svg')}}" alt="" class="shape-one">
+    <img src="{{asset('interface/images/shape/shape-59.svg')}}" alt="" class="shape-two">
+    <img src="{{asset('interface/images/shape/shape-61.svg')}}" alt="" class="shape-three">
+    <div class="container">
+        <div class="main-wrapper">
+            <div class="theme-title-one text-center">
+                <h2 class="main-title">We completed 1500+ Projects Yearly <br>Successfully & counting</h2>
+            </div> <!-- /.theme-title-one -->
+
+            <div class="counter-wrapper">
                 <div class="row">
-                    @foreach($news as $new)
-                        <div class="cardcontainer col-md-4" data-aos="fade-up" data-aos-delay="200">
-                            <div class="photo"> <img src="{{$new->img}}">
-                            </div>
-                            <div class="content">
-                                <h4 class="txt4 text-white">{{$new->header}}</h4>
-                                <!-- <p class="txt5">A city that never sleeps</p> -->
-                                <p class="txt2 mt-3">{{$new->desc}}</p>
-                            </div>
-                            <div class="newsFooter">
-                                <p>
-                                    <a class="read-more waves-effect waves-light btn" href="{{route('user.news.show',$new->id)}}">{{trans('home.show_more')}}</a>
-                                </p>
-                                <p class="txt3">{{date('d-m-Y', strtotime($new->created_at))}}<i class="bi bi-calendar"></i></p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-                    <div class="d-flex justify-content-center">
-                        <a class="btn btn-info text-white" href="{{route('allnews')}}">{{trans('home.see_more')}}</a>
+                    <div class="col-sm-4">
+                        <div class="single-counter-box">
+                              <h2 class="number"><span class="timer" data-from="0" data-to="16" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
+                              <p>المشتركين</p>
+                          </div> <!-- /.single-counter-box -->
                     </div>
-            </div>
-        </section>
-        <!---End News---->
+                    <div class="col-sm-4">
+                        <div class="single-counter-box">
+                              <h2 class="number"><span class="timer" data-from="0" data-to="460" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
+                              <p>الافكار</p>
+                          </div> <!-- /.single-counter-box -->
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="single-counter-box">
+                              <h2 class="number"><span class="timer" data-from="0" data-to="500" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
+                              <p>Completed Projects</p>
+                          </div> <!-- /.single-counter-box -->
+                    </div>
 
-    <!-- ======= End Content ======= -->
+                </div>
+            </div> <!-- /.counter-wrapper -->
+        </div> <!-- /.main-wrapper -->
+    </div> <!-- /.container -->
+</div> <!-- /.agn-counter-section -->
+
+<div class="about-us-standard agency-style team-standard our-team ">
+        <div class="theme-title-one text-center">
+            <div class="upper-title">رسالة من</div>
+            <h2 class="main-title">الممول الرئيسى</h2>
+        </div> <!-- /.theme-title-one -->
+        <div class="message-div">
+            <div class="container">
+                <div class="demo-container-1100">
+                    <div class="row gutter-80">
+                        <div class="col-lg-6 order-lg-last" data-aos="fade-right">
+                            <div class="single-block">
+                                <p>LSince inception of RFCO, we are dedicated to build an environment based on innovation and efficiency. Where our clients and employees are met with the integrity and respect they aim for. RFCO believes in creating communities to live in that include all the lifestyle services and needed facilities for a hassle-free life. A community that acts as one harmonious entity serving the needs of our customers during and after delivery. Since we began our journey, our success has been a source of pride and inspiration for us to embrace the present and continue building for the future. We have constantly strived to create livable communities and projects.</p>
+                            </div> <!-- /.single-block -->
+                        </div><!--  /.col- -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="single-team-member">
+                                <div class="wrapper">
+                                    <div class="img-box"><img src="{{asset('interface/images/ceo.jpeg')}}" alt=""></div>
+                                    <div class="info-meta">
+                                        <h6 class="name">RAMY FARES</h6>
+                                        <span>الممول الرئيسى</span>
+                                    </div>
+                                </div>
+                                <div class="hover-content">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div> <!-- /.hover-content -->
+                            </div> <!-- /.single-team-member -->
+                        </div> <!-- /.col- -->
+                    </div> <!-- /.row -->
+                </div> <!-- /.demo-container-900 -->
+            </div> <!-- /.container -->
+        </div>
+</div> <!-- /.about-us-standard -->
+
+
+<!--
+=====================================================
+    Our Blog
+=====================================================
+-->
+<div class="our-blog blog-masonry">
+    <img src="{{asset('interface/images/shape/shape-58.svg')}}" alt="" class="shape-one">
+    <img src="{{asset('interface/images/shape/shape-57.svg')}}" alt="" class="shape-two">
+    <img src="{{asset('interface/images/shape/shape-9.svg')}}" alt="" class="shape-three">
+    <img src="{{asset('interface/images/shape/shape-55.svg')}}" alt="" class="shape-four">
+    <div class="container">
+        <div class="theme-title-one text-center">
+            <div class="upper-title">Our Blog</div>
+            <h2 class="main-title">تعرف على احدث الاخبار</h2>
+        </div> <!-- /.theme-title-one -->
+
+        <div class="blog-one-slider">
+            <div class="item">
+                <div class="isotop-item">
+                    <div class="single-blog-post">
+                        <div class="img-holder"><img src="{{asset('interface/images/blog/3.jpg')}}" alt=""></div>
+                        <div class="post-data">
+                            <a href="#" class="date">23 July, 2018</a>
+                            <h5 class="blog-title-one title"><a href="blog-details.html">Challange yourself and win the future.</a></h5>
+                            <a href="blog-details.html" class="read-more"><i class="flaticon-back-1"></i></a>
+                        </div> <!-- /.post-data -->
+                    </div> <!-- /.single-blog-post -->
+                </div> <!-- /.isotop-item -->
+            </div>
+
+            <div class="item">
+                <div class="isotop-item">
+                    <div class="single-blog-post">
+                        <div class="img-holder"><img src="{{asset('interface/images/blog/3.jpg')}}" alt=""></div>
+                        <div class="post-data">
+                            <a href="#" class="date">23 July, 2018</a>
+                            <h5 class="blog-title-one title"><a href="blog-details.html">Challange yourself and win the future.</a></h5>
+                            <a href="blog-details.html" class="read-more"><i class="flaticon-back-1"></i></a>
+                        </div> <!-- /.post-data -->
+                    </div> <!-- /.single-blog-post -->
+                </div> <!-- /.isotop-item -->
+            </div>
+
+            <div class="item">
+                <div class="isotop-item">
+                    <div class="single-blog-post">
+                        <div class="img-holder"><img src="{{asset('interface/images/blog/3.jpg')}}" alt=""></div>
+                        <div class="post-data">
+                            <a href="#" class="date">23 July, 2018</a>
+                            <h5 class="blog-title-one title"><a href="blog-details.html">Challange yourself and win the future.</a></h5>
+                            <a href="blog-details.html" class="read-more"><i class="flaticon-back-1"></i></a>
+                        </div> <!-- /.post-data -->
+                    </div> <!-- /.single-blog-post -->
+                </div> <!-- /.isotop-item -->
+            </div>
+        </div>
+    </div>
+</div> <!-- /.our-blog-one -->
+
+<!--
+=============================================
+    Contact Banner
+==============================================
+-->
+<div class="agn-contact-banner">
+    <div class="container">
+        <h2 class="title">Do you have any projects? <br>Contact us.</h2>
+        <a href="contact-us-agency.html" class="contact-button line-button-one">Contact Us</a>
+    </div> <!-- /.contianer -->
+</div> <!-- /.agn-contact-banner -->
+
 @endsection
 @section('scripts')
- <!-- start chart script -->
-   @if($count >0)
-        <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
-        <script src="{{asset('assets/plugins/morrisjs/morris.js')}}"></script>
-        <script src="{{asset('js/morris-data.js')}}"></script>
-        <!-- ============================================================== -->
-        <!-- Style switcher -->
-        <!-- ============================================================== -->
-        <script src="{{asset('assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
-        <script>
-        Morris.Donut({
-            element: 'morris-donut-chart',
-            data: {!! $ideas_vote !!},
-            resize: true,
-            colors:['#009efb', '#55ce63', '#2f3d4a']
-        });
-        </script>
-    @else
-        <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
-        <script src="{{asset('assets/plugins/morrisjs/morris.j')}}s"></script>
-        <script src="{{asset('js/morris-data.js')}}"></script>
-        <!-- ============================================================== -->
-        <!-- Style switcher -->
-        <!-- ============================================================== -->
-        <script src="{{asset('assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
-        <script>
-        Morris.Donut({
-            element: 'morris-donut-chart',
-            data: [{
-                label: "no vote yet",
-                value: 100
-            }],
-            resize: true,
-            colors:['#2f3d4a']
-        });
-        </script>
-   @endif
- <!-- end chart script -->
-
-
-
-<!-- start timer script -->
-  <script>
-        var countDownDate = new Date("Jul 25, 2022 16:37:52").getTime();
-        var myfunc = setInterval(function() {
-        // code goes here
-        var now = new Date().getTime();
-        var timeleft = countDownDate - now;
-
-        var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
-
-        document.getElementById("days").innerHTML = days + "d "
-        document.getElementById("hours").innerHTML = hours + "h "
-        document.getElementById("mins").innerHTML = minutes + "m "
-        document.getElementById("secs").innerHTML = seconds + "s"
-        }, 1000)
-
-        
-
-
-  </script>
-<!-- end timer script -->
-
-<!-- start vote script -->
-
-<!-- end vote script -->
 @endsection
 

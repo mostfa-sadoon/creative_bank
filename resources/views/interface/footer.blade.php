@@ -1,123 +1,115 @@
-  <!-- ======= Start Footer ======= -->
-  <footer id="footer">
 
-<div class="footer-top">
-    <div class="container">
-        <div class="row">
+			<footer class="theme-footer-one">
+				<div class="shape-one" data-aos="zoom-in-right"></div>
+				<img src="{{asset('interface/images/shape/shape-67.svg')}}" alt="" class="shape-two">
+				<div class="top-footer">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-3 col-sm-6 col-12 about-widget" data-aos="fade-up">
+								<a href="index.html" class="logo"><img src="{{asset('interface/images/logo/logoo.svg')}}" alt=""></a>
+								<a href="#" class="email">info@sdsolutionseg.com</a>
+								<a href="#" class="phone">01097130604</a>
 
-            <div class="col-lg-3 col-md-6 footer-contact">
-                <h3> <span>فكرتك</span></h3>
-                <p><i class="bi bi-geo-alt-fill"></i> 7 زيد إبن ثابت , الحجاز مصر الجديدة القاهرة ,مصر<br>
-                    <i class="bi bi-telephone-fill"></i> 01097130604
-                    <br>
-                    <i class="bi bi-envelope-fill"></i> info@sdsolutionseg.com<br>
-                </p>
-            </div>
+							</div> <!-- /.about-widget -->
+							<div class="col-lg-3 col-lg-3 col-sm-6 col-12 footer-list" data-aos="fade-up">
+								<h5 class="title">Services</h5>
+								<ul>
+									<li><a href="about-us.html">our service</a></li>
+									<li><a href="about-us.html">discussion creative idea</a></li>
+									<li><a href="about-us.html">Sponser</a></li>
 
-            <div class="col-lg-2 col-md-6 footer-links">
-                <h4>{{trans('user.important_link')}}</h4>
-                <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">{{trans('user.main')}}</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">{{trans('user.send_idea')}}</a></li>
-                    <li><i class="bx bx-chevron-right"></i>
-                        <a href="#">{{trans('user.creative')}}</a>  
-                    </li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">{{trans('user.conact_us')}}</a></li>
-                </ul>
-            </div>
+								</ul>
+							</div> <!-- /.footer-recent-post -->
+							<div class="col-lg-3 col-sm-6 col-12 footer-list" data-aos="fade-up">
+								<h5 class="title">important link</h5>
+								<ul>
+									<li><a href="index.html">Main</a></li>
+									<li><a href="send-your-idea.html">send your idea</a></li>
+									<li><a href="team-standard.html">Team</a></li>
+									<li><a href="about-us.html">About Bank</a></li>
+									<li><a href="blogs.html">News</a></li>
+								</ul>
+							</div> <!-- /.footer-list -->
+							<div class="col-lg-3 col-lg-2 col-sm-6 col-12 footer-information" data-aos="fade-up">
+								<h5 class="title">Our Address</h5>
+								<p> 7 زيد إبن ثابت , الحجاز مصر الجديدة
+									<br>القاهرة ,مصر</p>
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+								</ul>
+							</div>
+						</div> <!-- /.row -->
+					</div> <!-- /.container -->
+				</div> <!-- /.top-footer -->
 
-            <div class="col-lg-3 col-md-6 footer-links">
-                <h4>{{trans('user.our_service')}}</h4>
-                <ul>
-                    <li><i class="bx bx-chevron-right"></i>
-                        <a href="#services">{{trans('user.last_news')}}</a>
-                    </li>
-                    <li><i class="bx bx-chevron-right"></i>
-                        <a href="#services">{{trans('user.discussion_creative_idea')}}</a>
-                    </li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#services">{{trans('user.winners')}}</a></li>   
-                    <li><i class="bx bx-chevron-right"></i> <a href="#services">{{trans('user.display_best_idea')}}</a></li>
-
-                </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-6 footer-newsletter">
-                <h4>{{trans('user.send_idea')}}</h4>
-                <!-- <p>Our experienced team of professionals specializing in providing software solutions for companies of all sizes in different industry sectors, easier and in a much efficient way.</p> -->
-                <form action="" method="post">
-                    <input type="email" name="email"><input type="submit" value="سجل الان">
-                </form>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<div class="container  py-4">
-    <div class="row">
-        <div class="col-md-6">
-            <div class="me-md-auto text-center text-md-end">
-                <div class="copyright">
-                    &copy; حقوق النشر <strong><span> فكرتك </span></strong>. جميع الحقوق محفوظة
-                </div>
-                <div class="credits">
-                    تم التطوير بواسطة <a href="https://sdsolutionseg.com/index.php">SD Solutions</a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="col-md-3">
-
-        </div>
-
-
-        <div class="col-md-3 ">
-            <div class="social-links text-center text-md-start pt-3 pt-md-0 ">
-                <a href="https://www.facebook.com/sdsolutionseg/ " class="facebook "><i class="bx bxl-facebook "></i></a>
-                <a href="https://www.instagram.com/sd_solutionseg/ " class="instagram "><i class="bx bxl-instagram "></i></a>
-                <a href="https://www.linkedin.com/company/sdsolutionseg/mycompany/ " class="linkedin "><i class="bx bxl-linkedin "></i></a>
-            </div>
-        </div>
-    </div>
+				<div class="container">
+					<div class="bottom-footer">
+						<div class="clearfix">
+							<p>&copy; 2019 copyright all right reserved</p>
+							<ul>
+								<li><a href="#">Privace & Policy.</a></li>
+								<li><a href="faq.html">Faq.</a></li>
+								<li><a href="#">Terms.</a></li>
+							</ul>
+						</div>
+					</div> <!-- /.bottom-footer -->
+				</div>
+			</footer> <!-- /.theme-footer-one -->
 
 
 
 
-</div>
-</footer>
-<!-- ======= End Footer ======= -->
+	        <!-- Scroll Top Button -->
+			<button class="scroll-top tran3s">
+				<i class="fa fa-angle-up" aria-hidden="true"></i>
+			</button>
 
-<!--Script------------------------------------------->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="{{asset('interface/assets/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('interface/assets/js/bootstrap.min.js')}}"></script>
 
-<!-- Vendor JS Files -->
-<script src="{{asset('interface/assets/vendor/purecounter/purecounter.js')}}"></script>
-<script src="{{asset('interface/assets/vendor/aos/aos.js')}}"></script>
-<script src="{{asset('interface/assets/vendor/owl-carousel/owl.carousel.js')}}"></script>
-<script src="{{asset('interface/assets/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('interface/assets/vendor/glightbox/js/glightbox.min.js')}}"></script>
-<script src="{{asset('interface/assets/vendor/isotope-layout/isotope.pkgd.min.js')}}"></script>
-<script src="{{asset('interface/assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-<script src="{{asset('interface/assets/vendor/php-email-form/validate.js')}}"></script>
-<script src="{{asset('interface/assets/js/custom.js')}}"></script>
 
-<script>
-        $(document).ready(function(){
-            var lang= {!!  json_encode(app()->getLocale()) !!}
-            console.log(lang);
-            if(lang=="ar"){
-                $("html[lang=ar]").attr("dir", "rtl")
-                .find("body").addClass("right-to-left");
-            }else{
-                $("html[lang=en]").attr("dir", "ltr")
-                .find("body").addClass("left-to-right");
-            }
-        });
-   </script>
-    @yield('scripts')
-</body>
+		<!-- Optional JavaScript _____________________________  -->
 
+    	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    	<!-- jQuery -->
+		<script src="{{asset('interface/vendor/jquery.2.2.3.min.js')}}"></script>
+		<!-- Popper js -->
+		<script src="{{asset('interface/vendor/popper.js/popper.min.js')}}"></script>
+		<!-- Bootstrap JS -->
+		<script src="{{asset('interface/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+	    <!-- menu  -->
+		<script src="{{asset('interface/vendor/mega-menu/assets/js/custom.js')}}"></script>
+		<!-- AOS js -->
+		<script src="{{asset('interface/vendor/aos-next/dist/aos.js')}}"></script>
+		<!-- WOW js -->
+		<script src="{{asset('interface/vendor/WOW-master/dist/wow.min.js')}}"></script>
+		<!-- owl.carousel -->
+		<script src="{{asset('interface/vendor/owl-carousel/owl.carousel.min.js')}}"></script>
+		<!-- js count to -->
+		<script src="{{asset('interface/vendor/jquery.appear.js')}}"></script>
+		<script src="{{asset('interface/vendor/jquery.countTo.js')}}"></script>
+		<!-- Fancybox -->
+		<script src="{{asset('interface/vendor/fancybox/dist/jquery.fancybox.min.js')}}"></script>
+		<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+		<!-- Theme js -->
+		<script src="{{asset('interface/js/lang.js')}}"></script>
+		<script src="{{asset('interface/js/theme.js')}}"></script>
+        <script>
+            $(document).ready(function(){
+                var lang= {!!  json_encode(app()->getLocale()) !!}
+                console.log(lang);
+                if(lang=="ar"){
+                    $("html[lang=ar]").attr("dir", "rtl")
+                    .find("body").addClass("right-to-left");
+                }else{
+                    $("html[lang=en]").attr("dir", "ltr")
+                    .find("body").addClass("left-to-right");
+                }
+            });
+       </script>
+        @yield('scripts')
+		</div> <!-- /.main-page-wrapper -->
+	</body>
 </html>

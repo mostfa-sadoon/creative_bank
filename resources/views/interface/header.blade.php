@@ -1,97 +1,50 @@
- <!---- ======= Start Nav ======= ---->
+<div class="theme-main-menu theme-menu-one">
+    <div class="logo"><a href="index.html"><img src="{{asset('interface/images/logo/logoo.svg')}}" alt=""></a></div>
+    <nav id="mega-menu-holder" class="navbar navbar-expand-lg">
+        <div  class="container nav-container">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="flaticon-setup"></i>
+            </button>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                   <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a href="index.html" class="nav-link" >الرئيسية</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about-us.html" class="nav-link" >عن البنك</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="send-your-idea.html" class="nav-link" >ارسل فكرتك</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="blogs.html" class="nav-link" >الاخبار</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="faq.html" class="nav-link" >الاسئلة الشائعة</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contact-us.html" class="nav-link" >تواصل معنا</a>
+                    </li>
+               </ul>
+           </div>
+        </div> <!-- /.container -->
+    </nav> <!-- /#mega-menu-holder -->
+    <div class="header-right-widget">
+        <ul>
+            <li class="language-switcher">
+                <div class="dropdown">
+                    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                        Ar
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <ul class="ct-language__dropdown">
+                            <li><a href="#googtrans(en|ar)" class="lang-es lang-select" data-lang="ar">Arabic</a></li>
+                        </ul>
+                      </div>
+                </div>
+            </li>
+            <li><a href="sign-up.html" class="contact-us white-shdw-button">تسجيل دخول<i class="icon flaticon-back "></i></a></li>
+        </ul>
+    </div> <!-- /.header-right-widget -->
+    </div> <!-- /.theme-main-menu -->
 
- <nav id="navbar_top" class="navbar navbar-expand-lg navbar-dark ">
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="menuToggle()">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <a class="navbar-brand" href="{{route('home')}}"> <span><img src="{{asset('interface/assets/images/logoo.png')}}" alt="logo" width="100px"height="50px"/></span> </a>
-  <div class=""style="display:contents;">
-      <ul class="navbar-nav my-2 ">
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{route('home')}}">{{trans('user.main')}}</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{{route('idea.create')}}">{{trans('user.send_your_idea')}}</a>
-          </li>
-          <!-- <li class="nav-item">
-              <a class="nav-link " href="#">كيف يعمل</a>
-          </li> -->
-          <li class="nav-item">
-              <a class="nav-link " href="{{route('profite')}}">{{trans('user.How_much_earn')}}</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="bestIdeas.html">{{trans('user.creative')}}</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link " href="{{route('user.commonquestions')}}">{{trans('user.common_question')}}</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link " href="{{route('allnews')}}">{{trans('user.last_news')}}</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link " href="{{route('allidea')}}">{{trans('user.ideas')}}</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{{route('about')}}">{{trans('user.about_bank')}}</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link " href="{{route('conect')}}">{{trans('user.conact_us')}}</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link " href="{{route('suggestions.index')}}">{{trans('user.suggestions')}}</a>
-          </li>
-      </ul>
-      <div style="display:contents;">
-          <div class="form-inline">
-              @guest
-              <a href="{{route('user.login')}}" class="btn btn-outline-success my-2 my-sm-0">تسجيل الدخول</a>
-              @endguest
-              @auth
-
-              <!-- <a href="{{route('user.signout')}}">خروج</a> -->
-              <a href="{{route('profile.show',Auth::user()->id)}}"><i class="profile bx bxs-user  "></i></a>
-              @endauth
-              <div class="dropdown show ">
-          @if(app()->getLocale() == 'en')
-              <a class="btn btn-secondary dropdown-toggle" href="{{url('change_lang/en')}}" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  English
-              </a>
-              @else
-              <a class="btn btn-secondary dropdown-toggle" href="{{url('change_lang/ar')}}" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  عربي
-              </a>
-          @endif
-
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="{{url('change_lang/en')}}">English</a>
-                  <a class="dropdown-item" href="{{url('change_lang/ar')}}">عربي</a>
-              </div>
-          </div>
-      </div>
-
-
-
-  </div>
-
-      <!-- @if(app()->getLocale() == 'en')
-          <i class="profile bx bx-globe  "><a href="{{url('change_lang/ar')}}">{{trans('user.lang')}}</a></i>
-      @else
-      <i class="profile bx bx-globe  "><a href="{{url('change_lang/en')}}">{{trans('user.lang')}}</a></i>
-      @endif -->
-
-  </div>
-  </nav>
-
-  <!---- ======= End Nav ======= ---->
-<script>
-    const myNav = document.getElementById('#navbarSupportedContent');
-
-    function menuToggle(){
-        myNav.style.display = 'inline-table !important';
-    }
-        
-
-</script>

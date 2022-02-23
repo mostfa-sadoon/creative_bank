@@ -1,47 +1,35 @@
-<!DOCTYPE html>
-<html lang="en" dir="rtl">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--Styles------------------------------------------->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('interface/assets/css/font-awesome.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('interface/assets/css/normalize.css')}}" />
-    <link rel="stylesheet" href="{{asset('interface/assets/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('interface/assets/css/bootstrap.min.css')}}" />
-    <!-- Vendor CSS Files -->
-    <link rel="stylesheet" href="{{asset('interface/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('interface/assets/vendor/boxicons/css/boxicons.min.css')}}">
-    <link rel="stylesheet" href="{{asset('interface/assets/vendor/glightbox/css/glightbox.min.css')}}">
-    <link rel="stylesheet" href="{{asset('interface/assets/vendor/glightbox/css/glightbox.min.css')}}">
-    <link rel="stylesheet" href="{{asset('interface/assets/vendor/remixicon/remixicon.css')}}">
-    <link rel="stylesheet" href="{{asset('interface/assets/vendor/owl-carousel/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{asset('interface/assets/vendor/aos/aos.css')}}">
-    @if(app()->getLocale() == 'en')
-    <link rel="stylesheet" href="{{asset('interface/assets/css/eng-style.css')}}"/>
-    @else
-    <link rel="stylesheet" href="{{asset('interface/assets/css/style.css')}}"/>
-    @endif
-    <link rel="stylesheet" href="{{asset('interface/assets/css/best_idea.css')}}"/>
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
+            <meta name="author" content="creativegigs">
+            <meta name="description" content="Rogan creative multipurpose is a beautiful website template designed for SEO & Digital Agency websites.">
+            <meta name='og:image' content='images/home/ogg.png'>
+            <!-- For IE -->
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <!-- For Resposive Device -->
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <!-- For Window Tab Color -->
+            <!-- Chrome, Firefox OS and Opera -->
+            <meta name="theme-color" content="#233D63">
+            <!-- Windows Phone -->
+            <meta name="msapplication-navbutton-color" content="#233D63">
+            <!-- iOS Safari -->
+            <meta name="apple-mobile-web-app-status-bar-style" content="#233D63">
+            <title>FKRTK</title>
+            <!-- Favicon -->
+            <link rel="icon" type="image/png" sizes="56x56" href="{{asset('interface/images/logo/logoo.svg')}}">
+            <!-- Main style sheet -->
+            <link rel="stylesheet" type="text/css" href="{{asset('interface/css/ar-style.css')}}">
+            <!-- responsive style sheet -->
+            <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-responsive.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-style.css')}}">
+            @yield('style')
+        </head>
+
+        <body>
+
+            <div class="main-page-wrapper">
 
 
-
-    <!-- <link href="assets/vendor/aos/aos.css" rel="stylesheet"--->
-    <style type="text/css">
-        .fixed-top {
-            top: -40px;
-            transform: translateY(40px);
-            transition: transform .8s;
-        }
-        .dropdown-menu {
-            width: 50px !important;
-            height: 50px !important;
-        }
-    </style>
-      @yield('style')
-    <title>بنك الأفكار</title>
-</head>
-
-<body>
