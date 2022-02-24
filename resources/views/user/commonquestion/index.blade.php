@@ -68,52 +68,55 @@
 </style>
 @endsection
 @section('content')
-  <!-- ======= Start Content ======= -->
-  <div class="">
-        <!-- ======= Start creative ======= -->
-        <section id="creative" class=" creative card bg-light" data-aos="zoom-in" data-aos-delay="100">
-            <div class=" section-title">
-                <h2>الأسئلة الشائعة</h2>
-            </div>
-            <div class="container text-center">
-                <p>هذه الصفحة تحتوى على جميع الاسئلة الشائعة التى تخدم المستخدم </p>
-            </div>
-        </section>
-        <!-- ======= End creative ======= -->
 
-        <!---Start Common Questions-->
-        <section>
-            <div class="container">
-                <div id="accordion" class="">
-                       
 
-                @foreach($commonquestions as $key=>$commonquestion)
-                    <!-- ======= start creative ======= -->
-                    <div id="accordion" class="">
-                        <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                                <div class="card-header p-0 border-0" id="heading-24{{$key}}">
-                                    <button class=" accordion-title border-0 collapsed" data-toggle="collapse" data-target="#collapse-24{{$key}}" aria-expanded="false" aria-controls="#collapse-240">
-                                        <i class="fa fa-minus text-center d-flex align-items-center justify-content-center h-100">
-                                        </i>{{$commonquestion->question}}
-                                    </button>
+
+<div class="solid-inner-banner">
+    <h2 class="page-title">Question & Answers</h2>
+    <ul class="page-breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+        <li>Faq</li>
+    </ul>
+</div> <!-- /.solid-inner-banner -->
+
+
+
+-->
+<div class="faq-page faq-tab-wrapper pt-150 ">
+    <div class="container">
+        <div class="d-md-flex justify-content-between align-items-center mb-80">
+            <h3 class="faq-page-title">Frequently Asked Questions</h3>
+            <form action="#" class="faq-search-form">
+                <input type="text" placeholder="Search here..">
+                <button><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <!-- ================== FAQ Panel ================ -->
+                   <div class="faq-panel">
+                    <div class="panel-group theme-accordion" id="accordion2">
+                       @foreach ($commonquestions as $key=>$commonquestion )
+                            <div class="panel">
+                                <div class="panel-heading">
+                                <h6 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapse{{$key}}">
+                                        {{$commonquestion->question}}</a>
+                                </h6>
                                 </div>
-                                <div id="collapse-24{{$key}}" class="collapse " aria-labelledby="heading-24{{$key}}" data-parent="#accordion">
-                                    <div class="card-body accordion-body">
-                                        <p>{{$commonquestion->answer}}</p>
-                                    </div>
-                                    <div class="d-flex justify-content-start">
-                                        <a href="{{route('commonquestions.edit',$commonquestion->id)}}" class="m-2"><i class="fas fa-edit"></i></a>
-                                        <a href="{{route('commonquestions.delete',$commonquestion->id)}}" class="m-2"><i class="fas fa-trash-alt text-danger"></i></a>
-                                    </div>
+                                <div id="collapse{{$key}}" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <p>{{$commonquestion->answer}}</p>
                                 </div>
-                            </div>
-                    </div>       
-                    <!-- ======= End creative ======= -->
-                    @endforeach
-                </div>
-            </div>
-        </section>
-        <!---End Common Questions---->
-    </div>
-    <!-- ======= End Content ======= -->
+                                </div>
+                            </div> <!-- /panel 1 -->
+                       @endforeach
+
+                    </div> <!-- end #accordion2 -->
+                </div> <!-- End of .faq-panel -->
+            </div> <!-- /.col- -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div> <!-- /.faq-page -->
 @endsection

@@ -26,7 +26,7 @@
 </section>
 
 <div class="theme-main-menu theme-menu-one">
-    
+
     <nav id="mega-menu-holder" class="navbar navbar-expand-lg">
         <div  class="container nav-container">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,7 +47,7 @@
                         <a href="blogs.html" class="nav-link" >الاخبار</a>
                     </li>
                     <li class="nav-item">
-                        <a href="faq.html" class="nav-link" >الاسئلة الشائعة</a>
+                        <a href="{{route('user.commonquestions')}}" class="nav-link" >الاسئلة الشائعة</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('conect')}}" class="nav-link" >تواصل معنا</a>

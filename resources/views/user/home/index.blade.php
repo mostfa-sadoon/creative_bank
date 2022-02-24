@@ -28,7 +28,7 @@
             <h1 class="main-title wow fadeInUp animated" data-wow-delay="0.4s">مرحبا بكم فى <br> بنك الافكار</h1>
             <p class="sub-title wow fadeInUp animated" data-wow-delay="0.9s">ارسل لنا فكرتك لتجد الدعم المناسب</p>
             <ul class="button-group lightgallery">
-                <li><a href="send-your-idea.html" class="more-button solid-button-one wow fadeInRight animated" data-wow-delay="1.5s">ارسل فكرتك<i class="fa fa-angle-left icon-right" aria-hidden="true"></i></a></li>
+                <li><a href="{{route('idea.create')}}" class="more-button solid-button-one wow fadeInRight animated" data-wow-delay="1.5s">ارسل فكرتك<i class="fa fa-angle-left icon-right" aria-hidden="true"></i></a></li>
             </ul>
         </div> <!-- /.main-wrapper -->
     </div> <!-- /.container -->
