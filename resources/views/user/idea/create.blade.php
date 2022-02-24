@@ -1,151 +1,136 @@
 @extends('user_temp')
 @section('content')
- <!---Start News-->
- <div class="container">
-            <div class="row send-Idea">
-                <div class="col-lg-8 mx-auto">
-                    <div class="card mt-2 mx-auto p-1 bg-light">
-                        <div class="card-body bg-light">
-                            <div class="container">
-                                <h2>{{trans('home.send_your_idea')}}</h2>
-                                <form id="contact-form" role="form" action="{{route('idea.store')}}" method="post" enctype="multipart/form-data">
-                                    @csrf
-                                    <div class="controls">
-                                        <!---Category---->
-                                        <div class="">
-                                            <div class="form-group">
-                                                <label for="form_need">الفئة <span>*</span>
-                                                </label>
-                                                <select id="form_need" name="category" class="form-control" required="required" data-error="Please specify your need.">
-                                                <option value="" selected disabled>-- اختر قيمة --</option>
-                                                @foreach($categories as $category)
-                                                    @if (old('category') == $category->id)
-                                                    <option value="{{$category->id}}" selected>{{ $category->name }}</option>
-                                                    @else
-                                                    <option value="{{$category->id}}">{{$category->name}}</option>
-                                                    @endif
-                                                @endforeach
-                                            </select>
-                                                   @if ($errors->has('category'))
-                                                      <span class="text-danger">{{ $errors->first('category') }}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                        <!---Idea Title---->
-                                        <div class="">
-                                            <div class="form-group">
-                                                <label for="validationServer01">{{trans('home.idea_title')}}<span> *</span></label>
-                                                <input id="validationServer01" type="text" name="name"  value="{{ old('name') }}" class="form-control is-nvalid" placeholder=" أدخل عنوان الفكرة *" required="required" data-error="Firstname is required.">
-                                                    @if ($errors->has('name'))
-                                                      <span class="text-danger">{{ $errors->first('name') }}</span>
-                                                    @endif
-                                            </div>
+<div class="solid-inner-banner">
+    <h2 class="page-title">ارسل فكرتك</h2>
+</div> <!-- /.solid-inner-banner -->
 
-                                            <div class="invalid-feedback">
-                                                Please choose a username.
-                                            </div>
-                                        </div>
-                                        <!---Choose Photo---->
-                                        <div class="form-group">
-                                            <label for="exampleFormControlFile1">الصورة</label>
-                                            <input type="file" name="img"  value="{{ old('img') }}" class="form-control-file" id="exampleFormControlFile1">
-                                                   @if ($errors->has('img'))
-                                                      <span class="text-danger">{{ $errors->first('img') }}</span>
-                                                    @endif
-                                        </div>
-                                        <!---Choose video---->
-                                        <div class="">
-                                            <div class="form-group">
-                                                <label for="form_email">فيديو</label>
-                                                <input id="form_email" name="video_link"  value="{{ old('video_link') }}" type="url" name="text" class="form-control" placeholder="ادخل رابط الفيديو *"  data-error="Valid email is required.">
-                                                <p class="hidden-text mt-3">من فضلك اضف رابط يوتيوب صحيح. فمثلا https://www.youtube.com/watch?v=xxxxxxxxxxx</p>
-                                                   @if ($errors->has('video_link'))
-                                                      <span class="text-danger">{{ $errors->first('video_link')}}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                         <!---The Opportunity---->
-                                         <div class="">
-                                            <div class="form-group">
-                                                <label for="form_message">{{trans('home.desc')}}<span> *</span>
-                                                </label>
-                                                <textarea id="form_message" name="desc" class="form-control" placeholder="{{trans('home.desc_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message.">{{ old('desc') }}</textarea>
-                                                   @if ($errors->has('desc'))
-                                                      <span class="text-danger">{{ $errors->first('desc')}}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                        <!---The Opportunity---->
-                                        <div class="">
-                                            <div class="form-group">
-                                                <label for="form_message">{{trans('home.problem')}}<span> *</span>
-                                                </label>
-                                                <textarea id="form_message" name="problem" class="form-control" placeholder="{{trans('home.problem_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message.">{{ old('problem') }}</textarea>
-                                                   @if ($errors->has('problem'))
-                                                      <span class="text-danger">{{ $errors->first('problem')}}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                        <!---The Solution---->
-                                        <div class="">
-                                            <div class="form-group">
-                                                <label for="form_message">{{trans('home.solve')}}<span> *</span>
-                                                </label>
-                                                <textarea id="form_message" name="solve" class="form-control" placeholder="{{trans('home.solve_placeholder')}} *" rows="4" required="required" data-error="Please, leave us a message.">{{ old('solve') }}</textarea>
-                                                   @if ($errors->has('solve'))
-                                                      <span class="text-danger">{{ $errors->first('solve')}}</span>
-                                                    @endif
-                                            </div>
-                                        </div>
-                                        <!---Attachment---->
-                                        <div class="form-group">
-                                            <label for="exampleFormControlFile1">مرفق</label>
-                                            <input type="file" name="attachment"  value="{{ old('attachment') }}" class="form-control-file" id="exampleFormControlFile1">
-                                            @if ($errors->has('attachment'))
-                                                <span class="text-danger">{{ $errors->first('attachment')}}</span>
-                                            @endif
-                                        </div>
-
-
-                                          <!---Feasibility_study---->
-                                          <div class="form-group">
-                                            <label for="exampleFormControlFile1">{{trans('user.Feasibility_study')}}</label>
-                                            <input type="file" name="Feasibility_study"  value="{{ old('attachment') }}" class="form-control-file" id="exampleFormControlFile1">
-                                            @if ($errors->has('attachment'))
-                                                <span class="text-danger">{{ $errors->first('attachment')}}</span>
-                                            @endif
-                                        </div>
-
-                                          <!---Intellectual_property---->
-                                          <div class="form-group">
-                                            <label for="exampleFormControlFile1">{{trans('user.Intellectual_property')}}</label>
-                                            <input type="file" name="Intellectual_property"  value="{{ old('attachment') }}" class="form-control-file" id="exampleFormControlFile1">
-                                            @if ($errors->has('attachment'))
-                                                <span class="text-danger">{{ $errors->first('attachment')}}</span>
-                                            @endif
-                                        </div>
-
-                                          <!---patent---->
-                                          <div class="form-group">
-                                            <label for="exampleFormControlFile1">{{trans('user.patent')}}</label>
-                                            <input type="file" name="patent"  value="{{ old('attachment') }}" class="form-control-file" id="exampleFormControlFile1">
-                                            @if ($errors->has('attachment'))
-                                                <span class="text-danger">{{ $errors->first('attachment')}}</span>
-                                            @endif
-                                        </div>
-                                        <!---Submit Button---->
-                                        <div class="mt-4">
-                                            <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="{{trans('home.send_your_idea')}}">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.8 -->
+<div class="faq-page faq-tab-wrapper pb-200">
+    <div class="container">
+        <form  class="submit-faq pt-150" action="{{route('idea.store')}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <h3 class="faq-page-title text-center">لديك فكرة ؟ ارسلها الان</h3>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <select name="category" class="form-select form-select-lg mb-3 send-idea-select" aria-label=".form-select-lg example">
+                        <option value="" selected disabled>-- اختر الفئه    --</option>
+                            @foreach($categories as $category)
+                                @if (old('category') == $category->id)
+                                <option value="{{$category->id}}" selected>{{ $category->name }}</option>
+                                @else
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endif
+                            @endforeach
+                    </select>
+                        @if ($errors->has('category'))
+                            <span class="text-danger">{{ $errors->first('category') }}</span>
+                        @endif
                 </div>
-                <!-- /.row-->
+                <div class="col-lg-4 col-md-6">
+                    <input type="text" name="name" value="{{ old('name') }}" placeholder="{{trans('home.idea_title')}}">
+                    @if ($errors->has('name'))
+                    <span class="text-danger">{{ $errors->first('name')}}</span>
+                  @endif
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <input type="text" name="desc" value="{{ old('desc') }}" placeholder="{{trans('home.desc')}}">
+                    @if ($errors->has('desc'))
+                    <span class="text-danger">{{ $errors->first('desc')}}</span>
+                  @endif
+                </div>
+                <div class="col-12"><textarea name="problem" placeholder="المشكلة*">{{ old('problem') }}</textarea>
+                    @if ($errors->has('problem'))
+                    <span class="text-danger">{{ $errors->first('problem')}}</span>
+                  @endif
+                </div>
+                <div class="col-12"><textarea name="solve" placeholder="الحل*">{{ old('solve') }}</textarea>
+                    @if ($errors->has('solve'))
+                    <span class="text-danger">{{ $errors->first('solve')}}</span>
+                  @endif
+                </div>
+                <div class="col-lg-4">
+                    <input type="text" name="video_link" value="{{ old('video_link') }}" placeholder="رابط الفيديو*">
+                    @if ($errors->has('video_link'))
+                    <span class="text-danger">{{ $errors->first('video_link')}}</span>
+                  @endif
+                </div>
+                <div class="col-lg-4">
+                    <input type="file" name="img" id="file" />
+                    @if ($errors->has('img'))
+                       <span class="text-danger">{{ $errors->first('img')}}</span>
+                    @endif
+                </div>
+                <div class="col-lg-12 col-md-9">
+                    <div class="faq-tab-wrapper">
+                        <div class="faq-panel">
+                            <div class="panel-group theme-accordion" id="accordion">
+                              <div class="panel">
+                                <div class="panel-heading">
+                                  <h6 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                    تحميل دراسة الجدوى ان وجدت</a>
+                                  </h6>
+                                </div>
+                                <div id="collapse1" class="panel-collapse collapse ">
+                                  <div class="panel-body">
+                                        <input type="file" name="Feasibility_study" id="file" />
+                                    </button>
+                                  </div>
+                                </div>
+                              </div> <!-- /panel 1 -->
+                            </div> <!-- end #accordion -->
+                        </div> <!-- End of .faq-panel -->
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-9">
+                    <div class="faq-tab-wrapper">
+                        <div class="faq-panel">
+                            <div class="panel-group theme-accordion" id="accordion2">
+                              <div class="panel">
+                                <div class="panel-heading">
+                                  <h6 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
+                                    تحميل الملكية الفكرية ان وجدت</a>
+                                  </h6>
+                                </div>
+                                <div id="collapse2" class="panel-collapse collapse ">
+                                  <div class="panel-body">
+                                        <input type="file" name="Intellectual_property" id="file" />
+                                  </div>
+                                </div>
+                              </div> <!-- /panel 1 -->
+                            </div> <!-- end #accordion -->
+                        </div> <!-- End of .faq-panel -->
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-9">
+                    <div class="faq-tab-wrapper">
+                        <div class="faq-panel">
+                            <div class="panel-group theme-accordion" id="accordion3">
+                              <div class="panel">
+                                <div class="panel-heading">
+                                  <h6 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion3" href="#collapse3">
+                                    تحميل براءة الاختراع</a>
+                                  </h6>
+                                </div>
+                                <div id="collapse3" class="panel-collapse collapse ">
+                                  <div class="panel-body">
+                                        <input type="file"  name="patent" id="file" />
+                                  </div>
+                                </div>
+                              </div> <!-- /panel 1 -->
+                            </div> <!-- end #accordion -->
+                        </div> <!-- End of .faq-panel -->
+                    </div>
+                </div>
+
+                <div class="col-12"><button>Submit Idea</button></div>
             </div>
-        </div>
-        <!---End News---->
-@endsection
+        </form>
+    </div> <!-- /.container -->
+</div> <!-- /.faq-page -->
+
+
+
+ <!---Start News-->
+ @endsection

@@ -1,181 +1,86 @@
 @extends('user_temp')
 @section('content')
- <!-- ======= Start Content ======= -->
- <div class="">
-        <!-- ======= Start creative ======= -->
-        <section id="creative" class=" creative card bg-light">
+<div class="contact-address-two">
+    <div class="container">
+        <div class="theme-title-one text-center">
+            <div class="upper-title">Our Address</div>
+            <h2 class="main-title">Don’t hesitate to contact us for <br>any information. </h2>
+        </div> <!-- /.theme-title-one -->
 
-            <div class=" section-title">
-                <h2>عن بنك الافكار</h2>
-            </div>
-            <div class="container text-center">
-                <p><span class="qoute"></span>هذه الصفحة تحتوى على أفضل الاشخاص المشتركين فى بنك الافكار و اصحاب الافكار الرائدة<span class="qoute"></span></p>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="address-block">
+                    <div class="icon-box"><img src="{{asset('interface/images/icon/icon59.svg')}}" alt=""></div>
+                    <h5>Our Location</h5>
+                    <p>Danmondi, 7563 King Meadow <br>Suite 896, USA</p>
+                </div> <!-- /.address-block -->
+            </div> <!-- /.col- -->
+            <div class="col-lg-4">
+                <div class="address-block">
+                    <div class="icon-box"><img src="{{asset('interface/images/icon/icon60.svg')}}" alt=""></div>
+                    <h5>Email & Phone</h5>
+                    <p><a href="#">roganinc@coname.com</a> <br><a href="#">880 1723801729</a></p>
+                </div> <!-- /.address-block -->
+            </div> <!-- /.col- -->
+            <div class="col-lg-4">
+                <div class="address-block">
+                    <div class="icon-box"><img src="{{asset('interface/images/icon/icon61.svg')}}" alt=""></div>
+                    <h5>Get In Touch</h5>
+                    <p>Also find us social media below</p>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div> <!-- /.address-block -->
+            </div> <!-- /.col- -->
+        </div> <!-- /.row -->
+    </div> <!-- /.container -->
+</div> <!-- /.contact-address-two -->
 
-            </div>
-
-        </section>
-        <!-- ======= End creative ======= -->
 
 
-           <!-- ======= Start Content ======= -->
-    <section class="ftco-section  bg-light card">
-        <div class="container">
-            <div class="section-title">
-                <h2>تواصل معنا</h2>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-12">
-                    <div class="wrapper">
-                        <div class="row mb-5">
-                            <div class="col-md-3">
-                                <div class="dbox-contact w-100 text-center">
-                                    <div class="icon d-flex align-items-center justify-content-center">
-                                        <span class="fa fa-map-marker"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p class="text-center">
-                                            <span>العنوان:</span><br>
-                                            <a href="https://www.google.com/maps/place/SD+Solutions/@30.116134,31.354833,18z/data=!4m5!3m4!1s0x0:0x99eb8b27ece9940f!8m2!3d30.1161336!4d31.3548332?hl=en">7 Zeid Ibn Sabet, Al Matar, El Nozha, Cairo Governorate, Egypt.</a>                                            </p>
-                                    </div>
-                                </div>
+
+<!--
+=============================================
+    Contact Us
+==============================================
+-->
+<div class="contact-us-section contact-minimal">
+    <div class="row no-gutters">
+        <div class="col-lg-6 order-lg-last">
+            <div class="inner-wrapper clearfix">
+                <div class="contact-form">
+                      <form class="form form-style-three" id="contact-form" action="inc/contact.php" data-toggle="validator">
+                        <div class="messages"></div>
+                        <div class="controls">
+                            <div class="form-group">
+                                <input id="form_email" type="email" name="email" placeholder="Email Address*" required="required" data-error="Valid email is required.">
+                                <div class="help-block with-errors"></div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="dbox-contact w-100 text-center">
-                                    <div class="icon d-flex align-items-center justify-content-center">
-                                        <span class="fa fa-phone"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p class="text-center">
-                                            <span>رقم الهاتف:</span><br>
-                                            <a href="tel://+20 109 713 0604">01097130604</a>
-                                        </p>
-                                    </div>
-                                </div>
+
+                            <div class="form-group">
+                                <input id="form_sub" type="text" name="sub" placeholder="Subject*" required="required" data-error="Subject is required.">
+                                <div class="help-block with-errors"></div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="dbox-contact w-100 text-center">
-                                    <div class="icon d-flex align-items-center justify-content-center">
-                                        <span class="fa fa-paper-plane"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p class="text-center">
-                                            <span>البريد الالكترونى:</span><br>
-                                            <a href="mailto:info@sdsolutionseg.com">info@sdsolutionseg.com</a>
-                                        </p>
-                                    </div>
-                                </div>
+
+                            <div class="form-group">
+                                <textarea id="form_message" name="message" class="form_message" placeholder="Your Message*" required="required" data-error="Please,leave us a message."></textarea>
+                                <div class="help-block with-errors"></div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="dbox-contact w-100 text-center">
-                                    <div class="icon d-flex align-items-center justify-content-center">
-                                        <span class="fa fa-globe"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p class="text-center"><span>الموقع الالكترونى:</span> <br><a href="https://sdsolutionseg.com/">sdsolutionseg.com</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row no-gutters">
-                            <div class="col-md-7  order-2 order-md-1">
-                                <div class="contact-wrap w-100 p-md-5 p-4">
-                                    <form method="POST" id="contactForm" name="contactForm" class="contactForm">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <h6 class="label" for="name">الاسم</h6>
-                                                    <input type="text" class="form-control" name="name" id="name" placeholder="الاسم">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <h6 class="label" for="email">البريد الالكترونى</h6>
-                                                    <input type="email" class="form-control" name="email" id="email" placeholder="البريد الالكتورنى">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <h6 class="label" for="subject">العنوان</h6>
-                                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="العنوان">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <h6 class="label" for="#">الرسالة</h6>
-                                                    <textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="الرسالة"></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <input type="submit" value="أرسل" class="btn btn-primary">
-                                                    <div class="submitting"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="col-md-5 d-flex align-items-stretch  order-1 order-md-2">
-                                <div class="info-wrap w-100 p-5 img" style="background-image: url(assets/images/contactUs.jpg); background-repeat: no-repeat;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- ======= End Content ======= -->
+                            <button class="send-button">Send Message</button>
+                        </div> <!-- /.controls -->
+                      </form>
+                </div> <!-- /.contact-form -->
+            </div> <!-- /.inner-wrapper -->
+        </div> <!-- /.col- -->
+        <div class="col-lg-6 order-lg-first"><div id="google-map-three"><div class="map-canvas"></div></div></div>
+    </div> <!-- /.row -->
+</div> <!-- /.contact-us-section -->
+@endsection
 
-
-
-
-        <!---Start Vision-->
-        <section id="creative" class="container creative card bg-light">
-            <div class="container about-bank">
-                <div class="text-center row about-item">
-                    <i class="text-center fa fa-eye  fa-4x"></i>
-                    <span class="text-center"> الرؤية</span>
-
-                </div>
-                <div>
-                    <p>بنك الكتروني وطني يساهم في التنمية التكنولوجية القائمة على الابتكار والاختراع</p>
-                </div>
-            </div>
-        </section>
-        <!---End Vision---->
-
-        <!---Start Mission-->
-        <section id="creative" class="container creative card bg-light">
-            <div class="container about-bank">
-                <div class="text-center row about-item">
-                    <i class="text-center fa fa-bullseye  fa-4x"></i>
-                    <span class="text-center"> الرسالة</span>
-
-                </div>
-                <div>
-                    <p>ملتقى للمخترع والمستثمر ورجل الصناعة والمجتمع المدني والجهات المانحة للمساهمة في تفعيل منظومة العلوم والتكنولوجيا واستثمار الابتكارات والاختراعات والمساعدة في خلق فرص استثمارية تكنولوجية وتكنولوجيا وطنية</p>
-                </div>
-            </div>
-        </section>
-        <!---End Mission---->
-
-        <!---Start Goal-->
-        <section id="creative" class="container creative card bg-light">
-            <div class="container about-bank">
-                <div class="text-center row about-item">
-                    <i class="text-center fa fa-lightbulb-o fa-4x"></i>
-                    <span class="text-center"> الهدف</span>
-
-                </div>
-                <div>
-                    <p>تشجيع الابتكارات والاختراعات التي تؤدى إلى توليد تكنولوجيا وطنية ، والمساهمة في تنسيق الجهود الوطنية لتنمية القدرات الابتكارية من خلال توفير منفذ تسويقي للابتكارات ، دعم المبتكرين والمخترعين ومؤسسات المجتمع المدني</p>
-                </div>
-            </div>
-        </section>
-        <!---End Goal---->
-
-
-    </div>
-    <!-- ======= End Content ======= -->
+@section('scripts')
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjQLCCbRKFhsr8BY78g2PQ0_bTyrm_YXU" type="text/javascript"></script>
+    <script src="{{asset('interface/vendor/sanzzy-map/dist/snazzy-info-window.min.js')}}"></script>
+    <script src="{{asset('interface/js/map-script.js')}}"></script>
 @endsection
