@@ -50,7 +50,6 @@ class Setting extends Controller
     public function aboutUpdate(Request $request)
     {
         $id=$request->id;
-        dd($request->all());
         $about=About::find($id);
         $about->update([
             'ideaRate_ar'=>$request->ideaRate_ar,
