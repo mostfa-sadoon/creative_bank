@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    padding-top: 40px;
+    color: #2e323c;
+    background: #f5f6fa;
+    position: relative;
+    height: 100%;
+}
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #ff3a46;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+.card {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
+.userProfile{
+    margin-top:100px;
+}
+.user-profile{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+.profileGender{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+    margin-top:52px;
+}
+.input[type=radio]{
+    margin: revert !important; 
+    box-sizing: none !important;
+
+}
+.profileDate{
+ margin-top: 32px;
+}
+
+.profileGenderInput{
+    height: 14px !important;
+}
+.faq-page .submit-faq button{
+    margin-bottom: 20px !important;
+}
+.profileTitle{
+    margin-bottom: 32px !important;
+    font-size: larger;
+    color:#ff3a46 !important;
+}
+
+@media (max-width: 991px) {
+    .user-profile{
+        display: flex;
+        align-content: stretch;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+   
+  } 
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    opacity: 0;
+    transition: .3s ease;
+    background-color: #a3808082;
+    border-radius: 100%;
+  }
+
+  .overlay a{
+    color: #ff3a46;
+  }
+
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* When you mouse over the container, fade in the overlay icon*/
+  .imageContainer:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* The icon inside the overlay is positioned in the middle vertically and horizontally */
+  .icon {
+    color: #ff3a46;
+    font-size: 37px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  /* When you move the mouse over the icon, change color */
+  .fa-user:hover {
+    color: #ee4e58;
+  }
+
+  .center-div{
+      display:flex;
+      justify-content:center;
+  }
+
+  .account-settings .about p {
+    margin: auto;
+}

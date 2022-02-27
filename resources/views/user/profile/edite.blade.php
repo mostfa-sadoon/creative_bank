@@ -1,241 +1,147 @@
 @extends('user_temp')
+@section('style')
+<link rel="stylesheet" type="text/css" href="{{asset('interface/css/profile.css')}}">
+@endsection
+
+
 @section('content')
+  
   <!-- ======= Start Content ======= -->
-  <div class="">
-
-<!---Start News-->
-<div class="container mt-4">
-    <div class="row send-Idea">
-        <div class="col-lg-8 mx-auto">
-            <div class="card mt-2 mx-auto p-1 bg-light">
-                <div class="card-body bg-light">
-                    <div class="container">
-                        <h2 class="text-center">{{trans('user.edit_user')}}</h2>
-                        <div></div>
-                        <form id="contact-form" role="form" action="{{route('user.update')}}" method="post" enctype="multipart/form-data">
-                            @csrf
-                            <div class="controls">
-                                <div class="text-center">
-                                    <!-- <img class="rounded-circle" src="assets/images/team/team-1.jpg" alt="" width="100px" /> -->
-
-                                    <img src="{{$user->img}}" id="preview" class="rounded-circle " alt="" width="100px" height="100px" />
-                                    <div class=" text-center">
-                                        <div id="msg"></div>
-                                        <form method="post" id="image-form">
-                                            <input type="file" name="img" class="file" value="{{$user->img}}" accept="image/*">
-                                            @error('img')
-                                                <div class="alert alert-danger">{{ $message }}</div>
-                                            @enderror
-                                            <div class=" ">
-                                                <!-- <input type="text" class="form-control" disabled placeholder="Upload File" id="file"> -->
-                                                <div class="mt-4">
-                                                    <button type="button" class="browse btn btn-primary">{{trans('user.choose_img')}}</button>
-                                                </div>
-                                            </div>
-                                        </form>
+  <div class="userProfile faq-page faq-tab-wrapper">
+    <div class="container">
+        <div class="row gutters">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                  <div class="card-body">
+                     <div class="account-settings">
+                         <div class="user-profile">
+                            <div class="user-avatar">
+                                <div class="imageContainer">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin" >
+                                    <div class="overlay" >
+                                        <a href="#" class="icon" title="User Profile" id="pImage">
+                                        <i class="fa fa-user"></i>
+                                        </a>
                                     </div>
-                                </div>
-                                <!---Name---->
-                                <div class="form-group ">
-                                    <label for="validationDefault01">{{trans('user.full_name')}}<span>*</span>
-                                    </label>
-                                    @if(old('name'))
-                                       <input type="text" class="form-control" name="name"  value="{{ old('name') }}" id="validationDefault01" placeholder="  الاسم بالكامل " required>
-                                    @else
-                                       <input type="text" class="form-control" name="name"  value="{{$user->name}}"  id="validationDefault01" placeholder="  الاسم بالكامل " required>
-                                    @endif             
-                                    @error('name')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <!---Email---->
-                                <div class="">
-                                    <div class="form-group">
-                                        <label for="form_email">{{trans('user.email')}}<span>*</span>
-                                        </label>
-                                        @if(old('email'))
-                                        <input id="form_email" name="email" type="email" value="{{old('email')}}" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
-                                        @else
-                                           <input id="form_email" name="email" type="email" value="{{$user->email}}" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
-                                        @endif
-                                        @error('email')
-                                           <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>              
-                                <!---Phone---->
-                                <div class="form-group ">
-                                    <label for="validationDefault01">{{trans('user.phone_number')}}<span>*</span>
-                                    </label>
-                                        @if(old('phone'))
-                                        <input type="text" name="phone" class="form-control" value="{{old('phone')}}" id="validationDefault01" placeholder="رقم الهاتف" required>
-                                        @else
-                                        <input type="text" name="phone" class="form-control" value="{{$user->phone}}" id="validationDefault01" placeholder="رقم الهاتف" required>
-                                        @endif
-                                        @error('phone')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                </div>
-                                <!---Age---->
-                                <div class="form-group ">
-                                    <label for="validationDefault01">{{trans('user.phone_number')}}<span>*</span>
-                                    </label>
-                                        @if(old('date_of_birth'))
-                                        <input type="date" name="date_of_birth" class="form-control" value="{{old('date_of_birth')}}" id="validationDefault01" placeholder="تاريخ الميلاد" required>
-                                        @else
-                                        <input type="date" name="date_of_birth" class="form-control" value="{{$user->date_of_birth}}" id="validationDefault01" placeholder="تاريخ الميلاد" required>
-                                        @endif
-                                        @error('date_of_birth')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                </div>
-                                <!---Gender---->
-                                <div class="form-group ">
-                                    <label for="validationDefault01">{{trans('user.kind')}}<span>*</span>
-                                    </label>
-                                    <div class="row">
-                                    @if(old('gender'))
-                                        @if(old('gender')=='male')
-                                            <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
-                                            {{trans('user.male')}}
-                                            </label>
-                                                <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" checked>
-                                            </div>
-                                            <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
-                                            {{trans('user.female')}}
-                                                </label>
-                                                <input class="form-check-input" type="radio" value="female" name="gender" id="flexRadioDefault2">
-                                            </div>
-                                        @else
-                                           <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
-                                            {{trans('user.male')}}
-                                            </label>
-                                                <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" >
-                                            </div>
-                                            <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
-                                            {{trans('user.female')}}
-                                                </label>
-                                                <input class="form-check-input" type="radio" value="female" name="gender" id="flexRadioDefault2" checked>
-                                            </div>
-                                        @endif
-                                    @else
-                                    @if($user->gender=='male')
-                                            <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
-                                            {{trans('user.male')}}
-                                            </label>
-                                                <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" checked>
-                                            </div>
-                                            <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
-                                            {{trans('user.female')}}
-                                                </label>
-                                                <input class="form-check-input" type="radio" value="female" name="gender" id="flexRadioDefault2">
-                                            </div>
-                                        @else
-                                            <div class="form-check col-md-4 col-3"> <label class="form-check-label" for="flexRadioDefault1">
-                                            {{trans('user.male')}}
-                                            </label>
-                                                <input class="form-check-input" type="radio" value="male" name="gender" id="flexRadioDefault1" >
-                                            </div>
-                                            <div class="form-check col-md-4 col-3"><label class="form-check-label" for="flexRadioDefault2">
-                                            {{trans('user.female')}}
-                                                </label>
-                                                <input class="form-check-input" type="radio" value="female" name="gender" id="flexRadioDefault2" checked>
-                                            </div>
-                                        @endif
-                                    @endif
-                                       
-                                    </div>
-                                    @error('gender')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                                <!---ِAddress---->
-                                <div class="form-group ">
-                                    <label for="validationDefault01">{{trans('user.address')}}<span>*</span>
-                                    </label>
-                                        @if(old('date_of_birth'))
-                                        <input type="text" name="address" class="form-control" value="{{old('address')}}" id="validationDefault01" placeholder="العنوان" required>
-                                        @else
-                                        <input type="text" name="address" class="form-control" value="{{$user->address}}" id="validationDefault01" placeholder="العنوان" required>
-                                        @endif
-                                        @error('address')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                </div>
-                                <!---User Category---->
-                                <div class="">
-                                    <div class="form-group">
-                                        <label for="form_need">{{trans('user.user_classificaion')}}<span>*</span>
-                                        </label>
-                                        <select id="form_need" name="clasified" class="form-control" required="required" data-error="Please specify your need.">
-                                            @if(old('clasified'))
-                                                @foreach($classifications as $classification)
-                                                    @if (old('clasified') == $classification->id)
-                                                    <option value="{{$classification->id}}" selected>{{ $classification->name }}</option>
-                                                    @else
-                                                    <option value="{{$classification->id}}">{{$classification->name}}</option>
-                                                    @endif
-                                                @endforeach
-                                            @else
-                                                <option value="{{$user->classified_id}}" selected >{{$classification->name}}</option>
-                                                @foreach($classifications as $classification)
-                                                    <option value="{{$classification->id}}">{{$classification->name}}</option>
-                                                @endforeach
-                                            @endif
-                                        </select>
-
-                                    @error('clasified')
-                                        <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-
-                                    </div>
-                                </div>
-                                <!---Category---->
-                                <div class="">
-                                    <div class="form-group">
-                                        <label for="form_need">{{trans('user.Industry')}}<span>*</span>
-                                        </label>
-                                    <select id="form_need" name="field" class="form-control" required="required" data-error="Please specify your need.">
-                                           @if(old('field'))
-                                                @foreach($fields as $field)
-                                                    @if (old('field') == $field->id)
-                                                    <option value="{{$field->id}}" selected>{{ $field->name }}</option>
-                                                    @else
-                                                    <option value="{{$field->id}}">{{$field->name}}</option>
-                                                    @endif
-                                                @endforeach
-                                            @else
-                                                 <option value="{{$user->field_id}}" selected >{{$field->name}}</option>
-                                                @foreach($fields as $field)
-                                                    <option value="{{$field->id}}">{{$field->name}}</option>
-                                                @endforeach
-                                            @endif
-                                    </select>
-                                        @error('field')
-                                            <div class="alert alert-danger">{{ $message }}</div>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                   <!---Submit Button---->
-                                   <div class="mt-4 d-flex justify-content-center">
-                                    <a  href="{{route('user.edit.password')}}"class="btn btn-success btn-send pt-2 btn-block">{{trans('user.edit_password')}}</a>
-                                  </div>
-                                <!---Submit Button---->
-                                <div class="mt-4">
-                                    <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="{{trans('user.edit')}}">
+                                    <input type="file" id="my_file" style="display: none;" />
                                 </div>
                             </div>
+                            <h5 class="user-name">Yuki Hayashi</h5>
+                            <h6 class="user-email">yuki@Maxwell.com</h6>
+                         </div>
+                        <div class="about">
+                            <h5>About</h5>
+                            <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <form class="submit-faq pt-20"  method="post" enctype="multipart/form-data">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="mb-2 text-primary profileTitle">Personal Details</h6>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" name="email" class="form-control" id="email" placeholder="Enter email ID">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" name="phone" class="form-control" id="phone" placeholder="Enter phone number">
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                                <div class="form-group profileGender">
+                                    <input type="radio" class="profileGenderInput" id="male" name="gender" value="male">
+                                    <label for="male">Male</label><br>
+                                    <input type="radio" class="profileGenderInput" id="female" name="gender" value="female">
+                                    <label for="female">Female</label><br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gutters">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="Address">Address</label>
+                                    <input type="text" class="form-control" id="Address" placeholder="Enter Address">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group profileDate">
+                                    <input type="date" class="form-control" id="birthday" name="birthday">
+
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="classification">Classification</label>
+                                    <select name="classification" id="classification" class="form-select form-select-lg mb-3 send-idea-select" aria-label=".form-select-lg example">
+                                        <option value="option1">option 1</option>
+                                        <option value="option2">option 2</option>
+                                    <select>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="field">Field</label>
+                                    <select name="field"  id="field" class="form-select form-select-lg mb-3 send-idea-select" aria-label=".form-select-lg example">
+                                        <option value="option1">option 1</option>
+                                        <option value="option2">option 2</option>
+                                    <select>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" id="password" placeholder="Enter Password">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm Password</label>
+                                    <input type="password" name="confirm-password" id="confirm-password" placeholder="Enter Password Again">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gutters center-div">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                                <div class="text-right">
+                                    <button type="button" id="submit" name="submit" >Update</button>
+                                </div>
+                            </div>
+                        </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <!-- /.8 -->
         </div>
-        <!-- /.row-->
-    </div>
-</div>
-<!---End News---->
-</div>
+      </div>
+  </div>
+  
 <!-- ======= End Content ======= -->
+
 @endsection
+
+@section('scripts')
+<script>
+    $("#pImage").click(function() {
+    $("input[id='my_file']").click();
+    });
+    
+</script>
+
+@endsection
+

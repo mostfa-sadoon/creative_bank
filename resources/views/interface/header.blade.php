@@ -26,7 +26,7 @@
 </section>
 
 <div class="theme-main-menu theme-menu-one">
-
+    <div class="logo"><a href="index.html"><img src="{{asset('interface/images/logo/logoo.svg')}}" alt=""></a></div>
     <nav id="mega-menu-holder" class="navbar navbar-expand-lg">
         <div  class="container nav-container">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
