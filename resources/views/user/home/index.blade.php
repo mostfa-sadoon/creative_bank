@@ -176,13 +176,13 @@
                     <div class="row gutter-80">
                         <div class="col-lg-6 order-lg-last" data-aos="fade-right">
                             <div class="single-block">
-                                <p>LSince inception of RFCO, we are dedicated to build an environment based on innovation and efficiency. Where our clients and employees are met with the integrity and respect they aim for. RFCO believes in creating communities to live in that include all the lifestyle services and needed facilities for a hassle-free life. A community that acts as one harmonious entity serving the needs of our customers during and after delivery. Since we began our journey, our success has been a source of pride and inspiration for us to embrace the present and continue building for the future. We have constantly strived to create livable communities and projects.</p>
+                                <p>{{$owner->desc}}</p>
                             </div> <!-- /.single-block -->
                         </div><!--  /.col- -->
                         <div class="col-lg-4 col-md-6">
                             <div class="single-team-member">
                                 <div class="wrapper">
-                                    <div class="img-box"><img src="{{asset('interface/images/ceo.jpeg')}}" alt=""></div>
+                                    <div class="img-box"><img src="{{$owner->img}}" alt=""></div>
                                     <div class="info-meta">
                                         <h6 class="name">RAMY FARES</h6>
                                         <span>الممول الرئيسى</span>

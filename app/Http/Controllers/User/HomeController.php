@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Idea;
 use App\Models\News;
 use App\Models\Vote;
+use App\Models\Owner;
 
 class HomeController extends Controller
 {
@@ -28,11 +29,12 @@ class HomeController extends Controller
                //  $ideas_vote[$key]=array('label'=>$vote->idea->name,'value' => $vote->id);
                 $ideas_vote[$key]=['label'=>$vote->idea->name,'value' => $vote->count];
                 $count+=$vote->count;
-             } 
+             }
         }
         //dd($count);
         $ideas_vote=json_encode($ideas_vote);
        // dd($ideas_vote);
-        return view('user.home.index',compact('ideas','news','votes','ideas_vote','count'));
+        $owner=Owner::find(1);
+        return view('user.home.index',compact('ideas','news','votes','ideas_vote','count','owner'));
     }
 }

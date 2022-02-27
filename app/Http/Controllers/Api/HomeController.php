@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;   
+use Illuminate\Http\Request;
 use App\Models\Idea;
 use App\Models\News;
 use App\Models\Vote;
 use App\Models\ImgSlider;
-use App\Models\Userlike; 
+use App\Models\Userlike;
+use App\Models\Owner;
 use Auth;
 
 class HomeController extends Controller
@@ -16,9 +17,11 @@ class HomeController extends Controller
     //
     public function index(Request $request)
     {
-       
+
         $data=[];
+        $lang='ar';
         $lang=$request->header('lang');
+        \App::setLocale($lang);
         $imgsSlider=ImgSlider::select('img')->get();
         $ideas=Idea::select('id','name','img','desc','view','like')->where('status','true')->orderBy('created_at', 'desc')->take(6)->get();
         if( Auth::guard('api')->user())
@@ -34,17 +37,18 @@ class HomeController extends Controller
               }
         }
         else{
-            foreach($ideas as $idea){             
+            foreach($ideas as $idea){
                 $idea->setAttribute('likeStatus', "false");
             }
         }
         $news=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','img','id','created_at')->orderBy('created_at', 'desc')->take(6)->get();
         $votes=Vote::select('id','name_'.$lang.' as name','end_vote','created_at')->with('voteideas')->where('status','true')->get();
+        $owner=Owner::find(1)->makehidden(['created_at','updated_at','desc_ar','desc_en']);
         $data['imgsSlider']=$imgsSlider;
         $data['ideas']=$ideas;
         $data['news']=$news;
         $data['vote']=$votes;
-        $data['bsetSubscriper']=[];
+        $data['owner']=$owner;
         return msgdata(true,'get data successfully',$data);
     }
 

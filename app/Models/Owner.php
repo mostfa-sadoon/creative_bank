@@ -9,6 +9,7 @@ class Owner extends Model
 {
     use HasFactory;
     protected $guarded = [];
+    protected $appends = ['desc'];
     public function getImgAttribute($img)
     {
         if ($img)
@@ -17,6 +18,11 @@ class Owner extends Model
         }else{
             return asset('/uploads/owner/ceo.jpeg');
         }
+    }
+
+    public function getDescAttribute()
+    {
+        return $this['desc_' . app()->getLocale()];
     }
 
 }
