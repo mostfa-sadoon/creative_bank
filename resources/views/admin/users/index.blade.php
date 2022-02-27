@@ -1,6 +1,6 @@
 @extends('admin_temp')
 @section('content')
-   
+
 <div class="card">
                             <div class="card-body">
                                 <h4 class="card-title">{{trans('admin.users')}}</h4>
@@ -26,11 +26,11 @@
                                                     </td>
                                                     <td>{{$user->email}}</td>
                                                     <td>{{$user->phone}}</td>
-                                                    <td>{{$user->created_at->format('d/m/Y')}}</td>
+                                                    <td>{{date('d-m-Y', strtotime($user->created_at))}}</td>
                                                     <td>
                                                         <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                                     </td>
-                                                </tr>   
+                                                </tr>
                                             @endforeach
                                         </tbody>
                                     </table>

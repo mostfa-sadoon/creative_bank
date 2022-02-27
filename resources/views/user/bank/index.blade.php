@@ -126,3 +126,10 @@
     </div>
 </div> <!-- /.about-us-standard -->
 @endsection
+
+@section('scripts')
+<script src="{{asset('interface/vendor/tabs/tabs.js')}}"></script>
+@endsection
+
+
+

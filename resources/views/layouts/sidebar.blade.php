@@ -8,7 +8,7 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav">
                         <li class="nav-small-cap">Dash board</li>
-                       
+
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.categories')}}</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('category.index')}}">{{ trans('admin.categories')}}</a></li>
@@ -17,7 +17,7 @@
 
                         @role('Super-Admin')
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.users')}}</span></a>
-                          
+
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('user.index')}}">{{ trans('admin.users')}}</a></li>
                             </ul>
@@ -62,14 +62,14 @@
                                 <li><a href="{{route('idea.trash')}}">{{ trans('admin.trash')}}</a></li>
                             </ul>
                         </li>
-                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.vote')}}</span></a>
+                        {{-- <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.vote')}}</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('vote.index')}}">{{ trans('admin.vote')}}</a></li>
                             </ul>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('vote.create')}}">{{ trans('admin.vote_create')}}</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
 
 
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.news')}}</span></a>
@@ -115,4 +115,3 @@
             <!-- ============================================================== -->
             <div class="container-fluid ">
 
-               
