@@ -43,7 +43,7 @@ class HomeController extends Controller
         }
         $news=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','img','id','created_at')->orderBy('created_at', 'desc')->take(6)->get();
         $votes=Vote::select('id','name_'.$lang.' as name','end_vote','created_at')->with('voteideas')->where('status','true')->get();
-        $owner=Owner::find(1)->makehidden(['created_at','updated_at','desc_ar','desc_en']);
+        $owner=Owner::first()->makehidden(['created_at','updated_at','desc_ar','desc_en']);
         $data['imgsSlider']=$imgsSlider;
         $data['ideas']=$ideas;
         $data['news']=$news;
