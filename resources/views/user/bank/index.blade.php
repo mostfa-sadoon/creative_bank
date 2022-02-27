@@ -4,14 +4,6 @@
  <div class="solid-inner-banner">
     <h2 class="page-title">من نحن</h2>
 </div> <!-- /.solid-inner-banner -->
-
-
-
-<!--
-=============================================
-    About Us Standard
-==============================================
--->
 <div class="about-us-standard pt-150 pb-150">
     <div class="container">
         <div class="theme-title-three text-center mb-170">
@@ -39,8 +31,6 @@
         </div> <!-- /.demo-container-900 -->
     </div> <!-- /.container -->
 </div> <!-- /.about-us-standard -->
-
-
 <!-- Element Style -->
 <div class="element-section mb-150">
     <div class="container">
@@ -86,8 +76,6 @@
         </div>
     </div>
 </div>
-
-
 <div class="about-us-standard agency-style team-standard our-team ">
     <div class="theme-title-one text-center pb-4">
         <div class="upper-title">رسالة من</div>

@@ -14,16 +14,16 @@ return [
     */
 
     'categories' => 'categories',
-    'category_in_arabic' => 'category in arabic',  
-    'category_in_english' => 'category in english',  
+    'category_in_arabic' => 'category in arabic',
+    'category_in_english' => 'category in english',
     'add'=>'add',
     'edit'=>'edit',
     'measure'=>'measure',
     'add_new_category'=>'add new category',
     'creative_bank'=>'creative bank',
     'users'=>'users',
-    'fields'=>'fields',  
-    'classification'=>'classification',   
+    'fields'=>'fields',
+    'classification'=>'classification',
     'field_in_arabic'=>'field in arabic',
     'field_in_english'=>'field in english',
     'add_new_field'=>'add new field',
@@ -40,7 +40,7 @@ return [
     'add_news'=>'add news',
     'news_all'=>'news All',
     'news_trash'=>'trash',
-    
+
     'commonquestion'=>'commonquestion',
     'commonquestion.show'=>'display question',
     'question_ar'=>'question in arabic',
@@ -68,8 +68,14 @@ return [
      'phone'=>'phone',
      'joining_date'=>'joining date',
      'Action'=>'Action',
-  
      'refused_ideas'=>'refused idea',
-    
-   
+
+     'setting'=>'setting',
+     'owner'=>'owner',
+     'about_bank'=>'about bank',
+
+     'ideaRate'=>'ideaRate',
+
+     'ideaStudy'=>'ideaStudy',
+     'acceptedIdea'=>'acceptedIdea',
 ];

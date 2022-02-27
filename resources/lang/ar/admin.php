@@ -10,9 +10,9 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-    'categories' => 'التصنيفات',  
-    'category_in_arabic' => 'التصنيف بالعربي',  
-    'category_in_english' => 'التصنيف بالانجليزي',  
+    'categories' => 'التصنيفات',
+    'category_in_arabic' => 'التصنيف بالعربي',
+    'category_in_english' => 'التصنيف بالانجليزي',
     'add'=>'اضافه',
     'edit'=>'تعديل',
     'measure'=>'الاجرائات',
@@ -66,5 +66,13 @@ return [
      'Action'=>'الاجرائات',
 
      'refused_ideas'=>'الافكار المرفوضه',
-     
+     'setting'=>'الاعدادات',
+
+     'owner'=>'الممول',
+     'about_bank'=>'عن البنك',
+     'ideaRate'=>'تقييم الفكره',
+
+     'ideaStudy'=>'دراسه الفكره',
+     'acceptedIdea'=>'الافكار المقبوله',
+
 ];

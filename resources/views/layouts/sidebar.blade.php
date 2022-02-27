@@ -93,7 +93,18 @@
 
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.suggesions')}}</span></a>
                             <ul aria-expanded="false" class="collapse">
+
                                 <li><a href="{{route('admin.suggestions')}}">{{ trans('admin.show_suggesions')}}</a></li>
+                            </ul>
+                        </li>
+
+
+
+
+                        <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.setting')}}</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route('owner.index')}}">{{trans('admin.owner')}}</a></li>
+                                <li><a href="{{route('fekrtk.about')}}">{{trans('admin.about_bank')}}</a></li>
                             </ul>
                         </li>
 
