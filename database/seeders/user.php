@@ -23,6 +23,8 @@ class user extends Seeder
             'email' => 'sadoonmostfa6@gmail.com',
             'phone'=>'123456789',
             'date_of_birth'=>Carbon::parse('2000-01-01'),
+            'field_id'=>1,
+            'classified_id'=>1,
             'address'=>'maser el gadida',
             'password' => Hash::make(123456),
         ]);
