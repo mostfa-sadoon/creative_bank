@@ -23,7 +23,9 @@ class CreateNewsTable extends Migration
             $table->string('header_en');
             $table->text('news_en');
             $table->text('news_ar');
-            $table->string('img');  
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('new_categories')->onDelete('set null');
+            $table->string('img');
             $table->softDeletes();
             $table->timestamps();
         });

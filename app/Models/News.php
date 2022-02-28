@@ -11,9 +11,9 @@ class News extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    
+
     protected $table = 'news';
-    protected $guarded = [];    
+    protected $guarded = [];
     public function getImgAttribute($img)
     {
         if ($img)
@@ -26,5 +26,10 @@ class News extends Model
     {
         //$value=Carbon::createFromFormat('m/d/Y', $value)->format('Y-m-d');
        return Carbon::parse($value)->format('m/d/Y');
+    }
+
+    public function NewCategory()
+    {
+        return $this->belongsTo(NewCategory::class);
     }
 }

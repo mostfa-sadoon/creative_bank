@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User\Pages;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\About;
 
 class LayoutController extends Controller
 {
@@ -14,7 +15,8 @@ class LayoutController extends Controller
     }
     public function about()
     {
-        return view('user.bank.index');
+        $about=About::first();
+        return view('user.bank.index',compact('about'));
     }
     public function conect()
     {

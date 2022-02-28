@@ -3,8 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\AuthController;
-use App\Http\Controllers\Api\HomeController; 
-use App\Http\Controllers\Api\IdeaController;   
+use App\Http\Controllers\Api\HomeController;
+use App\Http\Controllers\Api\IdeaController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\LikeController;
 
@@ -29,6 +29,7 @@ use App\Http\Controllers\Api\LikeController;
     Route::get('idea/show', [IdeaController::class, 'show']);
 
     Route::group(['middleware' => ['jwt.verify']], function() {
+            Route::post('user/logout', [AuthController::class, 'logout']);
             Route::controller(IdeaController::class)->group(function(){
                 Route::get('ideaForm','index');
                 Route::post('ideastore','store');

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\News;
+use App\Models\NewCategory;
 use Alert;
 use Auth;
 
@@ -20,7 +21,8 @@ class NewsController extends Controller
       }
       public function create()
       {
-         return view('admin.new.create');
+         $newcategories=NewCategory::get();
+         return view('admin.new.create',compact('newcategories'));
       }
     public function store(Request $request)
     {
@@ -44,6 +46,7 @@ class NewsController extends Controller
             'desc_ar'=>$request->desc_ar,
             'desc_en'=>$request->desc_en,
             'img'=>$img,
+            'category_id'=>$request->category_id,
             'admin_id'=>$admin_id,
          ]);
          Alert::success('Congratulations', 'the news added successfully');
@@ -57,11 +60,13 @@ class NewsController extends Controller
     }
      public function edit($id)
      {
-         $new=News::find($id);
-         return view('admin.new.edit',compact('new'));
-     }   
+         $new=News::with('NewCategory')->find($id);
+         $newcategories=NewCategory::get();
+         $category=NewCategory::find($new->category_id);
+         return view('admin.new.edit',compact('new','newcategories','category'));
+     }
      public function update(Request $request)
-     { 
+     {
          $news=News::find($request->id);
          $request->validate([
             'header_ar' => 'required|max:50',
@@ -76,13 +81,14 @@ class NewsController extends Controller
             $request->validate([
                'img'=>'image|mimes:jpg,png,jpeg,gif,svg|max:10240',
             ]);
-            $img = $this->MoveImage($request->img, 'uploads/news');  
+            $img = $this->MoveImage($request->img, 'uploads/news');
             $news->update([
                'header_ar' => $request->header_ar,
                'header_en' => $request->header_en,
                'news_ar' => $request->news_ar,
                'news_en' => $request->news_en,
                'desc_ar' => $request->desc_ar,
+               'category_id'=>$request->category_id,
                'desc_en' => $request->desc_en,
                'img' => $img,
             ]);
@@ -93,6 +99,7 @@ class NewsController extends Controller
                'news_ar' => $request->news_ar,
                'news_en' => $request->news_en,
                'desc_ar' => $request->desc_ar,
+               'category_id'=>$request->category_id,
                'desc_en' => $request->desc_en,
             ]);
          }

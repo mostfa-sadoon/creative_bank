@@ -78,4 +78,13 @@ return [
 
      'ideaStudy'=>'ideaStudy',
      'acceptedIdea'=>'acceptedIdea',
+
+     'NewCategory'=>'Category',
+     'name'=>'name in english',
+     'NewCategory_in_arabic'=>'Category in arabic',
+     'NewCategory_in_english'=>'Category in english',
+
+
+     'NewCategory_add'=>'add new category',
+
 ];

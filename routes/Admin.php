@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\VoteController;
 use App\Http\Controllers\Admin\ClassificationController;
 use App\Http\Controllers\Admin\userController;
+use App\Http\Controllers\Admin\NewCategories;
 use App\Http\Controllers\Setting;
 
 /*
@@ -55,6 +56,15 @@ use App\Http\Controllers\Setting;
         Route::get('/field/show/{id}','show')->name('field.show');
         Route::post('/field/update','update')->name('field.update');
         Route::post('/field/destroy','destroy')->name('field.destroy');
+    });
+      // NewCategory routes
+      Route::controller(NewCategories::class)->group(function(){
+        Route::get('/NewCategory','index')->name('NewCategory.index');
+        Route::get('/NewCategory/create','create')->name('NewCategory.create');
+        Route::post('/NewCategory/store','store')->name('NewCategory.store');
+        Route::get('/NewCategory/edit/{id}','edit')->name('NewCategory.edit');
+        Route::post('/NewCategory/update','update')->name('NewCategory.update');
+        Route::get('/NewCategory/destroy/{id}','destroy')->name('NewCategory.destroy');
     });
      // fildes classification
     Route::controller(ClassificationController::class)->group(function(){

@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Validator;
 use JWTAuth;
 use Hash;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -85,5 +86,14 @@ class AuthController extends Controller
                 'msg'=>'register success',
                 'token' => $token,
             ]);
-    }
+         }
+         public function logout()
+         {
+            Auth::guard('api')->logout();
+            return response()->json([
+                'status' => true,
+                'msg'=>'logout success',
+            ]);
+         }
+
 }

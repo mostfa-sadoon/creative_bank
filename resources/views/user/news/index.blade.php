@@ -1,5 +1,77 @@
 @extends('user_temp')
+
+@section('style')
+
+@endsection
 @section('content')
+
+<div class="our-blog blog-filer mb-150">
+    <div class="blog-filter-title">
+        <p class="upper-title">اخبارنا</p>
+        <h2 class="main-title">تابع معنا <br>كل ما هو جديد</h2>
+    </div> <!-- /.blog-filter-title -->
+
+    <ul class="isotop-menu-wrapper blog-filter-nav clearfix">
+        @if(Request::url() === route('allnews'))
+            <li class="is-checked" data-filter="*"><a href="{{route('allnews')}}" ><span>All</span></a></li>
+            @foreach ($NewCategories as $category)
+            <li data-filter=".economy"><span><a href="{{route('newsCategory',$category->id)}}" >{{$category->name}}</a></span></li>
+            @endforeach
+        @else
+            <li  data-filter="*"><a href="{{route('allnews')}}" ><span>All</span></a></li>
+            @foreach ($NewCategories as $category)
+                @if(request('category') != $category->id)
+                   <li  data-filter=".economy"><span><a href="{{route('newsCategory',$category->id)}}" >{{$category->name}}</a></span></li>
+                @else
+                <li class="is-checked" data-filter=".economy"><span><a href="{{route('newsCategory',$category->id)}}" >{{$category->name}}</a></span></li>
+                @endif
+            @endforeach
+        @endif
+    </ul>
+
+<div class="row">
+    @foreach ($news as $new)
+        <div class="col-md-3">
+            <div class="single-blog-post">
+                <div class="img-holder"><img src="{{$new->img}}" alt=""></div>
+                <div class="post-data">
+                    <a href="#" class="date">23 July, 2018</a>
+                    <h5 class="blog-title-one title"><a href="{{route('user.news.show',$new->id)}}">{{$new->header}}</a></h5>
+                    <p>{{$new->desc}}</p>
+                    <a href="" class="read-more"><i class="flaticon-back-1"></i></a>
+                </div> <!-- /.post-data -->
+            </div> <!-- /.single-blog-post -->
+        </div>
+    @endforeach
+</div>
+
+
+
+
+
+
+    <div class="theme-pagination-one text-center pt-15">
+        <ul>
+            <li><a href="#"><i class="flaticon-next-1"></i></a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li>....</li>
+            <li><a href="#">Last</a></li>
+            <li><a href="#"><i class="flaticon-back-1"></i></a></li>
+        </ul>
+    </div> <!-- /.theme-pagination-one -->
+</div> <!-- /.our-blog -->
+
+
+
+
+
+
+
+
+
  <!---Start News-->
  <section id="news" class="container news">
             <div class="container news">
@@ -34,4 +106,8 @@
         <div class="d-flex justify-content-center">
             {{ $news->links('vendor.pagination.custom') }}
         </div>
+@endsection
+
+@section('scripts')
+
 @endsection

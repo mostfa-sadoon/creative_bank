@@ -1,9 +1,9 @@
 @extends('admin_temp')
-@section('styles')  
+@section('styles')
 <link href="{{asset('assets/plugins/summernote/dist/summernote.css')}}" rel="stylesheet" />
 <link rel="stylesheet" href="{{asset('assets/plugins/dropify/dist/css/dropify.min.css')}}">
 @endsection
-@section('content')  
+@section('content')
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <div class="row page-titles">
@@ -23,7 +23,7 @@
             </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
- 
+
                 <form action="{{route('news.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
@@ -91,15 +91,24 @@
                                                 @endif
                                         </div>
                                     </div>
+
+                                  <div class="form-group">
+                                    <select class="form-control" name="category_id" id="exampleFormControlSelect1">
+                                        @foreach ($newcategories as $NewCategory)
+                                            <option value="{{$NewCategory->id}}">{{$NewCategory->name}}</option>
+                                        @endforeach
+                                    </select>
+                                  </div>
+
                                 <div class="d-flex justify-content-center">
                                    <input type="submit" class="btn btn-success" value="نشر">
-                                </div>  
+                                </div>
                         </div>
                     </div>
                 </form>
 @endsection
-@section('scripts')  
-  
+@section('scripts')
+
     <!-- wysuhtml5 Plugin JavaScript -->
     <script src="{{asset('assets/plugins/tinymce/tinymce.min.js')}}"></script>
     <script>

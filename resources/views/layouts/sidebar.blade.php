@@ -74,6 +74,9 @@
 
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">{{ trans('admin.news')}}</span></a>
                             <ul aria-expanded="false" class="collapse">
+                                <li><a href="{{route('NewCategory.index')}}">{{ trans('admin.NewCategory')}}</a></li>
+                            </ul>
+                            <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('news.create')}}">{{ trans('admin.add_news')}}</a></li>
                             </ul>
                             <ul aria-expanded="false" class="collapse">

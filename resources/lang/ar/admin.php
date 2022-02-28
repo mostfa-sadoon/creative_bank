@@ -75,4 +75,9 @@ return [
      'ideaStudy'=>'دراسه الفكره',
      'acceptedIdea'=>'الافكار المقبوله',
 
+     'NewCategory'=>'القسم',
+     'NewCategory_in_arabic'=>'القسم بالعربي',
+     'NewCategory_in_english'=>'القسم بالانجليزي',
+
+     'NewCategory_add'=>'اضافه قسم جديد',
 ];
