@@ -7,7 +7,7 @@ use App\Http\Controllers\Api\HomeController;
 use App\Http\Controllers\Api\IdeaController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\LikeController;
-
+use App\Http\Controllers\Api\NewsController;
 
 
 
@@ -28,6 +28,9 @@ use App\Http\Controllers\Api\LikeController;
     Route::get('Home', [HomeController::class, 'index']);
     Route::get('idea/show', [IdeaController::class, 'show']);
 
+    Route::controller(NewsController::class)->group(function(){
+        Route::get('/news/all','index');
+    });
     Route::group(['middleware' => ['jwt.verify']], function() {
             Route::post('user/logout', [AuthController::class, 'logout']);
             Route::controller(IdeaController::class)->group(function(){
@@ -46,7 +49,6 @@ use App\Http\Controllers\Api\LikeController;
                 Route::post('/idea/unlike','unlike');
             });
     });
-
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
