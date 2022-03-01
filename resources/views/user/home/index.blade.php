@@ -176,7 +176,7 @@
                     <div class="row gutter-80">
                         <div class="col-lg-6 order-lg-last" data-aos="fade-right">
                             <div class="single-block">
-                                {{-- <p>{{$owner->desc}}</p> --}}
+                                <p>{{$owner->desc}}</p>
                             </div> <!-- /.single-block -->
                         </div><!--  /.col- -->
                         <div class="col-lg-4 col-md-6">

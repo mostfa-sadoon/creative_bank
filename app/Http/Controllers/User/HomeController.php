@@ -34,7 +34,7 @@ class HomeController extends Controller
         //dd($count);
         $ideas_vote=json_encode($ideas_vote);
        // dd($ideas_vote);
-        $owner=Owner::find(1);
+        $owner=Owner::first();
         return view('user.home.index',compact('ideas','news','votes','ideas_vote','count','owner'));
     }
 }
