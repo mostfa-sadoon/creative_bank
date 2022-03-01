@@ -13,7 +13,6 @@ class NewsController extends Controller
     {
         return News::paginate(5);
     }
-
     public function show()
     {
 

@@ -176,13 +176,13 @@
                     <div class="row gutter-80">
                         <div class="col-lg-6 order-lg-last" data-aos="fade-right">
                             <div class="single-block">
-                                <p>{{$owner->desc}}</p>
+                                {{-- <p>{{$owner->desc}}</p> --}}
                             </div> <!-- /.single-block -->
                         </div><!--  /.col- -->
                         <div class="col-lg-4 col-md-6">
                             <div class="single-team-member">
                                 <div class="wrapper">
-                                    <div class="img-box"><img src="{{$owner->img}}" alt=""></div>
+                                    {{-- <div class="img-box"><img src="{{$owner->img}}" alt=""></div> --}}
                                     <div class="info-meta">
                                         <h6 class="name">RAMY FARES</h6>
                                         <span>الممول الرئيسى</span>
