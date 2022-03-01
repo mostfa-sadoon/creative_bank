@@ -182,7 +182,7 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="single-team-member">
                                 <div class="wrapper">
-                                    {{-- <div class="img-box"><img src="{{$owner->img}}" alt=""></div> --}}
+                                    <div class="img-box"><img src="{{$owner->img}}" alt=""></div>
                                     <div class="info-meta">
                                         <h6 class="name">RAMY FARES</h6>
                                         <span>الممول الرئيسى</span>
