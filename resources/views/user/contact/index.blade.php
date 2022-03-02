@@ -51,7 +51,8 @@
         <div class="col-lg-6 order-lg-last">
             <div class="inner-wrapper clearfix">
                 <div class="contact-form">
-                      <form class="form form-style-three" id="contact-form" action="inc/contact.php" data-toggle="validator">
+                      <form class="form form-style-three" id="contact-form" method="POST" action="{{ route('contact.store') }}" data-toggle="validator">
+                        @csrf
                         <div class="messages"></div>
                         <div class="controls">
                             <div class="form-group">
@@ -60,7 +61,7 @@
                             </div>
 
                             <div class="form-group">
-                                <input id="form_sub" type="text" name="sub" placeholder="Subject*" required="required" data-error="Subject is required.">
+                                <input id="form_sub" type="text" name="subject" placeholder="Subject*" required="required" data-error="Subject is required.">
                                 <div class="help-block with-errors"></div>
                             </div>
 

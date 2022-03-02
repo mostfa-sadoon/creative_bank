@@ -8,8 +8,9 @@ use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\NewsController;
 use App\Http\Controllers\User\CommonquestionController;
-use App\Http\Controllers\User\suggestionController;
+// use App\Http\Controllers\User\suggestionController;
 use App\Http\Controllers\User\VoteController;
+use App\Http\Controllers\Admin\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,11 @@ use App\Http\Controllers\User\VoteController;
     // pages
     Route::get('much/earn', [LayoutController::class, 'index'])->name('much.index');
     Route::get('about/bank', [LayoutController::class, 'about'])->name('about');
-    Route::get('conect/us', [LayoutController::class, 'conect'])->name('conect');
+    // Contact Us
+    Route::get('contact/us', [ContactController::class, 'create'])->name('contact.create');
+    Route::post('contact/us', [ContactController::class, 'store'])->name('contact.store');
+    
+
     Route::get('suggestions', [LayoutController::class, 'suggestions'])->name('suggestions');
     Route::get('profite', [LayoutController::class, 'profite'])->name('profite');
     //idea
@@ -47,7 +52,7 @@ use App\Http\Controllers\User\VoteController;
     //common qustions
     Route::get('/user/commonquestion',[CommonquestionController::class, 'index'])->name('user.commonquestions');
     //suggestion
-    Route::resource('suggestions', suggestionController::class);
+    // Route::resource('suggestions', suggestionController::class);
     Route::middleware('auth:web')->group(function () {
         //user Auth
         Route::get('signout', [AuthController::class, 'signOut'])->name('user.signout');
