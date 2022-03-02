@@ -82,10 +82,15 @@ class ForgotPasswordController extends Controller
         if ($validator->fails()) {
             return msg(false, $validator->messages()->first());
         } else {
-            $data['password']=$request->password;
+            $token=$request->token;
+            $passwordreset=DB::table('password_resets')->where([ 'email' => $request->email,])->latest()->first();
+           if (Hash::check($token,$passwordreset->token)) {
+               // The passwords match...
+               $data['password']=$request->password;
                $user->update([
                     'password'=> Hash::make($data['password']),
                ]);
+               DB::table('password_resets')->where(['email'=> $request->email])->latest()->delete();
                $credentials = $request->only('email', 'password');
                $token = JWTAuth::attempt($credentials);
                return response()->json([
@@ -93,6 +98,9 @@ class ForgotPasswordController extends Controller
                 'msg'=>'register success',
                 'token' => $token,
                ]);
+           }else{
+              return msg(false,'the token is false');
            }
+        }
     }
 }
