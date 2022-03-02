@@ -8,7 +8,7 @@ use App\Http\Controllers\Api\IdeaController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\LikeController;
 use App\Http\Controllers\Api\NewsController;
-
+use App\Http\Controllers\Api\Auth\ForgotPasswordController;
 
 
 /*
@@ -27,7 +27,11 @@ use App\Http\Controllers\Api\NewsController;
     Route::get('registerForm', [AuthController::class, 'create']);
     Route::get('Home', [HomeController::class, 'index']);
     Route::get('idea/show', [IdeaController::class, 'show']);
-
+    Route::controller(ForgotPasswordController::class)->group(function(){
+        Route::post('forget/password','submitemail');
+        Route::post('send/token','sendtoken');
+        Route::post('reset-password','changepass');
+    });
     Route::controller(NewsController::class)->group(function(){
         Route::get('/news/all','index');
     });
