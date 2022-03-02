@@ -15,3 +15,7 @@ function msg($status, $key)
     $msg['msg'] = $key;
     return $msg;
 }
+
+function lang($keyVar) {
+    return $keyvar . "_" . app()->getLocale();
+}

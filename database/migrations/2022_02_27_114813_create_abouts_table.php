@@ -21,6 +21,10 @@ class CreateAboutsTable extends Migration
             $table->text('ideaStudy_en');
             $table->text('acceptedIdea_ar');
             $table->text('acceptedIdea_en');
+            $table->text('vision_ar');
+            $table->text('vision_en');
+            $table->text('mission_ar');
+            $table->text('mission_en');
             $table->timestamps();
         });
     }
