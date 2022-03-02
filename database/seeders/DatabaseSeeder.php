@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             RolesAndPermissionsSeeder::class,
             Img_seeder::class,
             Owner::class,
+            About::class,
         ]);
     }
 }
