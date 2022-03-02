@@ -50,7 +50,7 @@
                         <a href="{{route('user.commonquestions')}}" class="nav-link" >الاسئلة الشائعة</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('conect')}}" class="nav-link" >تواصل معنا</a>
+                        <a href="{{route('contact.create')}}" class="nav-link" >تواصل معنا</a>
                     </li>
                </ul>
            </div>
