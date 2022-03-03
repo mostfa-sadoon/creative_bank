@@ -15,7 +15,6 @@ class InfoController extends Controller
     //About Us
     public function index()
     {     
-
             $data =  AboutResource::collection(About::latest()->get());
             return msgdata(true,'retuen success',$data);
     }
