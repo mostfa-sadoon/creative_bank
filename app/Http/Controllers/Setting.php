@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Owner;
 use App\Models\About;
+use App\Models\ContactInfo;
 
 class Setting extends Controller
 {
@@ -69,4 +70,8 @@ class Setting extends Controller
         ]);
         return redirect()->route('fekrtk.about');
     }
+
+    //Contact Info
+
+    
 }
