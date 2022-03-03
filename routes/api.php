@@ -56,6 +56,7 @@ use App\Http\Controllers\Api\Auth\ForgotPasswordController;
     });
 
 Route::apiResource('About', InfoController::class);
+Route::get('ContactInfo', [InfoController::class, 'ContactInfo_Index']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
