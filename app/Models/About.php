@@ -9,7 +9,7 @@ class About extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $appends = ['ideaRate','ideaStudy','acceptedIdea','vision','mission'];
+    protected $appends = ['ideaRate','ideaStudy','acceptedIdea','vision','mission','description'];
     public function getIdeaRateAttribute()
     {
         return $this['ideaRate_' . app()->getLocale()];
@@ -30,4 +30,9 @@ class About extends Model
     {
         return $this['mission_' . app()->getLocale()];
     }
+    public function getDescriptionAttribute()
+    {
+        return $this['description_' . app()->getLocale()];
+    }
+    
 }
