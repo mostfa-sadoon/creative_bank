@@ -36,6 +36,7 @@ class IdeaController extends Controller
                 'Feasibility_study'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,docx,pdf|max:8192',
                 'patent'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,docx,pdf|max:8192',
             ]);
+
             if ($validator->fails()) {
                 return msg(false, $validator->messages()->first());
             } else {
@@ -64,15 +65,30 @@ class IdeaController extends Controller
                 }else{
                     $patent=null;
                 }
-                $data=$request->all();
-                $data['user_id']=Auth::user()->id;
-                $data['view']=0;
-                $data['like']=0;
-                $data['img']=$img;
-                $data['Intellectual_property']=$Intellectual_property;
-                $data['Feasibility_study']=$Feasibility_study;
-                $data['patent']=$patent;
-                Idea::create($data);
+                // $data=$request->all();
+                // $data['user_id']=Auth::user()->id;
+                // $data['view']=0;
+                // $data['like']=0;
+                // $data['img']=$img;
+                // $data['Intellectual_property']=$Intellectual_property;
+                // $data['Feasibility_study']=$Feasibility_study;
+                // $data['attatchment']=$attachment;
+                // $data['patent']=$patent;
+                // Idea::create($data);
+                Idea::create([
+                    'name'=>$request->name,
+                    'user_id'=>Auth::user()->id,
+                    'img'=> $img,
+                    'videolink'=>$request->video_link,
+                    'problem'=>$request->problem,
+                    'solve'=>$request->solve,
+                    'attatchment'=>$attachment,
+                    'desc'=>$request->desc,
+                    'category_id'=>$request->category_id,
+                    'Intellectual_property'=>$Intellectual_property,
+                    'Feasibility_study'=>$Feasibility_study,
+                    'patent'=>$patent,
+                ]);
                 return msg(true,'idea added successfully');
             }
     }
