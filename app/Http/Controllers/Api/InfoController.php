@@ -11,9 +11,9 @@ class InfoController extends Controller
 {
     //About Us
     public function index()
-    {
-        $data = About::latest()->get();
-        return response()->json([AboutResource::collection($data), 'All Info fetched.']);
+    {     
+            $data = About::latest()->get(); 
+            return msgdata(true,'retuen success',$data);
      }
 
 
