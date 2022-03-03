@@ -14,13 +14,15 @@ class InfoController extends Controller
 {
     //About Us
     public function index()
-    {     
-            $data =  AboutResource::collection(About::latest()->get());
+    {
+
+           // $data =  AboutResource::collection(About::latest()->get());
+            $data = new AboutResource(About::first());
             return msgdata(true,'retuen success',$data);
     }
 
     public function ContactInfo_Index()
-    {     
+    {
             $data =  ContactInfoResource::collection(ContactInfo::latest()->get());
             return msgdata(true,'retuen success',$data);
     }
