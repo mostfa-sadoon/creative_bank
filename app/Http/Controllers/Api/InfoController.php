@@ -9,19 +9,20 @@ use App\Models\ContactInfo;
 use App\Http\Resources\AboutResource;
 use App\Http\Resources\ContactInfoResource;
 
+
 class InfoController extends Controller
 {
     //About Us
     public function index()
     {     
-            $data = About::latest()->get(); 
+
+            $data =  AboutResource::collection(About::latest()->get());
             return msgdata(true,'retuen success',$data);
     }
 
     public function ContactInfo_Index()
     {     
-            $data = ContactInfo::latest()->get(); 
-            // dd($data)
+            $data =  ContactInfoResource::collection(ContactInfo::latest()->get());
             return msgdata(true,'retuen success',$data);
     }
 
