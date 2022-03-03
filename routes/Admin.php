@@ -8,13 +8,13 @@ use App\Http\Controllers\Admin\FieldController;
 use App\Http\Controllers\Admin\IdeaController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\CommonquestionController;
-use App\Http\Controllers\Admin\suggestionController;
 use App\Http\Controllers\Admin\employeecontroller;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\VoteController;
 use App\Http\Controllers\Admin\ClassificationController;
 use App\Http\Controllers\Admin\userController;
 use App\Http\Controllers\Admin\NewCategories;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Setting;
 
 /*
@@ -118,7 +118,10 @@ use App\Http\Controllers\Setting;
     Route::post('/commonquestions/update', [CommonquestionController::class, 'update'])->name('commonquestions.update');
     Route::get('/commonquestions/delete/{id}', [CommonquestionController::class, 'delete'])->name('commonquestions.delete');
     //sugestions
-    Route::get('/suggestions/admin/show', [suggestionController::class, 'index'])->name('admin.suggestions');
+    Route::get('/suggestions', [ContactController::class, 'index'])->name('admin.suggestions');
+    Route::get('/suggestions/{contact}', [ContactController::class, 'show'])->name('suggestions.show');
+    Route::delete('/suggestions/delete/{contact}', [ContactController::class, 'destroy'])->name('suggestions.destroy');
+
     Route::group(['middleware' => ['role:Super-Admin']], function () {
         //
         Route::get('/employees', [employeecontroller::class, 'index'])->name('employees');
@@ -142,3 +145,7 @@ use App\Http\Controllers\Setting;
        });
 });
 Route::get('change_lang/{lang}', [HomeController::class,'change_lang'])->name('change_lang');
+
+//Contact Us
+
+
