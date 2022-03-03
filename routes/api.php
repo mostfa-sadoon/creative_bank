@@ -35,7 +35,7 @@ use App\Http\Controllers\Api\Auth\ForgotPasswordController;
     });
     Route::controller(NewsController::class)->group(function(){
         Route::get('/news/all','index');
-        Route::get('/news/{id}','show');
+        Route::get('/news/show','show');
     });
     Route::group(['middleware' => ['jwt.verify']], function() {
             Route::post('user/logout', [AuthController::class, 'logout']);
