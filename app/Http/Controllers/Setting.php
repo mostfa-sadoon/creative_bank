@@ -60,6 +60,12 @@ class Setting extends Controller
 
             'acceptedIdea_ar'=>$request->acceptedIdea_ar,
             'acceptedIdea_en'=>$request->acceptedIdea_en,
+
+            'vision_ar'=>$request->vision_ar,
+            'vision_en'=>$request->vision_en,
+
+            'mission_ar'=>$request->mission_ar,
+            'mission_en'=>$request->mission_en,
         ]);
         return redirect()->route('fekrtk.about');
     }

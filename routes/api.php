@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\IdeaController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\LikeController;
 use App\Http\Controllers\Api\NewsController;
+use App\Http\Controllers\Api\InfoController;
 use App\Http\Controllers\Api\Auth\ForgotPasswordController;
 
 
@@ -53,6 +54,10 @@ use App\Http\Controllers\Api\Auth\ForgotPasswordController;
                 Route::post('/idea/unlike','unlike');
             });
     });
+
+Route::apiResource('About', InfoController::class);
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
