@@ -13,8 +13,11 @@ use App\Http\Resources\ContactInfoResource;
 class InfoController extends Controller
 {
     //About Us
-    public function index()
-    {
+    public function index(Request $request)
+        {
+            $lang='ar';
+            $lang=$request->header('lang');
+            \App::setLocale($lang);
            // $data =  AboutResource::collection(About::latest()->get());
             $data = new AboutResource(About::first());
             return msgdata(true,'retuen success',$data);
