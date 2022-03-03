@@ -72,6 +72,32 @@ class Setting extends Controller
     }
 
     //Contact Info
+    public function contactInfo_index()
+    {
+       $info=ContactInfo::first();
+       return view('admin.about.index',compact('info'));
+    }
 
+   public function contactInfo_edit($id)
+   {
+        $info=ContactInfo::find($id);
+        return view('admin.about.edit',compact('info'));
+   }
+
+    public function contactInfo_Update(Request $request)
+    {
+        $id=$request->id;
+        $info=ContactInfo::find($id);
+        $info->update([
+            'phone'=>$request->phone,
+            'email'=>$request->email,
+            'address'=>$request->address,
+            'facebook'=>$request->facebook,
+            'instagram'=>$request->instagram,
+            'tweeter'=>$request->tweeter,
+            'youtube'=>$request->youtube,
+        ]);
+        return redirect()->route('fekrtk.info');
+    }
     
 }

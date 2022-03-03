@@ -17,12 +17,12 @@ class AboutResource extends JsonResource
     {
        return [
             'id' => $this->id,
-            'ideaRate' => $this->ideaRate ."_" . app()->getLocale(),
-            'ideaStudy' => $this->ideaStudy ."_" . app()->getLocale(),
-            'acceptedIdea' => $this->acceptedIdea ."_" . app()->getLocale(),
-            'vision' => $this->vision ."_" . app()->getLocale(),
-            'mission' => $this->mission ."_" . app()->getLocale(),
-            'description' => $this->description ."_" . app()->getLocale(),
+            'ideaRate' => $this->ideaRate,
+            'ideaStudy' => $this->ideaStudy,
+            'acceptedIdea' => $this->acceptedIdea,
+            'vision' => $this->vision,
+            'mission' => $this->mission,
+            'description' => $this->description,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

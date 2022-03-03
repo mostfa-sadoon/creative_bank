@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Contact;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\ContactInfo;
 
 class ContactController extends Controller
 {
@@ -27,7 +28,8 @@ class ContactController extends Controller
     public function create()
     {
         // User
-         return view('user.contact/index');
+          $ContactInfo= ContactInfo::first();
+         return view('user.contact.index',compact('ContactInfo'));
         
     }
 
