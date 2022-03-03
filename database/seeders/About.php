@@ -47,6 +47,10 @@ class About extends Seeder
             ,
             'mission_ar' => 'تشجيع الابتكارات والاختراعات التي تؤدى إلى توليد تكنولوجيا وطنية ، والمساهمة في تنسيق الجهود الوطنية لتنمية القدرات الابتكارية من خلال توفير منفذ تسويقي للابتكارات ، دعم المبتكرين والمخترعين ومؤسسات المجتمع المدني'
             ,
+            'description_en' => 'Innovations and inventions that lead to the generation of national technology and contribute to the coordination of national innovation development through a marketing outlet for innovations, support innovators, inventors and civil projects'
+            ,
+            'description_ar' => 'تشجيع الابتكارات والاختراعات التي تؤدى إلى توليد تكنولوجيا وطنية ، والمساهمة في تنسيق الجهود الوطنية لتنمية القدرات الابتكارية من خلال توفير منفذ تسويقي للابتكارات ، دعم المبتكرين والمخترعين ومؤسسات المجتمع المدني'
+            ,
 
         ]);
     }
