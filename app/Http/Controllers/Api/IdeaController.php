@@ -25,10 +25,10 @@ class IdeaController extends Controller
            //start validation
             $validator = Validator::make($request->all(), [
                 'name'=>'required',
-                'desc'=>'required|max:300|min:10',
+                'desc'=>'required|max:400|min:5',
                 'img'=>'required|mimes:jpg,png,jpeg,gif,svg|max:42000',
-                'problem'=>'required|max:2000|min:50',
-                'solve'=>'required|max:2000|min:50',
+                'problem'=>'required|max:2000|min:20',
+                'solve'=>'required|max:2000|min:20',
                 'attachment'=>'mimes:png,jpg,jpeg,csv,txt,xlx,xls,pdf|max:8192',
                 'category_id'=>'required',
                 'videolink'=>'url',
