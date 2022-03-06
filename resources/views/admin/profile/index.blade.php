@@ -1,5 +1,5 @@
 @extends('admin_temp')
-@section('content')  
+@section('content')
  <!-- Bread crumb and right sidebar toggle -->
     <!-- ============================================================== -->
         <div class="row page-titles">
@@ -17,21 +17,21 @@
             </div>
         </div>
     <!-- ============================================================== -->
-<!-- End Bread crumb and right sidebar toggle -->  
+<!-- End Bread crumb and right sidebar toggle -->
 
                    <div class="row">
                         <!-- Column -->
                             <div class="col-lg-4 col-xlg-3 col-md-5">
                                     <div class="card">
                                         <div class="card-body">
-                                            <center class="m-t-30"> <img src="../assets/images/users/5.jpg" class="img-circle" width="150" />
-                                                <h4 class="card-title m-t-10">Hanna Gover</h4>
+                                            <center class="m-t-30"> <img src="{{asset('assets/images/users/5.jpg')}}" class="img-circle" width="150" />
+                                                <h4 class="card-title m-t-10">{{$employee->name}}</h4>
                                             </center>
                                         </div>
                                         <div>
                                             <hr> </div>
                                         <div class="card-body"> <small class="text-muted">Email address </small>
-                                            <h6>hannagover@gmail.com</h6> 
+                                            <h6>{{$employee->email}}</h6>
                                         </div>
                                     </div>
                                 </div>
@@ -62,12 +62,12 @@
                                                     <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
                                                 </div>
                                             </div>
-                                           
-                                          
-                                    
+
+
+
                                             <div class="form-group">
                                                 <div class="col-sm-12">
-                                                    <button class="btn btn-success">Update Profile</button> 
+                                                    <button class="btn btn-success">Update Profile</button>
                                                 </div>
                                             </div>
 
@@ -91,18 +91,18 @@
                                                     <input type="password"  class="form-control form-control-line" name="example-email" id="example-email">
                                                 </div>
                                             </div>
-                                           
+
                                             <div class="form-group">
                                                 <label for="example-email" class="col-md-12">new password</label>
                                                 <div class="col-md-12">
                                                     <input type="password"  class="form-control form-control-line" name="example-email" id="example-email">
                                                 </div>
                                             </div>
-                                          
-                                    
+
+
                                             <div class="form-group">
                                                 <div class="col-sm-12">
-                                                    <button class="btn btn-success">Update Profile</button> 
+                                                    <button class="btn btn-success">Update Profile</button>
                                                 </div>
                                             </div>
 
@@ -116,11 +116,11 @@
                     <!-- Column -->
                    </div>
 
-                
 
 
 
 
 
-                    
+
+
 @endsection
