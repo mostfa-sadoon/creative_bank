@@ -72,7 +72,7 @@
                                     <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="{{asset('assets/images/icon/staff.png')}}" alt="Income" /></div>
                                     <div class="align-self-center">
                                         <h6 class="text-muted m-t-10 m-b-0">Total Staff</h6>
-                                        <h2 class="m-t-0">987,563</h2></div>
+                                        <a class="m-t-0 text-black bold text-lg-left" href="">{{$employees}}</a></div>
                                 </div>
                             </div>
                         </div>
