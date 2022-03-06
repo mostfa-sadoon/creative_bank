@@ -30,12 +30,10 @@ class HomeController extends Controller
         $refusedidea=Idea::where('status','refused')->count();
         $acceptedidea=Idea::where('status','true')->count();
         $totaluser=User::count();
-        for ($i = 1; $i <= 12; $i++) {
+        for ($i = 0; $i <12; $i++) {
             $idea_count[$i] = Idea::withTrashed()->whereYear('created_at', '=', Carbon::yesterday())->whereMonth('created_at', '=', $i)->get()->count();
         };
-          // dd($idea_count);
         $idea_count = json_encode($idea_count);
-       // dd($idea_count);
         return view('dashboard',compact('ideacount','refusedidea','acceptedidea','totaluser','newscount','idea_count'));
     }
 }
