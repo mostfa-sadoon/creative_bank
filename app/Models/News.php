@@ -22,7 +22,7 @@ class News extends Model
             return asset('/uploads/news') . '/' . $img;
         }
     }
-    public function getdescAttribute()
+    public function getDescAttribute()
     {
         return $this['desc_' . app()->getLocale()];
     }

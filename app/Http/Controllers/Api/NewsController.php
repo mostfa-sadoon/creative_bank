@@ -12,7 +12,7 @@ class NewsController extends Controller
     //
     public function index()
     {
-        return News::paginate(5);
+        return NewsResource::collection(News::paginate(5));
     }
     public function show(Request $request)
     {
