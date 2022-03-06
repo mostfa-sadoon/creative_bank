@@ -20,7 +20,9 @@ class NewsController extends Controller
         $lang=$request->header('lang');
         \App::setLocale($lang);
         $id=$request->id;
-        $new = new NewsResource(News::find($id));
+       // $new=News::find($id);
+        //$new =  News::find($id);
+        $new= new NewsResource(News::find($id));
         return msgdata(true,'return new success',$new);
     }
 }
