@@ -142,7 +142,11 @@ use App\Http\Controllers\Setting;
            Route::get('/about/fekrtk','about')->name('fekrtk.about');
            Route::get('/about/edit/{id}','aboutedit')->name('about.edit');
            Route::post('/fekrtk/update','aboutUpdate')->name('fekrtk.update');
-       });
+           //ContactInfo
+           Route::get('/Info','contactInfo_index')->name('fekrtk.info');
+           Route::get('/Info/edit/{id}','contactInfo_edit')->name('info.edit'); 
+           Route::post('/Info/update','contactInfo_Update')->name('info.update');
+        });
 });
 Route::get('change_lang/{lang}', [HomeController::class,'change_lang'])->name('change_lang');
 

@@ -12,14 +12,14 @@
                 <div class="address-block">
                     <div class="icon-box"><img src="{{asset('interface/images/icon/icon59.svg')}}" alt=""></div>
                     <h5>Our Location</h5>
-                    <p>Danmondi, 7563 King Meadow <br>Suite 896, USA</p>
+                    <p>{{$ContactInfo->address}}</p>
                 </div> <!-- /.address-block -->
             </div> <!-- /.col- -->
             <div class="col-lg-4">
                 <div class="address-block">
                     <div class="icon-box"><img src="{{asset('interface/images/icon/icon60.svg')}}" alt=""></div>
                     <h5>Email & Phone</h5>
-                    <p><a href="#">roganinc@coname.com</a> <br><a href="#">880 1723801729</a></p>
+                    <p><a href="#">{{$ContactInfo->email}}</a> <br><a href="#">{{$ContactInfo->phone}}9</a></p>
                 </div> <!-- /.address-block -->
             </div> <!-- /.col- -->
             <div class="col-lg-4">
@@ -28,9 +28,10 @@
                     <h5>Get In Touch</h5>
                     <p>Also find us social media below</p>
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="{{$ContactInfo->facebook}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="{{$ContactInfo->tweeter}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="{{$ContactInfo->instagram}}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li><a href="{{$ContactInfo->youtube}}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
                     </ul>
                 </div> <!-- /.address-block -->
             </div> <!-- /.col- -->

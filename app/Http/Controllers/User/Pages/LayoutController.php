@@ -18,10 +18,10 @@ class LayoutController extends Controller
         $about=About::first();
         return view('user.bank.index',compact('about'));
     }
-    public function conect()
-    {
-        return view('user.conect.index');
-    }
+    // public function conect()
+    // {
+    //     return view('user.conect.index');
+    // }
     public function suggestions()
     {
         return view('user.suggestions.index');
