@@ -12,7 +12,8 @@ class NewsController extends Controller
     //
     public function index()
     {
-        return NewsResource::collection(News::paginate(5));
+        $data= NewsResource::collection(News::paginate(5));
+        return msgdata(true,'retuen success',$data);
     }
     public function show(Request $request)
     {
@@ -20,8 +21,7 @@ class NewsController extends Controller
     $lang=$request->header('lang');
     \App::setLocale($lang);
      $id=$request->id;
-     return new NewsResource(News::find($id));
-     return NewsResource::collection(News::paginate(5));
-
+     $data = new NewsResource(News::find($id));
+     return msgdata(true,'retuen success',$data);
     }
 }
