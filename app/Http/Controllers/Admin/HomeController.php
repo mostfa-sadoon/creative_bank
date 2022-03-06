@@ -15,7 +15,7 @@ class HomeController extends Controller
     //
     public function change_lang(Request $request,$lang)
     {
-        
+
         if (session()->has('lang')) {
             session()->forget('lang');
         }
@@ -27,7 +27,7 @@ class HomeController extends Controller
     {
         $ideacount=Idea::withTrashed()->count();
         $newscount=News::withTrashed()->count();
-        $refusedidea=Idea::onlyTrashed()->count();
+        $refusedidea=Idea::where('status','refused')->count();
         $acceptedidea=Idea::where('status','true')->count();
         $totaluser=User::count();
         for ($i = 1; $i <= 12; $i++) {
