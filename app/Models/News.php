@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+
 use Carbon\Carbon;
 
 class News extends Model
@@ -22,7 +23,7 @@ class News extends Model
             return asset('/uploads/news') . '/' . $img;
         }
     }
-    public function getdescAttribute()
+    public function getDescAttribute()
     {
         return $this['desc_' . app()->getLocale()];
     }

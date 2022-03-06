@@ -15,16 +15,16 @@ class ContactInfoResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'id' => $this->id,
-            'phone' => $this->phone,
-            'address' => $this->address,
-            'email' => $this->email,
-            'facebook' => $this->facebook,
-            'instagram' => $this->instagram,
-            'tweeter' => $this->tweeter,
-            'youtube' => $this->youtube,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
+            'id' => $this->id ?? '',
+            'phone' => $this->phone ?? '',
+            'address' => $this->address ?? '',
+            'email' => $this->email ?? '',
+            'facebook' => $this->facebook ?? '',
+            'instagram' => $this->instagram ?? '',
+            'tweeter' => $this->tweeter ?? '',
+            'youtube' => $this->youtube ?? '',
+            'created_at' => $this->created_at ,
+            'updated_at' => $this->updated_at ,
         ];
     }
 }
