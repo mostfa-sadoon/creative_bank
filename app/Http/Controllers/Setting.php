@@ -75,17 +75,18 @@ class Setting extends Controller
     public function contactInfo_index()
     {
        $info=ContactInfo::first();
-       return view('admin.about.index',compact('info'));
+       return view('admin.info.index',compact('info'));
     }
 
    public function contactInfo_edit($id)
    {
         $info=ContactInfo::find($id);
-        return view('admin.about.edit',compact('info'));
+        return view('admin.info.edit',compact('info'));
    }
 
     public function contactInfo_Update(Request $request)
     {
+        // dd($request->id); 
         $id=$request->id;
         $info=ContactInfo::find($id);
         $info->update([
