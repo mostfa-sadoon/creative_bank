@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\LikeController;
 use App\Http\Controllers\Api\NewsController;
 use App\Http\Controllers\Api\InfoController;
+use App\Http\Controllers\Api\CommonQuestionsController;
 use App\Http\Controllers\Api\Auth\ForgotPasswordController;
 
 
@@ -57,6 +58,7 @@ use App\Http\Controllers\Api\Auth\ForgotPasswordController;
     });
 
 Route::apiResource('About', InfoController::class);
+Route::apiResource('Commonquestions', CommonQuestionsController::class);
 Route::get('ContactInfo', [InfoController::class, 'ContactInfo_Index']);
 
 
