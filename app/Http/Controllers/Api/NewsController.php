@@ -16,14 +16,12 @@ class NewsController extends Controller
     }
     public function show(Request $request)
     {
-    //     $lang='ar';
-    //     $lang=$request->header('lang');
-    //     \App::setLocale($lang);
-    //     $id=$request->id;
-    //    // $new=News::find($id);
-    //     //$new =  News::find($id);
-    //     return new NewsResource(News::find($id));
-    //   //  return msgdata(true,'return new success',$new);
+    $lang='ar';
+    $lang=$request->header('lang');
+    \App::setLocale($lang);
+     $id=$request->id;
+     return new NewsResource(News::find($id));
      return NewsResource::collection(News::paginate(5));
+
     }
 }
