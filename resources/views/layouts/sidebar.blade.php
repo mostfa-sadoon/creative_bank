@@ -108,6 +108,7 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="{{route('owner.index')}}">{{trans('admin.owner')}}</a></li>
                                 <li><a href="{{route('fekrtk.about')}}">{{trans('admin.about_bank')}}</a></li>
+                                <li><a href="{{route('fekrtk.info')}}">{{trans('admin.contact_us')}}</a></li>
                             </ul>
                         </li>
 
