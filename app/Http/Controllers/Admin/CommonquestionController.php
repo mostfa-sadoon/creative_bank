@@ -14,7 +14,7 @@ class CommonquestionController extends Controller
     {
         $lang=app()->getLocale();
         $commonquestions=Commonquestion::get();
-        return view('admin.Commonquestion.index',compact('commonquestions'));
+        return view('admin.commonquestion.index',compact('commonquestions'));
     }
     public function create()
     {
