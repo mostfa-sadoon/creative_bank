@@ -5,7 +5,7 @@
 
 
 @section('content')
-  
+
   <!-- ======= Start Content ======= -->
   <div class="mt-4">
     <!---Start Goal-->
@@ -30,13 +30,13 @@
                                 <p class="w-50">I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
                              </div>
                              <div class="center-div profileDate">
-                                <button class="theme-button-two ">Edit Profile</button>
+                                <a class="text-white theme-button-two" href="{{route('profile.edit',$user->id)}}">Edit Profile</a>
                              </div>
                           </div>
                          </div>
                       </div>
                     </div>
-                </div>                
+                </div>
             </div>
           </div>
       </div>
