@@ -43,7 +43,8 @@ class HomeController extends Controller
             }
         }
       //  $news= newsHome::collection(News::orderBy('created_at', 'desc')->take(6)->get());
-      $news=News::orderBy('created_at', 'desc')->take(6)->get()->makeHidden(['category_id','created_at','updated_at','deleted_at','admin_id','desc_ar','desc_en','header_ar','header_en','news_ar','news_en']);
+    //   $news=News::orderBy('created_at', 'desc')->take(6)->get()->makeHidden(['category_id','created_at','updated_at','deleted_at','admin_id','desc_ar','desc_en','header_ar','header_en','news_ar','news_en']);
+         $news= newsHome::collection(News::orderBy('created_at', 'desc')->take(6)->get());
         $votes=Vote::select('id','name_'.$lang.' as name','end_vote','created_at')->with('voteideas')->where('status','true')->get();
         $owner=Owner::first()->makehidden(['created_at','updated_at','desc_ar','desc_en']);
         $data['imgsSlider']=$imgsSlider;
