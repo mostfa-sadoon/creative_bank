@@ -26,6 +26,7 @@ class InfoController extends Controller
     public function ContactInfo_Index()
     {
         $data = new ContactInfoResource(ContactInfo::first());
+       // $data=ContactInfo::first();
             return msgdata(true,'retuen success',$data);
     }
 }
