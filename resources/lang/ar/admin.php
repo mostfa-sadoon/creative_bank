@@ -69,6 +69,7 @@ return [
      'setting'=>'الاعدادات',
 
      'owner'=>'الممول',
+     'contact_us'=>'تواصل معنا',
      'about_bank'=>'عن البنك',
      'ideaRate'=>'تقييم الفكره',
 

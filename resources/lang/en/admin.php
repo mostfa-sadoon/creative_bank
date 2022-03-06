@@ -73,6 +73,7 @@ return [
      'setting'=>'setting',
      'owner'=>'owner',
      'about_bank'=>'about bank',
+     'contact_us'=>'contact us',
 
      'ideaRate'=>'ideaRate',
 
