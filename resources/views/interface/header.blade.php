@@ -70,7 +70,19 @@
                       </div>
                 </div>
             </li>
+            @if (auth()->user())
+            <li class="dropdown">
+                <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                {{auth()->user()->name}}    
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{{route('profile.show', auth()->user()->id)}}">Profile</a>
+                    <a class="dropdown-item" href="{{route('user.signout')}}">logout</a>
+                </div>
+            </li>
+            @else
             <li><a href="{{route('user.login')}}" class="contact-us white-shdw-button">تسجيل دخول<i class="icon flaticon-back "></i></a></li>
+            @endif
         </ul>
     </div> <!-- /.header-right-widget -->
     </div> <!-- /.theme-main-menu -->
