@@ -6,7 +6,7 @@
     <!-- page css -->
     <link href="{{asset('css/pages/footable-page.css')}}" rel="stylesheet">
     @endsection
-@section('content')   
+@section('content')
             <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <div class="row page-titles">
@@ -15,8 +15,8 @@
                     </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard 2</li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.ideas_archive')}}</a></li>
+                            <li class="breadcrumb-item active">{{trans('admin.dashboard')}}</li>
                         </ol>
                     </div>
                     <div class="">
@@ -41,7 +41,7 @@
                         </thead>
                         <tbody>
                             @foreach($ideas as $key=>$idea)
-                          
+
                             <tr>
                                 <td></td>
                                 <td>{{$idea->name}}</td>
@@ -56,7 +56,7 @@
         </div>
         <!-- Column -->
 @endsection
-@section('scripts')    
+@section('scripts')
     <!-- Footable -->
     <script src="{{asset('../assets/plugins/footable/js/footable.all.min.js')}}"></script>
     <script src="{{asset('../assets/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>

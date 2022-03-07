@@ -12,9 +12,9 @@
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">add new</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">new</a></li>
-                        <li class="breadcrumb-item active">Dashboard 2</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.news_create')}}</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.news')}}</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
                     </ol>
                 </div>
                 <div class="">

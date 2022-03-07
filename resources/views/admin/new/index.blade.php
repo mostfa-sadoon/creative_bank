@@ -1,5 +1,5 @@
 @extends('admin_temp')
-@section('content')  
+@section('content')
               <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <div class="row page-titles">
@@ -8,8 +8,9 @@
                     </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard 2</li>
+            
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.news')}}</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
                         </ol>
                     </div>
                     <div class="">
@@ -17,10 +18,10 @@
                     </div>
                 </div>
                 <!-- ============================================================== -->
-                <!--  add new news -->   
+                <!--  add new news -->
                  <div class="d-flex justify-content-start m-2">
                      <a href="{{route('news.create')}}" class="btn btn-success text-white">{{trans('admin.add_news')}}</a>
-                 </div>        
+                 </div>
                 <!-- End Bread crumb and right sidebar toggle -->
                 <div class="row">
                     @foreach($news as $new)

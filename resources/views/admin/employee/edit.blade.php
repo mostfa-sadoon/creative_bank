@@ -8,9 +8,10 @@
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.creative_bank')}}</a></li>
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.employee')}}</a></li>
                         <li class="breadcrumb-item active">{{trans('admin.employee_edit')}}</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.employee')}}</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
+
                     </ol>
                 </div>
                 <div class="">
@@ -25,33 +26,33 @@
                     <div class="row">
                         <div class="col-12">
                                <laple>{{trans('admin.name')}}</laple>
-                               <input type="text" name="name"  value="{{$employee->name}}" class="form-control">  
+                               <input type="text" name="name"  value="{{$employee->name}}" class="form-control">
                                @if ($errors->has('name'))
                                 <span class="text-danger">{{ $errors->first('name') }}</span>
-                                @endif   
+                                @endif
                         </div>
                         <div class="col-12">
                                <laple>{{trans('admin.email')}}</laple>
                                <input type="email" name="email" class="form-control" value="{{$employee->email}}">
                                @if ($errors->has('email'))
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
-                                @endif     
+                                @endif
                         </div>
                         <div class="col-12">
                                <laple>{{trans('admin.password')}}</laple>
                                <input type="password" name="password" class="form-control">
                                @if ($errors->has('password'))
                                 <span class="text-danger">{{ $errors->first('password') }}</span>
-                                @endif   
+                                @endif
                         </div>
                         <div class="col-12">
                                <laple>{{trans('admin.confirm_password')}}</laple>
                                <input type="password" name="password_confirmation" class="form-control">
                                @if ($errors->has('password_confirmation'))
                                 <span class="text-danger">{{ $errors->first('password_confirmation') }}</span>
-                                @endif    
+                                @endif
                         </div>
-                            
+
 
                         @if($role == "writer")
                          <div class="col-12 mt-3">

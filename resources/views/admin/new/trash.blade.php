@@ -1,5 +1,5 @@
 @extends('admin_temp')
-@section('content')  
+@section('content')
               <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <div class="row page-titles">
@@ -8,9 +8,9 @@
                     </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="javascript:void(0)">trash</a></li>
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">news</a></li>
-                            <li class="breadcrumb-item active">Dashboard 2</li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.trash')}}</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.news')}}</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
                         </ol>
                     </div>
                     <div class="">

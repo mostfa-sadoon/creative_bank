@@ -1,8 +1,8 @@
 @extends('admin_temp')
     @section('styles')
-    
+
     @endsection
-@section('content')   
+@section('content')
             <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <div class="row page-titles">
@@ -11,8 +11,8 @@
                     </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard 2</li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.ideas_archive')}}</a></li>
+                            <li class="breadcrumb-item active">{{trans('admin.dashboard')}}</li>
                         </ol>
                     </div>
                     <div class="">
@@ -41,7 +41,7 @@
         <p>{{$idea->solve}}</p>
     </div>
     <div class="">
-         <h4>pdf</h4>    
+         <h4>pdf</h4>
          <embed src="{{$idea->attatchment}}" width="100%" height="500px">
     </div>
 
@@ -59,8 +59,8 @@
 
     <div class="d-flex justify-content-center">
          <a  href="{{route('idea.restore',$idea->id)}}"class="btn btn-success">restore</a>   <a href="{{route('idea.delete',$idea->id)}}" class="btn btn-danger text-white">delete</a>
-    </div>          
+    </div>
 @endsection
-@section('scripts')    
+@section('scripts')
 
 @endsection

@@ -1,9 +1,9 @@
 @extends('admin_temp')
-@section('styles')  
+@section('styles')
 <link href="{{asset('../assets/plugins/summernote/dist/summernote.css')}}" rel="stylesheet" />
 <link rel="stylesheet" href="{{asset('../assets/plugins/dropify/dist/css/dropify.min.css')}}">
 @endsection
-@section('content')  
+@section('content')
                <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <div class="row page-titles">
@@ -12,9 +12,9 @@
                     </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">shows</a></li>
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">news</a></li>
-                            <li class="breadcrumb-item active">creative bank</li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.news_display')}}</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.news')}}</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
                         </ol>
                     </div>
                     <div class="">
@@ -28,15 +28,15 @@
                     <div class="card-body">
                             <h2 class="card-title">{{$new->header}}</h2>
                             <h4 class="card-text">{{$new->desc}}</h4>
-                                 <div>{!! $new->news !!}</div> 
+                                 <div>{!! $new->news !!}</div>
                             <div class="d-flex d-flex justify-content-center">
                                  <a href="{{route('news.delete',$new->id)}}" class="btn btn-danger text-white">delete</a>
                                  <a  class="btn btn-success text-white" href="{{route('news.restore',$new->id)}}">restore</a>
                             </div>
                     </div>
-                </div>         
+                </div>
 @endsection
-@section('scripts')  
+@section('scripts')
    <!-- wysuhtml5 Plugin JavaScript -->
    <script src="{{asset('../assets/plugins/tinymce/tinymce.min.js')}}"></script>
     <script>

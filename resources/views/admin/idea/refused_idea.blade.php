@@ -1,12 +1,12 @@
 @extends('admin_temp')
-    @section('styles') 
+    @section('styles')
     <!-- Footable CSS -->
     <link href="{{asset('../assets/plugins/footable/css/footable.core.css')}}" rel="stylesheet">
     <link href="{{asset('../assets/plugins/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet" />
     <!-- page css -->
     <link href="{{asset('css/pages/footable-page.css')}}" rel="stylesheet">
     @endsection
-@section('content')      
+@section('content')
               <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
                 <div class="row page-titles">
@@ -16,7 +16,7 @@
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">{{ trans('admin.refused_ideas')}}</a></li>
-                            <li class="breadcrumb-item active">Dashboard 2</li>
+                            <li class="breadcrumb-item active">{{trans('admin.dashboard')}}</li>
                         </ol>
                     </div>
                     <div class="">
@@ -41,7 +41,7 @@
                         </thead>
                         <tbody>
                             @foreach($ideas as $key=>$idea)
-                          
+
                             <tr>
                                 <td></td>
                                 <td>{{$idea->name}}</td>
@@ -52,18 +52,18 @@
                         </tbody>
                     </table>
                     <div class="d-flex justify-content-center">
-                    
+
                     </div>
                 </div>
             </div>
         </div>
         <!-- Column -->
 @endsection
-@section('scripts')    
+@section('scripts')
     <!-- Footable -->
     <script src="{{asset('../assets/plugins/footable/js/footable.all.min.js')}}"></script>
     <script src="{{asset('../assets/plugins/bootstrap-select/bootstrap-select.min.js')}}" type="text/javascript"></script>
     <!--FooTable init-->
     <script src="{{asset('js/footable-init.js')}}"></script>
-   
+
 @endsection

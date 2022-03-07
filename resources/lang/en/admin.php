@@ -52,7 +52,7 @@ return [
      'suggesions'=>'suggesions',
      'show_suggesions'=>'عرض الاقتراحات',
 
-     'employee'=>'employee', 
+     'employee'=>'employee',
      'employee_create'=>'create employee',
      'creators'=>'creators',
 
@@ -61,12 +61,12 @@ return [
      'accepted_ideas'=>'accepted ideas',
      'vote'=>'vote',
      'publish' => "Publish",
-    
-     //Add News 
+
+     //Add News
      'Add_news' => 'Add News',
      'upload_img' => "upload image",
-     'title' => "Title", 
-     'description' => 'Description', 
+     'title' => "Title",
+     'description' => 'Description',
      'news_body' => 'Content',
 
      'number'=>'number',
@@ -104,5 +104,19 @@ return [
      'mission' => 'mission',
      'description' => 'description',
 
-
+     'accepted_idea'=>'accepted idea',
+     'new_idea'=>'new idea',
+     'dashboard'=>'dashboard',
+     'ideas_archive'=>'archive idea',
+     'employee_show'=>'shoe employee',
+     'classification_display'=>'display classification',
+     'classification_create'=>'create classification',
+     'classification_edit'=>'edit classification',
+     'fields_edit'=>'edit field',
+     'field_create'=>'create field ',
+     'category_edit'=>'edit category',
+     'category_add'=>'add category',
+     'news_create'=>'create news',
+     'news_edit'=>'edit news',
+     'news_show'=>'show news',
 ];

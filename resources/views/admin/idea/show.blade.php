@@ -12,7 +12,7 @@
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
-                            <li class="breadcrumb-item active">Dashboard 2</li>
+                            <li class="breadcrumb-item active">{{trans('admin.dashboard')}}</li>
                         </ol>
                     </div>
                     <div class="">

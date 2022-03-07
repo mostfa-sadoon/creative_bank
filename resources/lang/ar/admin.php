@@ -50,7 +50,7 @@ return [
      'suggesions'=>'الاقتراحات',
      'show_suggesions'=>'  عرض الاقتراحات',
 
-     'employee'=>'الموظفين', 
+     'employee'=>'الموظفين',
      'employee_create'=>'اضافه موظف',
      'employee_edit'=>'تعديل بيانات موظف',
 
@@ -89,13 +89,32 @@ return [
      'add_news' => 'اضافة خبر',
      'upload_img' => "تحميل ملف",
      'title' => "العنوان",
-     'description' => 'الوصف', 
-     'news_body' => 'المحتوى', 
-     
+     'description' => 'الوصف',
+     'news_body' => 'المحتوى',
+
      'password' => "كلمة السر",
      'confirm_password' => "تأكيد كلمة السر",
 
      'vision' => 'الرؤيه',
      'mission' => 'الهدف',
-     'description' => 'الوصف'
+     'description' => 'الوصف',
+     
+     'accepted_idea'=>'الافكار المقبوله',
+     'new_idea'=>'الافكار الجديده',
+     'dashboard'=>'لوحه التحكم',
+     'ideas_archive'=>'الافكار المؤرشفه',
+     'employee_show'=>'عرض الموظفين',
+     'classification_display'=>'عرض تصنيفات المستخدمين',
+     'classification_create'=>'اضافه تصنيف جديد',
+     'classification_edit'=>'تعديل التصنيف',
+     'fields_edit'=>'تعديل المجالات',
+     'field_create'=>'انشاء مجال جديد ',
+     'category_edit'=>'تعديل التصنيف',
+     'category_add'=>'اضافه تصنيف',
+     'news_create'=>'اضافه خبر',
+     'news_edit'=>'تعديل خبر',
+     'news_show'=>'عرض خبر',
+
+
+
 ];
