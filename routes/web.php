@@ -36,8 +36,8 @@ use App\Http\Controllers\Admin\ContactController;
     // Contact Us
     Route::get('contact/us', [ContactController::class, 'create'])->name('contact.create');
     Route::post('contact/us', [ContactController::class, 'store'])->name('contact.store');
-    
-    
+
+
     Route::get('suggestions', [LayoutController::class, 'suggestions'])->name('suggestions');
     Route::get('profite', [LayoutController::class, 'profite'])->name('profite');
     //idea
@@ -64,10 +64,12 @@ use App\Http\Controllers\Admin\ContactController;
         Route::post('/idea/vote',[VoteController::class, 'vote'])->name('idea.vote');
         Route::post('/idea/unvote',[VoteController::class, 'unvote'])->name('idea.unvote');
         //user profile
-        Route::get('/user/profile/edit/{id}',[ProfileController::class, 'edit'])->name('profile.edit');
-        Route::post('/user/update',[ProfileController::class, 'update'])->name('user.update');
-        Route::get('/user/password/edit',[ProfileController::class, 'editpassword'])->name('user.edit.password');
-        Route::post('/user/password/update',[ProfileController::class, 'updatepassword'])->name('password.update');
+        Route::controller(ProfileController::class)->group(function(){
+            Route::get('/user/profile/edit/{id}','edit')->name('profile.edit');
+            Route::post('/user/update','update')->name('user.update');
+            Route::get('/user/password/edit','editpassword')->name('user.edit.password');
+            Route::post('/user/password/update','updatepassword')->name('password.update');
+        });
         // send comment
         Route::post('/user/send/comment',[IdeaController::class, 'sendcomment'])->name('comment.send');
     });

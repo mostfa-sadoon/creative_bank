@@ -72,7 +72,7 @@
                                     <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="{{asset('assets/images/icon/staff.png')}}" alt="Income" /></div>
                                     <div class="align-self-center">
                                         <h6 class="text-muted m-t-10 m-b-0">Total Staff</h6>
-                                        <h2 class="m-t-0">987,563</h2></div>
+                                        <a class="m-t-0 text-black bold text-lg-left" href="">{{$employees}}</a></div>
                                 </div>
                             </div>
                         </div>
@@ -109,9 +109,9 @@
 @endsection
 @section('scripts')
     <script src="{{asset('assets/plugins/Chart.js/Chart.min.js')}}"></script>
-   
+
     <script>
-       // idea chart script 
+       // idea chart script
        var ctx3 = document.getElementById("chart3").getContext("2d");
     var data3 = [
 		 {
@@ -139,12 +139,12 @@
         legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<segments.length; i++){%><li><span style=\"background-color:<%=segments[i].fillColor%>\"></span><%if(segments[i].label){%><%=segments[i].label%><%}%></li><%}%></ul>",
         responsive: true
     });
-      // end idea chart script 
+      // end idea chart script
       //start idea chart scripts
       var ctx1 = document.getElementById("chart1").getContext("2d");
       var data= {!! $idea_count !!}
     var data1 = {
-        labels: ["January", "February", "March", "April", "May", "June", "July","August","September","October","November","December"],
+        labels: ["January","February","March","April","May","June","July","August","September","October","November","December"],
         datasets: [
             {
                 label: "My First dataset",

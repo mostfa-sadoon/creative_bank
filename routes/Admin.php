@@ -99,17 +99,19 @@ use App\Http\Controllers\Setting;
         Route::get('/vote/end/{id}','endvote')->name('vote.end');
     });
     //news
-    Route::get('/news', [NewsController::class, 'index'])->name('news.index');
-    Route::get('/news/create', [NewsController::class, 'create'])->name('news.create');
-    Route::post('/news/store', [NewsController::class, 'store'])->name('news.store');
-    Route::get('/news/show/{id}', [NewsController::class, 'show'])->name('news.show');
-    Route::get('/news/show/edit/{id}', [NewsController::class, 'edit'])->name('news.edit');
-    Route::POST('/news/show/update/', [NewsController::class, 'update'])->name('news.update');
-    Route::get('/news/trash/{id}', [NewsController::class, 'trash'])->name('news.trash');
-    Route::get('/news/trash/', [NewsController::class, 'gettrash'])->name('news.gettrash');
-    Route::get('/news/show/trashed/{id}', [NewsController::class, 'showtrashed'])->name('news.show.trashed');
-    Route::get('/news/delete/{id}', [NewsController::class, 'destroy'])->name('news.delete');
-    Route::get('/news/restore/{id}', [NewsController::class, 'restore'])->name('news.restore');
+    Route::controller(NewsController::class)->group(function(){
+        Route::get('/news', 'index')->name('news.index');
+        Route::get('/news/create', 'create')->name('news.create');
+        Route::post('/news/store', 'store')->name('news.store');
+        Route::get('/news/show/{id}','show')->name('news.show');
+        Route::get('/news/show/edit/{id}','edit')->name('news.edit');
+        Route::POST('/news/show/update/','update')->name('news.update');
+        Route::get('/news/trash/{id}','trash')->name('news.trash');
+        Route::get('/news/trash/', 'gettrash')->name('news.gettrash');
+        Route::get('/news/show/trashed/{id}','showtrashed')->name('news.show.trashed');
+        Route::get('/news/delete/{id}','destroy')->name('news.delete');
+        Route::get('/news/restore/{id}','restore')->name('news.restore');
+    });
     //common question
     Route::get('/commonquestions', [CommonquestionController::class, 'index'])->name('commonquestions.index');
     Route::get('/commonquestions/create', [CommonquestionController::class, 'create'])->name('commonquestions.create');
@@ -144,7 +146,7 @@ use App\Http\Controllers\Setting;
            Route::post('/fekrtk/update','aboutUpdate')->name('fekrtk.update');
            //ContactInfo
            Route::get('/Info','contactInfo_index')->name('fekrtk.info');
-           Route::get('/Info/edit/{id}','contactInfo_edit')->name('info.edit'); 
+           Route::get('/Info/edit/{id}','contactInfo_edit')->name('info.edit');
            Route::post('/Info/update','contactInfo_Update')->name('info.update');
         });
 });

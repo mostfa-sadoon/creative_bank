@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Idea;
 use App\Models\User;
 use App\Models\News;
+use App\Models\Admin;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -15,7 +16,7 @@ class HomeController extends Controller
     //
     public function change_lang(Request $request,$lang)
     {
-        
+
         if (session()->has('lang')) {
             session()->forget('lang');
         }
@@ -27,15 +28,14 @@ class HomeController extends Controller
     {
         $ideacount=Idea::withTrashed()->count();
         $newscount=News::withTrashed()->count();
-        $refusedidea=Idea::onlyTrashed()->count();
+        $refusedidea=Idea::where('status','refused')->count();
         $acceptedidea=Idea::where('status','true')->count();
         $totaluser=User::count();
-        for ($i = 1; $i <= 12; $i++) {
+        $employees=Admin::count();
+        for ($i = 0; $i <12; $i++) {
             $idea_count[$i] = Idea::withTrashed()->whereYear('created_at', '=', Carbon::yesterday())->whereMonth('created_at', '=', $i)->get()->count();
         };
-          // dd($idea_count);
         $idea_count = json_encode($idea_count);
-       // dd($idea_count);
-        return view('dashboard',compact('ideacount','refusedidea','acceptedidea','totaluser','newscount','idea_count'));
+        return view('dashboard',compact('ideacount','refusedidea','acceptedidea','totaluser','newscount','idea_count','employees'));
     }
 }
