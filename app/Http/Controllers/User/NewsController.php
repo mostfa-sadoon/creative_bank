@@ -15,6 +15,7 @@ class NewsController extends Controller
         $lang=app()->getLocale();
         $NewCategories=NewCategory::get();
         $news=News::paginate(20);
+       // dd($news);
         return view('user.news.index',compact('news','NewCategories'));
     }
 
