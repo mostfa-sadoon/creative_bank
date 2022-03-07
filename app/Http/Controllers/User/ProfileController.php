@@ -89,14 +89,13 @@ class ProfileController extends Controller
     }
     public function updatepassword(Request $request)
     {
+        
          $data=$this->validate($request, [
                'old_password'=>'required',
                'password'=>'required|min:6|max:50|confirmed',
                'password_confirmation' => 'required|max:50|min:6',
           ]);
           $id=Auth::user()->id;
-
-          dd($id);
           $user=User::find($id);
           if (!Hash::check($data['old_password'], $user->password)) {
                return back()->with('error', 'The specified password does not match the database password');
