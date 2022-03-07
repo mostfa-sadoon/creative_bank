@@ -10,7 +10,7 @@
                     <th>#</th>
                     <th>{{trans('admin.NewCategory_in_arabic')}}</th>
                     <th>{{trans('admin.NewCategory_in_english')}}</th>
-                    <th>{{trans('admin.measure')}}</th>
+                    <th>{{trans('admin.action')}}</th>
                 </tr>
             </thead>
             <tbody>

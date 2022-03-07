@@ -30,16 +30,16 @@ return [
     'add_new_classification'=>'add new classification',
     'classification_in_arabic'=>'classification in arabic',
     'classificstion_in_english'=>'classification in english',
+    'action' => 'Control',
 
-
-    'ideas'=>'ideas',
-    'new_ideas'=>'new ideas',
-    'trash'=>'trash',
+    'ideas'=>'Ideas',
+    'new_ideas'=>'New Ideas',
+    'trash'=>'Archive',
 
     'news'=>'news',
     'add_news'=>'add news',
     'news_all'=>'news All',
-    'news_trash'=>'trash',
+    'news_trash'=>'Archive',
 
     'commonquestion'=>'commonquestion',
     'commonquestion.show'=>'display question',
@@ -52,7 +52,7 @@ return [
      'suggesions'=>'suggesions',
      'show_suggesions'=>'عرض الاقتراحات',
 
-     'employee'=>'employee',
+     'employee'=>'employee', 
      'employee_create'=>'create employee',
      'creators'=>'creators',
 
@@ -60,7 +60,14 @@ return [
      'ideas'=>'ideas',
      'accepted_ideas'=>'accepted ideas',
      'vote'=>'vote',
-
+     'publish' => "Publish",
+    
+     //Add News 
+     'Add_news' => 'Add News',
+     'upload_img' => "upload image",
+     'title' => "Title", 
+     'description' => 'Description', 
+     'news_body' => 'Content',
 
      'number'=>'number',
      'name'=>'name',
@@ -81,11 +88,21 @@ return [
      'acceptedIdea'=>'acceptedIdea',
 
      'NewCategory'=>'Category',
-     'name'=>'name in english',
+    //  'name'=>'name in english',
      'NewCategory_in_arabic'=>'Category in arabic',
      'NewCategory_in_english'=>'Category in english',
 
 
      'NewCategory_add'=>'add new category',
+
+     'password' => 'Password',
+     'confirm_password' => 'Confirm Password',
+
+     'Contact_info' => 'Contact us info',
+     'address' => 'address',
+     'vision' => 'vision',
+     'mission' => 'mission',
+     'description' => 'description',
+
 
 ];

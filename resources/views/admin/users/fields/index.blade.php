@@ -10,19 +10,21 @@
                     <th>#</th>
                     <th>{{trans('admin.field_in_arabic')}}</th>
                     <th>{{trans('admin.field_in_english')}}</th>
-                    <th>{{trans('admin.measure')}}</th>
+                    <th>{{trans('admin.action')}}</th>
                 </tr>
             </thead>
             <tbody>
+                <?php $counter = 0; ?>
             @foreach($fields as $key=>$field)
+                <?php $counter += 1; ?>    
                 <tr>
-                    <td>{{$key+1}}</td>
+                    <td>{{$counter}}</td>
                     <td>{{$field->name_ar}}</td>
                     <td>{{$field->name_en}}</td>
                     <td>   
-                        <a href="{{route('field.show',$field->id)}}"><i class="far fa-eye text-success"></i></a>  
-                        <a href="{{route('field.edit',$field->id)}}"><i class="fas fa-edit"></i></a>
-                    </td>
+                    <a href="{{route('field.edit', $field->id)}}"><i class="fas fa-edit"></i></a>
+                    <a href="{{route('field.destroy', $field->id)}}"><i class="fas fa-close text-danger"></i></a>
+                </td>
                 </tr>
                 @endforeach            
             </tbody>

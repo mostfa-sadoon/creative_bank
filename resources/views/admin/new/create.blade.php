@@ -30,7 +30,7 @@
                         <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">upload img</h4>
+                                        <h4 class="card-title">{{trans('admin.upload_img')}}</h4>
                                         <input type="file" name="img" id="input-file-now" class="dropify" />
                                     </div>
                                     @if ($errors->has('img'))
@@ -39,8 +39,8 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">header in arabic</h4>
-                                        <input type="text" name="header_ar" value="{{ old('header_ar') }}" class="form-control" />
+                                        <h4 class="card-title">{{trans('admin.title')}} In Arabic</h4>
+                                        <input type="text" name="header_ar" class="form-control" value="{{ old('header_ar') }}" />
                                     </div>
                                     @if ($errors->has('header_ar'))
                                         <span class="text-danger">{{ $errors->first('header_ar')}}</span>
@@ -48,8 +48,8 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">description in arabic</h4>
-                                        <textarea type="text"  name="desc_ar"   class="form-control"> old('desc_ar')</textarea>
+                                        <h4 class="card-title">{{trans('admin.description')}} In Arabic</h4>
+                                        <textarea type="text"  name="desc_ar" class="form-control"> old('desc_ar') </textarea>
                                     </div>
                                     @if ($errors->has('desc_ar'))
                                         <span class="text-danger">{{ $errors->first('desc_ar')}}</span>
@@ -57,7 +57,7 @@
                                 </div>
                                    <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">news in arabic</h4>
+                                            <h4 class="card-title">{{trans('admin.news_body')}} In Arabic</h4>
                                                 <textarea id="mymce"  name="news_ar">{{ old('news_ar') }}</textarea>
                                                 @if ($errors->has('news_ar'))
                                                     <span class="text-danger">{{ $errors->first('news_ar')}}</span>
@@ -66,8 +66,8 @@
                                     </div>
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">header in english</h4>
-                                        <input type="text"  name="header_en" value="{{ old('header_en') }}" class="form-control" />
+                                        <h4 class="card-title">{{trans('admin.title')}} in English</h4>
+                                        <input type="text"  name="header_en" class="form-control" value="{{ old('header_en') }}"/>
                                     </div>
                                     @if ($errors->has('header_en'))
                                         <span class="text-danger">{{ $errors->first('header_en')}}</span>
@@ -75,8 +75,8 @@
                                 </div>
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title">description in english</h4>
-                                        <textarea type="text"  name="desc_en"  class="form-control">{{ old('desc_en') }}</textarea>
+                                        <h4 class="card-title">{{trans('admin.description')}} in English</h4>
+                                        <textarea type="text"  name="desc_en" class="form-control">{{ old('desc_en') }}</textarea>
                                     </div>
                                     @if ($errors->has('desc_en'))
                                         <span class="text-danger">{{ $errors->first('desc_en')}}</span>
@@ -84,7 +84,7 @@
                                 </div>
                                    <div class="card">
                                         <div class="card-body">
-                                            <h4 class="card-title">news in arabic</h4>
+                                            <h4 class="card-title">{{trans('admin.news_body')}} in English</h4>
                                                 <textarea  id="mymce" name="news_en">{{ old('news_en') }}</textarea>
                                                 @if ($errors->has('news_en'))
                                                     <span class="text-danger">{{ $errors->first('news_en')}}</span>
@@ -101,7 +101,7 @@
                                   </div>
 
                                 <div class="d-flex justify-content-center">
-                                   <input type="submit" class="btn btn-success" value="نشر">
+                                   <input type="submit" class="btn btn-success" value="{{trans('admin.publish')}}">
                                 </div>
                         </div>
                     </div>

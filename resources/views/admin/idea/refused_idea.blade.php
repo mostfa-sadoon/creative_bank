@@ -1,5 +1,5 @@
 @extends('admin_temp')
-    @section('styles')
+    @section('styles') 
     <!-- Footable CSS -->
     <link href="{{asset('../assets/plugins/footable/css/footable.core.css')}}" rel="stylesheet">
     <link href="{{asset('../assets/plugins/bootstrap-select/bootstrap-select.min.css')}}" rel="stylesheet" />
@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">accepted idea</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{ trans('admin.refused_ideas')}}</a></li>
                             <li class="breadcrumb-item active">Dashboard 2</li>
                         </ol>
                     </div>

@@ -27,7 +27,7 @@
                 <!-- End Bread crumb and right sidebar toggle -->
 <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Contact Emplyee list</h4>
+                <h4 class="card-title">{{ trans('admin.new_ideas')}}</h4>
                 <h6 class="card-subtitle"></h6>
                 <div class="table-responsive">
                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">

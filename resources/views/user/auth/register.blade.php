@@ -103,13 +103,13 @@
 				<div class="sign-up-form-wrapper">
 					<div class="title-area text-center">
 						<h3>Register Now!</h3>
-						<p>You can signup with you social account below</p>
-					</div> <!-- /.title-area -->
-					<ul class="social-icon-wrapper row">
+						<!-- <p>You can signup with you social account below</p>
+					</div> /.title-area -->
+					<!-- <ul class="social-icon-wrapper row">
 						<li class="col-6"><a href="#" class="gmail"><i class="fa fa-envelope-o" aria-hidden="true"></i> Gmail</a></li>
 						<li class="col-6"><a href="#" class="facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a></li>
-					</ul>
-					<p class="or-text"><span>or</span></p>
+					</ul> -->
+					<!-- <p class="or-text"><span>or</span></p> -->
                     <form id="contact-form" role="form" action="{{route('user.create')}}" method="post">
                         @csrf
 						<div class="row">

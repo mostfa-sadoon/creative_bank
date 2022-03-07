@@ -30,9 +30,7 @@
                                 <li><a href="{{route('classification.index')}}">{{ trans('admin.classification')}}</a></li>
                             </ul>
 
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="{{route('field.index')}}">{{ trans('admin.creators')}}</a></li>
-                            </ul>
+                            
                         </li>
                         @endrole
 

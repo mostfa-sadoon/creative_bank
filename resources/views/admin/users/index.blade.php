@@ -14,22 +14,24 @@
                                                 <th>{{trans('admin.email')}}</th>
                                                 <th>{{trans('admin.phone')}}</th>
                                                 <th>{{trans('admin.joining_date')}}</th>
-                                                <th>{{trans('admin.Action')}}</th>
+                                                <!--  -->
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($users as  $key=>$user)
+                                            <?php $counter = 0 ?>
+                                            @foreach($users as  $user)
+                                            <?php $counter = $counter+ 1?>
                                                 <tr>
-                                                    <td>{{$key+1}}</td>
+                                                    <td>{{$counter}}</td>
                                                     <td>
-                                                        <a href="javascript:void(0)"><img src="{{$user->img}}" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
+                                                        <!-- <a href=""> -->
+                                                            <img src="{{$user->img}}" alt="user" width="40" class="img-circle" /> 
+                                                            Genelia Deshmukh
+                                                        <!-- </a> -->
                                                     </td>
                                                     <td>{{$user->email}}</td>
                                                     <td>{{$user->phone}}</td>
                                                     <td>{{date('d-m-Y', strtotime($user->created_at))}}</td>
-                                                    <td>
-                                                        <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                    </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>

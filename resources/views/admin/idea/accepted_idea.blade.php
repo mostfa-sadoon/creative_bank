@@ -15,7 +15,7 @@
                     </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="javascript:void(0)">accepted idea</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">{{ trans('admin.accepted_ideas')}}</a></li>
                             <li class="breadcrumb-item active">Dashboard 2</li>
                         </ol>
                     </div>

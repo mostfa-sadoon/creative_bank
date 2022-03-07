@@ -44,7 +44,7 @@ use App\Http\Controllers\Setting;
     Route::get('/category/edit/{id}', [CategoryController::class, 'edit'])->name('category.edit');
     Route::get('/category/show/{id}', [CategoryController::class, 'show'])->name('category.show');
     Route::post('/category/update', [CategoryController::class, 'update'])->name('category.update');
-    Route::post('/category/destroy', [CategoryController::class, 'destroy'])->name('category.destroy');
+    Route::get('/category/destroy/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
     //user
     Route::get('/user', [userController::class, 'index'])->name('user.index');
     // fildes routes
@@ -55,7 +55,7 @@ use App\Http\Controllers\Setting;
         Route::get('/field/edit/{id}','edit')->name('field.edit');
         Route::get('/field/show/{id}','show')->name('field.show');
         Route::post('/field/update','update')->name('field.update');
-        Route::post('/field/destroy','destroy')->name('field.destroy');
+        Route::get('/field/destroy/{id}','destroy')->name('field.destroy');
     });
       // NewCategory routes
       Route::controller(NewCategories::class)->group(function(){
@@ -73,7 +73,7 @@ use App\Http\Controllers\Setting;
         Route::post('/classification/store','store')->name('classification.store');
         Route::get('/classification/edit/{id}','edit')->name('classification.edit');
         Route::post('/classification/update','update')->name('classification.update');
-        Route::post('/classification/destroy','destroy')->name('classification.destroy');
+        Route::get('/classification/delete/{id}','destroy')->name('classification.destroy');
     });
     // ideas
     Route::controller(IdeaController::class)->group(function(){

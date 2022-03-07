@@ -43,7 +43,7 @@ class ClassificationController extends Controller
             $request->validate([
             'name_ar' => 'required|max:50',
             'name_en' => 'required|max:50'
-        ]);
+        ]);  
         $classification=Classification::find($id);
         $classification->update([
           'name_ar'=>$request->name_ar,

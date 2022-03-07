@@ -22,7 +22,7 @@
         <div class="col-lg-4 col-md-4">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">File owner</h4>
+                    <!-- <h4 class="card-title">File owner</h4> -->
                     <input type="file" name="img" id="input-file-now-custom-3" class="dropify" data-height="500" data-default-file="{{$owner->img}}" />
                 </div>
             </div>
