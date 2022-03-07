@@ -20,7 +20,6 @@
                                         <i class="fa fa-user"></i>
                                         </a>
                                     </div>
-                                    <input type="file" id="my_file" onchange="previewFile(this)" style="display: none;" />
                                 </div>
                             </div>
                             <h5 class="user-name">Yuki Hayashi</h5>
@@ -49,6 +48,7 @@
                                 <div class="card-body">
                                     <form class="submit-faq pt-20"  method="post" action="{{route('user.update')}}" enctype="multipart/form-data">
                                         @csrf
+                                        <input type="file" id="my_file" onchange="previewFile(this)" style="display: none;" />
                                         <input type="hidden" name="id" value="{{$user->id}}">
                                     <div class="row gutters">
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
