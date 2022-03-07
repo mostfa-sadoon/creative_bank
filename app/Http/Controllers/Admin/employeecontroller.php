@@ -24,7 +24,7 @@ class employeecontroller extends Controller
        // dd($request->all());
         $data = $this->validate(\request(),
         [
-            'name' =>    'required|string|between:12,50',
+            'name' =>    'required|string|between:6,50',
             'email' =>   'required|unique:admins|max:50',
             'password'=> 'required|min:6|max:50|confirmed',
             'password_confirmation' => 'required|max:50|min:6',
@@ -36,6 +36,9 @@ class employeecontroller extends Controller
         $data['password']=Hash::make($request->password);
         $admin=Admin::create($data);
         $admin->assignRole($role);
+        return redirect()->route('employees');
+
+
     }
     public function edit($id)
     {
@@ -61,6 +64,8 @@ class employeecontroller extends Controller
         $employee=Admin::findorfail($request->id);
         $employee->update($data);
         $employee->assignRole($role);
+        return redirect()->route('employees');
+
     }
     public function delete($id)
     {

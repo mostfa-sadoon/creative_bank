@@ -10,7 +10,7 @@
                     <th>#</th>
                     <th>{{trans('admin.category_in_arabic')}}</th>
                     <th>{{trans('admin.category_in_english')}}</th>
-                    <th>{{trans('admin.measure')}}</th>
+                    <th>{{trans('admin.action')}}</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,10 +20,9 @@
                     <td>{{$category->name_ar}}</td>
                     <td>{{$category->name_en}}</td>
                     <td>   
-                        <a href="{{route('category.show',$category->id)}}"><i class="far fa-eye text-success"></i></a>  
-                        <a href="{{route('category.edit',$category->id)}}"><i class="fas fa-edit"></i></a>
-                        <a href="{{route('category.destroy',$category->id)}}"><i class="fas fa-trash-alt text-danger"></i></a>
-                    </td>
+                        <a href="{{route('category.edit' ,$category->id)}}"><i class="fas fa-edit"></i></a>
+                        <a href="{{route('category.destroy' ,$category->id)}}"><i class="fas fa-trash-alt text-danger"></i></a>
+                    </td> 
                 </tr>
                 @endforeach            
             </tbody>

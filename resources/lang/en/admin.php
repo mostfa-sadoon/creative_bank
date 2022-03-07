@@ -30,7 +30,7 @@ return [
     'add_new_classification'=>'add new classification',
     'classification_in_arabic'=>'classification in arabic',
     'classificstion_in_english'=>'classification in english',
-
+    'action' => 'Control',
 
     'ideas'=>'Ideas',
     'new_ideas'=>'New Ideas',
@@ -52,7 +52,7 @@ return [
      'suggesions'=>'suggesions',
      'show_suggesions'=>'عرض الاقتراحات',
 
-     'employee'=>'employee',
+     'employee'=>'employee', 
      'employee_create'=>'create employee',
      'creators'=>'creators',
 
@@ -65,7 +65,7 @@ return [
      //Add News 
      'Add_news' => 'Add News',
      'upload_img' => "upload image",
-     'title' => "Title",
+     'title' => "Title", 
      'description' => 'Description', 
      'news_body' => 'Content',
 
@@ -88,11 +88,21 @@ return [
      'acceptedIdea'=>'acceptedIdea',
 
      'NewCategory'=>'Category',
-     'name'=>'name in english',
+    //  'name'=>'name in english',
      'NewCategory_in_arabic'=>'Category in arabic',
      'NewCategory_in_english'=>'Category in english',
 
 
      'NewCategory_add'=>'add new category',
+
+     'password' => 'Password',
+     'confirm_password' => 'Confirm Password',
+
+     'Contact_info' => 'Contact us info',
+     'address' => 'address',
+     'vision' => 'vision',
+     'mission' => 'mission',
+     'description' => 'description',
+
 
 ];

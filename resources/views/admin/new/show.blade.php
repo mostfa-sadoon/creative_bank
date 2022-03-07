@@ -30,8 +30,8 @@
                             <h4 class="card-text">{{$new->desc}}</h4>
                                  <div>{!! $new->news !!}</div> 
                             <div class="d-flex d-flex justify-content-center">
-                                 <a href="{{route('news.trash',$new->id)}}" class="btn btn-danger text-white">trash</a>
-                                 <a  class="btn btn-success text-white" href="{{route('news.edit',$new->id)}}">edit</a>
+                                 <a href="{{route('news.trash',$new->id)}}" class="btn btn-danger text-white">{{trans('admin.trash')}}</a>
+                                 <a  class="btn btn-success text-white" href="{{route('news.edit',$new->id)}}">{{trans('admin.edit')}}</a>
                             </div>
                     </div>
                 </div>         

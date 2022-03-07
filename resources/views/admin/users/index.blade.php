@@ -18,16 +18,20 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($users as  $key=>$user)
+                                            <?php $counter = 0 ?>
+                                            @foreach($users as  $user)
+                                            <?php $counter = $counter+ 1?>
                                                 <tr>
-                                                    <td>{{$key+1}}</td>
+                                                    <td>{{$counter}}</td>
                                                     <td>
-                                                        <a href="javascript:void(0)"><img src="{{$user->img}}" alt="user" width="40" class="img-circle" /> Genelia Deshmukh</a>
+                                                        <!-- <a href=""> -->
+                                                            <img src="{{$user->img}}" alt="user" width="40" class="img-circle" /> 
+                                                            Genelia Deshmukh
+                                                        <!-- </a> -->
                                                     </td>
                                                     <td>{{$user->email}}</td>
                                                     <td>{{$user->phone}}</td>
                                                     <td>{{date('d-m-Y', strtotime($user->created_at))}}</td>
-                                                    <!--  -->
                                                 </tr>
                                             @endforeach
                                         </tbody>

@@ -97,6 +97,10 @@ class FieldController extends Controller
      */
     public function destroy($id)
     {
-        //
+        {
+            $field=Field::find($id);
+            $field->delete();
+            return redirect()->back();
+        }
     }
 }

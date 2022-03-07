@@ -20,14 +20,15 @@ return [
     'creative_bank'=>'بنك الافكار',
     'users'=>'المستخدمين',
     'fields'=>'المجالات',
-    'classification'=>'التصنيات',
+    'classification'=>'التصنيفات',
     'field_in_arabic'=>'ألمجال بالعربي',
     'field_in_english'=>'المجال بالانجليزي',
     'add_new_field'=>'اضافه مجال جديد',
     'add_new_classification'=>'اضافه تصنيف جديد',
     'classification_in_arabic'=>'التصنيف بالعربي ',
     'classificstion_in_english'=>'التصنيف باالانجليزيه',
-
+    'contact_info' => 'بيانات التواصل',
+    'address' => 'العنوان',
 
     'ideas'=>'الافكار',
     'new_ideas'=>'الافكار الجديده',
@@ -49,8 +50,9 @@ return [
      'suggesions'=>'الاقتراحات',
      'show_suggesions'=>'  عرض الاقتراحات',
 
-     'employee'=>'الموظفين',
+     'employee'=>'الموظفين', 
      'employee_create'=>'اضافه موظف',
+     'employee_edit'=>'تعديل بيانات موظف',
 
      'creators'=>'المبدعين',
      'creative_bank'>'بنك الافكار',
@@ -82,11 +84,18 @@ return [
      'NewCategory_in_english'=>'القسم بالانجليزي',
 
      'NewCategory_add'=>'اضافه قسم جديد',
- 
+    'action' => 'التحكم',
      //Add news
      'add_news' => 'اضافة خبر',
      'upload_img' => "تحميل ملف",
      'title' => "العنوان",
      'description' => 'الوصف', 
-     'news_body' => 'المحتوى',
+     'news_body' => 'المحتوى', 
+     
+     'password' => "كلمة السر",
+     'confirm_password' => "تأكيد كلمة السر",
+
+     'vision' => 'الرؤيه',
+     'mission' => 'الهدف',
+     'description' => 'الوصف'
 ];

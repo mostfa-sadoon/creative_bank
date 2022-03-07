@@ -67,6 +67,9 @@ class Setting extends Controller
 
             'mission_ar'=>$request->mission_ar,
             'mission_en'=>$request->mission_en,
+
+            'description_ar'=>$request->description_ar,
+            'description_en'=>$request->description_en,
         ]);
         return redirect()->route('fekrtk.about');
     }

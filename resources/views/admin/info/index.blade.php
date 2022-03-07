@@ -6,7 +6,7 @@
                             
                         <div class="card-body">
                             
-                            <h4 class="card-title"></span> Contact us Info</h4>
+                            <h4 class="card-title"></span> {{trans('admin.contact_us')}}</h4>
                             
                             <ul class="feeds">
                                 <li>

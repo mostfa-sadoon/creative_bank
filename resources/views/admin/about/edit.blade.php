@@ -62,7 +62,7 @@
 
  {{-- start vision_ar --}}
      <div class="d-flex justify-content-start">
-        <h2>vision</h2>
+        <h2>{{trans('admin.vision')}}</h2>
     </div>
     <div class="row">
         <div class="col-md-6">
@@ -80,7 +80,7 @@
 
  {{-- start mission_ar --}}
      <div class="d-flex justify-content-start">
-        <h2>mission</h2>
+        <h2>{{trans('admin.mission')}}</h2>
     </div>
     <div class="row">
         <div class="col-md-6">
@@ -95,6 +95,24 @@
         </div>
     </div>
  {{-- end mission_ar --}}
+
+ {{-- start description_ar --}}
+     <div class="d-flex justify-content-start">
+        <h2>{{trans('admin.description')}}</h2>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <textarea class="form-control"  name="description_ar" id="exampleFormControlTextarea1" rows="13" >
+                {{$about->description_ar}}
+            </textarea>
+        </div>
+        <div class="col-md-6">
+            <textarea class="form-control"  name="description_en" id="exampleFormControlTextarea1" rows="13">
+                {{$about->description_en}}
+            </textarea>
+        </div>
+    </div>
+ {{-- end description_ar --}}
         <div class="d-flex justify-content-center">
             <input type="submit" class="btn btn-success" value="{{trans('admin.edit')}}">
         </div>
