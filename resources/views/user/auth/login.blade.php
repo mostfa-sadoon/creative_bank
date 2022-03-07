@@ -108,12 +108,11 @@
                        @endif
 
 						<div class="agreement-checkbox d-flex justify-content-between align-items-center">
-							<div>
+							<div class="adjust">
 								<input type="checkbox" id="remember">
 								<label for="remember">Remember Me</label>
+								<a href="#">Forget Password!</a>
 							</div>
-							<a href="#">Forget Password?</a>
-
 						</div>
                         <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="تسجيل الدخول">
 					</form>
