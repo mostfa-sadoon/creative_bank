@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;   
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Classification;
 
@@ -28,7 +28,7 @@ class ClassificationController extends Controller
         ]);
         Classification::create($data);
         return redirect()->route('classification.index');
-    } 
+    }
     public function edit($id)
     {
         //
