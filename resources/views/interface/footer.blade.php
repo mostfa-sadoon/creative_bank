@@ -25,7 +25,6 @@
 								<ul>
 									<li><a href="index.html">Main</a></li>
 									<li><a href="send-your-idea.html">send your idea</a></li>
-									<li><a href="team-standard.html">Team</a></li>
 									<li><a href="about-us.html">About Bank</a></li>
 									<li><a href="blogs.html">News</a></li>
 								</ul>
