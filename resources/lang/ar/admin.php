@@ -97,5 +97,12 @@ return [
 
      'vision' => 'الرؤيه',
      'mission' => 'الهدف',
-     'description' => 'الوصف'
+     'description' => 'الوصف',
+
+     'total_users' => 'المستخدمين',
+     'total_ideas' => 'الافكار',
+     'total_news' => 'الاخبار',
+     'total_staff' => 'فريق العمل',
+     'activity' => 'معدل النشاط',
+     'dashboard' => 'لوحة التحكم'
 ];

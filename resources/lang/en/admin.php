@@ -104,5 +104,12 @@ return [
      'mission' => 'mission',
      'description' => 'description',
 
+     'total_users' => 'Total Users',
+     'total_ideas' => 'Total Ideas',
+     'total_news' => 'Total News',
+     'total_staff' => 'Total Staff',
+     'activity' => 'Activity',
+     'dashboard' => 'Dashboard'
+
 
 ];

@@ -40,8 +40,7 @@
     <script src="{{asset('js/dashboard1.js')}}"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
-    <!-- ============================================================== -->
-    <script src="{{asset('assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
+
     @yield('scripts')
 </body>
 </html>
