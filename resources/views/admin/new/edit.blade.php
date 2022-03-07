@@ -1,7 +1,7 @@
 @extends('admin_temp')
 @section('styles')
-<link href="{{asset('../assets/plugins/summernote/dist/summernote.css')}}" rel="stylesheet" />
-<link rel="stylesheet" href="{{asset('../assets/plugins/dropify/dist/css/dropify.min.css')}}">
+<link href="{{asset('assets/plugins/summernote/dist/summernote.css')}}" rel="stylesheet" />
+<link rel="stylesheet" href="{{asset('assets/plugins/dropify/dist/css/dropify.min.css')}}">
 @endsection
 @section('content')
             <!-- Bread crumb and right sidebar toggle -->
@@ -32,7 +32,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">{{trans('admin.upload_img')}}</h4>
-                                        <input type="file" id="input-file-now-custom-1" class="dropify" data-default-file="{{$new->img}}" />
+                                        <input type="file" name="img" id="input-file-now-custom-1" class="dropify" data-default-file="{{$new->img}}" />
                                     </div>
                                     @if ($errors->has('img'))
                                         <span class="text-danger">{{ $errors->first('img')}}</span>
@@ -113,7 +113,7 @@
 @endsection
 @section('scripts')
     <!-- wysuhtml5 Plugin JavaScript -->
-    <script src="{{asset('../assets/plugins/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/tinymce/tinymce.min.js')}}"></script>
     <script>
     $(document).ready(function() {
 
@@ -136,22 +136,22 @@
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="{{asset('../assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
+    <script src="{{asset('assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
     <script src="{{asset('js/sidebarmenu.js')}}"></script>
     <!--stickey kit -->
-    <script src="{{asset('../assets/plugins/sticky-kit-master/dist/sticky-kit.min.js')}}"></script>
-    <script src="{{asset('../assets/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/sticky-kit-master/dist/sticky-kit.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/sparkline/jquery.sparkline.min.js')}}"></script>
     <!--Custom JavaScript -->
     <script src="{{asset('js/custom.min.js')}}"></script>
     <!-- ============================================================== -->
     <!-- Plugins for this page -->
     <!-- ============================================================== -->
     <!-- jQuery file upload -->
-    <script src="{{asset('../assets/plugins/dropify/dist/js/dropify.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/dropify/dist/js/dropify.min.js')}}"></script>
     <script>
     $(document).ready(function() {
         // Basic

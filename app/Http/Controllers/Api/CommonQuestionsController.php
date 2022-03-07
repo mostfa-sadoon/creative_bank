@@ -13,7 +13,7 @@ class CommonQuestionsController extends Controller
 {
     //
     public function index(Request $request)
-        {   
+        {
             // dd($request);
             $lang='ar';
             $lang=$request->header('lang');
@@ -21,6 +21,6 @@ class CommonQuestionsController extends Controller
            $data =  CommonQuestionsResource::collection(Commonquestion::all());
             // $data = new CommonQuestionsResource(Commonquestion::first());
             return msgdata(true,'retuen success',$data);
-    
+
     }
 }

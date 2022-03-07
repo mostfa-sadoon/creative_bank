@@ -40,7 +40,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">{{trans('admin.title')}} In Arabic</h4>
-                                        <input type="text" name="header_ar" class="form-control" />
+                                        <input type="text" name="header_ar" class="form-control" value="{{ old('header_ar') }}" />
                                     </div>
                                     @if ($errors->has('header_ar'))
                                         <span class="text-danger">{{ $errors->first('header_ar')}}</span>
@@ -49,7 +49,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">{{trans('admin.description')}} In Arabic</h4>
-                                        <textarea type="text"  name="desc_ar" class="form-control"></textarea>
+                                        <textarea type="text"  name="desc_ar" class="form-control"> old('desc_ar') </textarea>
                                     </div>
                                     @if ($errors->has('desc_ar'))
                                         <span class="text-danger">{{ $errors->first('desc_ar')}}</span>
@@ -58,7 +58,7 @@
                                    <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">{{trans('admin.news_body')}} In Arabic</h4>
-                                                <textarea id="mymce"  name="news_ar"></textarea>
+                                                <textarea id="mymce"  name="news_ar">{{ old('news_ar') }}</textarea>
                                                 @if ($errors->has('news_ar'))
                                                     <span class="text-danger">{{ $errors->first('news_ar')}}</span>
                                                 @endif
@@ -67,7 +67,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">{{trans('admin.title')}} in English</h4>
-                                        <input type="text"  name="header_en" class="form-control" />
+                                        <input type="text"  name="header_en" class="form-control" value="{{ old('header_en') }}"/>
                                     </div>
                                     @if ($errors->has('header_en'))
                                         <span class="text-danger">{{ $errors->first('header_en')}}</span>
@@ -76,7 +76,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">{{trans('admin.description')}} in English</h4>
-                                        <textarea type="text"  name="desc_en" class="form-control"></textarea>
+                                        <textarea type="text"  name="desc_en" class="form-control">{{ old('desc_en') }}</textarea>
                                     </div>
                                     @if ($errors->has('desc_en'))
                                         <span class="text-danger">{{ $errors->first('desc_en')}}</span>
@@ -85,7 +85,7 @@
                                    <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">{{trans('admin.news_body')}} in English</h4>
-                                                <textarea  id="mymce" name="news_en"></textarea>
+                                                <textarea  id="mymce" name="news_en">{{ old('news_en') }}</textarea>
                                                 @if ($errors->has('news_en'))
                                                     <span class="text-danger">{{ $errors->first('news_en')}}</span>
                                                 @endif
@@ -158,7 +158,7 @@
     <!-- Plugins for this page -->
     <!-- ============================================================== -->
     <!-- jQuery file upload -->
-    <script src="{{asset('../assets/plugins/dropify/dist/js/dropify.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/dropify/dist/js/dropify.min.js')}}"></script>
     <script>
     $(document).ready(function() {
         // Basic
