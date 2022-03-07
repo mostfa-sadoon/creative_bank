@@ -32,7 +32,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">upload img</h4>
-                                        <input type="file" id="input-file-now-custom-1" class="dropify" data-default-file="{{$new->img}}" />
+                                        <input type="file" name="img" id="input-file-now-custom-1" class="dropify" data-default-file="{{$new->img}}" />
                                     </div>
                                     @if ($errors->has('img'))
                                         <span class="text-danger">{{ $errors->first('img')}}</span>
