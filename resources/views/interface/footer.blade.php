@@ -15,7 +15,7 @@
 								<h5 class="title">Services</h5>
 								<ul>
 									<li><a href="about-us.html">our service</a></li>
-									<li><a href="about-us.html">discussion creative idea</a></li>
+									<li><a href="about-us.html">Idea Cycle</a></li>
 									<li><a href="about-us.html">Sponser</a></li>
 
 								</ul>
@@ -23,7 +23,7 @@
 							<div class="col-lg-3 col-sm-6 col-12 footer-list" data-aos="fade-up">
 								<h5 class="title">important link</h5>
 								<ul>
-									<li><a href="index.html">Main</a></li>
+									<li><a href="index.html">Home</a></li>
 									<li><a href="send-your-idea.html">send your idea</a></li>
 									<li><a href="about-us.html">About Bank</a></li>
 									<li><a href="blogs.html">News</a></li>
