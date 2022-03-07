@@ -42,7 +42,7 @@
                     <!-- Tab Navigation Menu -->
                     <ul class="tabs-menu clearfix">
                         <li><a>Personal Details</a></li>
-                        <li ><a >Password</a></li>
+
                     </ul>
                     <!-- Content container -->
                     <div class="tab-container">
@@ -233,63 +233,6 @@
                                         </div>
                                     </div>
                                     </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card h-100">
-                                <div class="card-body">
-                                <form class="submit-faq pt-20"  method="post" action="{{route('password.update')}}">
-                                    @csrf
-                                        <input type="hidden" name="id" value="{{$user->id}}">
-                                    <div class="row gutters">
-                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                            <h6 class="mb-2 text-primary profileTitle">Password Details</h6>
-                                        </div>
-
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                            <div class="form-group">
-
-                                                <label for="password">old Password</label>
-                                                <input type="password" name="old_Password"  placeholder="Enter Password">
-                                                    @error('old_password')
-                                                        <div class="alert alert-danger">{{ $message }}</div>
-                                                    @enderror
-                                                    @if(Session::has('error'))
-                                                        <div class="alert alert-danger">
-                                                        {{ Session::get('error')}}
-                                                        </div>
-                                                    @endif
-                                            </div>
-                                        </div>
-
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                            <div class="form-group">
-                                                <label for="password">Password</label>
-                                                <input type="password" name="password"  placeholder="Enter Password">
-                                                @error('password')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
-                                                @enderror
-                                            </div>
-                                        </div>
-                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                            <div class="form-group">
-                                                <label for="confirm-password">Confirm Password</label>
-                                                <input type="password" name="password_confirmation"  placeholder="Enter Password Again">
-                                                    @error('confirm-password')
-                                                    <div class="alert alert-danger">{{ $message }}</div>
-                                                   @enderror
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row gutters center-div">
-                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="text-right">
-                                                <button type="submit" id="submit" name="submit" >Update</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
                                 </div>
                             </div>
                         </div>
