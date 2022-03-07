@@ -113,7 +113,7 @@
 @endsection
 @section('scripts')
     <!-- wysuhtml5 Plugin JavaScript -->
-    <script src="{{asset('../assets/plugins/tinymce/tinymce.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/tinymce/tinymce.min.js')}}"></script>
     <script>
     $(document).ready(function() {
 
@@ -136,7 +136,7 @@
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->
-    <script src="../assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="assets/plugins/styleswitcher/jQuery.style.switcher.js"></script>
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->

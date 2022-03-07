@@ -158,7 +158,7 @@
     <!-- Plugins for this page -->
     <!-- ============================================================== -->
     <!-- jQuery file upload -->
-    <script src="{{asset('../assets/plugins/dropify/dist/js/dropify.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/dropify/dist/js/dropify.min.js')}}"></script>
     <script>
     $(document).ready(function() {
         // Basic
