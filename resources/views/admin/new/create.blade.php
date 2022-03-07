@@ -49,7 +49,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">description in arabic</h4>
-                                        <textarea type="text"  name="desc_ar" value="{{ old('desc_ar') }}"  class="form-control"></textarea>
+                                        <textarea type="text"  name="desc_ar"   class="form-control"> old('desc_ar')</textarea>
                                     </div>
                                     @if ($errors->has('desc_ar'))
                                         <span class="text-danger">{{ $errors->first('desc_ar')}}</span>
@@ -76,7 +76,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">description in english</h4>
-                                        <textarea type="text"  name="desc_en" value="{{ old('desc_en') }}" class="form-control"></textarea>
+                                        <textarea type="text"  name="desc_en"  class="form-control">{{ old('desc_en') }}</textarea>
                                     </div>
                                     @if ($errors->has('desc_en'))
                                         <span class="text-danger">{{ $errors->first('desc_en')}}</span>
