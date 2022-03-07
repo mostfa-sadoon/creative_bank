@@ -30,9 +30,6 @@
                             <h5>About</h5>
                             <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
                         </div>
-
-                        <a href="{{route('user.edit.password',$user->id)}}" >Update password</a>
-
                      </div>
                   </div>
                 </div>
@@ -224,6 +221,13 @@
                                                 <select>
                                             </div>
                                         </div>
+                                        <div class="passButton w-100">
+                                            <hr>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <h6 class="mb-2 text-primary profileTitle">Password Details</h6>
+                                            </div>
+                                            <a href="{{route('user.edit.password',$user->id)}}" class="m-auto" >Click here to Update your password</a>
+                                        </div>
                                     </div>
                                     <div class="row gutters center-div pt-50">
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
@@ -251,7 +255,7 @@
 <script>
 
 function previewFile(input){
-        var file = $("input[type=file]").get(0).files[0];
+    var file = $("input[type=file]").get(0).files[0];
  
         if(file){
             var reader = new FileReader();

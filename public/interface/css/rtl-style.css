@@ -52,9 +52,9 @@
   @media (max-width: 991px) {
     .theme-menu-one .logo {
       position: absolute;
-      top: 12px;
-      left: 8px;
+      top: 16px;
       z-index: 3;
+      right:5px;
     }
     .about-div{
       height:auto;
@@ -236,4 +236,18 @@
 }
 .radioLabel{
   line-height: 25px !important;
+}
+
+.theme-footer-four .about-widget p{
+  padding: -1px 0 35px 80px !important;
+}
+.logPhoto{
+  width: 39px ;
+    border: 1px solid #ff3a46;
+    border-radius: 50%;
+    padding: 0px;
+}
+
+.theme-menu-one .header-right-widget{
+  left:60px !important;
 }
