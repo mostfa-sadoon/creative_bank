@@ -159,3 +159,14 @@ body {
   .account-settings .about p {
     margin: auto;
 }
+
+.passButton a{
+    color:#FF3A46 !important;
+    margin-right: 14px !important;
+    font-weight: 100 !important;
+}
+
+.passButton a:hover{
+    color:black !important;
+    
+}
