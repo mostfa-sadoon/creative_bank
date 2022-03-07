@@ -73,7 +73,7 @@ body {
     display: flex;
     align-items: baseline;
     justify-content: space-evenly;
-    margin-top:52px;
+    margin-top:36px;
 }
 .input[type=radio]{
     margin: revert !important; 
@@ -87,13 +87,11 @@ body {
 .profileGenderInput{
     height: 14px !important;
 }
-.faq-page .submit-faq button{
-    margin-bottom: 20px !important;
-}
+
 .profileTitle{
     margin-bottom: 32px !important;
     font-size: larger;
-    color:#ff3a46 !important;
+    color:black !important;
 }
 
 @media (max-width: 991px) {
