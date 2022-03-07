@@ -25,7 +25,7 @@ class ProfileController extends Controller
     public function edit($id)
     {
          $user=User::find($id);
-         $lang=app()->getLocale();   
+         $lang=app()->getLocale();
          $field=Field::select('name_'.$lang.' as name')->find($user->field->id);
          $classification=Classification::select('name_'.$lang.' as name')->find($user->field->id);
          $fields=Field::select('name_'.$lang.' as name','id')->get();
@@ -80,7 +80,7 @@ class ProfileController extends Controller
                'field_id'=>$request->field,
                'classified_id'=>$request->clasified
           ]);
-          return redirect()->route('profile.show',$id);    
+          return redirect()->route('profile.show',$id);
       }
     }
     public function editpassword()
@@ -90,19 +90,21 @@ class ProfileController extends Controller
     public function updatepassword(Request $request)
     {
          $data=$this->validate($request, [
-               'old_password'=>'required',  
-               'password'=>'required|min:6|max:50|confirmed', 
-               'password_confirmation' => 'required|max:50|min:6',    
+               'old_password'=>'required',
+               'password'=>'required|min:6|max:50|confirmed',
+               'password_confirmation' => 'required|max:50|min:6',
           ]);
-          $id=Auth::user()->id;    
-          $user=User::find($id);  
+          $id=Auth::user()->id;
+
+          dd($id);
+          $user=User::find($id);
           if (!Hash::check($data['old_password'], $user->password)) {
                return back()->with('error', 'The specified password does not match the database password');
            } else {
-               $user->update([   
+               $user->update([
                     'password'=> bcrypt($data['password']),
                ]);
                return redirect()->route('profile.show',$id);
-           }    
+           }
     }
 }

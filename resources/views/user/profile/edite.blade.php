@@ -2,10 +2,7 @@
 @section('style')
 <link rel="stylesheet" type="text/css" href="{{asset('interface/css/profile.css')}}">
 @endsection
-
-
 @section('content')
-
   <!-- ======= Start Content ======= -->
   <div class="userProfile faq-page faq-tab-wrapper">
     <div class="container">
@@ -33,6 +30,9 @@
                             <h5>About</h5>
                             <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
                         </div>
+
+                        <a href="{{route('user.edit.password',$user->id)}}" >Update password</a>
+
                      </div>
                   </div>
                 </div>
@@ -42,7 +42,7 @@
                     <!-- Tab Navigation Menu -->
                     <ul class="tabs-menu clearfix">
                         <li><a>Personal Details</a></li>
-                        <li><a>Password</a></li>
+                        <li ><a >Password</a></li>
                     </ul>
                     <!-- Content container -->
                     <div class="tab-container">
@@ -98,7 +98,7 @@
                                         </div>
                                         <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
                                             <div class="form-group profileGender">
-            
+
                                                 @if(old('gender'))
                                                 @if(old('gender')=='male')
                                                     <div class="form-check"> <label class="form-check-label" for="flexRadioDefault1">
@@ -175,7 +175,7 @@
                                                 @error('date_of_birth')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
-            
+
                                             </div>
                                         </div>
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -197,7 +197,7 @@
                                                         @endforeach
                                                     @endif
                                                 </select>
-            
+
                                             @error('clasified')
                                                 <div class="alert alert-danger">{{ $message }}</div>
                                             @enderror
@@ -239,24 +239,46 @@
                         <div>
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <form class="submit-faq pt-20"  method="post" action="{{route('user.update')}}" enctype="multipart/form-data">
-                                        @csrf
+                                <form class="submit-faq pt-20"  method="post" action="{{route('password.update')}}">
+                                    @csrf
                                         <input type="hidden" name="id" value="{{$user->id}}">
                                     <div class="row gutters">
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                             <h6 class="mb-2 text-primary profileTitle">Password Details</h6>
                                         </div>
+
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                            
-                                                <label for="password">Password</label>
-                                                <input type="password" name="password" id="password" placeholder="Enter Password">
+
+                                                <label for="password">old Password</label>
+                                                <input type="password" name="old_Password"  placeholder="Enter Password">
+                                                    @error('old_password')
+                                                        <div class="alert alert-danger">{{ $message }}</div>
+                                                    @enderror
+                                                    @if(Session::has('error'))
+                                                        <div class="alert alert-danger">
+                                                        {{ Session::get('error')}}
+                                                        </div>
+                                                    @endif
                                             </div>
-                                        </div> 
+                                        </div>
+
+                                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                            <div class="form-group">
+                                                <label for="password">Password</label>
+                                                <input type="password" name="password"  placeholder="Enter Password">
+                                                @error('password')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                @enderror
+                                            </div>
+                                        </div>
                                          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
                                                 <label for="confirm-password">Confirm Password</label>
-                                                <input type="password" name="confirm-password" id="confirm-password" placeholder="Enter Password Again">
+                                                <input type="password" name="password_confirmation"  placeholder="Enter Password Again">
+                                                    @error('confirm-password')
+                                                    <div class="alert alert-danger">{{ $message }}</div>
+                                                   @enderror
                                             </div>
                                         </div>
                                     </div>
@@ -267,7 +289,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    </form>
+                                </form>
                                 </div>
                             </div>
                         </div>
@@ -287,10 +309,7 @@
     $("#pImage").click(function() {
     $("input[id='my_file']").click();
     });
-
 </script>
 <script src="{{asset('interface/vendor/tabs/tabs.js')}}"></script>
-
-
 @endsection
 
