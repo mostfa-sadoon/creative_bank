@@ -32,14 +32,14 @@ return [
     'classificstion_in_english'=>'classification in english',
 
 
-    'ideas'=>'ideas',
-    'new_ideas'=>'new ideas',
-    'trash'=>'trash',
+    'ideas'=>'Ideas',
+    'new_ideas'=>'New Ideas',
+    'trash'=>'Archive',
 
     'news'=>'news',
     'add_news'=>'add news',
     'news_all'=>'news All',
-    'news_trash'=>'trash',
+    'news_trash'=>'Archive',
 
     'commonquestion'=>'commonquestion',
     'commonquestion.show'=>'display question',
@@ -60,7 +60,14 @@ return [
      'ideas'=>'ideas',
      'accepted_ideas'=>'accepted ideas',
      'vote'=>'vote',
-
+     'publish' => "Publish",
+    
+     //Add News 
+     'Add_news' => 'Add News',
+     'upload_img' => "upload image",
+     'title' => "Title",
+     'description' => 'Description', 
+     'news_body' => 'Content',
 
      'number'=>'number',
      'name'=>'name',

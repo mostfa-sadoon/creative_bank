@@ -19,7 +19,7 @@
                 <!-- ============================================================== -->
                 <!--  add new news -->   
                  <div class="d-flex justify-content-start m-2">
-                     <a href="{{route('news.create')}}" class="btn btn-success text-white">اضافه خبر جديد</a>
+                     <a href="{{route('news.create')}}" class="btn btn-success text-white">{{trans('admin.add_news')}}</a>
                  </div>        
                 <!-- End Bread crumb and right sidebar toggle -->
                 <div class="row">

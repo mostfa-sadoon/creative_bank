@@ -6,7 +6,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Commonquestion;
-use App\Http\Resources\CommonquestionsResource;
+use App\Http\Resources\CommonQuestionsResource;
 
 
 class CommonQuestionsController extends Controller

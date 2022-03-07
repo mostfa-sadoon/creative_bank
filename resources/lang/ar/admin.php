@@ -37,6 +37,7 @@ return [
      'add_news'=>'اضافه خبر',
      'news_all'=>'كل الاخبار',
      'news_trash'=>'الارشيف',
+     'publish' => 'نشر',
 
      'commonquestion'=>'الاسئله الشائعه',
      'commonquestion.show'=>'عرض الاسئله',
@@ -81,4 +82,11 @@ return [
      'NewCategory_in_english'=>'القسم بالانجليزي',
 
      'NewCategory_add'=>'اضافه قسم جديد',
+ 
+     //Add news
+     'add_news' => 'اضافة خبر',
+     'upload_img' => "تحميل ملف",
+     'title' => "العنوان",
+     'description' => 'الوصف', 
+     'news_body' => 'المحتوى',
 ];
