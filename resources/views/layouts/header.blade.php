@@ -4,7 +4,7 @@
     <div class="preloader">
         <div class="loader">
             <div class="loader__figure"></div>
-            <p class="loader__label">creative bank</p>
+            <p class="loader__label">{{trans('admin.creative_bank')}}</p>
         </div>
     </div>
     <!-- ============================================================== -->

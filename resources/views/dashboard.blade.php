@@ -16,12 +16,9 @@
           </div>
           <div class="col-md-7 align-self-center">
               <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><a href="javascript:void(0)">creative bank</a></li>
-                  <li class="breadcrumb-item"><a href="javascript:void(0)">dash board</a></li>
+                  <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.creative_bank')}}</a></li>
+                  <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
               </ol>
-          </div>
-          <div class="">
-              <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
           </div>
       </div>
      <!-- ============================================================== -->
@@ -35,7 +32,7 @@
                                 <div class="d-flex no-block">
                                     <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="{{asset('assets/images/icon/income.png')}}" alt="Income" /></div>
                                     <div class="align-self-center">
-                                        <h6 class="text-muted m-t-10 m-b-0">Total Idea</h6>
+                                        <h6 class="text-muted m-t-10 m-b-0">{{trans('admin.total_ideas')}}</h6>
                                         <h2 class="m-t-0">{{$ideacount}}</h2></div>
                                 </div>
                             </div>
@@ -47,7 +44,7 @@
                                 <div class="d-flex no-block">
                                     <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="{{asset('assets/images/icon/expense.png')}}" alt="Income" /></div>
                                     <div class="align-self-center">
-                                        <h6 class="text-muted m-t-10 m-b-0">Total user</h6>
+                                        <h6 class="text-muted m-t-10 m-b-0">{{trans('admin.total_users')}}</h6>
                                         <h2 class="m-t-0">{{$totaluser}}</h2></div>
                                 </div>
                             </div>
@@ -59,7 +56,7 @@
                                 <div class="d-flex no-block">
                                     <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="{{asset('assets/images/icon/assets.png')}}" alt="Income" /></div>
                                     <div class="align-self-center">
-                                        <h6 class="text-muted m-t-10 m-b-0">Total news</h6>
+                                        <h6 class="text-muted m-t-10 m-b-0">{{trans('admin.total_news')}}</h6>
                                         <h2 class="m-t-0">{{$newscount}}</h2></div>
                                 </div>
                             </div>
@@ -71,7 +68,7 @@
                                 <div class="d-flex no-block">
                                     <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="{{asset('assets/images/icon/staff.png')}}" alt="Income" /></div>
                                     <div class="align-self-center">
-                                        <h6 class="text-muted m-t-10 m-b-0">Total Staff</h6>
+                                        <h6 class="text-muted m-t-10 m-b-0">{{trans('admin.total_staff')}}</h6>
                                         <a class="m-t-0 text-black bold text-lg-left" href="">{{$employees}}</a></div>
                                 </div>
                             </div>
@@ -85,7 +82,7 @@
               <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title">idea</h4>
+                            <h4 class="card-title">{{trans('admin.ideas')}}</h4>
                             <div>
                                 <canvas id="chart3" height="150"></canvas>
                             </div>
@@ -97,7 +94,7 @@
                 <div class="col-lg-6">
                   <div class="card">
                       <div class="card-body">
-                          <h4 class="card-title">Line Chart</h4>
+                          <h4 class="card-title">{{trans('admin.activity')}}</h4>
                           <div>
                               <canvas id="chart1" height="150"></canvas>
                           </div>
