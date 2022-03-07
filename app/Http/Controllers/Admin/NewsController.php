@@ -16,7 +16,7 @@ class NewsController extends Controller
       public function index()
       {
          $lang=app()->getLocale();
-         $news=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','img','id')->paginate(20);
+         $news=News::paginate(20);
          return view('admin.new.index',compact('news'));
       }
       public function create()
@@ -55,7 +55,7 @@ class NewsController extends Controller
     public function show($id)
     {
        $lang=app()->getLocale();
-       $new=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','news_'.$lang.' as news','img','id')->find($id);
+       $new=News::find($id);
        return view('admin.new.show',compact('new'));
     }
      public function edit($id)
@@ -116,13 +116,13 @@ class NewsController extends Controller
    public function gettrash()
    {
       $lang=app()->getLocale();
-      $news=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','img','id')->onlyTrashed()->paginate(20);
+      $news=News::onlyTrashed()->paginate(20);
       return view('admin.new.trash',compact('news'));
    }
    public function showtrashed($id)
    {
       $lang=app()->getLocale();
-      $new=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','news_'.$lang.' as news','img','id')->withTrashed()->find($id);
+      $new=News::withTrashed()->find($id);
       return view('admin.new.trash_news',compact('new'));
    }
    public function destroy($id)

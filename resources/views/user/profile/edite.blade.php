@@ -17,7 +17,7 @@
                          <div class="user-profile">
                             <div class="user-avatar">
                                 <div class="imageContainer">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin" >
+                                    <img src="{{$user->img}}" alt="Maxwell Admin" >
                                     <div class="overlay" >
                                         <a href="#" class="icon" title="User Profile" id="pImage">
                                         <i class="fa fa-user"></i>
@@ -40,7 +40,9 @@
             <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
                 <div class="card h-100">
                     <div class="card-body">
-                        <form class="submit-faq pt-20"  method="post" enctype="multipart/form-data">
+                        <form class="submit-faq pt-20"  method="post" action="{{route('user.update')}}" enctype="multipart/form-data">
+                          @csrf
+                          <input type="hidden" name="id" value="{{$user->id}}">
                         <div class="row gutters">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <h6 class="mb-2 text-primary profileTitle">Personal Details</h6>
@@ -228,7 +230,7 @@
                         <div class="row gutters center-div">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="text-right">
-                                    <button type="button" id="submit" name="submit" >Update</button>
+                                    <button type="submit" id="submit" name="submit" >Update</button>
                                 </div>
                             </div>
                         </div>

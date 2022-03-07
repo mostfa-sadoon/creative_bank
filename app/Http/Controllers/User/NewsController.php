@@ -14,7 +14,8 @@ class NewsController extends Controller
     {
         $lang=app()->getLocale();
         $NewCategories=NewCategory::get();
-        $news=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','img','id')->paginate(20);
+        $news=News::paginate(20);
+       // dd($news);
         return view('user.news.index',compact('news','NewCategories'));
     }
 
@@ -22,14 +23,14 @@ class NewsController extends Controller
     {
         $lang=app()->getLocale();
         $NewCategories=NewCategory::get();
-        $news=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','img','id')->where('category_id','=',$category)->paginate(20);
+        $news=News::where('category_id','=',$category)->paginate(20);
         return view('user.news.index',compact('news','NewCategories'));
     }
 
     public function show($id)
     {
         $lang=app()->getLocale();
-        $news=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','news_'.$lang.' as news','img','id')->find($id);
+        $news=News::find($id);
         return view('user.news.show',compact('news'));
     }
 }
