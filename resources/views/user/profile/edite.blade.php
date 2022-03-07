@@ -14,13 +14,13 @@
                          <div class="user-profile">
                             <div class="user-avatar">
                                 <div class="imageContainer">
-                                    <img src="{{$user->img}}" alt="Maxwell Admin" >
+                                    <img src="{{$user->img}}" alt="Maxwell Admin" id="proImg">
                                     <div class="overlay" >
                                         <a href="#" class="icon" title="User Profile" id="pImage">
                                         <i class="fa fa-user"></i>
                                         </a>
                                     </div>
-                                    <input type="file" id="my_file" style="display: none;" />
+                                    <input type="file" id="my_file" onchange="previewFile(this)" style="display: none;" />
                                 </div>
                             </div>
                             <h5 class="user-name">Yuki Hayashi</h5>
@@ -306,6 +306,20 @@
 
 @section('scripts')
 <script>
+
+function previewFile(input){
+        var file = $("input[type=file]").get(0).files[0];
+ 
+        if(file){
+            var reader = new FileReader();
+ 
+            reader.onload = function(){
+                $("#proImg").attr("src", reader.result);
+            }
+ 
+            reader.readAsDataURL(file);
+        }
+    }
     $("#pImage").click(function() {
     $("input[id='my_file']").click();
     });
