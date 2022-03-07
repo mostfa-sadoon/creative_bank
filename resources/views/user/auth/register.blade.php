@@ -157,28 +157,26 @@
 							</div> <!-- /.col- -->
 
                               <!---Gender---->
-                              <div class="col-12">
-                                    <label for="validationDefault01">النوع<span>*</span>
-                                    </label>
-                                    <div class="row">
-                                        <div class="form-check gender-check col-md-4 col-3 text-center">
-                                            <label class="form-check-label " for="flexRadioDefault1">
+                              <div class="col-12 pt-50">
+										<div class="input-group ">
+                                        <div class=" col-md-4 col-3 text-center ">
+                                            <label class="radioLabel" for="flexRadioDefault1">
                                             ذكر
                                         </label>
-                                            <input class="form-check-input" value="male" name="gender" type="radio" name="flexRadioDefault" id="flexRadioDefault1"checked>
+                                            <input  value="male" name="gender" type="radio" class="radioInput" name="flexRadioDefault" id="flexRadioDefault1"checked>
                                         </div>
-                                        <div class="form-check gender-check col-md-4 col-3">
-                                            <label class="form-check-label" for="flexRadioDefault2">
+                                        <div class="col-md-4 col-3">
+                                            <label  class="radioLabel" for="flexRadioDefault2">
                                             أنثى
                                             </label>
-                                            <input class="form-check-input" value="female" name="gender" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+                                            <input  value="female" name="gender" type="radio" class="radioInput" name="flexRadioDefault" id="flexRadioDefault2" >
                                         </div>
                                         @error('gender')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
-                                    </div>
-                               </div>
-
+                                    </div> 
+									</div>
+							
 
                                <div class="col-12">
                                 <label for="form_need">تصنيف المستخدم <span>*</span>

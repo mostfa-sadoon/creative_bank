@@ -3795,7 +3795,6 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   font-size: 95%;
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
-  -webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
 }
 .our-project-portfo #isotop-gallery-wrapper .isotop-item h2,
 .our-project-portfo #isotop-gallery-wrapper .isotop-item p.icon-links a {
@@ -9765,3 +9764,5 @@ html[lang="ru"] .op-menu-one .ct-language__dropdown li a[data-lang="ru"] {color:
 .studio-footer-one .bottom-footer ul li {display: inline-block;}
 .studio-footer-one .bottom-footer ul li a {color: rgba(255,255,255,0.5); margin: 0 5px;}
 .studio-footer-one .bottom-footer ul li a:hover {color: #fff;}
+
+/***********************************/

@@ -246,3 +246,9 @@ margin-bottom: 26px;
   filter: FlipH;
   -ms-filter: "FlipH";
 }
+.radioInput{
+  height:19px !important;
+}
+.radioLabel{
+  line-height: 25px !important;
+}

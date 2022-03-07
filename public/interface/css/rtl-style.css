@@ -231,3 +231,9 @@
 #file{
   border:none;
 }
+.radioInput{
+  height:19px !important;
+}
+.radioLabel{
+  line-height: 25px !important;
+}
