@@ -40,7 +40,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">header in arabic</h4>
-                                        <input type="text" name="header_ar" class="form-control" />
+                                        <input type="text" name="header_ar" value="{{ old('header_ar') }}" class="form-control" />
                                     </div>
                                     @if ($errors->has('header_ar'))
                                         <span class="text-danger">{{ $errors->first('header_ar')}}</span>
@@ -49,7 +49,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">description in arabic</h4>
-                                        <textarea type="text"  name="desc_ar" class="form-control"></textarea>
+                                        <textarea type="text"  name="desc_ar" value="{{ old('desc_ar') }}"  class="form-control"></textarea>
                                     </div>
                                     @if ($errors->has('desc_ar'))
                                         <span class="text-danger">{{ $errors->first('desc_ar')}}</span>
@@ -58,7 +58,7 @@
                                    <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">news in arabic</h4>
-                                                <textarea id="mymce"  name="news_ar"></textarea>
+                                                <textarea id="mymce"  name="news_ar">{{ old('news_ar') }}</textarea>
                                                 @if ($errors->has('news_ar'))
                                                     <span class="text-danger">{{ $errors->first('news_ar')}}</span>
                                                 @endif
@@ -67,7 +67,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">header in english</h4>
-                                        <input type="text"  name="header_en" class="form-control" />
+                                        <input type="text"  name="header_en" value="{{ old('header_en') }}" class="form-control" />
                                     </div>
                                     @if ($errors->has('header_en'))
                                         <span class="text-danger">{{ $errors->first('header_en')}}</span>
@@ -76,7 +76,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">description in english</h4>
-                                        <textarea type="text"  name="desc_en" class="form-control"></textarea>
+                                        <textarea type="text"  name="desc_en" value="{{ old('desc_en') }}" class="form-control"></textarea>
                                     </div>
                                     @if ($errors->has('desc_en'))
                                         <span class="text-danger">{{ $errors->first('desc_en')}}</span>
@@ -85,7 +85,7 @@
                                    <div class="card">
                                         <div class="card-body">
                                             <h4 class="card-title">news in arabic</h4>
-                                                <textarea  id="mymce" name="news_en"></textarea>
+                                                <textarea  id="mymce" name="news_en">{{ old('news_en') }}</textarea>
                                                 @if ($errors->has('news_en'))
                                                     <span class="text-danger">{{ $errors->first('news_en')}}</span>
                                                 @endif
