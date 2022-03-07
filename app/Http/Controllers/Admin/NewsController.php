@@ -55,7 +55,7 @@ class NewsController extends Controller
     public function show($id)
     {
        $lang=app()->getLocale();
-       $new=News::select('desc_'.$lang.' as desc','header_'.$lang.' as header','news_'.$lang.' as news','img','id')->find($id);
+       $new=News::find($id);
        return view('admin.new.show',compact('new'));
     }
      public function edit($id)

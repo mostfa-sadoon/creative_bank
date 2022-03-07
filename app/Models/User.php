@@ -19,8 +19,8 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array<int, string>
      */
-    protected $guarded = [];    
-     
+    protected $guarded = [];
+
     public function getJWTIdentifier()
     {
         return $this->getKey();
@@ -57,13 +57,13 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsTo(Field::class,'field_id');
     }
-    
+
     // here we write forign key because the forign key in the table not match model name (Classification)
-    public function classification()  
+    public function classification()
     {
         return $this->belongsTo(Classification::class ,'classified_id');
     }
-    
+
 
     public function getImgAttribute($img)
     {

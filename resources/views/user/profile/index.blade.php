@@ -19,7 +19,7 @@
                              <div class="user-profile">
                                 <div class="user-avatar">
                                     <div class="imageContainer">
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin" >
+                                        <img src="{{$user->img}}" alt="Maxwell Admin" >
                                     </div>
                                 </div>
                                 <h5 class="user-name">Yuki Hayashi</h5>

@@ -35,9 +35,9 @@
             <div class="single-blog-post">
                 <div class="img-holder"><img src="{{$new->img}}" alt=""></div>
                 <div class="post-data">
-                    <a href="#" class="date">23 July, 2018</a>
-                    <h5 class="blog-title-one title"><a href="{{route('user.news.show',$new->id)}}">{{$new->header}}</a></h5>
-                    <p>{{$new->desc}}</p>
+                    <a href="#" class="date">{{$new->created_at}}</a>
+                    <h5 class="blog-title-one title"><a href="{{route('user.news.show',$new->id)}}">{{$new->header}}bgff</a></h5>
+                    <p>{{$new->desc}} </p>
                     <a href="" class="read-more"><i class="flaticon-back-1"></i></a>
                 </div> <!-- /.post-data -->
             </div> <!-- /.single-blog-post -->
