@@ -101,8 +101,9 @@
 					<span></span>
 				</div> <!-- /.shape-wrapper -->
 				<div class="sign-up-form-wrapper">
-					<div class="title-area text-center">
+					<div class="title-area text-center pb-70">
 						<h3>Register Now!</h3>
+					</div>
 						<!-- <p>You can signup with you social account below</p>
 					</div> /.title-area -->
 					<!-- <ul class="social-icon-wrapper row">

@@ -98,7 +98,7 @@ return [
      'vision' => 'الرؤيه',
      'mission' => 'الهدف',
      'description' => 'الوصف',
-     
+
      'accepted_idea'=>'الافكار المقبوله',
      'new_idea'=>'الافكار الجديده',
      'dashboard'=>'لوحه التحكم',
