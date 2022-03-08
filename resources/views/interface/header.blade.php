@@ -132,7 +132,7 @@
                 </div>
             </li>
             @else
-            <li><a href="{{route('user.login')}}" class="contact-us white-shdw-button">تسجيل دخول<i class="icon flaticon-back "></i></a></li>
+            <li><a href="{{route('user.login')}}" class="contact-us white-shdw-button">تسجيل دخول</a></li>
             @endif
         </ul>
     </div> <!-- /.header-right-widget -->
