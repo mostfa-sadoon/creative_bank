@@ -11,10 +11,24 @@
 @endsection
 
 @section('content')
-   <div class="d-flex justify-content-center">
-         <h1>{{trans('admin.owner')}}</h1>
-   </div>
-
+<!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">{{trans('admin.owner')}}</h3>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.owner')}}</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
+                    </ol>
+                </div>
+                <div class="">
+                    <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+                </div>
+            </div>
+    <!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
 <form action="{{route('owner.update')}}" method="post" enctype='multipart/form-data'>
  @csrf
  <input type="hidden" name="id" value="{{$owner->id}}">

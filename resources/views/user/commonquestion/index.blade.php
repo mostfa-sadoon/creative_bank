@@ -71,6 +71,7 @@
 
 
 
+
 <div class="solid-inner-banner">
     <h2 class="page-title">Question & Answers</h2>
     <ul class="page-breadcrumbs">
@@ -79,9 +80,6 @@
         <li>Faq</li>
     </ul>
 </div> <!-- /.solid-inner-banner -->
-
-
-
 -->
 <div class="faq-page faq-tab-wrapper pt-150 ">
     <div class="container">

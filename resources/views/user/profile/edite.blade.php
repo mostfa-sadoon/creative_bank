@@ -48,7 +48,7 @@
                                 <div class="card-body">
                                     <form class="submit-faq pt-20"  method="post" action="{{route('user.update')}}" enctype="multipart/form-data">
                                         @csrf
-                                        <input type="file" id="my_file" onchange="previewFile(this)" style="display: none;" />
+                                        <input type="file" name="img" id="my_file" onchange="previewFile(this)" style="display: none;" />
                                         <input type="hidden" name="id" value="{{$user->id}}">
                                     <div class="row gutters">
                                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -256,14 +256,14 @@
 
 function previewFile(input){
     var file = $("input[type=file]").get(0).files[0];
- 
+
         if(file){
             var reader = new FileReader();
- 
+
             reader.onload = function(){
                 $("#proImg").attr("src", reader.result);
             }
- 
+
             reader.readAsDataURL(file);
         }
     }

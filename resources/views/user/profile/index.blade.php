@@ -18,17 +18,17 @@
                          <div class="account-settings">
                              <div class="user-profile">
                                 <div class="user-avatar">
-                                    <div class="imageContainer">
+                                    <div class="imageContainer d-flex justify-content-center">
                                         <img src="{{$user->img}}" alt="Maxwell Admin" >
                                     </div>
                                 </div>
-                                <h5 class="user-name">Yuki Hayashi</h5>
-                                <h6 class="user-email">yuki@Maxwell.com</h6>
+                                <h5 class="user-name">{{$user->name}}</h5>
+                                <h6 class="user-email">{{$user->email}}</h6>
                              </div>
-                            <div class="about">
+                            {{-- <div class="about">
                                 <h5>About</h5>
                                 <p class="w-50">I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
-                             </div>
+                             </div> --}}
                              <div class="center-div profileDate">
                                 <a class="text-white theme-button-two" href="{{route('profile.edit',$user->id)}}">Edit Profile</a>
                              </div>

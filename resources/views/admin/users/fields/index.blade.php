@@ -4,21 +4,20 @@
             <!-- ============================================================== -->
             <div class="row page-titles">
                 <div class="col-md-5 align-self-center">
-                    <h3 class="text-themecolor">{{trans('admin.employee')}}</h3>
+                    <h3 class="text-themecolor">{{trans('admin.fields')}}</h3>
                 </div>
                 <div class="col-md-7 align-self-center">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.fields')}}</a></li>
                         <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
-
                     </ol>
                 </div>
                 <div class="">
                     <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
                 </div>
             </div>
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
     <div class=" d-flex justify-content-start">
          <a  href="{{route('field.create')}}" class="btn btn-success">{{trans('admin.add_new_field')}}</a>
     </div>

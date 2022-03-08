@@ -1,13 +1,33 @@
 @extends('admin_temp')
-@section('content') 
+@section('content')
 <div class="col-lg-6 col-md-6">
-    
+
+
+    <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">{{trans('admin.contact_us')}}</h3>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.contact_us')}}</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
+                    </ol>
+                </div>
+                <div class="">
+                    <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+                </div>
+            </div>
+    <!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+
                         <div class="card">
-                            
+
                         <div class="card-body">
-                            
+
                             <h4 class="card-title"></span> {{trans('admin.contact_us')}}</h4>
-                            
+
                             <ul class="feeds">
                                 <li>
                                     <div class="bg-light-info"><i class="fa fa-envelope"></i></div> {{$info->email}} </li>

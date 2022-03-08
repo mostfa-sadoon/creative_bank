@@ -67,12 +67,32 @@
 /*End Common Questions Screen*/
 </style>
 @endsection
-@section('content')  
-<!-- ======= add question ======= -->  
+@section('content')
+
+<!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="row page-titles">
+                <div class="col-md-5 align-self-center">
+                    <h3 class="text-themecolor">{{trans('admin.commonquestion')}}</h3>
+                </div>
+                <div class="col-md-7 align-self-center">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.commonquestion')}}</a></li>
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
+                    </ol>
+                </div>
+                <div class="">
+                    <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+                </div>
+            </div>
+    <!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+
+<!-- ======= add question ======= -->
 <div class="d-flex d-content-start">
    <a class="btn btn-primary mb-2" href="{{route('commonquestions.create')}}")> {{trans('admin.add_question')}}</a>
 </div>
-<!-- ======= end addquestion ======= -->    
+<!-- ======= end addquestion ======= -->
 @foreach($commonquestions as $key=>$commonquestion)
  <!-- ======= start creative ======= -->
  <div id="accordion" class="">
@@ -93,10 +113,10 @@
                 </div>
             </div>
         </div>
-</div>       
+</div>
 <!-- ======= End creative ======= -->
 @endforeach
 @endsection
-@section('scripts')    
-   
+@section('scripts')
+
 @endsection
