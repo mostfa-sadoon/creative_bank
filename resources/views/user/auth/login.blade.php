@@ -111,7 +111,7 @@
 							<div class="adjust">
 								<input type="checkbox" id="remember">
 								<label for="remember">Remember Me</label>
-								<a href="#">Forget Password!</a>
+								<a href="{{route('profile.forget')}}">Forget Password!</a>
 							</div>
 						</div>
                         <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="تسجيل الدخول">

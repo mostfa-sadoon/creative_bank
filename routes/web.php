@@ -34,8 +34,10 @@ use App\Http\Controllers\User\Auth\forgetPasswordController;
     //forget password
     Route::controller(forgetPasswordController::class)->group(function(){
         Route::get('/user/forget/password','index')->name('profile.forget');
-        Route::get('/user/forget/password/token','token')->name('profile.forget');
-        Route::get('/user/forget/password/update','changepassword')->name('profile.forget');
+        Route::post('/user/forget/sendEmail','sendEmail')->name('sendEmail');
+        Route::get('/user/forget/password/sendToken','sendToken')->name('sendToken');
+        Route::post('/user/forget/password/submitToekn','submitToekn')->name('submitToekn');
+        Route::get('/user/forget/password/update','changepassword');
     });
     // pages
     Route::get('much/earn', [LayoutController::class, 'index'])->name('much.index');

@@ -69,4 +69,5 @@ return [
     'patent'=>'برائه اختراع',
     'Intellectual_property'=>'حقوق الملكيه الفكريه',
     'Feasibility_study'=>'دراسه جدوي',
+    'send'=>'ارسال',
 ];

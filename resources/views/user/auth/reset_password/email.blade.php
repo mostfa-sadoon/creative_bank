@@ -87,7 +87,7 @@
                                             <p class="w-50">you can reset it Now</p>
                                         </div>
                                         <div class="forgotpassword pt-50">
-                                            <form class="submit-faq pt-20"  method="post" action="#" enctype="multipart/form-data" style="display: flex;">
+                                            <form class="submit-faq pt-20"  method="post" action="{{route('sendEmail')}}" style="display: flex;">
                                                 @csrf
                                                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
                                                     <div class="form-group">
@@ -96,7 +96,7 @@
                                                 </div>
                                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                                                 <div class="text-right">
-                                                    <button type="submit" id="submit" name="submit" >Send</button>
+                                                    <input type="submit" id="submit" name="submit" value="{{trans('user.send')}}">
                                                 </div>
                                             </div>
                                             </form>

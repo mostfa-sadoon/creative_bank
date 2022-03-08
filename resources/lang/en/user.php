@@ -66,4 +66,5 @@ return [
      'patent'=>'patent',
      'Intellectual_property'=>'Intellectual property',
      'Feasibility_study'=>'Feasibility study',
+     'send'=>'send',
 ];
