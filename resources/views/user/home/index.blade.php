@@ -221,44 +221,21 @@
         </div> <!-- /.theme-title-one -->
 
         <div class="blog-one-slider">
+            @foreach ($news as $new)
             <div class="item">
                 <div class="isotop-item">
                     <div class="single-blog-post">
-                        <div class="img-holder"><img src="{{asset('interface/images/blog/3.jpg')}}" alt=""></div>
+                        <div class="img-holder"><img src="{{$new->img}}" alt=""></div>
                         <div class="post-data">
-                            <a href="#" class="date">23 July, 2018</a>
-                            <h5 class="blog-title-one title"><a href="blog-details.html">Challange yourself and win the future.</a></h5>
-                            <a href="blog-details.html" class="read-more"><i class="flaticon-back-1"></i></a>
+                            <a href="#" class="date">{{$new->created_at}}</a>
+                            <h5 class="blog-title-one title"><a href="{{route('user.news.show',$new->id)}}">{{$new->header}}</a></h5>
+                            <p>{{$new->desc}}</p>
+                            <a href="{{route('user.news.show',$new->id)}}" class="read-more"><i class="flaticon-back-1"></i></a>
                         </div> <!-- /.post-data -->
                     </div> <!-- /.single-blog-post -->
                 </div> <!-- /.isotop-item -->
             </div>
-
-            <div class="item">
-                <div class="isotop-item">
-                    <div class="single-blog-post">
-                        <div class="img-holder"><img src="{{asset('interface/images/blog/3.jpg')}}" alt=""></div>
-                        <div class="post-data">
-                            <a href="#" class="date">23 July, 2018</a>
-                            <h5 class="blog-title-one title"><a href="blog-details.html">Challange yourself and win the future.</a></h5>
-                            <a href="blog-details.html" class="read-more"><i class="flaticon-back-1"></i></a>
-                        </div> <!-- /.post-data -->
-                    </div> <!-- /.single-blog-post -->
-                </div> <!-- /.isotop-item -->
-            </div>
-
-            <div class="item">
-                <div class="isotop-item">
-                    <div class="single-blog-post">
-                        <div class="img-holder"><img src="{{asset('interface/images/blog/3.jpg')}}" alt=""></div>
-                        <div class="post-data">
-                            <a href="#" class="date">23 July, 2018</a>
-                            <h5 class="blog-title-one title"><a href="blog-details.html">Challange yourself and win the future.</a></h5>
-                            <a href="blog-details.html" class="read-more"><i class="flaticon-back-1"></i></a>
-                        </div> <!-- /.post-data -->
-                    </div> <!-- /.single-blog-post -->
-                </div> <!-- /.isotop-item -->
-            </div>
+            @endforeach
         </div>
     </div>
 </div> <!-- /.our-blog-one -->

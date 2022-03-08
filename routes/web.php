@@ -43,8 +43,7 @@ use App\Http\Controllers\User\Auth\forgetPasswordController;
     // Contact Us
     Route::get('contact/us', [ContactController::class, 'create'])->name('contact.create');
     Route::post('contact/us', [ContactController::class, 'store'])->name('contact.store');
-
-
+    
     Route::get('suggestions', [LayoutController::class, 'suggestions'])->name('suggestions');
     Route::get('profite', [LayoutController::class, 'profite'])->name('profite');
     //idea
