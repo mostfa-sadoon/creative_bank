@@ -20,8 +20,6 @@
                                         <img src="{{asset('interface/images/fogotpass.png')}}" alt=""/>
                                     </div>
                                 </div>
-                                <h5 class="user-name"></h5>
-                                <h6 class="user-email"></h6>
                              </div>
                              <div class="about">
                                 <h4>Forgot Your Password !</h4>
