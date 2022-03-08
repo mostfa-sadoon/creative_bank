@@ -18,6 +18,7 @@
   width: 180px !important;
 
 }
+
 }
 /*************************************************************/
 @media (max-width: 1550px) {
@@ -95,6 +96,9 @@
   .agn-about-us .learn-more{
     position: absolute;
     bottom: -84px !important;
+  }
+  .forgotpassword form{
+    display: contents;
   }
 } 
 /*************************************************************/

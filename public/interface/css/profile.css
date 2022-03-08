@@ -103,7 +103,12 @@ body {
         align-items: center;
         flex-direction: column;
     }
-   
+    .forgotpassword form{
+        display: contents !important;
+      }
+    body{
+        overflow-x: hidden !important;
+    }
   } 
 
   .overlay {
