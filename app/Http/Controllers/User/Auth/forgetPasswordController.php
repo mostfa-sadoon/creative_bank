@@ -35,22 +35,24 @@ class forgetPasswordController extends Controller
              $message->subject('Reset Password');
          });
          $email=$request->email;
-         return view('user.auth.reset_password.token',compact('email'));
+         session(['email'=>$email]);
+         return redirect()->route('sendToken');
     }
-    // public function sendToken()
-    // {
-    //     return view('user.auth.reset_password.token');
-    // }
+    public function sendToken()
+    {
+        return view('user.auth.reset_password.token');
+    }
     public function submitToekn(Request $request)
     {
          $number=$request->number;
-         $token= implode("",$number);
+         $token=$number;
+          $token= implode("",$number);
         // dd($token);
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|exists:users',
         ]);
         $email=$request->email;
-             $token=$request->token;
+            //  $token=$request->token;
              $passwordreset=DB::table('password_resets')
              ->where([
                'email' => $request->email,
@@ -59,11 +61,11 @@ class forgetPasswordController extends Controller
 
             if (Hash::check($token,$passwordreset->token)) {
                 // The passwords match...
-                return msg(true,'the token is true');
+                return view('user.auth.reset_password.update_password');
             }else{
                 $request->session()->flash('errortoken', 'The token is false');
+                $request->session(['email'=>$request->email]);
                 return view('user.auth.reset_password.token',compact('email'));
-                return back()->with('', 'The token is false');
              }
     }
     public function changepassword()

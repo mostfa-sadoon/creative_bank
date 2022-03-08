@@ -85,7 +85,7 @@
                                         <div class="forgotpassword pt-50">
                                             <form class="otc" name="one-time-code" action="{{route('submitToekn')}}" method="post" style="direction: ltr;">
                                                 @csrf
-                                                <input type="hidden" name="email" value="{{$email}}">
+                                                <input type="hidden" name="email" value="{{Session::get('email')}}">
                                                 <fieldset>
                                                     <label for="otc-1">Number 1</label>
                                                     <label for="otc-2">Number 2</label>
@@ -96,24 +96,29 @@
 
                                                     <div>
                                                     <input type="number" name="number[]" pattern="[0-9]*"  value="" inputtype="numeric" autocomplete="one-time-code" id="otc-1" required>
-
                                                     <!-- Autocomplete not to put on other input -->
                                                     <input type="number" name="number[]" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-2" required>
                                                     <input type="number" name="number[]" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-3" required>
                                                     <input type="number" name="number[]" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-4" required>
                                                     <input type="number" name="number[]" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-5" required>
                                                     <input type="number" name="number[]" pattern="[0-9]*" min="0" max="9" maxlength="1"  value="" inputtype="numeric" id="otc-6" required>
+
                                                     </div>
-                                                        @if(Session::has('errortoken'))
-                                                        <div class="alert alert-danger">
-                                                        {{ Session::get('errortoken')}}
-                                                        </div>
-                                                        @endif
+                                                    @if(Session::has('errortoken'))
+                                                    <div class="alert alert-danger">
+                                                    {{ Session::get('errortoken')}}
+                                                    </div>
+                                                    @endif
                                                 </fieldset>
+                                              
+
                                                 <div class="col-lg- pb-70 pt-50 center-div">
                                                     <button type="submit" id="submit" name="submit" class="line-button-one" >send</button>
                                                 </div>
                                             </form>
+
+
+
                                         </div>
                                     </div>
                                     </div>
