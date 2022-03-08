@@ -11,6 +11,7 @@ use App\Http\Controllers\User\CommonquestionController;
 // use App\Http\Controllers\User\suggestionController;
 use App\Http\Controllers\User\VoteController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\User\Auth\forgetPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,12 @@ use App\Http\Controllers\Admin\ContactController;
     Route::post('register/user', [AuthController::class, 'register'])->name('user.create');
     Route::post('signin/user', [AuthController::class, 'login'])->name('user.signin');
     Route::get('signout/user', [AuthController::class, 'signout'])->name('user.signout');
+    //forget password
+    Route::controller(forgetPasswordController::class)->group(function(){
+        Route::get('/user/forget/password','index')->name('profile.forget');
+        Route::get('/user/forget/password/token','token')->name('profile.forget');
+        Route::get('/user/forget/password/update','changepassword')->name('profile.forget');
+    });
     // pages
     Route::get('much/earn', [LayoutController::class, 'index'])->name('much.index');
     Route::get('about/bank', [LayoutController::class, 'about'])->name('about');
