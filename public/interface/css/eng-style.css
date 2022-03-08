@@ -319,6 +319,7 @@
   font-size: 17px;
   position: relative;
   top:0 !important;
+  text-align:left !important;
  }
  .font-lato {font-family: 'Lato', sans-serif; font-weight: normal;}
  .font-k2d {font-family: 'K2D', sans-serif !important;}
@@ -973,10 +974,16 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
 .theme-menu-one.d-align-item.fixed  {padding-bottom: 12px;}
 /*---------------------------- Theme Main Banner One -------------------------*/
 #theme-banner-one {
-  background: url(../images/shape/1.png) no-repeat top right;
   position: relative;
 }
-#theme-banner-one .main-wrapper {padding: 235px 0 155px;}
+#theme-banner-one .main-wrapper {
+  padding: 235px 30px 155px !important;
+  display:flex !important;
+  align-items: flex-start;
+  flex-direction: column;
+  text-align: left !important;
+}
+
 #theme-banner-one .main-wrapper .slogan {
   display: inline-block;
   background: #FBFBFF;
@@ -1552,7 +1559,7 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   margin-top: 20px;
 }
 .agn-what-we-do .single-block .more-button:hover {text-decoration: overline;}
-.agn-what-we-do .single-block {padding-top: 60px;}
+.agn-what-we-do .single-block {padding-top: 60px; text-align: left;}
 /*---------------------- What We Do/SEO --------------------*/
 .seo-what-we-do {position: relative;padding: 150px 0 100px;}
 .seo-what-we-do .theme-title-one {padding-bottom: 60px;}
@@ -1635,7 +1642,7 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   animation: hvr-ripple-out-two 1.5s linear infinite;
 }
 /*----------------------- About Us -------------------*/
-.agn-about-us {position: relative;padding: 135px 0 0;}
+.agn-about-us {position: relative;padding: 135px 0 0; text-align: left;}
 .agn-about-us .shape-one {
   position: absolute;
   left: 52%;
@@ -3792,7 +3799,6 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   font-size: 95%;
   -webkit-transition: opacity 0.35s;
   transition: opacity 0.35s;
-  -webkit-backface-visibility: hidden; /* Fix for Chrome 37.0.2062.120 (Mac) */
 }
 .our-project-portfo #isotop-gallery-wrapper .isotop-item h2,
 .our-project-portfo #isotop-gallery-wrapper .isotop-item p.icon-links a {
@@ -6133,6 +6139,7 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   padding: 25px 0 25px 50px;
   background: #fff;
   box-shadow: 5.994px 14.835px 30px 0px rgba(229, 234, 239, 0.5);
+  text-align:left !important;
 }
 .our-team .single-team-member .info-meta .name {
   font-size: 22px;
