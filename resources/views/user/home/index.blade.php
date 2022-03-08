@@ -248,7 +248,7 @@
 <div class="agn-contact-banner">
     <div class="container">
         <h2 class="title">Do you have any projects? <br>Contact us.</h2>
-        <a href="contact-us-agency.html" class="contact-button line-button-one">Contact Us</a>
+        <a href="{{route('contact.create')}}" class="contact-button line-button-one">Contact Us</a>
     </div> <!-- /.contianer -->
 </div> <!-- /.agn-contact-banner -->
 
