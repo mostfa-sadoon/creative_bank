@@ -20,6 +20,7 @@ return [
     'How_much_earn' => 'كم ساربح',
     'common_question' => 'الاسئله الشائعه',
     'last_news' => 'اخر الاخبار',
+    'news'=>'الاخبار',
     'about_bank'=>'عن البنك',
     'conact_us'=>'تواصل معنا',
     'suggestions'=>'المقترحات',

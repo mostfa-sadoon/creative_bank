@@ -20,6 +20,7 @@ return [
     'How_much_earn' => 'Profit',
     'common_question' => 'common question',
     'last_news' => ' news',
+    'news'=>'news',
     'about_bank'=>'about',
     'conact_us'=>'conact',
     'suggestions'=>'suggestions',

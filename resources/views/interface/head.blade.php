@@ -1,5 +1,5 @@
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="en" dir="rtl">
         <head>
             <meta charset="UTF-8">
             <meta name="keywords" content="Digital marketing agency, Digital marketing company, Digital marketing services">
@@ -21,10 +21,18 @@
             <!-- Favicon -->
             <link rel="icon" type="image/png" sizes="56x56" href="{{asset('interface/images/logo/logoo.svg')}}">
             <!-- Main style sheet -->
-            <link rel="stylesheet" type="text/css" href="{{asset('interface/css/ar-style.css')}}">
             <!-- responsive style sheet -->
-            <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-responsive.css')}}">
-            <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-style.css')}}">
+            @if (app()->getLocale() == 'en')
+                    <link rel="stylesheet" type="text/css" href="{{asset('interface/css/eng-style.css')}}">
+                    <link rel="stylesheet" type="text/css" href="{{asset('interface/css/ltr-responsive.css')}}">
+                    <link rel="stylesheet" type="text/css" href="{{asset('interface/css/ltr-style.css')}}">
+            @else
+                <link rel="stylesheet" type="text/css" href="{{asset('interface/css/ar-style.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-responsive.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-style.css')}}">
+            @endif
+            <link rel="stylesheet" type="text/css" href="{{asset('interface/css/verify.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('interface/css/profile.css')}}">
             @yield('style')
         </head>
 

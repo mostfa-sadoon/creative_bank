@@ -36,57 +36,57 @@
                    <ul class="navbar-nav">
                     @if(Request::url() === route('home'))
                         <li class="nav-item active">
-                            <a href="{{route('home')}}" class="nav-link" >الرئيسية</a>
+                            <a href="{{route('home')}}" class="nav-link" >{{trans('user.main')}}</a>
                         </li>
                     @else
                         <li class="nav-item ">
-                            <a href="{{route('home')}}" class="nav-link" >الرئيسية</a>
+                            <a href="{{route('home')}}" class="nav-link" >{{trans('user.main')}}</a>
                         </li>
                     @endif
                     @if(Request::url() === route('about'))
                     <li class="nav-item active">
-                        <a href="{{route('about')}}" class="nav-link" >عن البنك</a>
+                        <a href="{{route('about')}}" class="nav-link" >{{trans('user.about_bank')}}</a>
                     </li>
                     @else
                     <li class="nav-item">
-                        <a href="{{route('about')}}" class="nav-link" >عن البنك</a>
+                        <a href="{{route('about')}}" class="nav-link" >{{trans('user.about_bank')}}</a>
                     </li>
                     @endif
                     @if(Request::url() === route('idea.create'))
                     <li class="nav-item active">
-                        <a href="{{route('idea.create')}}" class="nav-link" >ارسل فكرتك</a>
+                        <a href="{{route('idea.create')}}" class="nav-link" >{{trans('user.send_your_idea')}}</a>
                     </li>
                     @else
                     <li class="nav-item">
-                        <a href="{{route('idea.create')}}" class="nav-link" >ارسل فكرتك</a>
+                        <a href="{{route('idea.create')}}" class="nav-link" >{{trans('user.send_your_idea')}}</a>
                     </li>
                     @endif
                     @if(Request::url() === route('allnews'))
 
                     <li class="nav-item active">
-                        <a href="{{route('allnews')}}" class="nav-link" >الاخبار</a>
+                        <a href="{{route('allnews')}}" class="nav-link" >{{trans('user.news')}}</a>
                     </li>
                     @else
                     <li class="nav-item">
-                        <a href="{{route('allnews')}}" class="nav-link" >الاخبار</a>
+                        <a href="{{route('allnews')}}" class="nav-link" >{{trans('user.news')}}</a>
                     </li>
                     @endif
                     @if(Request::url() === route('user.commonquestions'))
                         <li class="nav-item active">
-                            <a href="{{route('user.commonquestions')}}" class="nav-link" >الاسئلة الشائعة</a>
+                            <a href="{{route('user.commonquestions')}}" class="nav-link" >{{trans('user.common_question')}}</a>
                         </li>
                     @else
                         <li class="nav-item">
-                            <a href="{{route('user.commonquestions')}}" class="nav-link" >الاسئلة الشائعة</a>
+                            <a href="{{route('user.commonquestions')}}" class="nav-link" >{{trans('user.common_question')}}</a>
                         </li>
                     @endif
                     @if(Request::url() === route('contact.create'))
                     <li class="nav-item active">
-                        <a href="{{route('contact.create')}}" class="nav-link" >تواصل معنا</a>
+                        <a href="{{route('contact.create')}}" class="nav-link" >{{trans('user.conact_us')}}</a>
                     </li>
                     @else
                     <li class="nav-item">
-                        <a href="{{route('contact.create')}}" class="nav-link" >تواصل معنا</a>
+                        <a href="{{route('contact.create')}}" class="nav-link" >{{trans('user.conact_us')}}</a>
                     </li>
                     @endif
                </ul>
@@ -108,15 +108,13 @@
                         </button>
                     @endif
 
-
                     <div class="dropdown-menu dropdown-menu-right">
                         <ul class="ct-language__dropdown">
                             @if(app()->getLocale() == 'en')
-                            <li><a  href="{{url('change_lang/ar')}}" class="lang-es lang-select" data-lang="ar">عربي</a></li>
+                            <li><a href="{{url('change_lang/ar')}}" class="lang-es lang-select" data-lang="ar">عربي</a></li>
                             @else
                                  <li><a href="{{url('change_lang/en')}}" class="lang-es lang-select" data-lang="ar">english</a></li>
                             @endif
-
                         </ul>
                       </div>
                 </div>
