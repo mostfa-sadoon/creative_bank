@@ -5,6 +5,7 @@ body {
     background: #f5f6fa;
     position: relative;
     height: 100%;
+    overflow-x: hidden !important;
 }
 .account-settings .user-profile {
     margin: 0 0 1rem 0;
@@ -169,4 +170,9 @@ body {
 .passButton a:hover{
     color:black !important;
     
+}
+
+.passIcon{
+    display: flex;
+    justify-content: center;
 }
