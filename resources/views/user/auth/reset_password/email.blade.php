@@ -4,7 +4,7 @@
 @endsection
 @section('content')
 <!-- ======= Start Content ======= -->
- 
+
 <div class="mt-4">
     <!---Start Goal-->
     <div class="userProfile faq-page faq-tab-wrapper">
@@ -20,11 +20,13 @@
                                         <img src="{{asset('interface/images/fogotpass.png')}}" alt=""/>
                                     </div>
                                 </div>
+                                <h5 class="user-name"></h5>
+                                <h6 class="user-email"></h6>
                              </div>
                              <div class="about">
                                 <h4>Forgot Your Password !</h4>
                                 <p class="w-50">you can reset it Now</p>
-                             </div> 
+                             </div>
                              <div class="forgotpassword pt-50">
                                 <form class="submit-faq pt-20"  method="post" action="#" enctype="multipart/form-data" style="display: flex;">
                                     @csrf
@@ -44,7 +46,7 @@
                          </div>
                       </div>
                     </div>
-                 
+
                 </div>
             </div>
           </div>

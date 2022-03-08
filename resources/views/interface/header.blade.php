@@ -97,12 +97,26 @@
         <ul>
             <li class="language-switcher">
                 <div class="dropdown">
-                    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
-                        Ar
-                    </button>
+
+                    @if(app()->getLocale() == 'en')
+                        <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                            en
+                        </button>
+                    @else
+                        <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+                            ar
+                        </button>
+                    @endif
+
+
                     <div class="dropdown-menu dropdown-menu-right">
                         <ul class="ct-language__dropdown">
-                            <li><a href="#googtrans(en|ar)" class="lang-es lang-select" data-lang="ar">Arabic</a></li>
+                            @if(app()->getLocale() == 'en')
+                            <li><a  href="{{url('change_lang/ar')}}" class="lang-es lang-select" data-lang="ar">عربي</a></li>
+                            @else
+                                 <li><a href="{{url('change_lang/en')}}" class="lang-es lang-select" data-lang="ar">english</a></li>
+                            @endif
+
                         </ul>
                       </div>
                 </div>
@@ -123,4 +137,6 @@
         </ul>
     </div> <!-- /.header-right-widget -->
     </div> <!-- /.theme-main-menu -->
+
+
 
