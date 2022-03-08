@@ -34,24 +34,61 @@
             </button>
            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                    <ul class="navbar-nav">
+                    @if(Request::url() === route('home'))
+                        <li class="nav-item active">
+                            <a href="{{route('home')}}" class="nav-link" >الرئيسية</a>
+                        </li>
+                    @else
+                        <li class="nav-item ">
+                            <a href="{{route('home')}}" class="nav-link" >الرئيسية</a>
+                        </li>
+                    @endif
+                    @if(Request::url() === route('about'))
                     <li class="nav-item active">
-                        <a href="{{route('home')}}" class="nav-link" >الرئيسية</a>
+                        <a href="{{route('about')}}" class="nav-link" >عن البنك</a>
                     </li>
+                    @else
                     <li class="nav-item">
                         <a href="{{route('about')}}" class="nav-link" >عن البنك</a>
                     </li>
+                    @endif
+                    @if(Request::url() === route('idea.create'))
+                    <li class="nav-item active">
+                        <a href="{{route('idea.create')}}" class="nav-link" >ارسل فكرتك</a>
+                    </li>
+                    @else
                     <li class="nav-item">
                         <a href="{{route('idea.create')}}" class="nav-link" >ارسل فكرتك</a>
                     </li>
+                    @endif
+                    @if(Request::url() === route('allnews'))
+
+                    <li class="nav-item active">
+                        <a href="{{route('allnews')}}" class="nav-link" >الاخبار</a>
+                    </li>
+                    @else
                     <li class="nav-item">
                         <a href="{{route('allnews')}}" class="nav-link" >الاخبار</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{route('user.commonquestions')}}" class="nav-link" >الاسئلة الشائعة</a>
+                    @endif
+                    @if(Request::url() === route('user.commonquestions'))
+                        <li class="nav-item active">
+                            <a href="{{route('user.commonquestions')}}" class="nav-link" >الاسئلة الشائعة</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a href="{{route('user.commonquestions')}}" class="nav-link" >الاسئلة الشائعة</a>
+                        </li>
+                    @endif
+                    @if(Request::url() === route('contact.create'))
+                    <li class="nav-item active">
+                        <a href="{{route('contact.create')}}" class="nav-link" >تواصل معنا</a>
                     </li>
+                    @else
                     <li class="nav-item">
                         <a href="{{route('contact.create')}}" class="nav-link" >تواصل معنا</a>
                     </li>
+                    @endif
                </ul>
            </div>
         </div> <!-- /.container -->
