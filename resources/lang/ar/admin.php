@@ -115,6 +115,10 @@ return [
      'news_edit'=>'تعديل خبر',
      'news_show'=>'عرض خبر',
 
+     'total_staff'=>'المديرين',
+     'total_news'=>'الاخبار',
+     'total_users'=>'المستخدمين',
+     'total_ideas'=>'الافكار',
 
 
 ];

@@ -119,4 +119,10 @@ return [
      'news_create'=>'create news',
      'news_edit'=>'edit news',
      'news_show'=>'show news',
+
+     'total_staff'=>'total staff',
+     'total_news'=>'total news',
+     'total_users'=>'total users',
+     'total_ideas'=>'total ideas',
+
 ];
