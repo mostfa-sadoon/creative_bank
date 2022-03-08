@@ -110,7 +110,7 @@
             @if (auth()->user())
             <li class="dropdown">
                 <a href="https://icons8.com/icon/21441/user"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                    <img src="https://img.icons8.com/color/48/000000/user.png" class="logPhoto"/>
+                    <img src="{{Auth()->user()->img}}" class="logPhoto"/>
                 </a>
                 <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="{{route('profile.show', auth()->user()->id)}}">Profile</a>
