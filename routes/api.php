@@ -24,11 +24,14 @@ use App\Http\Controllers\Api\Auth\ForgotPasswordController;
 |
 */
 
-    Route::post('login', [AuthController::class, 'login']);
-    Route::post('register', [AuthController::class, 'register']);
-    Route::get('registerForm', [AuthController::class, 'create']);
-    Route::get('Home', [HomeController::class, 'index']);
-    Route::get('idea/show', [IdeaController::class, 'show']);
+
+    Route::controller(AuthController::class)->group(function(){
+        Route::post('login','login');
+        Route::post('register','register');
+        Route::get('registerForm','create');
+        Route::get('Home','index');
+        Route::get('idea/show','show');
+    });
     Route::controller(ForgotPasswordController::class)->group(function(){
         Route::post('forget/password','submitemail');
         Route::post('send/token','sendtoken');
@@ -57,9 +60,9 @@ use App\Http\Controllers\Api\Auth\ForgotPasswordController;
             });
     });
 
-Route::apiResource('About', InfoController::class);
-Route::apiResource('Commonquestions', CommonQuestionsController::class);
-Route::get('ContactInfo', [InfoController::class, 'ContactInfo_Index']);
+    Route::apiResource('About', InfoController::class);
+    Route::apiResource('Commonquestions', CommonQuestionsController::class);
+    Route::get('ContactInfo', [InfoController::class, 'ContactInfo_Index']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

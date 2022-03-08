@@ -125,4 +125,6 @@ return [
      'total_users'=>'total users',
      'total_ideas'=>'total ideas',
 
+     'activity'=>'activity',
+
 ];

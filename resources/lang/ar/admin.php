@@ -119,6 +119,7 @@ return [
      'total_news'=>'الاخبار',
      'total_users'=>'المستخدمين',
      'total_ideas'=>'الافكار',
+     'activity'=>'الانشطه',
 
 
 ];
