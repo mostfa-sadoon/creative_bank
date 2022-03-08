@@ -31,8 +31,8 @@
                 <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-responsive.css')}}">
                 <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-style.css')}}">
             @endif
-            <link rel="stylesheet" type="text/css" href="{{asset('interface/css/verify.css')}}">
             <link rel="stylesheet" type="text/css" href="{{asset('interface/css/profile.css')}}">
+            <link rel="stylesheet" type="text/css" href="{{asset('interface/css/verify.css')}}">
             @yield('style')
         </head>
 
