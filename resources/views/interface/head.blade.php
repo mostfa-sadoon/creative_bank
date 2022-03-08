@@ -23,9 +23,9 @@
             <!-- Main style sheet -->
             <!-- responsive style sheet -->
             @if (app()->getLocale() == 'en')
-                    <link rel="stylesheet" type="text/css" href="{{asset('interface/css/eng-style.css')}}">
-                    <link rel="stylesheet" type="text/css" href="{{asset('interface/css/ltr-responsive.css')}}">
-                    <link rel="stylesheet" type="text/css" href="{{asset('interface/css/ltr-style.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{asset('interface/css/ar-style.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-responsive.css')}}">
+                <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-style.css')}}">
             @else
                 <link rel="stylesheet" type="text/css" href="{{asset('interface/css/ar-style.css')}}">
                 <link rel="stylesheet" type="text/css" href="{{asset('interface/css/rtl-responsive.css')}}">
