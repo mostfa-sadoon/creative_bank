@@ -74,13 +74,7 @@
 
 <div class="solid-inner-banner">
     <h2 class="page-title">Question & Answers</h2>
-    <ul class="page-breadcrumbs">
-        <li><a href="index.html">Home</a></li>
-        <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
-        <li>Faq</li>
-    </ul>
 </div> <!-- /.solid-inner-banner -->
--->
 <div class="faq-page faq-tab-wrapper pt-150 ">
     <div class="container">
         <div class="d-md-flex justify-content-between align-items-center mb-80">
