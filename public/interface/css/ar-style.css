@@ -6953,7 +6953,7 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
 .masnory-blog-wrapper {margin: 0 -25px;}
 .masnory-blog-wrapper .grid-sizer,.masnory-blog-wrapper .isotop-item {width: 33.333333%;padding: 0 25px;}
 .our-blog .img-holder {background: #292928;overflow: hidden;position: relative;}
-.our-blog .img-holder img {width: 100%;transition: all 0.6s ease-in;}
+.our-blog .img-holder img {width: 100%;transition: all 0.6s ease-in; height: 270px;}
 .our-blog .single-blog-post:hover .img-holder img {opacity: 0.6;transform: scale3d(1.1,1.1,1);}
 .our-blog .img-holder .video-button {
   display: block;
