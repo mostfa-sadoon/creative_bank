@@ -7036,7 +7036,9 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   padding: 28px 20px 18px 30px;
   border: 1px solid #ededed;
   border-top: none;
+  height: 274px;
 }
+
 .blog-masonry .single-blog-post {margin-bottom: 35px;}
 .blog-masonry .single-blog-post .title {margin: 18px 0 15px;}
 .blog-default .single-blog-post .post-data {padding-top: 45px;}
