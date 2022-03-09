@@ -7030,6 +7030,7 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   padding: 28px 30px 18px 20px;
   border: 1px solid #ededed;
   border-top: none;
+  height: 274px;
 }
 .blog-masonry .single-blog-post {margin-bottom: 35px;}
 .blog-masonry .single-blog-post .title {margin: 18px 0 15px;}
