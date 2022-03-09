@@ -123,7 +123,11 @@
             </div>
         </div>
     </div> <!-- /.container -->
+<<<<<<< HEAD
     <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">{{trans('user.read_more')}}<i class="fa fa-angle-left icon-left" aria-hidden="true"></i></a>
+=======
+    <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">مزيد من التفاصيل</a>
+>>>>>>> 5616eeeb186c75c691c9b6ea91ca7ec96adc7c21
 </div> <!-- /.agn-about-us -->
 
 

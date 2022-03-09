@@ -2,12 +2,12 @@
 
   @media (min-width: 992px) {
     .theme-menu-one .logo{
-      width: 138px !important;
+      width: 180px !important;
   }
   .theme-menu-one .logo {
       position: absolute;
-      top: 30px;
-      right: 30px;
+      top: 2px;
+      right: 62px;
       z-index: 3;
 }
 .theme-menu-one.fixed .logo{
@@ -97,6 +97,9 @@
     }
     .forgotpassword form{
       display: contents;
+    }
+    .theme-main-menu{
+      display: contents !important;
     }
   } 
   /*************************************************************/
@@ -286,4 +289,15 @@
 
 .adjust a:hover{
   color:black !important;
+}
+
+.theme-main-menu .theme-menu-one{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-items: center !important;
+    align-content: center !important;
+}
+.z-content-inner{
+  padding: 50px !important;
 }

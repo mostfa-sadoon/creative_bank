@@ -71,6 +71,7 @@ return [
     'Feasibility_study'=>'دراسه جدوي',
     'send'=>'ارسال',
 
+<<<<<<< HEAD
     'login' => 'تسجيل الدخول',
 
     //==================== Main Page =======================//
@@ -148,4 +149,9 @@ return [
     'Frequently_Questions' => 'الاسأله المكررة'
 
     
+=======
+    'our_service'=>'خدماتنا',
+    'idea_cycle'=>'مسار الفكره',
+    'sponser'=>'الممول',
+>>>>>>> 5616eeeb186c75c691c9b6ea91ca7ec96adc7c21
 ];

@@ -22,13 +22,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <h5 class="user-name">Yuki Hayashi</h5>
-                            <h6 class="user-email">yuki@Maxwell.com</h6>
+                            <h5 class="user-name">{{$user->name}}</h5>
+                            <h6 class="user-email">{{$user->email}}</h6>
                          </div>
-                        <div class="about">
-                            <h5>About</h5>
-                            <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
-                        </div>
                      </div>
                   </div>
                 </div>
@@ -36,7 +32,7 @@
             <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
                 <div id='theme-tab-one' class="theme-tab-basic theme-tab" data-role='z-tabs' data-options='{"theme": "silver", "orientation": "horizontal", "animation": {"duration": 400, "effects": "slideH"}}'>
                     <!-- Tab Navigation Menu -->
-                    <ul class="tabs-menu clearfix">
+                    <ul class="tabs-menu clearfix engmenu">
                         <li><a>Personal Details</a></li>
 
                     </ul>

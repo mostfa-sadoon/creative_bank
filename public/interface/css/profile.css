@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    padding-top: 40px;
     color: #2e323c;
     background: #f5f6fa;
     position: relative;
@@ -61,7 +60,8 @@ body {
     margin-bottom: 1rem;
 }
 .userProfile{
-    margin-top:50px;
+    margin-top:150px;
+    margin-bottom: 150px;
 }
 .user-profile{
     display: flex;
@@ -69,6 +69,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 .profileGender{
     display: flex;

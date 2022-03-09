@@ -68,6 +68,7 @@ return [
      'Feasibility_study'=>'Feasibility study',
      'send'=>'send',
 
+<<<<<<< HEAD
      "login" => 'login', 
 
      //============================ Main Page =============================//
@@ -144,3 +145,9 @@ return [
     'Frequently_Questions' => 'Frequently Asked Questions',
 
     ];
+=======
+     'our_service'=>'our service',
+     'idea_cycle'=>'idea cycle',
+     'sponser'=>'sponser',
+];
+>>>>>>> 5616eeeb186c75c691c9b6ea91ca7ec96adc7c21

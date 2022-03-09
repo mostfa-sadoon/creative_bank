@@ -751,6 +751,11 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   left:0;
   z-index: 99;
   padding: 65px 0 0;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  align-items: center !important;
+  align-content: center !important;
 }
 .theme-menu-one .logo {
   position: absolute;
@@ -6954,7 +6959,7 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
 .masnory-blog-wrapper {margin: 0 -25px;}
 .masnory-blog-wrapper .grid-sizer,.masnory-blog-wrapper .isotop-item {width: 33.333333%;padding: 0 25px;}
 .our-blog .img-holder {background: #292928;overflow: hidden;position: relative;}
-.our-blog .img-holder img {width: 100%;transition: all 0.6s ease-in;}
+.our-blog .img-holder img {width: 100%;transition: all 0.6s ease-in; height: 270px !important;}
 .our-blog .single-blog-post:hover .img-holder img {opacity: 0.6;transform: scale3d(1.1,1.1,1);}
 .our-blog .img-holder .video-button {
   display: block;
@@ -7031,7 +7036,9 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   padding: 28px 20px 18px 30px;
   border: 1px solid #ededed;
   border-top: none;
+  height: 274px;
 }
+
 .blog-masonry .single-blog-post {margin-bottom: 35px;}
 .blog-masonry .single-blog-post .title {margin: 18px 0 15px;}
 .blog-default .single-blog-post .post-data {padding-top: 45px;}

@@ -2,12 +2,12 @@
 
   @media (min-width: 992px) {
     .theme-menu-one .logo{
-      width: 138px !important;
+      width: 180px !important;
   }
   .theme-menu-one .logo {
       position: absolute;
-      top: 30px;
-      right: 30px;
+      top: 2px;
+      left: 62px;
       z-index: 3;
 }
 .theme-menu-one.fixed .logo{
@@ -100,6 +100,10 @@
   .forgotpassword form{
     display: contents;
   }
+  .theme-main-menu{
+    justify-content: flex-end !important;
+  }
+  
 } 
 /*************************************************************/
 @media (min-width: 768px) and (max-width: 991px) {
@@ -289,4 +293,17 @@ margin-bottom: 26px;
 
 .adjust a:hover{
   color:black !important;
+}
+
+.logPhoto {
+  width: 39px;
+  border: 1px solid #ff3a46;
+  border-radius: 50%;
+  padding: 0px;
+}
+.engmenu{
+  display: flex !important;
+}
+.z-content-inner{
+  padding: 50px !important;
 }

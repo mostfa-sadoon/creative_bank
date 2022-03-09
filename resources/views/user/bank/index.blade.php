@@ -40,10 +40,17 @@
                 <!-- The value of data-role should be z-tabs, data-options is optional to set options -->
                 <div id='theme-tab-one' class="theme-tab-basic theme-tab" data-role='z-tabs' data-options='{"theme": "silver", "orientation": "horizontal", "animation": {"duration": 400, "effects": "slideH"}}'>
                     <!-- Tab Navigation Menu -->
+<<<<<<< HEAD
                     <ul class="tabs-menu clearfix">
                         <li><a>{{trans('user.presenting_idea')}}</a></li>
                         <li><a>{{trans('user.studing_idea')}}</a></li>
                         <li><a>{{trans('admin.accepted_ideas')}}</a></li>
+=======
+                    <ul class="tabs-menu clearfix engmenu">
+                        <li><a>تقديم الفكرة</a></li>
+                        <li><a>دراسة الافكار</a></li>
+                        <li><a>الافكار المقبولة</a></li>
+>>>>>>> 5616eeeb186c75c691c9b6ea91ca7ec96adc7c21
                     </ul>
                     <!-- Content container -->
                     <div class="tab-container">
