@@ -72,6 +72,6 @@ return [
     'send'=>'ارسال',
 
     'our_service'=>'خدماتنا',
-    'idea_cycle'=>'مثار الفكره',
+    'idea_cycle'=>'مسار الفكره',
     'sponser'=>'الممول',
 ];
