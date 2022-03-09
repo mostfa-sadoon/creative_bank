@@ -46,8 +46,7 @@ class forgetPasswordController extends Controller
     {
          $number=$request->number;
          $token=$number;
-          $token= implode("",$number);
-        // dd($token);
+         $token= implode("",$number);
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|exists:users',
         ]);
@@ -58,18 +57,31 @@ class forgetPasswordController extends Controller
                'email' => $request->email,
              ])->latest()
              ->first();
-
             if (Hash::check($token,$passwordreset->token)) {
                 // The passwords match...
-                return view('user.auth.reset_password.update_password');
+                return redirect()->route('forgetchangepassword');
             }else{
                 $request->session()->flash('errortoken', 'The token is false');
-                $request->session(['email'=>$request->email]);
-                return view('user.auth.reset_password.token',compact('email'));
+                // session(['email'=>$request->email]);
+                return redirect()->back();
              }
     }
     public function changepassword()
     {
         return view('user.auth.reset_password.update_password');
+    }
+    public function updatePassword(Request $request)
+    {
+        $request->validate([
+            'email'=>'required|email|exists:users',
+            'password'=>'required|min:6|max:50|confirmed',
+            'password_confirmation'=>'required|max:50|min:6',
+        ]);
+        $email=$request->email;
+        $user=User::where('email','=',$email)->first();
+        $user->update([
+            'password'=>bcrypt($request->password),
+        ]);
+         return redirect()->route('user.login');
     }
 }

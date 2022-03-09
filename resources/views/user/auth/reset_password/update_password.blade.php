@@ -63,32 +63,32 @@
                     <div class="row gutters justify-content-center">
                         <div class="card h-100">
                         <div class="card-body">
-                        <form class="submit-faq pt-20 pb-50"  method="post" action="{{route('password.update')}}">
+                        <form class="submit-faq pt-20 pb-50" action="{{route('forget.updatePassword')}}" method="Post">
                             @csrf
-                                <input type="hidden" name="id" >
+                                <input type="hidden" name="email" value="{{Session::get('email')}}">
                             <div class="row gutters">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                     <h6 class="mb-2 text-primary profileTitle">Update Your Password !</h6>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label for="password">old Password</label>
-                                        <input type="password" name="old_password"  placeholder="Enter Password">
-                                        @error('old_password')
+                                        <label for="password"> Password</label>
+                                        <input type="password" name="password"  placeholder="Enter Password">
+                                        @error('password')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                         @if(Session::has('error'))
                                         <div class="alert alert-danger">
                                         {{ Session::get('error')}}
                                         </div>
-                            @endif
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" name="password"  placeholder="Enter Password">
-                                        @error('password')
+                                        <label for="password">Password confirmation</label>
+                                        <input type="password" name="password_confirmation"  placeholder="Enter Password">
+                                        @error('password_confirmation')
                                             <div class="alert alert-danger">{{ $message }}</div>
                                         @enderror
                                     </div>
@@ -97,7 +97,7 @@
                             <div class="row gutters center-div">
                                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
                                     <div class="text-right">
-                                        <button type="submit" id="submit" name="submit" >Update</button>
+                                        <input type="submit" id="submit" name="submit" value="update">
                                     </div>
                                 </div>
                             </div>
