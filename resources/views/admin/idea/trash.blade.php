@@ -33,10 +33,10 @@
                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Name</th>
-                                <th>date</th>
-                                <th>measure</th>
+                                <th></th>
+                                <th>{{ trans('admin.name')}}</th>
+                                <th>{{ trans('admin.date')}}</th>
+                                <th>{{ trans('admin.action')}}</th>
                             </tr>
                         </thead>
                         <tbody>

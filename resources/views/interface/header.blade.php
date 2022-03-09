@@ -82,11 +82,11 @@
                     @endif
                     @if(Request::url() === route('contact.create'))
                     <li class="nav-item active">
-                        <a href="{{route('contact.create')}}" class="nav-link" >{{trans('user.conact_us')}}</a>
+                        <a href="{{route('contact.create')}}" class="nav-link" >{{trans('user.contact_us')}}</a>
                     </li>
                     @else
                     <li class="nav-item">
-                        <a href="{{route('contact.create')}}" class="nav-link" >{{trans('user.conact_us')}}</a>
+                        <a href="{{route('contact.create')}}" class="nav-link" >{{trans('user.contact_us')}}</a>
                     </li>
                     @endif
                </ul>
@@ -130,11 +130,8 @@
                 </div>
             </li>
             @else
-            <li><a href="{{route('user.login')}}" class="contact-us white-shdw-button">تسجيل دخول</a></li>
+            <li><a href="{{route('user.login')}}" class="contact-us white-shdw-button">{{trans('user.login')}}</a></li>
             @endif
         </ul>
     </div> <!-- /.header-right-widget -->
     </div> <!-- /.theme-main-menu -->
-
-
-

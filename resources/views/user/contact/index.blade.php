@@ -3,30 +3,29 @@
 <div class="contact-address-two">
     <div class="container">
         <div class="theme-title-one text-center">
-            <div class="upper-title">Our Address</div>
-            <h2 class="main-title">Don’t hesitate to contact us for <br>any information. </h2>
+            <div class="upper-title">{{trans('user.our_address')}}</div>
+            <h2 class="main-title">{{trans('user.contact_us_msg')}} </h2>
         </div> <!-- /.theme-title-one -->
 
         <div class="row">
             <div class="col-lg-4">
                 <div class="address-block">
                     <div class="icon-box"><img src="{{asset('interface/images/icon/icon59.svg')}}" alt=""></div>
-                    <h5>Our Location</h5>
+                    <h5>{{trans('user.our_address')}}</h5>
                     <p>{{$ContactInfo->address}}</p>
                 </div> <!-- /.address-block -->
             </div> <!-- /.col- -->
             <div class="col-lg-4">
                 <div class="address-block">
                     <div class="icon-box"><img src="{{asset('interface/images/icon/icon60.svg')}}" alt=""></div>
-                    <h5>Email & Phone</h5>
+                    <h5>{{trans('user.email_phone')}}</h5>
                     <p><a href="#">{{$ContactInfo->email}}</a> <br><a href="#">{{$ContactInfo->phone}}9</a></p>
                 </div> <!-- /.address-block -->
             </div> <!-- /.col- -->
             <div class="col-lg-4">
                 <div class="address-block">
                     <div class="icon-box"><img src="{{asset('interface/images/icon/icon61.svg')}}" alt=""></div>
-                    <h5>Get In Touch</h5>
-                    <p>Also find us social media below</p>
+                    <h5>{{trans('user.get_in_touch')}}</h5>
                     <ul>
                         <li><a href="{{$ContactInfo->facebook}}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="{{$ContactInfo->tweeter}}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

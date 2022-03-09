@@ -103,5 +103,21 @@ class Setting extends Controller
         ]);
         return redirect()->route('fekrtk.info');
     }
+
+    public function user_about()
+    {
+       $abouts=About::first();
+       $owners=Owner::first();
+
+       return view('user.bank.index',compact('abouts', 'owners'));
+
+
+    }
+
+    public function owner_index()
+    { 
+        $owners=Owner::first();
+        return view('admin.owner.index',compact('owners'));
+    }
     
 }

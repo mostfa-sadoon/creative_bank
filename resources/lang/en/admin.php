@@ -35,7 +35,7 @@ return [
     'ideas'=>'Ideas',
     'new_ideas'=>'New Ideas',
     'trash'=>'Archive',
-
+    'date' => 'Date',
     'news'=>'news',
     'add_news'=>'add news',
     'news_all'=>'news All',
@@ -58,7 +58,7 @@ return [
 
      'creative_bank'>'creative bank',
      'ideas'=>'ideas',
-     'accepted_ideas'=>'accepted ideas',
+     'accepted_ideas'=>'Accepted Ideas',
      'vote'=>'vote',
      'publish' => "Publish",
 
