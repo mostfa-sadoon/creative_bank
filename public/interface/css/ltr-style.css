@@ -100,6 +100,10 @@
   .forgotpassword form{
     display: contents;
   }
+  .theme-main-menu{
+    justify-content: flex-end !important;
+  }
+  
 } 
 /*************************************************************/
 @media (min-width: 768px) and (max-width: 991px) {
