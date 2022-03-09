@@ -290,3 +290,10 @@ margin-bottom: 26px;
 .adjust a:hover{
   color:black !important;
 }
+
+.logPhoto {
+  width: 39px;
+  border: 1px solid #ff3a46;
+  border-radius: 50%;
+  padding: 0px;
+}
