@@ -80,7 +80,7 @@
         <li>Faq</li>
     </ul>
 </div> <!-- /.solid-inner-banner -->
--->
+
 <div class="faq-page faq-tab-wrapper pt-150 ">
     <div class="container">
         <div class="d-md-flex justify-content-between align-items-center mb-80">
