@@ -36,7 +36,7 @@
             <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
                 <div id='theme-tab-one' class="theme-tab-basic theme-tab" data-role='z-tabs' data-options='{"theme": "silver", "orientation": "horizontal", "animation": {"duration": 400, "effects": "slideH"}}'>
                     <!-- Tab Navigation Menu -->
-                    <ul class="tabs-menu clearfix">
+                    <ul class="tabs-menu clearfix engmenu">
                         <li><a>Personal Details</a></li>
 
                     </ul>

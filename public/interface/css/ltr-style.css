@@ -297,3 +297,9 @@ margin-bottom: 26px;
   border-radius: 50%;
   padding: 0px;
 }
+.engmenu{
+  display: flex !important;
+}
+.z-content-inner{
+  padding: 50px !important;
+}

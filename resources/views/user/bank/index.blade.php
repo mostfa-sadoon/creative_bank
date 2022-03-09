@@ -40,7 +40,7 @@
                 <!-- The value of data-role should be z-tabs, data-options is optional to set options -->
                 <div id='theme-tab-one' class="theme-tab-basic theme-tab" data-role='z-tabs' data-options='{"theme": "silver", "orientation": "horizontal", "animation": {"duration": 400, "effects": "slideH"}}'>
                     <!-- Tab Navigation Menu -->
-                    <ul class="tabs-menu clearfix">
+                    <ul class="tabs-menu clearfix engmenu">
                         <li><a>تقديم الفكرة</a></li>
                         <li><a>دراسة الافكار</a></li>
                         <li><a>الافكار المقبولة</a></li>

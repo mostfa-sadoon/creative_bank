@@ -295,3 +295,6 @@
     align-items: center !important;
     align-content: center !important;
 }
+.z-content-inner{
+  padding: 50px !important;
+}
