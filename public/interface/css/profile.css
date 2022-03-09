@@ -69,6 +69,7 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 .profileGender{
     display: flex;
