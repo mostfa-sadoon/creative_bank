@@ -2,12 +2,12 @@
 
   @media (min-width: 992px) {
     .theme-menu-one .logo{
-      width: 138px !important;
+      width: 180px !important;
   }
   .theme-menu-one .logo {
       position: absolute;
-      top: 30px;
-      right: 30px;
+      top: 2px;
+      left: 62px;
       z-index: 3;
 }
 .theme-menu-one.fixed .logo{

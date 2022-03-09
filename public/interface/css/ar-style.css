@@ -753,6 +753,11 @@ body .solid-button-one:hover,.navbar .navbar-toggler,.faq-tab-wrapper .faq-panel
   left:0;
   z-index: 99;
   padding: 65px 0 0;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  align-items: center !important;
+  align-content: center !important;
 }
 .theme-menu-one .logo {
   position: absolute;

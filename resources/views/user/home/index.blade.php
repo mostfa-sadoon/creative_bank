@@ -118,7 +118,7 @@
             </div>
         </div>
     </div> <!-- /.container -->
-    <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">مزيد من التفاصيل<i class="fa fa-angle-left icon-left" aria-hidden="true"></i></a>
+    <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">مزيد من التفاصيل</a>
 </div> <!-- /.agn-about-us -->
 
 
