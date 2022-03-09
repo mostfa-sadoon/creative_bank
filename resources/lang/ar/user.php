@@ -70,4 +70,8 @@ return [
     'Intellectual_property'=>'حقوق الملكيه الفكريه',
     'Feasibility_study'=>'دراسه جدوي',
     'send'=>'ارسال',
+
+    'our_service'=>'خدماتنا',
+    'idea_cycle'=>'مثار الفكره',
+    'sponser'=>'الممول',
 ];
