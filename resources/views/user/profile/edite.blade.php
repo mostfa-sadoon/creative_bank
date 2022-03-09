@@ -22,13 +22,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <h5 class="user-name">Yuki Hayashi</h5>
-                            <h6 class="user-email">yuki@Maxwell.com</h6>
+                            <h5 class="user-name">{{$user->name}}</h5>
+                            <h6 class="user-email">{{$user->email}}</h6>
                          </div>
-                        <div class="about">
-                            <h5>About</h5>
-                            <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
-                        </div>
                      </div>
                   </div>
                 </div>

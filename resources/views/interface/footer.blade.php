@@ -14,19 +14,19 @@
 							<div class="col-lg-3 col-lg-3 col-sm-6 col-12 footer-list" data-aos="fade-up">
 								<h5 class="title">Services</h5>
 								<ul>
-									<li><a href="about-us.html">our service</a></li>
-									<li><a href="about-us.html">Idea Cycle</a></li>
-									<li><a href="about-us.html">Sponser</a></li>
+									<li><a href="{{route('home')}}">{{trans('user.our_service')}}</a></li>
+									<li><a href="{{route('about')}}">{{trans('user.idea_cycle')}}</a></li>
+									<li><a href="{{route('about')}}">{{trans('user.sponser')}}</a></li>
 
 								</ul>
 							</div> <!-- /.footer-recent-post -->
 							<div class="col-lg-3 col-sm-6 col-12 footer-list" data-aos="fade-up">
 								<h5 class="title">important link</h5>
 								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="send-your-idea.html">send your idea</a></li>
-									<li><a href="about-us.html">About Bank</a></li>
-									<li><a href="blogs.html">News</a></li>
+									<li><a href="{{route('home')}}">{{trans("user.main")}}</a></li>
+									<li><a href="{{route('idea.create')}}">{{trans('user.send_idea')}}</a></li>
+									<li><a href="{{route('about')}}">{{trans("user.about_bank")}}</a></li>
+									<li><a href="{{route('news.index')}}">{{ trans('user.news') }}</a></li>
 								</ul>
 							</div> <!-- /.footer-list -->
 							<div class="col-lg-3 col-lg-2 col-sm-6 col-12 footer-information" data-aos="fade-up">
@@ -43,10 +43,10 @@
 					</div> <!-- /.container -->
 				</div> <!-- /.top-footer -->
 
-				<div class="container">
+                <div class="container">
 					<div class="bottom-footer">
 						<div class="clearfix">
-							<p>&copy; 2019 copyright all right reserved</p>
+							<p>&copy; sd solutions</p>
 							<ul>
 								<li><a href="#">Privace & Policy.</a></li>
 								<li><a href="faq.html">Faq.</a></li>
@@ -55,6 +55,7 @@
 						</div>
 					</div> <!-- /.bottom-footer -->
 				</div>
+
 			</footer> <!-- /.theme-footer-one -->
 
 
@@ -64,9 +65,6 @@
 			<button class="scroll-top tran3s">
 				<i class="fa fa-angle-up" aria-hidden="true"></i>
 			</button>
-
-
-
 		<!-- Optional JavaScript _____________________________  -->
 
     	<!-- jQuery first, then Popper.js, then Bootstrap JS -->

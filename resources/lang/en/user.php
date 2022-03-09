@@ -67,4 +67,8 @@ return [
      'Intellectual_property'=>'Intellectual property',
      'Feasibility_study'=>'Feasibility study',
      'send'=>'send',
+
+     'our_service'=>'our service',
+     'idea_cycle'=>'idea cycle',
+     'sponser'=>'sponser',
 ];
