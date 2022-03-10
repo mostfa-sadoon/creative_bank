@@ -7,9 +7,9 @@
                 <h3 class="text-themecolor">{{trans('admin.creative_bank')}}</h3>
             </div>
             <div class="col-md-7 align-self-center">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="javascript:void(0)">profile</a></li>
-                    <li class="breadcrumb-item active">Dashboard 2</li>
+                <ol class="breadcrumb"> 
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.profile')}}</a></li>
+                    <li class="breadcrumb-item active">{{trans('admin.dashboard')}}</li>
                 </ol>
             </div>
             <div class="">
@@ -24,13 +24,13 @@
                             <div class="col-lg-4 col-xlg-3 col-md-5">
                                     <div class="card">
                                         <div class="card-body">
-                                            <center class="m-t-30"> <img src="{{asset('assets/images/users/5.jpg')}}" class="img-circle" width="150" />
+                                            <center class="m-t-30">
                                                 <h4 class="card-title m-t-10">{{$employee->name}}</h4>
                                             </center>
                                         </div>
                                         <div>
                                             <hr> </div>
-                                        <div class="card-body"> <small class="text-muted">Email address </small>
+                                        <div class="card-body"> <small class="text-muted">{{trans('admin.email')}}</small>
                                             <h6>{{$employee->email}}</h6>
                                         </div>
                                     </div>
@@ -42,8 +42,8 @@
                         <div class="card">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs profile-tab" role="tablist">
-                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#settings" role="tab">Settings</a> </li>
-                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#password" role="tab">Password</a> </li>
+                                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#settings" role="tab">{{trans('admin.setting')}}</a> </li>
+                                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#password" role="tab">{{trans('admin.password')}}</a> </li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
@@ -51,15 +51,15 @@
                                     <div class="card-body">
                                         <form class="form-horizontal form-material">
                                             <div class="form-group">
-                                                <label class="col-md-12">Full Name</label>
+                                                <label class="col-md-12">{{trans('admin.name')}}</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" placeholder="Johnathan Doe" class="form-control form-control-line">
+                                                    <input type="text" value="{{$employee->name}}" class="form-control form-control-line">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="example-email" class="col-md-12">Email</label>
+                                                <label for="example-email" class="col-md-12">{{trans('admin.email')}}</label>
                                                 <div class="col-md-12">
-                                                    <input type="email" placeholder="johnathan@admin.com" class="form-control form-control-line" name="example-email" id="example-email">
+                                                    <input type="email" value="{{$employee->email}}" class="form-control form-control-line" name="example-email" id="example-email">
                                                 </div>
                                             </div>
 
@@ -67,7 +67,7 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-12">
-                                                    <button class="btn btn-success">Update Profile</button>
+                                                    <button class="btn btn-success">{{trans('admin.update')}}</button>
                                                 </div>
                                             </div>
 
@@ -102,7 +102,7 @@
 
                                             <div class="form-group">
                                                 <div class="col-sm-12">
-                                                    <button class="btn btn-success">Update Profile</button>
+                                                    <button class="btn btn-success">{{trans('admin.update')}}</button>
                                                 </div>
                                             </div>
 

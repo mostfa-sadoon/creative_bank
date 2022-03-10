@@ -126,5 +126,8 @@ return [
      'total_ideas'=>'total ideas',
 
      'activity'=>'activity',
+     'profile' => 'Profile',
+     'update' => 'Update'
+
 
 ];

@@ -68,7 +68,6 @@ return [
      'Feasibility_study'=>'Feasibility study',
      'send'=>'send',
 
-<<<<<<< HEAD
      "login" => 'login', 
 
      //============================ Main Page =============================//
@@ -118,7 +117,7 @@ return [
      'benefits' => 'The Benefits',
 
 
-    // ==================== send idea ========================
+    // ==================== send idea ======================== 
 
     'idea_Question' => 'Do you have Idea ? Send it now.',
     'choose_category' => 'Choose Category',
@@ -144,10 +143,8 @@ return [
      'q_a' => 'Questions & Answers',
     'Frequently_Questions' => 'Frequently Asked Questions',
 
+    //========================Footer ========================
+    'idea_cycle' => 'Idea Cycle',
+    ''
+
     ];
-=======
-     'our_service'=>'our service',
-     'idea_cycle'=>'idea cycle',
-     'sponser'=>'sponser',
-];
->>>>>>> 5616eeeb186c75c691c9b6ea91ca7ec96adc7c21
