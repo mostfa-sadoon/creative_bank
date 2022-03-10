@@ -16,7 +16,7 @@
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="javascript:void(0)">{{ trans('admin.accepted_ideas')}}</a></li>
-                            <li class="breadcrumb-item active">Dashboard 2</li>
+                            <li class="breadcrumb-item active">{{ trans('admin.dashboard')}}</li>
                         </ol>
                     </div>
                     <div class="">
@@ -27,16 +27,16 @@
                 <!-- End Bread crumb and right sidebar toggle -->
 <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Contact Emplyee list</h4>
+                <h4 class="card-title">{{ trans('admin.accepted_ideas')}}</h4>
                 <h6 class="card-subtitle"></h6>
                 <div class="table-responsive">
                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
                         <thead>
                             <tr>
-                                <th>No</th>
-                                <th>Name</th>
-                                <th>date</th>
-                                <th>measure</th>
+                                <th></th>
+                                <th>{{trans('admin.name')}}</th>
+                                <th>{{trans('admin.date')}}</th>
+                                <th>{{trans('admin.action')}}</th>
                             </tr>
                         </thead>
                         <tbody>

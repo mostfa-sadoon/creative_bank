@@ -120,6 +120,8 @@ return [
      'total_users'=>'المستخدمين',
      'total_ideas'=>'الافكار',
      'activity'=>'الانشطه',
+     'date' => 'التاريخ',
+
 
 
 

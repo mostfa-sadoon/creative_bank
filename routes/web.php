@@ -8,6 +8,7 @@ use App\Http\Controllers\User\HomeController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\NewsController;
 use App\Http\Controllers\User\CommonquestionController;
+use App\Http\Controllers\Setting;
 // use App\Http\Controllers\User\suggestionController;
 use App\Http\Controllers\User\VoteController;
 use App\Http\Controllers\Admin\ContactController;
@@ -42,7 +43,7 @@ use App\Http\Controllers\User\Auth\forgetPasswordController;
     });
     // pages
     Route::get('much/earn', [LayoutController::class, 'index'])->name('much.index');
-    Route::get('about/bank', [LayoutController::class, 'about'])->name('about');
+    // Route::get('about/bank', [LayoutController::class, 'about'])->name('about');
     // Contact Us
     Route::get('contact/us', [ContactController::class, 'create'])->name('contact.create');
     Route::post('contact/us', [ContactController::class, 'store'])->name('contact.store');
@@ -60,6 +61,21 @@ use App\Http\Controllers\User\Auth\forgetPasswordController;
     Route::get('/user/news/show/{id}',[NewsController::class, 'show'])->name('user.news.show');
     //common qustions
     Route::get('/user/commonquestion',[CommonquestionController::class, 'index'])->name('user.commonquestions');
+
+    Route::controller(Setting::class)->group(function(){
+        //owner
+        // Route::get('/owner','index')->name('owner.index');
+        // Route::get('/owner/edit/{id}','edit')->name('owner.edit');
+        // Route::post('/owner/update','update')->name('owner.update');
+        //about
+        Route::get('/about/bank','user_about')->name('about');
+        //ContactInfo
+        // Route::get('/Info','contactInfo_index')->name('fekrtk.info');
+        // Route::get('/Info/edit/{id}','contactInfo_edit')->name('info.edit');
+        // Route::post('/Info/update','contactInfo_Update')->name('info.update');
+     });
+
+
     //suggestion
     // Route::resource('suggestions', suggestionController::class);
     Route::middleware('auth:web')->group(function () {
@@ -82,3 +98,5 @@ use App\Http\Controllers\User\Auth\forgetPasswordController;
         // send comment
         Route::post('/user/send/comment',[IdeaController::class, 'sendcomment'])->name('comment.send');
     });
+
+    

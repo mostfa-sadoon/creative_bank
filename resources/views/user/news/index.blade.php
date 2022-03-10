@@ -7,13 +7,13 @@
 
 <div class="our-blog blog-filer mb-150">
     <div class="blog-filter-title">
-        <p class="upper-title">اخبارنا</p>
-        <h2 class="main-title">تابع معنا <br>كل ما هو جديد</h2>
+        <p class="upper-title">{{trans('user.our_news')}}</p>
+        <h2 class="main-title">{{trans('user.latest_news')}}</h2>
     </div> <!-- /.blog-filter-title -->
 
     <ul class="isotop-menu-wrapper blog-filter-nav clearfix">
         @if(Request::url() === route('allnews'))
-            <li class="is-checked" data-filter="*"><a href="{{route('allnews')}}" ><span>All</span></a></li>
+            <li class="is-checked" data-filter="*"><a href="{{route('allnews')}}" ><span>{{trans('user.all')}}</span></a></li>
             @foreach ($NewCategories as $category)
             <li data-filter=".economy"><span><a href="{{route('newsCategory',$category->id)}}" >{{$category->name}}</a></span></li>
             @endforeach

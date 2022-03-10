@@ -25,10 +25,10 @@
     <img src="{{asset('interface/images/shape/shape-62.svg')}}" alt="" class="shape-eleven">
     <div class="container">
         <div class="main-wrapper">
-            <h1 class="main-title wow fadeInUp animated" data-wow-delay="0.4s">مرحبا بكم فى <br> بنك الافكار</h1>
-            <p class="sub-title wow fadeInUp animated" data-wow-delay="0.9s">ارسل لنا فكرتك لتجد الدعم المناسب</p>
+            <h1 class="main-title wow fadeInUp animated" data-wow-delay="0.4s">{{trans('user.welcome')}}<br>{{trans('user.creative_bank')}}</h1>
+            <p class="sub-title wow fadeInUp animated" data-wow-delay="0.9s">{{trans('user.welcome_msg')}}</p>
             <ul class="button-group lightgallery">
-                <li><a href="{{route('idea.create')}}" class="more-button solid-button-one wow fadeInRight animated" data-wow-delay="1.5s">ارسل فكرتك</a></li>
+                <li><a href="{{route('idea.create')}}" class="more-button solid-button-one wow fadeInRight animated" data-wow-delay="1.5s">{{trans('user.send_your_idea')}}<i class="fa fa-angle-left icon-right" aria-hidden="true"></i></a></li>
             </ul>
         </div> <!-- /.main-wrapper -->
     </div> <!-- /.container -->
@@ -45,8 +45,8 @@
     <img src="{{asset('interface/images/shape/shape-56.svg')}}" alt="" class="shape-two">
     <div class="container">
         <div class="theme-title-one text-center custom-blog">
-            <div class="upper-title">What We Do</div>
-            <h2 class="main-title">السماح للشباب<br>بالتعبير عن افكارهم</h2>
+            <div class="upper-title">{{trans('user.what_we_do')}}</div>
+            <h2 class="main-title">{{trans('user.we_do')}}</h2>
         </div> <!-- /.theme-title-one -->
 
         <div class="row">
@@ -56,9 +56,10 @@
                         <img src="{{asset('interface/images/shape/shape-2.svg')}}" alt="" class="bg">
                         <img src="{{asset('interface/images/icon/icon1.svg')}}" alt="" class="shape" data-aos="zoom-in-down">
                     </div>
-                    <h5 class="title">1. تقديم الفكرة</h5>
-                    <p>تقديم الفكرة مع توفير العناصر المطلوبة للتقديم.</p>
-                    <a href="about-us.html" class="more-button">المزيد من التفاصيل</a>
+                    <h5 class="title">1. {{trans('user.presenting_idea')}}</h5>
+                    <p>{{trans('user.presenting_idea_body')}}</p>
+                    <br>
+                    <a href="about-us.html" class="more-button">{{trans('user.read_more')}}</a>
                 </div> <!-- /.single-block -->
             </div>
 
@@ -68,9 +69,10 @@
                         <img src="{{asset('interface/images/shape/shape-2.svg')}}" alt="" class="bg">
                         <img src="{{asset('interface/images/icon/icon2.svg')}}" alt="" class="shape" data-aos="zoom-in-down">
                     </div>
-                    <h5 class="title">2. دراسة الفكرة</h5>
-                    <p>دراسة الافكار المقدمة وامكانية تنفيذها</p>
-                    <a href="about-us.html" class="more-button">المزيد من التفاصيل</a>
+                    <h5 class="title">2. {{trans('user.studing_idea')}}</h5>
+                    <p>{{trans('user.studing_idea_body')}}</p>
+                    <br>
+                    <a href="about-us.html" class="more-button">{{trans('user.read_more')}}</a>
                 </div> <!-- /.single-block -->
             </div>
 
@@ -80,9 +82,10 @@
                         <img src="{{asset('interface/images/shape/shape-2.svg')}}" alt="" class="bg">
                         <img src="{{asset('interface/images/icon/icon3.svg')}}" alt="" class="shape" data-aos="zoom-in-down">
                     </div>
-                    <h5 class="title">3. تمويل الافكار المقبولة</h5>
-                    <p>يوجد عدة فوائد يحصل عليها المشتركين المقبولة افكارهم</p>
-                    <a href="about-us.html" class="more-button">المزيد من التفاصيل</a>
+                    <h5 class="title">3. {{trans('user.funding_accepted_ideas')}}</h5>
+                    <p> {{trans('user.funding_accepted_ideas_body')}}</p>
+                    <br>
+                    <a href="about-us.html" class="more-button">{{trans('user.read_more')}}</a>
                 </div> <!-- /.single-block -->
             </div>
         </div>
@@ -105,10 +108,12 @@
             <div class="col-lg-6 order-lg-last">
                 <div class="text-wrapper">
                     <div class="theme-title-one">
-                        <div class="upper-title">About us</div>
-                        <h2 class="main-title">بنك الابتكار المصري هو بوابة الكترونية متكاملة تسمح بتلاقي افكار الشباب</h2>
+                        <div class="upper-title">{{trans('user.about_us')}}</div>
+                        <h2 class="main-title">{{trans('user.about_us_title')}}</h2>
                     </div> <!-- /.theme-title-one -->
-                    <p>ملتقى للمخترع والمستثمر ورجل الصناعة والمجتمع المدني والجهات المانحة للمساهمة في تفعيل منظومة العلوم والتكنولوجيا واستثمار الابتكارات والاختراعات والمساعدة في خلق فرص استثمارية تكنولوجية وتكنولوجيا وطنية</p>
+                    <p>
+                    {{trans('user.about_us_body')}}
+                    </p>
                 </div>
             </div>
             <div class="col-lg-6 order-lg-first">
@@ -118,7 +123,11 @@
             </div>
         </div>
     </div> <!-- /.container -->
+<<<<<<< HEAD
+    <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">{{trans('user.read_more')}}<i class="fa fa-angle-left icon-left" aria-hidden="true"></i></a>
+=======
     <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">مزيد من التفاصيل</a>
+>>>>>>> 5616eeeb186c75c691c9b6ea91ca7ec96adc7c21
 </div> <!-- /.agn-about-us -->
 
 
@@ -135,7 +144,7 @@
     <div class="container">
         <div class="main-wrapper">
             <div class="theme-title-one text-center">
-                <h2 class="main-title">We completed 1500+ Projects Yearly <br>Successfully & counting</h2>
+                <h2 class="main-title">{{trans('user.achivement')}}</h2>
             </div> <!-- /.theme-title-one -->
 
             <div class="counter-wrapper">
@@ -143,19 +152,19 @@
                     <div class="col-sm-4">
                         <div class="single-counter-box">
                               <h2 class="number"><span class="timer" data-from="0" data-to="16" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
-                              <p>المشتركين</p>
+                              <p>{{trans('user.clients')}}</p>
                           </div> <!-- /.single-counter-box -->
                     </div>
                     <div class="col-sm-4">
                         <div class="single-counter-box">
                               <h2 class="number"><span class="timer" data-from="0" data-to="460" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
-                              <p>الافكار</p>
+                              <p>{{trans('user.ideas')}}</p>
                           </div> <!-- /.single-counter-box -->
                     </div>
                     <div class="col-sm-4">
                         <div class="single-counter-box">
                               <h2 class="number"><span class="timer" data-from="0" data-to="500" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
-                              <p>Completed Projects</p>
+                              <p>{{trans('user.projects')}}</p>
                           </div> <!-- /.single-counter-box -->
                     </div>
 
@@ -167,8 +176,8 @@
 
 <div class="about-us-standard agency-style team-standard our-team ">
         <div class="theme-title-one text-center">
-            <div class="upper-title">رسالة من</div>
-            <h2 class="main-title">الممول الرئيسى</h2>
+            <div class="upper-title">{{trans('user.msg_from')}}</div>
+            <h2 class="main-title">{{trans('user.main_financier')}}</h2>
         </div> <!-- /.theme-title-one -->
         <div class="message-div">
             <div class="container">
@@ -184,8 +193,8 @@
                                 <div class="wrapper">
                                     <div class="img-box"><img src="{{$owner->img}}" alt=""></div>
                                     <div class="info-meta">
-                                        <h6 class="name">RAMY FARES</h6>
-                                        <span>الممول الرئيسى</span>
+                                        <h6 class="name">{{trans('user.financier_name')}}</h6>
+                                        <span>{{trans('user.main_financier')}}</span>
                                     </div>
                                 </div>
                                 <div class="hover-content">
@@ -216,8 +225,8 @@
     <img src="{{asset('interface/images/shape/shape-55.svg')}}" alt="" class="shape-four">
     <div class="container">
         <div class="theme-title-one text-center">
-            <div class="upper-title">Our Blog</div>
-            <h2 class="main-title">تعرف على احدث الاخبار</h2>
+            <div class="upper-title">{{trans('user.blog')}}</div>
+            <h2 class="main-title">{{trans('user.blog_title')}}</h2>
         </div> <!-- /.theme-title-one -->
 
         <div class="blog-one-slider">
@@ -247,8 +256,8 @@
 -->
 <div class="agn-contact-banner">
     <div class="container">
-        <h2 class="title">Do you have any projects? <br>Contact us.</h2>
-        <a href="{{route('contact.create')}}" class="contact-button line-button-one">Contact Us</a>
+        <h2 class="title">{{trans('user.idea_qusetion')}}<br>{{trans('user.contact_us')}}</h2>
+        <a href="{{route('contact.create')}}" class="contact-button line-button-one">{{trans('user.contact_us')}}</a>
     </div> <!-- /.contianer -->
 </div> <!-- /.agn-contact-banner -->
 

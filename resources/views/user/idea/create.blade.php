@@ -1,18 +1,18 @@
 @extends('user_temp')
 @section('content')
 <div class="solid-inner-banner">
-    <h2 class="page-title">ارسل فكرتك</h2>
-</div> <!-- /.solid-inner-banner -->
+    <h2 class="page-title">{{trans('user.send_your_idea')}}</h2>
+</div> <!-- /.solid-inner-banner --> 
 
 <div class="faq-page faq-tab-wrapper pb-200">
     <div class="container">
         <form  class="submit-faq pt-150" action="{{route('idea.store')}}" method="post" enctype="multipart/form-data">
             @csrf
-            <h3 class="faq-page-title text-center">لديك فكرة ؟ ارسلها الان</h3>
+            <h3 class="faq-page-title text-center">{{trans('user.idea_Question')}}</h3>
             <div class="row">
                 <div class="col-lg-4 col-md-6">
                     <select name="category" class="form-select form-select-lg mb-3 send-idea-select" aria-label=".form-select-lg example">
-                        <option value="" selected disabled>-- اختر الفئه    --</option>
+                        <option value="" selected disabled>{{trans('user.choose_category')}}</option>
                             @foreach($categories as $category)
                                 @if (old('category') == $category->id)
                                 <option value="{{$category->id}}" selected>{{ $category->name }}</option>
@@ -37,18 +37,18 @@
                     <span class="text-danger">{{ $errors->first('desc')}}</span>
                   @endif
                 </div>
-                <div class="col-12"><textarea name="problem" placeholder="المشكلة*">{{ old('problem') }}</textarea>
+                <div class="col-12"><textarea name="problem" placeholder="{{trans('user.problem')}}">{{ old('problem') }}</textarea>
                     @if ($errors->has('problem'))
                     <span class="text-danger">{{ $errors->first('problem')}}</span>
                   @endif
                 </div>
-                <div class="col-12"><textarea name="solve" placeholder="الحل*">{{ old('solve') }}</textarea>
+                <div class="col-12"><textarea name="solve" placeholder="{{trans('user.Solved')}}">{{ old('solve') }}</textarea>
                     @if ($errors->has('solve'))
                     <span class="text-danger">{{ $errors->first('solve')}}</span>
                   @endif
                 </div>
                 <div class="col-lg-4">
-                    <input type="text" name="video_link" value="{{ old('video_link') }}" placeholder="رابط الفيديو*">
+                    <input type="text" name="video_link" value="{{ old('video_link') }}" placeholder="{{trans('user.video_upload')}}">
                     @if ($errors->has('video_link'))
                     <span class="text-danger">{{ $errors->first('video_link')}}</span>
                   @endif
@@ -67,7 +67,7 @@
                                 <div class="panel-heading">
                                   <h6 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                                    تحميل دراسة الجدوى ان وجدت</a>
+                                    {{trans('user.Feasibility_study')}}</a>
                                   </h6>
                                 </div>
                                 <div id="collapse1" class="panel-collapse collapse ">
@@ -89,7 +89,7 @@
                                 <div class="panel-heading">
                                   <h6 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion2" href="#collapse2">
-                                    تحميل الملكية الفكرية ان وجدت</a>
+                                    {{trans('user.intellectual_property')}}</a>
                                   </h6>
                                 </div>
                                 <div id="collapse2" class="panel-collapse collapse ">
@@ -110,7 +110,7 @@
                                 <div class="panel-heading">
                                   <h6 class="panel-title">
                                     <a data-toggle="collapse" data-parent="#accordion3" href="#collapse3">
-                                    تحميل براءة الاختراع</a>
+                                    {{trans('user.patent')}}</a>
                                   </h6>
                                 </div>
                                 <div id="collapse3" class="panel-collapse collapse ">
@@ -124,7 +124,7 @@
                     </div>
                 </div>
 
-                <div class="col-12"><button>Submit Idea</button></div>
+                <div class="col-12"><button>{{trans('user.submit_idea')}}</button></div>
             </div>
         </form>
     </div> <!-- /.container -->
