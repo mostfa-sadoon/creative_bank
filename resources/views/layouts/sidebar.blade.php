@@ -29,7 +29,7 @@
                                 <li><a href="{{route('classification.index')}}">{{ trans('admin.classification')}}</a></li>
                             </ul>
 
-                            
+
                         </li>
                         @endrole
 
