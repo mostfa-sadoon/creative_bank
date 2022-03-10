@@ -58,7 +58,7 @@ return [
     'send_idea'=>'ارسل فكرتك',
     'important_link'=>'روابط هامه',
 
-    'our_service'=>'خدماتنا', 
+    'our_service'=>'خدماتنا',
     'last_news'=>'اخر الخبار',
     'discussion_creative_idea'=>'مناقشه الافكار الابدايه',
     'display_best_idea'=>'عرض افضل الافكار',
@@ -71,7 +71,6 @@ return [
     'Feasibility_study'=>'دراسه جدوي',
     'send'=>'ارسال',
 
-<<<<<<< HEAD
     'login' => 'تسجيل الدخول',
 
     //==================== Main Page =======================//
@@ -89,7 +88,7 @@ return [
 
     'studing_idea' => 'دراسة الفكرة',
     'studing_idea_body' => 'دراسة الافكار المقدمة وامكانية تنفيذها',
-    
+
     'funding_accepted_ideas' => 'تمويل الافكار المقبولة',
     'funding_accepted_ideas_body' => 'يوجد عدة فوائد يحصل عليها المشتركين المقبولة افكارهم',
 
@@ -110,7 +109,7 @@ return [
     'msg_from' => 'رساله من',
     'main_financier' => 'الممول الرئيسي',
     'financier_name' => 'رامى فارس',
-    
+
     // Section 5
     'blog' => 'الاخبار',
     'blog_title' => 'تعرف على احدث الاخبار',
@@ -119,7 +118,7 @@ return [
     'how_we_work' => 'كيف نعمل',
     'terms' => 'شروط تقديم الفكرة',
     'idea_types' => 'انواع الافكار',
-    'benefits' => 'الفوائد العائدة على المشتركين', 
+    'benefits' => 'الفوائد العائدة على المشتركين',
 
     // ==================== send idea ========================
 
@@ -148,10 +147,5 @@ return [
     'q_a' => 'اسأله و اجابات',
     'Frequently_Questions' => 'الاسأله المكررة'
 
-    
-=======
-    'our_service'=>'خدماتنا',
-    'idea_cycle'=>'مسار الفكره',
-    'sponser'=>'الممول',
->>>>>>> 5616eeeb186c75c691c9b6ea91ca7ec96adc7c21
+
 ];

@@ -68,8 +68,7 @@ return [
      'Feasibility_study'=>'Feasibility study',
      'send'=>'send',
 
-<<<<<<< HEAD
-     "login" => 'login', 
+     "login" => 'login',
 
      //============================ Main Page =============================//
      //Section 1
@@ -97,24 +96,24 @@ return [
      'achivement' => 'We complete 1500+ Successfull Projects Yearly',
      'projects' => 'Projects',
      'clients' => 'Clients',
-     'ideas' => 'Ideas', 
+     'ideas' => 'Ideas',
 
           // Section 4
      'msg_from' => 'Message From',
      'main_financier' => 'Main Financier',
      'financier_name' => 'Ramy Fares',
 
-     // Section 5 
+     // Section 5
      'blog' => 'Our Blog',
      'blog_title' => 'latest news',
      'idea_qusetion' => 'Do you have any Ideas ?',
- 
+
 
 
      //============= About Us ===================
      'how_we_work' => 'How We Work',
      'terms' => 'Terms of submitting the idea',
-     'idea_types' => 'Idea Types', 
+     'idea_types' => 'Idea Types',
      'benefits' => 'The Benefits',
 
 
@@ -145,9 +144,3 @@ return [
     'Frequently_Questions' => 'Frequently Asked Questions',
 
     ];
-=======
-     'our_service'=>'our service',
-     'idea_cycle'=>'idea cycle',
-     'sponser'=>'sponser',
-];
->>>>>>> 5616eeeb186c75c691c9b6ea91ca7ec96adc7c21
