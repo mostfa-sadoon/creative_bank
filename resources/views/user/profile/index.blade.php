@@ -25,12 +25,8 @@
                                 <h5 class="user-name">{{$user->name}}</h5>
                                 <h6 class="user-email">{{$user->email}}</h6>
                              </div>
-                            {{-- <div class="about">
-                                <h5>About</h5>
-                                <p class="w-50">I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
-                             </div> --}}
-                             <div class="center-div profileDate">
-                                <a class="text-white theme-button-two" href="{{route('profile.edit',$user->id)}}">Edit Profile</a>
+                                 <div class="center-div profileDate">
+                                <a class="text-white theme-button-two" href="{{route('profile.edit',$user->id)}}">{{trans('admin.update')}}</a>
                              </div>
                           </div>
                          </div>

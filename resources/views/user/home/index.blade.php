@@ -123,11 +123,7 @@
             </div>
         </div>
     </div> <!-- /.container -->
-<<<<<<< HEAD
-    <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">{{trans('user.read_more')}}<i class="fa fa-angle-left icon-left" aria-hidden="true"></i></a>
-=======
-    <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">مزيد من التفاصيل</a>
->>>>>>> 5616eeeb186c75c691c9b6ea91ca7ec96adc7c21
+    <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">{{ trans('user.read_more') }}<i class="fa fa-angle-left icon-left" aria-hidden="true"></i></a>
 </div> <!-- /.agn-about-us -->
 
 
@@ -151,19 +147,19 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="single-counter-box">
-                              <h2 class="number"><span class="timer" data-from="0" data-to="16" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
+                              <h2 class="number"><span class="timer" data-from="0" data-to="{{$count_users}}" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
                               <p>{{trans('user.clients')}}</p>
                           </div> <!-- /.single-counter-box -->
                     </div>
                     <div class="col-sm-4">
                         <div class="single-counter-box">
-                              <h2 class="number"><span class="timer" data-from="0" data-to="460" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
+                              <h2 class="number"><span class="timer" data-from="0" data-to="{{$count_ideas}}" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
                               <p>{{trans('user.ideas')}}</p>
                           </div> <!-- /.single-counter-box -->
                     </div>
                     <div class="col-sm-4">
                         <div class="single-counter-box">
-                              <h2 class="number"><span class="timer" data-from="0" data-to="500" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
+                              <h2 class="number"><span class="timer" data-from="0" data-to="{{$count_projects}}" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
                               <p>{{trans('user.projects')}}</p>
                           </div> <!-- /.single-counter-box -->
                     </div>
@@ -197,13 +193,7 @@
                                         <span>{{trans('user.main_financier')}}</span>
                                     </div>
                                 </div>
-                                <div class="hover-content">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div> <!-- /.hover-content -->
+                                
                             </div> <!-- /.single-team-member -->
                         </div> <!-- /.col- -->
                     </div> <!-- /.row -->

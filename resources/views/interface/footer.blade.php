@@ -6,37 +6,38 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-lg-3 col-sm-6 col-12 about-widget" data-aos="fade-up">
-								<a href="index.html" class="logo"><img src="{{asset('interface/images/logo/logoo.svg')}}" alt=""></a>
-								<a href="#" class="email">info@sdsolutionseg.com</a>
-								<a href="#" class="phone">01097130604</a>
+								<a  class="logo"><img src="{{asset('interface/images/logo/logoo.svg')}}" alt=""></a>
+								<a  class="email">{{ $contactInfo->email }}</a>
+								<a class="phone">{{ $contactInfo->phone }}</a>
 
 							</div> <!-- /.about-widget -->
-							<div class="col-lg-3 col-lg-3 col-sm-6 col-12 footer-list" data-aos="fade-up">
-								<h5 class="title">Services</h5>
+							<!-- <div class="col-lg-3 col-lg-3 col-sm-6 col-12 footer-list" data-aos="fade-up">
+								<h5 class="title">{{trans('user.our_service')}}</h5>
 								<ul>
 									<li><a href="{{route('home')}}">{{trans('user.our_service')}}</a></li>
 									<li><a href="{{route('about')}}">{{trans('user.idea_cycle')}}</a></li>
 									<li><a href="{{route('about')}}">{{trans('user.sponser')}}</a></li>
 
 								</ul>
-							</div> <!-- /.footer-recent-post -->
+							</div> /.footer-recent-post -->
 							<div class="col-lg-3 col-sm-6 col-12 footer-list" data-aos="fade-up">
-								<h5 class="title">important link</h5>
+								<h5 class="title">{{trans('user.important_link')}}</h5>
 								<ul>
 									<li><a href="{{route('home')}}">{{trans("user.main")}}</a></li>
 									<li><a href="{{route('idea.create')}}">{{trans('user.send_idea')}}</a></li>
 									<li><a href="{{route('about')}}">{{trans("user.about_bank")}}</a></li>
-									<li><a href="{{route('news.index')}}">{{ trans('user.news') }}</a></li>
+									<li><a href="{{route('allnews')}}">{{ trans('user.news') }}</a></li>
 								</ul>
 							</div> <!-- /.footer-list -->
 							<div class="col-lg-3 col-lg-2 col-sm-6 col-12 footer-information" data-aos="fade-up">
-								<h5 class="title">Our Address</h5>
-								<p> 7 زيد إبن ثابت , الحجاز مصر الجديدة
-									<br>القاهرة ,مصر</p>
+								<h5 class="title">{{ trans('user.our_address') }}</h5>
+								<p>{{ $contactInfo->address }}</p> 
+								<!-- Address -->
 								<ul>
-									<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+									<li><a href="https://{{ $contactInfo->facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="https://{{ $contactInfo->tweeter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="https://{{ $contactInfo->youtube }}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+									<li><a href="https://{{ $contactInfo->instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div> <!-- /.row -->
@@ -47,11 +48,11 @@
 					<div class="bottom-footer">
 						<div class="clearfix">
 							<p>&copy; sd solutions</p>
-							<ul>
+							<!-- <ul>
 								<li><a href="#">Privace & Policy.</a></li>
 								<li><a href="faq.html">Faq.</a></li>
 								<li><a href="#">Terms.</a></li>
-							</ul>
+							</ul> -->
 						</div>
 					</div> <!-- /.bottom-footer -->
 				</div>

@@ -73,16 +73,12 @@
 
 
 <div class="solid-inner-banner">
-<<<<<<< HEAD
     <h2 class="page-title">{{trans('user.q_a')}}</h2>
     <!-- <ul class="page-breadcrumbs">
         <li><a href="index.html">Home</a></li>
         <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
         <li>Faq</li>
     </ul> -->
-=======
-    <h2 class="page-title">Question & Answers</h2>
->>>>>>> 5616eeeb186c75c691c9b6ea91ca7ec96adc7c21
 </div> <!-- /.solid-inner-banner -->
 <div class="faq-page faq-tab-wrapper pt-150 ">
     <div class="container">
