@@ -7,8 +7,8 @@
 						<div class="row">
 							<div class="col-lg-3 col-sm-6 col-12 about-widget" data-aos="fade-up">
 								<a  class="logo"><img src="{{asset('interface/images/logo/logoo.svg')}}" alt=""></a>
-								<a  class="email">{{ config('global.email') }}</a>
-								<a class="phone">{{ config('global.phone') }}</a>
+								<a  class="email">{{ $contactInfo->email }}</a>
+								<a class="phone">{{ $contactInfo->phone }}</a>
 
 							</div> <!-- /.about-widget -->
 							<!-- <div class="col-lg-3 col-lg-3 col-sm-6 col-12 footer-list" data-aos="fade-up">
@@ -31,13 +31,13 @@
 							</div> <!-- /.footer-list -->
 							<div class="col-lg-3 col-lg-2 col-sm-6 col-12 footer-information" data-aos="fade-up">
 								<h5 class="title">{{ trans('user.our_address') }}</h5>
-								<p>{{ config('global.address') }}</p> 
+								<p>{{ $contactInfo->address }}</p> 
 								<!-- Address -->
 								<ul>
-									<li><a href="https://{{ config('global.facebook') }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-									<li><a href="https://{{ config('global.twitter') }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-									<li><a href="https://{{ config('global.youtube') }}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-									<li><a href="https://{{ config('global.instagram') }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+									<li><a href="https://{{ $contactInfo->facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+									<li><a href="https://{{ $contactInfo->tweeter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+									<li><a href="https://{{ $contactInfo->youtube }}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+									<li><a href="https://{{ $contactInfo->instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 								</ul>
 							</div>
 						</div> <!-- /.row -->

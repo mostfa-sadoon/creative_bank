@@ -11,7 +11,7 @@
 		<!-- For Resposive Device -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<!-- For Window Tab Color -->
-		<!-- Chrome, Firefox OS and Opera -->
+		<!-- Chrome, Firefox OS and Opera --> 
 		<meta name="theme-color" content="#233D63">
 		<!-- Windows Phone -->
 		<meta name="msapplication-navbutton-color" content="#233D63">
@@ -83,7 +83,7 @@
 						<input type="text" placeholder="Search here">
 						<i class="fa fa-search icon" aria-hidden="true"></i>
 					</form>
-					<p class="copy-right">&copy; 2019  All Right Reserved</p>
+					<p class="copy-right">&copy; 2022  All Right Reserved</p>
 				</div> <!-- /.inner-wrapper -->
 			</div> <!-- #sidebar-menu -->
 
@@ -102,7 +102,7 @@
 				</div> <!-- /.shape-wrapper -->
 				<div class="sign-up-form-wrapper">
 					<div class="title-area text-center pb-70">
-						<h3>Register Now!</h3>
+						<h3>{{trans('user.Register_Now')}}</h3>
 					</div>
 						<!-- <p>You can signup with you social account below</p>
 					</div> /.title-area -->
@@ -117,7 +117,7 @@
 							<div class="col-12">
 								<div class="input-group">
 									<input type="text" name="name" value="{{ old('name') }}"required>
-									<label>name</label>
+									<label>{{trans('admin.name')}}</label>
                                     @error('name')
                                       <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -126,7 +126,7 @@
 							<div class="col-12">
 								<div class="input-group">
 									<input type="email" name="email" value="{{ old('email') }}" required>
-									<label>Email</label>
+									<label>{{trans('user.email')}}</label>
                                     @error('email')
                                       <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -135,7 +135,7 @@
                             <div class="col-12">
 								<div class="input-group">
 									<input type="text" name="phone" value="{{ old('phone') }}"  required>
-									<label>phone</label>
+									<label>{{trans('admin.phone')}}</label>
                                     @error('phone')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                   @enderror
@@ -144,7 +144,7 @@
                             <div class="col-12">
 								<div class="input-group">
 									<input type="text" name="address"  value="{{ old('address') }}" required>
-									<label>address</label>
+									<label>{{trans('user.address')}}</label>
                                     @error('address')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                   @enderror
@@ -162,13 +162,13 @@
 										<div class="input-group ">
                                         <div class=" col-md-4 col-3 text-center ">
                                             <label class="radioLabel" for="flexRadioDefault1">
-                                            ذكر
+                                            {{trans('user.male')}}
                                         </label>
                                             <input  value="male" name="gender" type="radio" class="radioInput" name="flexRadioDefault" id="flexRadioDefault1"checked>
                                         </div>
                                         <div class="col-md-4 col-3">
                                             <label  class="radioLabel" for="flexRadioDefault2">
-                                            أنثى
+                                            {{trans('user.female')}}
                                             </label>
                                             <input  value="female" name="gender" type="radio" class="radioInput" name="flexRadioDefault" id="flexRadioDefault2" >
                                         </div>
@@ -180,13 +180,13 @@
 							
 
                                <div class="col-12">
-                                <label for="form_need">تصنيف المستخدم <span>*</span>
+                                <label for="form_need">{{trans('user.user_classificaion')}} <span>*</span>
                                 </label>
                                     <div class="input-group">
 
                                         <select id="form_need" name="clasified" class="form-control" required="required" data-error="Please specify your need.">
 
-                                        <option value="" selected disabled>-- اختر --</option>
+                                        <option value="" selected disabled>-- {{trans('user.choose')}} --</option>
                                         @foreach($classifications as $classification)
                                             @if (old('clasified') == $classification->id)
                                                 <option value="{{$classification->id}}" selected>{{ $classification->name }}</option>
@@ -202,11 +202,11 @@
 						    	</div> <!-- /.col- -->
 
                             <div class="col-12">
-                                    <label for="form_need">الصناعة /المجال<span>*</span>
+                                    <label for="form_need">{{trans('user.Industry')}}<span>*</span>
                                     </label>
 								<div class="input-group">
                                     <select id="form_need" name="field" class="form-control" required="required" data-error="Please specify your need.">
-                                    <option value="" selected disabled>-- اختر --</option>
+                                    <option value="" selected disabled>-- {{trans('user.choose')}} --</option>
                                     @foreach($fields as $field)
                                             @if (old('field') == $field->id)
                                                 <option value="{{$field->id}}" selected>{{ $field->name }}</option>
@@ -225,7 +225,7 @@
 							<div class="col-12">
 								<div class="input-group">
 									<input type="password" name="password"  value="{{ old('password') }}" required>
-									<label>Password</label>
+									<label>{{trans('user.password')}}</label>
                                     @error('password')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
@@ -235,7 +235,7 @@
                             <div class="col-12">
 								<div class="input-group">
 									<input type="password" name="password_confirmation" required>
-									<label>confirm password</label>
+									<label>{{trans('user.confirm_password')}}</label>
                                     @error('password_confirmation')
                                     <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
@@ -245,10 +245,10 @@
 
 						</div> <!-- /.row -->
 						<div class="agreement-checkbox">
-							<input type="checkbox" id="agreement">
-							<label for="agreement">I agree to the terms and policy from the rogan inc.</label>
+							<input type="checkbox" id="agreement" required>
+							<label for="agreement" >I agree to the terms and policy from the rogan inc.</label>
 						</div>
-                        <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="تسجيل الدخول">
+                        <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="{{trans('user.login')}}">
 					</form>
 				</div> <!-- /.sign-up-form-wrapper -->
 			</div> <!-- /.signUp-page -->

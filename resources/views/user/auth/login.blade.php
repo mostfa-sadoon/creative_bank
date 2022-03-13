@@ -114,7 +114,7 @@
 								<a href="{{route('profile.forget')}}">Forget Password!</a>
 							</div>
 						</div>
-                        <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="تسجيل الدخول">
+                        <input type="submit" class="btn btn-success btn-send pt-2 btn-block " value="Sign In">
 					</form>
 					<p class="signUp-text text-center">Don’t have any account? <a href="{{route('user.register')}}">Sign up</a> now.</p>
 				</div> <!-- /.sign-up-form-wrapper -->

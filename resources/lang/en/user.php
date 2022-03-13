@@ -51,6 +51,7 @@ return [
     'vote'=>'vote',
     'edit'=>'edit',
     'edit_password'=>'edit password',
+    'choose' => 'Choose',
 
     'main'=>'main',
     'send_idea'=>'send your idea',
@@ -145,6 +146,6 @@ return [
 
     //========================Footer ========================
     'idea_cycle' => 'Idea Cycle',
-    ''
+    'Register_Now' => 'Register Now'
 
     ];

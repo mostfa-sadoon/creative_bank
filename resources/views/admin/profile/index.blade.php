@@ -49,64 +49,64 @@
                             <div class="tab-content">
                                 <div class="tab-pane active" id="settings" role="tabpanel">
                                     <div class="card-body">
-                                        <form class="form-horizontal form-material">
-                                            <div class="form-group">
+                                        <form class="form-horizontal form-material" action="{{ route('profile.update')}}" method="post">
+                                        @csrf    
+                                        <div class="form-group">
                                                 <label class="col-md-12">{{trans('admin.name')}}</label>
                                                 <div class="col-md-12">
-                                                    <input type="text" value="{{$employee->name}}" class="form-control form-control-line">
+                                                    <input type="text" name="name" value="{{$employee->name}}" class="form-control form-control-line">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label for="example-email" class="col-md-12">{{trans('admin.email')}}</label>
                                                 <div class="col-md-12">
-                                                    <input type="email" value="{{$employee->email}}" class="form-control form-control-line" name="example-email" id="example-email">
+                                                    <input type="email" value="{{$employee->email}}" class="form-control form-control-line" name="email" id="example-email">
                                                 </div>
                                             </div>
-
-
-
                                             <div class="form-group">
                                                 <div class="col-sm-12">
-                                                    <button class="btn btn-success">{{trans('admin.update')}}</button>
+                                                
+                                                    <button class="btn btn-success" type="submit">{{trans('admin.update')}}</button>
+                                                    
+
                                                 </div>
                                             </div>
-
-
                                         </form>
                                     </div>
                                 </div>
 
                                 <div class="tab-pane" id="password" role="tabpanel">
                                 <div class="card-body">
-                                        <form class="form-horizontal form-material">
-                                            <div class="form-group">
-                                                <label class="col-md-12">old password</label>
+                                        <form class="form-horizontal form-material" action="{{ route('profile.updatePassword')}}" method="post">
+                                        @csrf    
+                                        <div class="form-group">
+                                                <label class="col-md-12">{{trans('admin.current_password')}}</label>
                                                 <div class="col-md-12">
-                                                    <input type="password"  class="form-control form-control-line">
+                                                    <input type="password" name="current_password"  class="form-control form-control-line">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="example-email" class="col-md-12">new password</label>
+                                                <label for="example-email" class="col-md-12">{{trans('admin.password')}}</label>
                                                 <div class="col-md-12">
-                                                    <input type="password"  class="form-control form-control-line" name="example-email" id="example-email">
+                                                    <input type="password"  class="form-control form-control-line" name="password" id="example-email">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="example-email" class="col-md-12">new password</label>
+                                                <label for="example-email" class="col-md-12">{{trans('admin.confirm_password')}}</label>
                                                 <div class="col-md-12">
-                                                    <input type="password"  class="form-control form-control-line" name="example-email" id="example-email">
+                                                    <input type="password"  class="form-control form-control-line" name="password_confirmation" id="example-email">
                                                 </div>
                                             </div>
 
 
                                             <div class="form-group">
-                                                <div class="col-sm-12">
-                                                    <button class="btn btn-success">{{trans('admin.update')}}</button>
+                                                <div class="col-sm-12"> 
+                                                    
+                                                        <button class="btn btn-success" type="submit">{{trans('admin.update')}}</button>
+                                                   
                                                 </div>
                                             </div>
-
-
                                         </form>
                                     </div>
                                 </div>
@@ -115,12 +115,4 @@
                     </div>
                     <!-- Column -->
                    </div>
-
-
-
-
-
-
-
-
 @endsection
