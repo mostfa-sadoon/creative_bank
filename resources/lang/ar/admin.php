@@ -94,7 +94,6 @@ return [
 
      'password' => "كلمة السر",
      'confirm_password' => "تأكيد كلمة السر",
-     'current_password' => 'كلمة السر الحاليه',
 
      'vision' => 'الرؤيه',
      'mission' => 'الهدف',
@@ -120,11 +119,8 @@ return [
      'total_news'=>'الاخبار',
      'total_users'=>'المستخدمين',
      'total_ideas'=>'الافكار',
-     'activity'=>'الانشطه', 
+     'activity'=>'الانشطه',
      'date' => 'التاريخ',
-
-     'profile' => 'الصفحه الشخصيه',
-     'update' => 'تعديل'
 
 
 

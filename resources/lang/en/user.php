@@ -51,7 +51,6 @@ return [
     'vote'=>'vote',
     'edit'=>'edit',
     'edit_password'=>'edit password',
-    'choose' => 'Choose',
 
     'main'=>'main',
     'send_idea'=>'send your idea',
@@ -69,7 +68,7 @@ return [
      'Feasibility_study'=>'Feasibility study',
      'send'=>'send',
 
-     "login" => 'login', 
+     "login" => 'login',
 
      //============================ Main Page =============================//
      //Section 1
@@ -118,7 +117,7 @@ return [
      'benefits' => 'The Benefits',
 
 
-    // ==================== send idea ======================== 
+    // ==================== send idea ========================
 
     'idea_Question' => 'Do you have Idea ? Send it now.',
     'choose_category' => 'Choose Category',
@@ -129,6 +128,8 @@ return [
     'intellectual_property' => 'intellectual property',
     'patent' => 'patent',
     'submit_idea' => 'Submit Idea',
+    'last_idea'=>'last ideas',
+    'last_idea_know'=>'get to know last news',
 
     // ==================== News ========================
      'our_news' => 'Our News',
@@ -143,9 +144,6 @@ return [
     // ==================== Common Questions ========================
      'q_a' => 'Questions & Answers',
     'Frequently_Questions' => 'Frequently Asked Questions',
-
-    //========================Footer ========================
-    'idea_cycle' => 'Idea Cycle',
-    'Register_Now' => 'Register Now'
+    'show'=>'show',
 
     ];

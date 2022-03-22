@@ -26,7 +26,7 @@ use App\Http\Controllers\Setting;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/ 
+*/
     Route::get('login', [CustomAuthController::class, 'index'])->name('login');
     Route::post('custom-login', [CustomAuthController::class, 'customLogin'])->name('login.custom');
     Route::get('registration', [CustomAuthController::class, 'registration'])->name('register-user');
@@ -37,7 +37,6 @@ use App\Http\Controllers\Setting;
     //profile
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
-    Route::post('/profile/password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
     // category routes
     Route::get('/category', [CategoryController::class, 'index'])->name('category.index');
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');

@@ -33,7 +33,7 @@
                 <div id='theme-tab-one' class="theme-tab-basic theme-tab" data-role='z-tabs' data-options='{"theme": "silver", "orientation": "horizontal", "animation": {"duration": 400, "effects": "slideH"}}'>
                     <!-- Tab Navigation Menu -->
                     <ul class="tabs-menu clearfix engmenu">
-                        <li><a>{{trans('admin.profile')}}</a></li>
+                        <li><a>Personal Details</a></li>
 
                     </ul>
                     <!-- Content container -->
@@ -47,13 +47,17 @@
                                         <input type="file" name="img" id="my_file" onchange="previewFile(this)" style="display: none;" />
                                         <input type="hidden" name="id" value="{{$user->id}}">
                                     <div class="row gutters">
-                                        
+                                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                            <h6 class="mb-2 text-primary profileTitle">Personal Details</h6>
+                                        </div>
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label for="name">{{trans('admin.name')}}</label>
-                                                
-                                                <input type="text" class="form-control" name="name"  value="{{$user->name}}" id="validationDefault01" required>
-                                               
+                                                <label for="name">Name</label>
+                                                @if(old('name'))
+                                                <input type="text" class="form-control" name="name"  value="{{ old('name') }}" id="validationDefault01" placeholder="  الاسم بالكامل " required>
+                                                @else
+                                                    <input type="text" class="form-control" name="name"  value="{{$user->name}}"  id="validationDefault01" placeholder="  الاسم بالكامل " required>
+                                                @endif
                                                 @error('name')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
@@ -61,10 +65,12 @@
                                         </div>
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label for="email">{{trans('admin.email')}}</label>
-                                                
-                                                <input id="form_email" name="email" type="email" value="{{$user->email}}" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
-                                               
+                                                <label for="email">Email</label>
+                                                @if(old('email'))
+                                                <input id="form_email" name="email" type="email" value="{{old('email')}}" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
+                                                @else
+                                                    <input id="form_email" name="email" type="email" value="{{$user->email}}" name="email" class="form-control" placeholder=" البريد الالكترونى" required="required" data-error="Valid email is required.">
+                                                @endif
                                                 @error('email')
                                                     <div class="alert alert-danger">{{ $message }}</div>
                                                 @enderror
@@ -72,10 +78,12 @@
                                         </div>
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label for="phone">{{trans('admin.phone')}}</label>
-                                                
+                                                <label for="phone">Phone</label>
+                                                @if(old('phone'))
+                                                    <input type="text" name="phone" class="form-control" value="{{old('phone')}}" id="validationDefault01" placeholder="رقم الهاتف" required>
+                                                    @else
                                                     <input type="text" name="phone" class="form-control" value="{{$user->phone}}" id="validationDefault01" placeholder="رقم الهاتف" required>
-                                                    
+                                                    @endif
                                                     @error('phone')
                                                         <div class="alert alert-danger">{{ $message }}</div>
                                                     @enderror
@@ -139,7 +147,7 @@
                                     <div class="row gutters">
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label for="Address">{{trans('admin.address')}}</label>
+                                                <label for="Address">Address</label>
                                                 @if(old('date_of_birth'))
                                                 <input type="text" name="address" class="form-control" value="{{old('address')}}" id="validationDefault01" placeholder="العنوان" required>
                                                 @else
@@ -165,7 +173,7 @@
                                         </div>
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label for="classification">{{trans('admin.classification')}}</label>
+                                                <label for="classification">Classification</label>
                                                 <select id="form_need" name="clasified" class="form-select form-select-lg mb-3 send-idea-select" required="required" data-error="Please specify your need.">
                                                     @if(old('clasified'))
                                                         @foreach($classifications as $classification)
@@ -190,7 +198,7 @@
                                         </div>
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                             <div class="form-group">
-                                                <label for="field">{{trans('admin.fields')}}</label>
+                                                <label for="field">Field</label>
                                                 <select name="field"  id="field" class="form-select form-select-lg mb-3 send-idea-select" aria-label=".form-select-lg example">
                                                     @if(old('field'))
                                                     @foreach($fields as $field)
@@ -210,14 +218,17 @@
                                             </div>
                                         </div>
                                         <div class="passButton w-100">
-                                            
-                                            <a href="{{route('user.edit.password',$user->id)}}" class="m-auto" >{{trans('admin.update')}} {{trans('admin.password')}}</a>
+                                            <hr>
+                                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                                <h6 class="mb-2 text-primary profileTitle">Password Details</h6>
+                                            </div>
+                                            <a href="{{route('user.edit.password',$user->id)}}" class="m-auto" >Click here to Update your password</a>
                                         </div>
                                     </div>
                                     <div class="row gutters center-div pt-50">
                                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                                             <div class="text-right">
-                                                <button type="submit" id="submit" name="submit" >{{trans('admin.update')}}</button>
+                                                <button type="submit" id="submit" name="submit" >Update</button>
                                             </div>
                                         </div>
                                     </div>

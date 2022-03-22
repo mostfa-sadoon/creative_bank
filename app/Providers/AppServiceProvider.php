@@ -4,9 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\View;
-
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,9 +25,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        // View::share('key', 'value');
-
-        $contactInfo=DB::table('contact_infos')->first();
-        View::share('contactInfo',$contactInfo);
+      
     }
 }

@@ -4,9 +4,6 @@
 @endsection
 @section('content')
 
-
-
-
 <div id="theme-banner-one">
     <div class="illustration wow zoomIn animated" data-wow-delay="1s" data-wow-duration="2s">
         <img src="{{asset('interface/images/shape/banner-shape1.svg')}}" alt="">
@@ -33,6 +30,85 @@
         </div> <!-- /.main-wrapper -->
     </div> <!-- /.container -->
 </div> <!-- /#theme-banner-one -->
+
+<!--
+=====================================================
+    Our Blog
+=====================================================
+-->
+<div class="our-blog blog-masonry">
+    <img src="{{asset('interface/images/shape/shape-58.svg')}}" alt="" class="shape-one">
+    <img src="{{asset('interface/images/shape/shape-57.svg')}}" alt="" class="shape-two">
+    <img src="{{asset('interface/images/shape/shape-9.svg')}}" alt="" class="shape-three">
+    <img src="{{asset('interface/images/shape/shape-55.svg')}}" alt="" class="shape-four">
+    <div class="container">
+        <div class="theme-title-one text-center">
+            <div class="upper-title">{{trans('user.last_idea')}}</div>
+            <h2 class="main-title">{{trans('user.last_idea_know')}}</h2>
+        </div> <!-- /.theme-title-one -->
+        <div class="blog-one-slider">
+            @foreach ($ideas as $idea)
+            <div class="item">
+                <div class="isotop-item">
+                    <div class="single-blog-post">
+                        <div class="img-holder"><img src="{{$idea->img}}" alt=""></div>
+                        <div class="post-data">
+                            <a href="#" class="date">{{$idea->created_at}}</a>
+                            <h5 class="blog-title-one title"><a href="{{route('user.idea.show',$idea->id)}}">{{$idea->name}}</a></h5>
+                            <p>{{$idea->desc}}</p>
+                            {{-- <a href="{{route('user.news.show',$new->id)}}" class="read-more"><i class="flaticon-back-1"></i></a> --}}
+                        </div> <!-- /.post-data -->
+                    </div> <!-- /.single-blog-post -->
+                </div> <!-- /.isotop-item -->
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div> <!-- /.our-blog-one -->
+
+
+
+  <!-- -------- start vote   -------->
+  @if(!$votes->isEmpty())
+  @foreach($votes as $vote)
+   <section id="best-idea" class="vote ">
+       <div class="container mt-4">
+               <h2 class="text-center">vote for the best idea</h2>
+           <div class="row ">
+                   <!-- column -->
+                   <div class="col-lg-3">
+                   </div>
+                      <div class="col-lg-6">
+                           <div class="card">
+                               <div class="card-body">
+                                   <h4 class="card-title">{{$vote->name_en}}</h4>
+
+                                   <div class="list-group mt-4">
+                                        @foreach($vote->voteideas as $voteidea)
+                                                  <a href="{{route('user.idea.show',$voteidea->idea_id)}}" class="list-group-item list-group-item-action d-flex justify-content-between">
+                                                       {{$voteidea->idea->name}}
+                                                       <span class="badge badge-primary badge-pill">{{$voteidea->count}}</span>
+                                                   </a>
+                                        @endforeach
+                               </div>
+                               {{-- <h3 class="text-warning">Timer</h3>
+                               <span id="days"></span><span id="hours"></span><span id="mins"></span><span id="secs"></span> --}}
+                           </div>
+                       </div>
+                      </div>
+
+                      <div class="col-lg-3">
+                    </div>
+                  <!-- column -->
+                    {{-- <div class="col-md-6">
+                          <img src="{{asset('uploads/imgs/vote.jpg')}}">
+                    </div> --}}
+           </div>
+       </div>
+   </section>
+  @endforeach
+  @endif
+ <!-- -------- end vote   --------->
 
 
 <!--
@@ -92,11 +168,10 @@
     </div> <!-- /.container -->
 </div> <!-- /.agn-what-we-do -->
 
-
 <!--
 =============================================
     About Us
-==============================================
+=============================================
 -->
 <div class="agn-about-us">
     <img src="{{asset('interface/images/shape/shape-61.svg')}}" alt="" class="shape-one">
@@ -123,7 +198,7 @@
             </div>
         </div>
     </div> <!-- /.container -->
-    <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">{{ trans('user.read_more') }}<i class="fa fa-angle-left icon-left" aria-hidden="true"></i></a>
+    <a href="about-us.html" class="learn-more theme-button-two" data-aos="fade-right">{{trans('user.read_more')}}<i class="fa fa-angle-left icon-left" aria-hidden="true"></i></a>
 </div> <!-- /.agn-about-us -->
 
 
@@ -147,19 +222,19 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="single-counter-box">
-                              <h2 class="number"><span class="timer" data-from="0" data-to="{{$count_users}}" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
+                              <h2 class="number"><span class="timer" data-from="0" data-to="16" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
                               <p>{{trans('user.clients')}}</p>
                           </div> <!-- /.single-counter-box -->
                     </div>
                     <div class="col-sm-4">
                         <div class="single-counter-box">
-                              <h2 class="number"><span class="timer" data-from="0" data-to="{{$count_ideas}}" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
+                              <h2 class="number"><span class="timer" data-from="0" data-to="460" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
                               <p>{{trans('user.ideas')}}</p>
                           </div> <!-- /.single-counter-box -->
                     </div>
                     <div class="col-sm-4">
                         <div class="single-counter-box">
-                              <h2 class="number"><span class="timer" data-from="0" data-to="{{$count_projects}}" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
+                              <h2 class="number"><span class="timer" data-from="0" data-to="500" data-speed="1200" data-refresh-interval="5">0</span>+</h2>
                               <p>{{trans('user.projects')}}</p>
                           </div> <!-- /.single-counter-box -->
                     </div>
@@ -193,7 +268,13 @@
                                         <span>{{trans('user.main_financier')}}</span>
                                     </div>
                                 </div>
-                                
+                                <div class="hover-content">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div> <!-- /.hover-content -->
                             </div> <!-- /.single-team-member -->
                         </div> <!-- /.col- -->
                     </div> <!-- /.row -->
@@ -253,5 +334,14 @@
 
 @endsection
 @section('scripts')
+
+
+
+
+
+
+
+
+
 @endsection
 

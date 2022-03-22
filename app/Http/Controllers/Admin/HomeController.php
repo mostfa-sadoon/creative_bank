@@ -40,6 +40,4 @@ class HomeController extends Controller
         $idea_count = json_encode($idea_count);
         return view('dashboard',compact('ideacount','refusedidea','acceptedidea','totaluser','newscount','idea_count','employees'));
     }
-
-  
 }

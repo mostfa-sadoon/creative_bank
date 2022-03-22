@@ -2,41 +2,45 @@
 @section('style')
 <link rel="stylesheet" href="{{asset('interface/assets/css/jquery-confirm.css')}}"/>
 <style>
-    
+
         .comment-widgets .comment-row:hover {
             background: rgba(0, 0, 0, 0.02);
             cursor: pointer
         }
-        
+
         .comment-footer {
             text-align: start;
             font-size: 14px;
         }
-        
+
         .comment-text p {
             text-align: start;
             margin-top: 10px;
         }
-        
+
         .comment-widgets {
             background-color: rgb(252, 252, 252);
             box-shadow: 0px 1px 10px #e2e2e2;
         }
-        
+
         .comment-widgets .comment-row {
             border-bottom: 1px solid rgba(120, 130, 140, 0.13);
             padding: 15px
         }
-        
+
         .comment-text:hover {
             visibility: hidden
         }
-        
+
         .comment-text:hover {
             visibility: visible
         }
         .round img {
             border-radius: 100%
+        }
+        .user_img{
+            border-radius: 100%;
+            width:50px;
         }
         .icon_color{
             color:#E94F1B;
@@ -45,56 +49,54 @@
          .vote{
              background-color:green;
              color:white;
-         }   
+         }
     </style>
 @endsection
 @section('content')
+
 <!-- ======= Start Content ======= -->
 <div class=" mt-4 ">
         <!---Start Goal-->
-        <section id="creative" class="team-item container creative card bg-light" data-id="{{$idea->id}}">
+        <section id="creative" class="team-item container creative card bg-light our-blog blog-details pt-150 mb-200" data-id="{{$idea->id}}">
             <div class="container about-bank">
 
                 <div class="row">
                     <div class=" col-md-6 d-flex ">
                         <div class="member " data-aos="fade-up" data-aos-delay="100">
                             @if($idea->video)
-                            <div class="">    
+                            <div class="">
                                 <iframe width="540" height="375" src="{{$idea->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             @else
                             <div class="member-img">
-                                <img src="{{$idea->img}}" class="img-fluid" alt="">
+                                <img src="{{$idea->img}}" class="img-fluid " alt="">
                             </div>
                             @endif
                             <div class="idea-info-user d-flex  justify-content-around row">
-                                <div class="col-12 idea_user_info"><a href="{{route('profile.show',$idea->user_id)}}"> <img src="{{$idea->user->img}}" class="img-fluid" alt="">
+                                <div class="col-12 idea_user_info"><a href="{{route('profile.show',$idea->user_id)}}"> <img src="{{$idea->user->img}}" class="img-fluid user_img" alt="">
                                     <span>{{$idea->user->name}}</span>
                                 </a>
-                            </div>
-                              <div class="col-12 mt-2 text-center">
+
+                                <div class="col-12 mt-2 text-center">
                                     <!-- this condation to check if user has react before -->
+                                <div class="d-flex justify-content-end">
                                   @if($interaction == "true")
                                     <span class="ui basic blue label" id="result"> {{$idea->like}} </span>
                                   <button id="like" class=" btn like" ><i class="fa fa-thumbs-up fa-1x icon_color" data-status="none" id="icon" ></i> </button>
-                                      
+
                                         <i class="bi bi-eye"></i><span> {{$idea->view}} <span> مشاهدة </span></span>
                                     </div>
-                                  @else 
+                                  @else
                                   <span class="ui basic blue label" id="result"> {{$idea->like}} </span>
                                   <button id="like" class=" btn like" ><i class="fa fa-thumbs-up fa-1x" data-status="none" id="icon" ></i> </button>
-                                       
+
                                         <i class="bi bi-eye"></i><span> {{$idea->view}} <span> مشاهدة </span></span>
                                     </div>
                                   @endif
-                            </div>
-                            <!-- <div class="idea-info-icon d-flex justify-content-start">
-                                <div class="like ui labeled button  bg-success" tabindex="0">
-                                    <a id="" class="text-white">
-                                        <i class="fa fa-thumbs-up fa-2x"></i>
-                                    </a>    
                                 </div>
-                            </div> -->
+                            </div>
+
+                            </div>
                         </div>
                     </div>
                     @if($votestatus == "true")
@@ -136,7 +138,7 @@
                                            @endforeach
                                     </div>
                              </div>
-                          
+
                          </div>
                        <!-- end vote -->
                     @endif
@@ -253,7 +255,7 @@
                                     });
                                 }
                             });
-                             /*************************start vote script***************************  */  
+                             /*************************start vote script***************************  */
                              $("#vote_button").click(function(){
                                 if($("#vote_button").hasClass('vote'))
                                 {
@@ -281,9 +283,9 @@
                                             _token: "{{ csrf_token() }}",
                                         },
                                         success:function(data) {
-                                            $("#vote_result").html(data.vote);                             
+                                            $("#vote_result").html(data.vote);
                                             $("#vote_button").addClass("vote");
-                                            $("#vote_button").html('cancel');            
+                                            $("#vote_button").html('cancel');
                                         }
                                     });
                                    }
@@ -311,7 +313,7 @@
                             });
                         });
 
-                    });  
+                    });
                 </script>
             @endguest
 @endsection

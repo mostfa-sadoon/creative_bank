@@ -15,7 +15,7 @@ class ProfileController extends Controller
     //
     public function index($id)
     {
-         $user=User::find($id);
+         $user=User::with('ideas')->find($id);
          $lang=app()->getLocale();
       //   dd($user->field->id);
          $field=Field::select('name_'.$lang.' as name')->find($user->field->id);
