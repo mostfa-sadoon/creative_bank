@@ -88,6 +88,7 @@
 		<!-- Fancybox -->
 		<script src="{{asset('interface/vendor/fancybox/dist/jquery.fancybox.min.js')}}"></script>
 		<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            
 
 
 		<!-- Theme js -->

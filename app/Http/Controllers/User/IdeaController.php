@@ -128,6 +128,7 @@ class IdeaController extends Controller
          }
         // dd($uservote);
         // dd($interaction);
+
         return view('user.idea.show',compact('idea','category','interaction','votestatus','vote','uservote'));
     }
     public function allidea()
@@ -141,12 +142,13 @@ class IdeaController extends Controller
         $request->validate([
             'comment'=>'required|max:200',
         ]);
-        Comment::create([
-            'user_id'=>$request->user_id,
+       $comment= Comment::create([
+            'user_id'=>Auth::user()->id,
             'idea_id'=>$idea_id,
             'comment'=>$request->comment,
         ]);
-        return redirect()->route('user.idea.show',$idea_id);
+        $comments=DB::table('comments')->join('users', 'users.id', '=', 'comments.user_id')->select('comment','name','img')->where('idea_id','=',$idea_id)->take(20)->get();
+        return $comments;
     }
     public function like(Request $request)
     {

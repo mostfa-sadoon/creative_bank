@@ -145,5 +145,5 @@ return [
      'q_a' => 'Questions & Answers',
     'Frequently_Questions' => 'Frequently Asked Questions',
     'show'=>'show',
-
+    'send'=>'send',
     ];

@@ -150,5 +150,6 @@ return [
     'Frequently_Questions' => 'الاسأله المكررة',
 
     'show'=>'مشاهده',
+    'send'=>'ارسل',
 
 ];

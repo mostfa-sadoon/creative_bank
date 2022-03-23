@@ -170,7 +170,7 @@
             <div class="comments container mt-4">
                 <h6>الموقع غير مسؤول عن مضمون التعليقات</h6>
             </div>
-            <div class="comment-widgets p-3 m-2 mt-lg-4">
+            <div class="comment-widgets p-3 m-2 mt-lg-4" id="comments">
                 @foreach($idea->comments as $comment)
                 <div class="d-flex flex-row comment-row ">
                     <div class="p-2">
@@ -188,17 +188,18 @@
                 @endforeach
             </div>
             @auth
-                <form action="{{route('comment.send')}}" method="Post">
-                    @csrf
+                <form>
+
                     <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-                    <input type="hidden" name="idea_id" value="{{$idea->id}}">
+                    <input type="hidden" name="idea_id" id="idea_id" value="{{$idea->id}}">
                     <div class="bg-light p-3 m-2 mt-lg-4">
                             <div class="d-flex flex-row align-items-start">
                                 <img class="rounded-circle m-2" src="{{Auth::user()->img}}" width="50">
-                                <textarea class="form-control ml-1 shadow-none textarea"  name="comment" placeholder="اكتب تعليقا بناء" rows="3"></textarea>
+                                <textarea class="form-control ml-1 shadow-none textarea" id="content"  name="comment" placeholder="اكتب تعليقا بناء" rows="3"></textarea>
                             </div>
+                            <span class="text-danger" id="comment_error"></span>
                             <div class="mt-1 ">
-                                <input class="btn btn-primary btn-sm shadow-none m-1" type="submit" value="ارسل">
+                                <p class="btn btn-primary btn-sm shadow-none m-1" value="ارسل" id="send">{{trans('user.send')}}</p>
                             </div>
                     </div>
                 </form>
@@ -214,6 +215,7 @@
     <!-- ======= End Content ======= -->
 @endsection
 @section('scripts')
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
             @auth
             <!-- start like script -->
                  <script>
@@ -221,7 +223,43 @@
                         var unlikeurl={!! json_encode(route('idea.unlike'))!!}
                         var vote={!! json_encode(route('idea.vote'))!!}
                         var unvote={!! json_encode(route('idea.unvote'))!!}
+                        var commentsend={!!json_encode(route('comment.send'))!!}
+
                     $(document).ready(function () {
+                        $("#send").click(function(){
+                            let content = $('#content').val();
+                            let idea_id = $('#idea_id').val();
+
+                            $.ajax({
+                                    type:'POST',
+                                    url:commentsend,
+                                    data: {
+                                            "idea_id":idea_id,
+                                            "comment":content,
+                                            _token: "{{ csrf_token() }}",
+                                        },
+                                    success:function(data) {
+                                          console.log(data);
+                                          var commentcontent;
+                                          for (const item of data) {
+                                              if(item.img!=null){
+                                                var img ={!!json_encode(asset('/uploads/user/profile_img'))!!}+'/'+item.img ;
+                                              }else{
+                                                var img ={!!json_encode(asset('/uploads/user/default/'))!!}+'/default.jpg';
+                                              }
+                                               commentcontent+=' <div class="d-flex flex-row comment-row "><div class="p-2"><span class="round"><img src="'+img+'" alt="user" width="50"></span> </div><div class="comment-text w-100"><h6>'+item.name+'</h6><div class="comment-footer"> <span class="date"></span> </div><p class="m-b-5 m-t-10">'+item.comment+'</p></div></div>'
+                                             }
+                                             $('#comments').html(commentcontent);
+                                        },
+                                    error: function(response) {
+                                            $('#comment_error').text(response.responseJSON.errors.comment);
+                                        },
+                                    });
+
+
+
+                            });
+
                         // to gat the id if idea
                         var id = $("#creative").attr("data-id");
                         console.log(status);
