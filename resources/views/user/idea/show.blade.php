@@ -256,7 +256,7 @@
                                         },
                                     });
 
-
+                                    document.getElementById('content').value = '';
 
                             });
 
