@@ -32,7 +32,7 @@ class NewsController extends Controller
     {
         $lang=app()->getLocale();
         $news=News::find($id);
-        $relatednews=News::select('id','img','header_'.$lang)->where('category_id','=',$news->category_id)->take(6)->latest()->get();
+        $relatednews=News::select('id','img','header_ar','header_en')->where('category_id','=',$news->category_id)->where('id','!=',$news->id)->take(6)->latest()->get();
         return view('user.news.show',compact('news','relatednews'));
     }
 }
