@@ -49,7 +49,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title">{{trans('admin.description')}} In Arabic</h4>
-                                        <textarea type="text"  name="desc_ar" class="form-control"> old('desc_ar') </textarea>
+                                        <textarea type="text"  name="desc_ar" class="form-control"> {{old('desc_ar')}} </textarea>
                                     </div>
                                     @if ($errors->has('desc_ar'))
                                         <span class="text-danger">{{ $errors->first('desc_ar')}}</span>
@@ -134,16 +134,6 @@
     <!-- Style switcher -->
     <!-- ============================================================== -->
     <script src="{{asset('assets/plugins/styleswitcher/jQuery.style.switcher.js')}}"></script>
-
-
-
-
-
-
-
-
-
-
     <!-- ============================================================== -->
     <!-- Style switcher -->
     <!-- ============================================================== -->

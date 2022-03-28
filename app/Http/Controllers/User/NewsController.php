@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\News;
 use App\Models\NewCategory;
@@ -31,6 +32,7 @@ class NewsController extends Controller
     {
         $lang=app()->getLocale();
         $news=News::find($id);
-        return view('user.news.show',compact('news'));
+        $relatednews=News::where('category_id','=',$news->category_id)->take(6)->latest()->get();
+        return view('user.news.show',compact('news','relatednews'));
     }
 }

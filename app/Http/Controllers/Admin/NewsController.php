@@ -28,12 +28,12 @@ class NewsController extends Controller
     {
      //   dd($request->all());
          $request->validate([
-            'header_ar' => 'required|max:50',
-            'header_en' => 'required|max:50',
+            'header_ar' => 'required|max:100',
+            'header_en' => 'required|max:100',
             'news_ar' => 'required|max:3000',
             'news_en' => 'required|max:3000',
-            'desc_ar'=>'required|max:100',
-            'desc_en'=>'required|max:100',
+            'desc_ar'=>'required|max:200',
+            'desc_en'=>'required|max:200',
             'img'=>'required',
          ]);
          $img = $this->MoveImage($request->img,'uploads/news');
@@ -69,12 +69,12 @@ class NewsController extends Controller
      {
          $news=News::find($request->id);
          $request->validate([
-            'header_ar' => 'required|max:50',
-            'header_en' => 'required|max:50',
+            'header_ar' => 'required|max:100',
+            'header_en' => 'required|max:100',
             'news_ar' => 'required|max:3000',
             'news_en' => 'required|max:3000',
-            'desc_ar'=>'required|max:100',
-            'desc_en'=>'required|max:100',
+            'desc_ar'=>'required|max:200',
+            'desc_en'=>'required|max:200',
            ]);
          if($request->hasfile('img'))
          {

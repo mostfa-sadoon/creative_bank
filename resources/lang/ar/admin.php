@@ -121,6 +121,8 @@ return [
      'total_ideas'=>'الافكار',
      'activity'=>'الانشطه',
      'date' => 'التاريخ',
+     'show'=>'عرض',
+     'delete'=>'حذف',
 
 
 

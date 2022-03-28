@@ -126,5 +126,7 @@ return [
      'total_ideas'=>'total ideas',
 
      'activity'=>'activity',
+     'show'=>'show',
+     'delete'=>'delete',
 
 ];

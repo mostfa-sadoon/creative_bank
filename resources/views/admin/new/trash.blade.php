@@ -27,7 +27,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{$new->header}}</h5>
                                 <p class="card-text">{{$new->desc}}</p>
-                                <a href="{{route('news.show.trashed',$new->id)}}" class="btn btn-primary">show</a>
+                                <a href="{{route('news.delete',$new->id)}}" class="btn btn-danger text-white">{{trans('admin.delete')}}</a>
+                                <a href="{{route('news.show.trashed',$new->id)}}" class="btn btn-primary">{{trans('admin.show')}}</a>
                             </div>
                         </div>
                     @endforeach

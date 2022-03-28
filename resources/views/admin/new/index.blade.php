@@ -8,7 +8,7 @@
                     </div>
                     <div class="col-md-7 align-self-center">
                         <ol class="breadcrumb">
-            
+
                             <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.news')}}</a></li>
                             <li class="breadcrumb-item"><a href="javascript:void(0)">{{trans('admin.dashboard')}}</a></li>
                         </ol>
@@ -30,7 +30,8 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{$new->header}}</h5>
                                 <p class="card-text">{{$new->desc}}</p>
-                                <a href="{{route('news.show',$new->id)}}" class="btn btn-primary">show</a>
+                                <a href="{{route('news.trash',$new->id)}}" class="btn btn-danger text-white">{{trans('admin.trash')}}</a>
+                                <a href="{{route('news.show',$new->id)}}" class="btn btn-primary">{{trans('admin.show')}}</a>
                             </div>
                         </div>
                     @endforeach
