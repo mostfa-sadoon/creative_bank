@@ -21,7 +21,7 @@
                     @forelse ($relatednews as $news)
                         <div class="col-md-6">
                             <div class="img-fluid"><img src="{{$news->img}}" alt=""></div>
-                            <h6 class="blog-title-one title"><a href="{{route('user.news.show',$news->id)}}">{{$news->header}}</a></h6>
+                            <h6 class="blog-title-one title"><a href="{{route('user.news.show',$news->id)}}">{{ $news->{'header_'.app()->getLocale()} }}</a></h6>
                         </div>
                     @empty
                     @endforelse
