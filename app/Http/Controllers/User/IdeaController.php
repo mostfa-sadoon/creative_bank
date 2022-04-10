@@ -147,7 +147,7 @@ class IdeaController extends Controller
             'idea_id'=>$idea_id,
             'comment'=>$request->comment,
         ]);
-        $comments=DB::table('comments')->join('users', 'users.id', '=', 'comments.user_id')->select('comment','name','img')->where('idea_id','=',$idea_id)->take(20)->get();
+        $comments=DB::table('comments')->join('users', 'users.id', '=', 'comments.user_id')->select('comment','comments.created_at','name','img')->where('idea_id','=',$idea_id)->latest()->orderBy('created_at','asc')->take(40)->get();
         return $comments;
     }
     public function like(Request $request)

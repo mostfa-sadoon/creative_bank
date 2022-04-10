@@ -38,6 +38,7 @@ class IdeaController extends Controller
             ]);
 
             if ($validator->fails()) {
+                //return response($validator->messages()->first(),404);
                 return msg(false, $validator->messages()->first());
             } else {
                 $img = $this->MoveImage($request->img, 'uploads/imgs/idea');

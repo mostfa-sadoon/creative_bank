@@ -240,14 +240,16 @@
                                         },
                                     success:function(data) {
                                           console.log(data);
-                                          var commentcontent;
-                                          for (const item of data) {
-                                              if(item.img!=null){
-                                                var img ={!!json_encode(asset('/uploads/user/profile_img'))!!}+'/'+item.img ;
+                                          var commentcontent='';
+                                          var length =data.length;
+                                          for (var i=length-1; i>=0; i--) {
+
+                                              if(data[i].img!=null){
+                                                var img ={!!json_encode(asset('/uploads/user/profile_img'))!!}+'/'+data[i].img ;
                                               }else{
                                                 var img ={!!json_encode(asset('/uploads/user/default/'))!!}+'/default.jpg';
                                               }
-                                               commentcontent+=' <div class="d-flex flex-row comment-row "><div class="p-2"><span class="round"><img src="'+img+'" alt="user" width="50"></span> </div><div class="comment-text w-100"><h6>'+item.name+'</h6><div class="comment-footer"> <span class="date"></span> </div><p class="m-b-5 m-t-10">'+item.comment+'</p></div></div>'
+                                               commentcontent+=' <div class="d-flex flex-row comment-row "><div class="p-2"><span class="round"><img src="'+img+'" alt="user" width="50"></span> </div><div class="comment-text w-100"><h6>'+data[i].name+'</h6>'+data[i].created_at+'<div class="comment-footer"> <span class="date"></span> </div><p class="m-b-5 m-t-10">'+data[i].comment+'</p></div></div>'
                                              }
                                              $('#comments').html(commentcontent);
                                         },
@@ -257,9 +259,7 @@
                                     });
 
                                     document.getElementById('content').value = '';
-
                             });
-
                         // to gat the id if idea
                         var id = $("#creative").attr("data-id");
                         console.log(status);
