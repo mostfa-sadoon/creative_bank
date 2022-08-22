@@ -11,13 +11,13 @@ class CustomAuthController extends Controller
 {
     //
     public function index()
-    { 
-        
+    {
+
         if(Auth::guard('Admin')->check()){
             return redirect("dashboard");
         }
         return view('auth.login');
-    }  
+    }
     public function customLogin(Request $request)
     {
         $request->validate([
@@ -39,12 +39,12 @@ class CustomAuthController extends Controller
         return redirect("dashboard");
     }
     public function customRegistration(Request $request)
-    {  
+    {
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6',
-        ]);      
+        ]);
         $data = $request->all();
         $check = $this->create($data);
         return redirect("dashboard")->withSuccess('You have signed-in');
@@ -56,7 +56,7 @@ class CustomAuthController extends Controller
         'email' => $data['email'],
         'password' => Hash::make($data['password'])
       ]);
-    }    
+    }
     // public function dashboard()
     // {
     //     if(Auth::guard('Admin')->check()){

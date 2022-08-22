@@ -1,4 +1,4 @@
-@extends('user_temp')
+    @extends('user_temp')
 
 @section('style')
 
